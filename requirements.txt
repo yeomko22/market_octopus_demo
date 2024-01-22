@@ -1,0 +1,6 @@
+pinecone-client==2.2.4
+google-cloud-translate==3.11.2
+google-auth==2.23.3
+python-dotenv-yaml==0.17.1
+openai==1.2.3
+pytz==2022.7
