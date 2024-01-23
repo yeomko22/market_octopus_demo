@@ -1,18 +1,14 @@
-import pandas as pd
-from typing import Tuple
 import streamlit as st
-from datetime import datetime, timedelta
-from typing import List, Optional
-import yfinance as yf
 
 from services.service_google import translate
 from services.service_openai import get_embedding, get_streaming_response
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
-import plotly.graph_objects as go
+from services.service_yfinance import select_ticker, draw_stock_price
+from services.streamlit_util import read_stream
 
 st.set_page_config(
-    page_icon="🤖",
-    page_title="AI 애널리스트",
+    page_icon="🐙",
+    page_title="Mr. market octopus"
 )
 st.markdown("""
 <style>
@@ -27,19 +23,6 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
-
-
-def read_stream(response) -> None:
-    content = ""
-    placeholder = st.empty()
-    for part in response:
-        if not part.id:
-            continue
-        delta = part.choices[0].delta
-        if delta.content:
-            content += delta.content
-            placeholder.markdown(content + "▌")
-    placeholder.markdown(content)
 
 
 def generate_prompt(instruct: str, question: str, selected_item: dict) -> str:
@@ -59,7 +42,11 @@ content: {selected_item["content"]}
     return prompt
 
 
-st.title("AI 애널리스트")
+st.title("🐙 Mr. Market Octopus")
+st.markdown("""
+유저의 질문과 가장 관련도가 높은 seeking-alpha 리포트 1편을 참고해서 답변을 생성합니다.  
+참고한 리포트가 특정 종목과 관련이 있을 경우, 현재 주가 데이터를 그려줍니다.
+""".strip())
 NOT_GIVEN = "선택 안함"
 auto_complete = st.selectbox("예시 질문 선택", options=[
     NOT_GIVEN,
@@ -70,7 +57,7 @@ auto_complete = st.selectbox("예시 질문 선택", options=[
     "지금과 같은 금융시장 환경에서는 어떤 투자 전략을 취해야할까?",
     "생성 AI 기술에 영향을 받을 종목은 어떤 것들이 있을까?",
     "올해 어떤 산업군이 좋은 성괄르 낼 것으로 예상해?",
-    "삼성 SDS의 주식은 현재 투자하기 좋은 선택일까?"
+    "테슬라는 현재 투자하기 좋은 선택일까?"
 ])
 example_ai_role = "당신은 전문 증권 애널리스트입니다."
 example_prompt = """
@@ -92,26 +79,6 @@ with st.form("form"):
     submit = st.form_submit_button(label="제출")
 
 
-def select_ticker(selected_report: dict) -> Optional[yf.Ticker]:
-    selected_ticker = None
-    # TODO: 오타, 고쳐야함
-    if "parimary_tickers" not in selected_report["metadata"]:
-        return selected_ticker
-    primary_tickers = selected_report["metadata"]["parimary_tickers"]
-    for primary_ticker in primary_tickers:
-        ticker = yf.Ticker(primary_ticker)
-        history = ticker.history(period="1d")
-        if not history.empty:
-            selected_ticker = ticker
-            break
-    return selected_ticker
-
-
-def select_seeking_alpha_report(related_report_list: List[dict]) -> Optional[dict]:
-    related_report_ids = [x["metadata"]["id"] for x in related_report_list]
-    return search_seeking_alpha_content(question_embedding, related_report_ids)
-
-
 def draw_seeking_alpha_report(selected_item: dict):
     selected_item_metadata = selected_item["metadata"]
     with st.expander(selected_item_metadata["title"], expanded=True):
@@ -127,91 +94,6 @@ def draw_seeking_alpha_report(selected_item: dict):
             url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
             use_container_width=True
         )
-
-
-def get_related_stock_data(ticker: yf.Ticker) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    start = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
-    end = datetime.now().strftime("%Y-%m-%d")
-    df_1d = ticker.history(start=start, end=end, interval="1h").reset_index()
-    df_1d["ds"] = df_1d["Datetime"].dt.strftime("%Y-%m-%d %H")
-
-    df_5d = ticker.history(period="5d", interval="1h").reset_index()
-    df_5d["ds"] = df_5d["Datetime"].dt.strftime("%Y-%m-%d %H")
-
-    df_1mo = ticker.history(period="1mo").reset_index()
-    df_1mo["ds"] = df_1mo["Date"].dt.strftime("%Y-%m-%d")
-
-    df_6mo = ticker.history(period="6mo").reset_index()
-    df_6mo["ds"] = df_6mo["Date"].dt.strftime("%Y-%m-%d")
-    return df_1d, df_5d, df_1mo, df_6mo
-
-
-def draw_trace(df: pd.DataFrame, name: str, visible=False) -> go.Scatter:
-    return go.Scatter(
-        x=df["ds"],
-        y=df["High"],
-        name=name,
-        mode="lines",
-        line=dict(color='#F06A6A'),
-        visible=visible,
-    )
-
-
-def draw_stock_price(ticker: yf.Ticker):
-    df_1d, df_5d, df_1mo, df_6mo = get_related_stock_data(ticker)
-    trace_1d = draw_trace(df_1d, "1D", visible=False)
-    trace_5d = draw_trace(df_5d, "5D", visible=True)
-    trace_1mo = draw_trace(df_1mo, "1mo", visible=False)
-    trace_6mo = draw_trace(df_6mo, "6mo", visible=False)
-    updatemenus = [
-        dict(
-            type="buttons",
-            direction="left",
-            x=0.95,
-            y=1.5,
-            showactive=True,
-            active=1,
-            buttons=[
-                dict(
-                    label="1D",
-                    method="update",
-                    args=[{'visible': [True, False, False, False]}]
-                ),
-                dict(
-                    label="5D",
-                    method="update",
-                    args=[{'visible': [False, True, False, False]}],
-                ),
-                dict(
-                    label="1M",
-                    method="update",
-                    args=[{'visible': [False, False, True, False]}]
-                ),
-                dict(
-                    label="6M",
-                    method="update",
-                    args=[{'visible': [False, False, False, True]}]
-                ),
-            ]
-        )
-    ]
-    layout = go.Layout(
-        xaxis=dict(
-            type="category",
-            showticklabels=False,
-        ),
-        height=150,
-        margin=dict(l=0, r=0, t=0, b=0),
-        updatemenus=updatemenus
-    )
-    st.markdown("**📈realted stock**")
-    with st.expander(ticker.ticker, expanded=True):
-        fig = go.Figure(
-            data=[trace_1d, trace_5d, trace_1mo, trace_6mo],
-            layout=layout
-        )
-        config = {'displayModeBar': False}
-        st.plotly_chart(fig, use_container_width=True, config=config)
 
 
 if submit:
@@ -231,12 +113,22 @@ if submit:
             if not related_report_list:
                 st.markdown("관련 리포트를 찾을 수 없습니다.")
             else:
-                selected_report = select_seeking_alpha_report(related_report_list)
+                related_report_ids = [x["metadata"]["id"] for x in related_report_list]
+                matches = search_seeking_alpha_content(question_embedding, related_report_ids)
+
+                # report 1개만 선택
+                selected_report = matches[0]
                 draw_seeking_alpha_report(selected_report)
                 selected_ticker = select_ticker(selected_report)
                 if selected_ticker:
-                    with st.spinner("관련 주식 정보 검색 중..."):
-                        draw_stock_price(selected_ticker)
+                    st.markdown("**📈realted stock**")
+                    with st.expander(selected_ticker.ticker, expanded=True):
+                        fig = draw_stock_price(selected_ticker)
+                        st.plotly_chart(
+                            fig,
+                            use_container_width=True,
+                            config={'displayModeBar': False}
+                        )
     with col2:
         st.markdown("**🧠AI 의견**")
         selected_report_metadata = selected_report["metadata"]
