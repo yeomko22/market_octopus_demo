@@ -5,11 +5,14 @@ from services.service_openai import get_embedding, get_streaming_response
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_yfinance import select_ticker, draw_stock_price
 from services.streamlit_util import read_stream, default_instruction, example_questions, NOT_GIVEN, write_common_style
+from st_pages import show_pages_from_config
+
 
 st.set_page_config(
     page_icon="🐙",
     page_title="Mr. market octopus"
 )
+show_pages_from_config()
 write_common_style()
 
 
