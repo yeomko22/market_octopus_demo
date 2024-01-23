@@ -73,7 +73,7 @@ def filter_duplicates(matches: List[dict]) -> List[dict]:
 #     return matches
 
 
-def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3) -> List[str]:
+def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3) -> List[dict]:
     result = seeking_alpha_index.query(
         vector=query_embedding,
         top_k=k,
