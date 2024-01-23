@@ -7,4 +7,4 @@ pytz==2022.7
 yfinance==0.2.36
 plotly==5.15.0
 pandas==1.5.1
-yfinance==0.2.18
+yfinance==0.2.36
