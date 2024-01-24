@@ -1,7 +1,7 @@
 [[pages]]
 path = "app.py"
-name = "seeking alpha single"
+name = "seeking alpha"
 
 [[pages]]
-path = "other_pages/seeking_alpha_multiple.py"
-name = "seeking alpha multiple"
+path = "other_pages/fnguide.py"
+name = "fnguide"
