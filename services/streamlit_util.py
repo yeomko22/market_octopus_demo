@@ -1,12 +1,18 @@
 import streamlit as st
 
-default_instruction = """
+
+default_instruction = f"""
 유저의 질문과 참고할만한 애널리스트 리포트 문단이 주어집니다.
-기존에 알고 있었던 지식과 참고 자료를 활용해서 스스로 분석한 결과를 작성하세요.
-구체적인 수치나 전문적인 자료를 언급해주세요.
-반드시 한국어로 답변하세요.
-두괄식으로 핵심을 먼저 말해주세요.
-불릿 포인트를 사용해서 핵심을 정리해주세요.
+리포트를 참고해서 직접 분석하여 답변을 작성해야합니다.
+
+먼저 질문 내용과 질문 의도를 한 문장으로 정리하세요.
+유저의 질문 내용을 칭찬해도 됩니다.
+그 다음 유저의 질문에 대한 분석 결과를 한 문장으로 요약한 제목을 제시하세요.
+제목 아래에 불릿포인트를 사용해서 핵심을 3~5가지 내용을 간결하게 설명하세요.
+
+제목은 진하게과 기울임을 적용하세요.
+반드시 친근한 구어체로 답하세요.
+"질문 요약", "제목" 등의 단어는 반드시 생략하세요.
 """.strip()
 
 NOT_GIVEN = "선택 안함"
@@ -36,6 +42,13 @@ def read_stream(response) -> None:
     placeholder.markdown(content)
 
 
+def set_page_config():
+    st.set_page_config(
+        page_icon="🐙",
+        page_title="Mr. market octopus"
+    )
+
+
 def write_common_style():
     st.markdown("""
     <style>
@@ -50,3 +63,20 @@ def write_common_style():
     }
     </style>
     """, unsafe_allow_html=True)
+
+
+def draw_seeking_alpha_report(selected_item: dict):
+    selected_item_metadata = selected_item["metadata"]
+    with st.expander(selected_item_metadata["title"], expanded=True):
+        st.markdown(selected_item_metadata['published_at'])
+        st.markdown(f"score: {round(selected_item['score'], 4)}")
+        st.link_button(
+            label="🌐 See full report",
+            url=selected_item_metadata["public_url"],
+            use_container_width=True
+        )
+        st.link_button(
+            label="📝 See text chunk",
+            url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
+            use_container_width=True
+        )

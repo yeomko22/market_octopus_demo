@@ -4,14 +4,11 @@ from services.service_google import translate
 from services.service_openai import get_embedding, get_streaming_response
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_yfinance import select_ticker, draw_stock_price
-from services.streamlit_util import read_stream, default_instruction, example_questions, NOT_GIVEN, write_common_style
+from services.streamlit_util import read_stream, default_instruction, example_questions, NOT_GIVEN, write_common_style, draw_seeking_alpha_report, set_page_config
 from st_pages import show_pages_from_config
 
 
-st.set_page_config(
-    page_icon="🐙",
-    page_title="Mr. market octopus"
-)
+set_page_config()
 show_pages_from_config()
 write_common_style()
 
@@ -50,23 +47,6 @@ with st.form("form"):
         value=auto_complete if auto_complete != NOT_GIVEN else ""
     )
     submit = st.form_submit_button(label="제출")
-
-
-def draw_seeking_alpha_report(selected_item: dict):
-    selected_item_metadata = selected_item["metadata"]
-    with st.expander(selected_item_metadata["title"], expanded=True):
-        st.markdown(selected_item_metadata['published_at'])
-        st.markdown(f"score: {round(selected_item['score'], 4)}")
-        st.link_button(
-            label="🌐 See full report",
-            url=selected_item_metadata["public_url"],
-            use_container_width=True
-        )
-        st.link_button(
-            label="📝 See text chunk",
-            url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
-            use_container_width=True
-        )
 
 
 if submit:
