@@ -84,10 +84,10 @@ def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3) -> Li
     return [x for x in matches if x["score"] >= 0.8]
 
 
-def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str], k: int = 1) -> Optional[dict]:
+def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str], k: int = 3) -> Optional[List[dict]]:
     result = seeking_alpha_index.query(
         vector=query_embedding,
-        top_k=k,
+        top_k=10,
         namespace="seeking-alpha-analysis-content",
         include_metadata=True,
         filter={"id": {"$in": id_list}}
@@ -95,4 +95,13 @@ def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str
     matches = result["matches"]
     if not matches:
         return None
-    return matches
+
+    # filter duplicates
+    visited = set()
+    filtered_result = []
+    for match in matches:
+        if match["metadata"]["id"] in visited:
+            continue
+        filtered_result.append(match)
+        visited.add(match["metadata"]["id"])
+    return filtered_result[:k]

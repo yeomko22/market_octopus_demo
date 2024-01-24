@@ -1,13 +1,16 @@
+from typing import List
+from datetime import datetime
+
 import streamlit as st
 from st_pages import show_pages_from_config
 
 from services.service_google import translate
-from services.service_openai import get_embedding, get_streaming_response
+from services.service_openai import get_embedding
+from services.service_openai import get_streaming_response
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_yfinance import select_ticker, draw_stock_price
-from services.streamlit_util import read_stream, default_instruction, NOT_GIVEN, draw_seeking_alpha_report
-from services.streamlit_util import write_common_style, example_questions, set_page_config
-
+from services.streamlit_util import default_instruction, NOT_GIVEN, draw_seeking_alpha_report
+from services.streamlit_util import write_common_style, example_questions, set_page_config, read_stream
 
 set_page_config()
 show_pages_from_config()
@@ -22,18 +25,23 @@ auto_complete = st.selectbox("예시 질문 선택", options=example_questions)
 example_ai_role = "당신은 전문 증권 애널리스트입니다."
 
 
-def generate_prompt(instruct: str, question: str, selected_item: dict) -> str:
+def generate_prompt(instruct: str, question: str, related_contents: List[dict]) -> str:
+    related_contents_text = ""
+    for i, content in enumerate(related_contents):
+        content_metadata = content["metadata"]
+        related_contents_text += f"""
+title: {content_metadata["title"]}  
+published_at: {content_metadata["published_at"]}  
+summary: {content_metadata["summary"]}  
+content: {content_metadata["content"]}  
+"""
     prompt = f"""
 {instruct}
----
-질문: {question}  
-관련 리포트 
-
-title: {selected_item["title"]}
-
-summary: {selected_item["summary"]}
-
-content: {selected_item["content"]}
+--- 
+today: {datetime.now().strftime("%Y-%m-%d")}  
+question: {question}  
+related analysis
+{related_contents_text}
 ---
 """.strip()
     return prompt
@@ -66,12 +74,9 @@ if submit:
                 st.markdown("관련 리포트를 찾을 수 없습니다.")
             else:
                 related_report_ids = [x["metadata"]["id"] for x in related_report_list]
-                matches = search_seeking_alpha_content(question_embedding, related_report_ids)
-
-                # report 1개만 선택
-                selected_report = matches[0]
-                draw_seeking_alpha_report(selected_report)
-                selected_ticker = select_ticker(selected_report)
+                related_contents = search_seeking_alpha_content(question_embedding, related_report_ids, k=3)
+                draw_seeking_alpha_report(related_contents)
+                selected_ticker = select_ticker(related_contents)
                 if selected_ticker:
                     st.markdown("**📈realted stock**")
                     with st.expander(selected_ticker.ticker, expanded=True):
@@ -83,9 +88,8 @@ if submit:
                         )
     with col2:
         st.markdown("**🧠AI 의견**")
-        selected_report_metadata = selected_report["metadata"]
         with st.spinner("AI 의견 생성 중..."):
-            prompt = generate_prompt(instruct, question, selected_report_metadata)
+            prompt = generate_prompt(instruct, question, related_contents)
             messages = [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": prompt},

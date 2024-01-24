@@ -1,14 +1,20 @@
 import streamlit as st
+from typing import List
 
 
 default_instruction = f"""
-유저의 질문과 참고할만한 애널리스트 리포트 문단이 주어집니다.
+금융 관련 질문과 참고할만한 애널리스트 리포트 문단이 주어집니다.
 리포트를 참고해서 직접 분석하여 답변을 작성해야합니다.
 
-먼저 질문 내용과 질문 의도를 한 문장으로 정리하세요.
-유저의 질문 내용을 칭찬해도 됩니다.
-그 다음 유저의 질문에 대한 분석 결과를 한 문장으로 요약한 제목을 제시하세요.
+먼저 질문 내용과 질문 의도를 한 문장으로 정리하세요. 질문 내용을 칭찬해도 됩니다.
+그 다음 질문에 대한 분석 결과를 한 문장으로 요약한 제목을 제시하세요.
 제목 아래에 불릿포인트를 사용해서 핵심을 3~5가지 내용을 간결하게 설명하세요.
+
+다음 문단부터 본격적으로 설명하세요.
+이 때, 소제목을 적극적으로 활용하세요.
+
+마지막 문단에서 결론을 한 문장으로 요약하세요.
+투자 대가들의 명언을 인용하면서 마무리하세요.
 
 제목은 진하게과 기울임을 적용하세요.
 반드시 친근한 구어체로 답하세요.
@@ -65,18 +71,19 @@ def write_common_style():
     """, unsafe_allow_html=True)
 
 
-def draw_seeking_alpha_report(selected_item: dict):
-    selected_item_metadata = selected_item["metadata"]
-    with st.expander(selected_item_metadata["title"], expanded=True):
-        st.markdown(selected_item_metadata['published_at'])
-        st.markdown(f"score: {round(selected_item['score'], 4)}")
-        st.link_button(
-            label="🌐 See full report",
-            url=selected_item_metadata["public_url"],
-            use_container_width=True
-        )
-        st.link_button(
-            label="📝 See text chunk",
-            url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
-            use_container_width=True
-        )
+def draw_seeking_alpha_report(related_contents: List[dict]):
+    for related_content in related_contents:
+        selected_item_metadata = related_content["metadata"]
+        with st.expander(selected_item_metadata["title"], expanded=True):
+            st.markdown(selected_item_metadata['published_at'])
+            st.markdown(f"score: {round(related_content['score'], 4)}")
+            st.link_button(
+                label="🌐 See full report",
+                url=selected_item_metadata["public_url"],
+                use_container_width=True
+            )
+            st.link_button(
+                label="📝 See text chunk",
+                url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
+                use_container_width=True
+            )

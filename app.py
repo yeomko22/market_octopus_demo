@@ -67,12 +67,11 @@ if submit:
                 st.markdown("관련 리포트를 찾을 수 없습니다.")
             else:
                 related_report_ids = [x["metadata"]["id"] for x in related_report_list]
-                matches = search_seeking_alpha_content(question_embedding, related_report_ids)
+                related_contents = search_seeking_alpha_content(question_embedding, related_report_ids, k=1)
 
                 # report 1개만 선택
-                selected_report = matches[0]
-                draw_seeking_alpha_report(selected_report)
-                selected_ticker = select_ticker(selected_report)
+                draw_seeking_alpha_report(related_contents)
+                selected_ticker = select_ticker(related_contents)
                 if selected_ticker:
                     st.markdown("**📈realted stock**")
                     with st.expander(selected_ticker.ticker, expanded=True):
@@ -84,7 +83,7 @@ if submit:
                         )
     with col2:
         st.markdown("**🧠AI 의견**")
-        selected_report_metadata = selected_report["metadata"]
+        selected_report_metadata = related_contents[0]["metadata"]
         with st.spinner("AI 의견 생성 중..."):
             prompt = generate_prompt(instruct, question, selected_report_metadata)
             messages = [

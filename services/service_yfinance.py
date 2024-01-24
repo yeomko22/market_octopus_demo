@@ -1,41 +1,52 @@
 from datetime import datetime, timedelta
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List
 
 import pandas as pd
 import plotly.graph_objects as go
 import yfinance as yf
 
 
-def select_ticker(selected_report: dict) -> Optional[yf.Ticker]:
+def select_ticker(related_reports: List[dict]) -> Optional[yf.Ticker]:
     selected_ticker = None
-    # TODO: 오타, 고쳐야함
-    if "parimary_tickers" not in selected_report["metadata"]:
-        return selected_ticker
-    primary_tickers = selected_report["metadata"]["parimary_tickers"]
+    primary_tickers = []
+    for related_report in related_reports:
+        cur_tickers = related_report["metadata"].get("parimary_tickers", [])
+        for ticker in cur_tickers:
+            if ticker not in primary_tickers:
+                primary_tickers.append(ticker)
     for primary_ticker in primary_tickers:
         ticker = yf.Ticker(primary_ticker)
-        history = ticker.history(period="1d")
+        history = ticker.history(period="1mo")
         if not history.empty:
             selected_ticker = ticker
             break
     return selected_ticker
 
 
-def get_related_stock_data(ticker: yf.Ticker) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+def get_related_stock_data(ticker: yf.Ticker) -> List[Tuple[str, pd.DataFrame]]:
+    dataframe_list: List[Tuple[str, pd.DataFrame]] = []
     start = (datetime.now() - timedelta(days=2)).strftime("%Y-%m-%d")
     end = datetime.now().strftime("%Y-%m-%d")
     df_1d = ticker.history(start=start, end=end, interval="1h").reset_index()
-    df_1d["ds"] = df_1d["Datetime"].dt.strftime("%Y-%m-%d %H")
+    if not df_1d.empty:
+        df_1d["ds"] = df_1d["Datetime"].dt.strftime("%Y-%m-%d %H")
+        dataframe_list.append(("1D", df_1d))
 
     df_5d = ticker.history(period="5d", interval="1h").reset_index()
-    df_5d["ds"] = df_5d["Datetime"].dt.strftime("%Y-%m-%d %H")
+    if not df_5d.empty:
+        df_5d["ds"] = df_5d["Datetime"].dt.strftime("%Y-%m-%d %H")
+        dataframe_list.append(("5D", df_5d))
 
     df_1mo = ticker.history(period="1mo").reset_index()
-    df_1mo["ds"] = df_1mo["Date"].dt.strftime("%Y-%m-%d")
+    if not df_1mo.empty:
+        df_1mo["ds"] = df_1mo["Date"].dt.strftime("%Y-%m-%d")
+        dataframe_list.append(("1M", df_1mo))
 
     df_6mo = ticker.history(period="6mo").reset_index()
-    df_6mo["ds"] = df_6mo["Date"].dt.strftime("%Y-%m-%d")
-    return df_1d, df_5d, df_1mo, df_6mo
+    if not df_6mo.empty:
+        df_6mo["ds"] = df_6mo["Date"].dt.strftime("%Y-%m-%d")
+        dataframe_list.append(("6M", df_6mo))
+    return dataframe_list
 
 
 def draw_trace(df: pd.DataFrame, name: str, visible=False) -> go.Scatter:
@@ -50,11 +61,17 @@ def draw_trace(df: pd.DataFrame, name: str, visible=False) -> go.Scatter:
 
 
 def draw_stock_price(ticker: yf.Ticker):
-    df_1d, df_5d, df_1mo, df_6mo = get_related_stock_data(ticker)
-    trace_1d = draw_trace(df_1d, "1D", visible=False)
-    trace_5d = draw_trace(df_5d, "5D", visible=True)
-    trace_1mo = draw_trace(df_1mo, "1mo", visible=False)
-    trace_6mo = draw_trace(df_6mo, "6mo", visible=False)
+    dataframe_list = get_related_stock_data(ticker)
+    trace_list = []
+    buttons = []
+    for i, (label, dataframe) in enumerate(dataframe_list):
+        trace = draw_trace(dataframe, label, visible=True if i == 0 else False)
+        trace_list.append(trace)
+        buttons.append({
+            "label": label,
+            "method": "update",
+            "args": [{"visible": [x == i for x in range(len(dataframe_list))]}]
+        })
     updatemenus = [
         dict(
             type="buttons",
@@ -62,29 +79,8 @@ def draw_stock_price(ticker: yf.Ticker):
             x=0.95,
             y=1.5,
             showactive=True,
-            active=1,
-            buttons=[
-                dict(
-                    label="1D",
-                    method="update",
-                    args=[{'visible': [True, False, False, False]}]
-                ),
-                dict(
-                    label="5D",
-                    method="update",
-                    args=[{'visible': [False, True, False, False]}],
-                ),
-                dict(
-                    label="1M",
-                    method="update",
-                    args=[{'visible': [False, False, True, False]}]
-                ),
-                dict(
-                    label="6M",
-                    method="update",
-                    args=[{'visible': [False, False, False, True]}]
-                ),
-            ]
+            active=0,
+            buttons=buttons
         )
     ]
     layout = go.Layout(
@@ -97,6 +93,6 @@ def draw_stock_price(ticker: yf.Ticker):
         updatemenus=updatemenus
     )
     return go.Figure(
-        data=[trace_1d, trace_5d, trace_1mo, trace_6mo],
+        data=trace_list,
         layout=layout
     )
