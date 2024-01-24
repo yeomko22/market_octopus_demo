@@ -87,3 +87,17 @@ def draw_seeking_alpha_report(related_contents: List[dict]):
                 url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
                 use_container_width=True
             )
+
+
+def draw_fnguide_report(related_contents: List[dict]):
+    for related_content in related_contents:
+        selected_item_metadata = related_content["metadata"]
+        with st.expander(f"{selected_item_metadata['publisher']} - {selected_item_metadata['title']}", expanded=True):
+            st.markdown(selected_item_metadata['published_at'])
+            st.markdown(selected_item_metadata['writer'])
+            st.markdown(f"score: {round(related_content['score'], 4)}")
+            st.link_button(
+                label="🌐 See full report",
+                url=selected_item_metadata["public_url"],
+                use_container_width=True
+            )

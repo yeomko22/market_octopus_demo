@@ -105,3 +105,25 @@ def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str
         filtered_result.append(match)
         visited.add(match["metadata"]["id"])
     return filtered_result[:k]
+
+
+def search_fnguide(query_embedding: List[float], k: int = 3) -> Optional[List[dict]]:
+    result = seeking_alpha_index.query(
+        vector=query_embedding,
+        top_k=10,
+        namespace="fnguide",
+        include_metadata=True,
+    )
+    matches = result["matches"]
+    if not matches:
+        return None
+
+    # filter duplicates
+    visited = set()
+    filtered_result = []
+    for match in matches:
+        if match["metadata"]["hashkey"] in visited:
+            continue
+        filtered_result.append(match)
+        visited.add(match["metadata"]["hashkey"])
+    return filtered_result[:k]
