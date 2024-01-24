@@ -30,7 +30,7 @@ content: {selected_item["content"]}
     return prompt
 
 
-st.title("🐙 Mr. Market Octopus")
+st.title("🐙 seeking alpha single")
 st.markdown("""
 유저의 질문과 가장 관련도가 높은 seeking-alpha 리포트 1편을 참고해서 답변을 생성합니다.  
 참고한 리포트가 특정 종목과 관련이 있을 경우, 현재 주가 데이터를 그려줍니다.
@@ -40,7 +40,7 @@ example_ai_role = "당신은 전문 증권 애널리스트입니다."
 
 with st.form("form"):
     system_message = st.text_input(label="AI 역할", value=example_ai_role)
-    instruct = st.text_area(label="답변 생성시 고려사항", value=default_instruction, height=120)
+    instruct = st.text_area(label="답변 생성시 고려사항", value=default_instruction, height=200)
     question = st.text_input(
         "질문",
         placeholder="질문을 입력해주세요",

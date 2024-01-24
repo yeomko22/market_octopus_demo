@@ -41,7 +41,7 @@ content: {selected_item["content"]}
 
 with st.form("form"):
     system_message = st.text_input(label="AI 역할", value=example_ai_role)
-    instruct = st.text_area(label="답변 생성시 고려사항", value=default_instruction, height=120)
+    instruct = st.text_area(label="답변 생성시 고려사항", value=default_instruction, height=200)
     question = st.text_input(
         "질문",
         placeholder="질문을 입력해주세요",
