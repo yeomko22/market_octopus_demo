@@ -16,7 +16,7 @@ set_page_config()
 show_pages_from_config()
 write_common_style()
 
-st.title("🐙 fnguide single")
+st.title("🐙 fnguide")
 st.markdown("""
 유저의 질문과 가장 관련도가 높은 fnguide 리포트 최대 3편을 참고해서 답변을 생성합니다.  
 """.strip())

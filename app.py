@@ -38,7 +38,7 @@ related analysis
     return prompt
 
 
-st.title("🐙 seeking alpha single")
+st.title("🐙 seeking alpha")
 st.markdown("""
 유저의 질문과 가장 관련도가 높은 seeking-alpha 리포트 최대 3편을 참고해서 답변을 생성합니다.  
 참고한 리포트가 특정 종목과 관련이 있을 경우, 현재 주가 데이터를 그려줍니다.
