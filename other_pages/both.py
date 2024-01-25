@@ -1,5 +1,4 @@
 from datetime import datetime
-import tiktoken
 from typing import List
 
 import streamlit as st
