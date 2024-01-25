@@ -71,10 +71,11 @@ def write_common_style():
     """, unsafe_allow_html=True)
 
 
-def draw_seeking_alpha_report(related_contents: List[dict]):
+def draw_seeking_alpha_report(related_contents: List[dict], expanded: bool = True):
+    st.markdown("**해외 애널리스트 리포트**")
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
-        with st.expander(selected_item_metadata["title"], expanded=True):
+        with st.expander(selected_item_metadata["title"], expanded=expanded):
             st.markdown(selected_item_metadata['published_at'])
             st.markdown(f"score: {round(related_content['score'], 4)}")
             st.link_button(
@@ -89,10 +90,11 @@ def draw_seeking_alpha_report(related_contents: List[dict]):
             )
 
 
-def draw_fnguide_report(related_contents: List[dict]):
+def draw_fnguide_report(related_contents: List[dict], expanded: bool = True):
+    st.markdown("**국내 애널리스트 리포트**")
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
-        with st.expander(f"{selected_item_metadata['publisher']} - {selected_item_metadata['title']}", expanded=True):
+        with st.expander(f"{selected_item_metadata['publisher']} - {selected_item_metadata['title']}", expanded=expanded):
             st.markdown(selected_item_metadata['published_at'])
             st.markdown(selected_item_metadata['writer'])
             st.markdown(f"score: {round(related_content['score'], 4)}")

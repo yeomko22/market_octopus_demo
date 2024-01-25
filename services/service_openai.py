@@ -3,7 +3,7 @@ from typing import List
 import openai
 import streamlit as st
 
-from services.util import parse_first_json, EnumIntent
+from services.util import parse_first_json, EnumPrimaryIntent
 
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -35,15 +35,15 @@ def get_streaming_response(messages: List[dict]):
     return response
 
 
-def intent_classfication(question: str) -> EnumIntent:
+def classify_primary_intent(question: str) -> EnumPrimaryIntent:
     system_message = """
 당신은 전문 증권 애널리스트입니다.
 주요 카테고리로 유저의 질문의 의도를 분류하세요.
 결과는 "category"를 키로 갖는 JSON 포맷으로 리턴하세요.
 
-주요 카테고리: 경제 지표, 정책 및 규제, 시장 동향, 시장 예측, 투자 전략, 신기술, 특정 산업 분석, 종목 추천, 종목 방향성 예측 
+주요 카테고리: 정책, 경제, 주식시장 전략, 채권시장, 산업 및 종목, 대체자산, 기타 
     """.strip()
-    intent = EnumIntent.MARKET_TREND
+    intent = EnumPrimaryIntent.ECONOMY
     for i in range(3):
         try:
             response = client.chat.completions.create(
@@ -56,7 +56,7 @@ def intent_classfication(question: str) -> EnumIntent:
             )
             intent_json = parse_first_json(response.choices[0].message.content)
             category = intent_json["category"]
-            for intent in EnumIntent:
+            for intent in EnumPrimaryIntent:
                 if intent.value == category:
                     return intent
         except Exception as e:
@@ -91,3 +91,4 @@ def extract_query(question: str) -> str:
             print("RETRY INTENT CLASSIFICATION", e)
             continue
     return query
+

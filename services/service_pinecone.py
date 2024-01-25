@@ -1,52 +1,10 @@
 import os
 from typing import List, Optional
 
-
 from pinecone import Pinecone
-from services.util import EnumIntent, EnumCategory
 
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
-# fnguide_index = pc.Index('financial-analyst')
 seeking_alpha_index = pc.Index('market-octopus')
-search_space_by_intent = {
-    EnumIntent.ECONOMIC_INDICATOR: [
-        EnumCategory.ECON.value,
-    ],
-    EnumIntent.POLICY_AND_REGULATION: [
-        EnumCategory.INDUSTRY.value,
-        EnumCategory.MARKET.value,
-    ],
-    EnumIntent.MARKET_TREND: [
-        EnumCategory.MARKET.value,
-    ],
-    EnumIntent.MARKET_PREDICTION: [
-        EnumCategory.ECON.value,
-        EnumCategory.MARKET.value,
-    ],
-    EnumIntent.INVESTMENT_STRATEGY: [
-        EnumCategory.ECON.value,
-        EnumCategory.MARKET.value,
-    ],
-    EnumIntent.NEW_TECHNOLOGY: [
-        EnumCategory.MARKET.value,
-        EnumCategory.INDUSTRY.value,
-        EnumCategory.STOCK.value,
-    ],
-    EnumIntent.INDUSTRY_ANALYSIS: [
-        EnumCategory.MARKET.value,
-        EnumCategory.INDUSTRY.value,
-    ],
-    EnumIntent.STOCK_RECOMMENDATION: [
-        EnumCategory.MARKET.value,
-        EnumCategory.STOCK.value,
-    ],
-    EnumIntent.STOCK_DIRECTION_PREDICTION: [
-        EnumCategory.ECON.value,
-        EnumCategory.MARKET.value,
-        EnumCategory.INDUSTRY.value,
-        EnumCategory.STOCK.value,
-    ],
-}
 
 
 def filter_duplicates(matches: List[dict]) -> List[dict]:

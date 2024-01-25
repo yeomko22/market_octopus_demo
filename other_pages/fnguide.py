@@ -1,5 +1,5 @@
-from typing import List
 from datetime import datetime
+from typing import List
 
 import streamlit as st
 from st_pages import show_pages_from_config
@@ -8,7 +8,6 @@ from services.service_google import translate
 from services.service_openai import get_embedding
 from services.service_openai import get_streaming_response
 from services.service_pinecone import search_fnguide
-from services.service_yfinance import select_ticker, draw_stock_price
 from services.streamlit_util import default_instruction, NOT_GIVEN, draw_fnguide_report
 from services.streamlit_util import write_common_style, example_questions, set_page_config, read_stream
 

@@ -4,17 +4,19 @@ from datetime import datetime
 from enum import Enum
 
 
-class EnumIntent(Enum):
-    ECONOMIC_INDICATOR = "경제 지표"
-    POLICY_AND_REGULATION = "정책 및 규제"
-    MARKET_TREND = "시장 동향"
-    MARKET_PREDICTION = "시장 예측"
-    INVESTMENT_STRATEGY = "투자 전략"
-    NEW_TECHNOLOGY = "신기술"
-    INDUSTRY_ANALYSIS = "특정 산업 분석"
-    STOCK_RECOMMENDATION = "종목 추천"
-    STOCK_DIRECTION_PREDICTION = "종목 방향성 예측"
+class EnumReferenceType(Enum):
+    DOMESTIC_REPORT = "한국 애널리스트 리포트"
+    OVERSEAS_REPORT = "미국 애널리스트 리포트"
 
+
+class EnumPrimaryIntent(Enum):
+    POLICY = "정책"
+    ECONOMY = "경제"
+    MARKET_STRATEGY = "주식시장 전략"
+    BOND = "채권시장"
+    INDUSTRY_STOCK = "산업 및 종목"
+    ALTERNATIVE_ASSET = "대체자산"
+    ETC = "기타"
 
 class EnumCategory(Enum):
     STOCK = "R100"
@@ -68,4 +70,3 @@ def get_date_diff(published_at: datetime) -> str:
         return "한달 전"
     else:
         return published_at.strftime("%Y-%m-%d")
-
