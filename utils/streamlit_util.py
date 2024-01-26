@@ -2,7 +2,8 @@ from typing import List, Union
 
 import streamlit as st
 
-from services.util import PRIMARY_INTENT_DICT, EnumPrimaryIntent, EnumIndustryStockIntent, EnumMarketStrategyIntent, ENUM_MARKET_STRATEGY_INTENT_DICT, ENUM_INDUSTRY_STOCK_INTENT_DICT
+from utils.intent import PRIMARY_INTENT_DICT, EnumPrimaryIntent, EnumIndustryStockIntent, \
+    EnumMarketStrategyIntent, ENUM_MARKET_STRATEGY_INTENT_DICT, ENUM_INDUSTRY_STOCK_INTENT_DICT
 
 default_instruction = f"""
 금융 관련 질문과 참고할만한 애널리스트 리포트 문단이 주어집니다.

@@ -1,12 +1,4 @@
-import json
-import re
-from datetime import datetime
 from enum import Enum
-
-
-class EnumReferenceType(Enum):
-    DOMESTIC_REPORT = "한국 애널리스트 리포트"
-    OVERSEAS_REPORT = "미국 애널리스트 리포트"
 
 
 class EnumPrimaryIntent(Enum):
@@ -72,44 +64,3 @@ ENUM_INDUSTRY_STOCK_INTENT_DICT = {
     EnumIndustryStockIntent.UTILITIES: "유틸리티",
     EnumIndustryStockIntent.REAL_ESTATE: "부동산",
 }
-
-
-class EnumCategory(Enum):
-    STOCK = "R100"
-    INDUSTRY = "R200"
-    MARKET = "R300"
-    BOND = "R500"
-    FX = "R600"
-    ECON = "R700"
-    CHINA = "H100"
-
-
-category_dict = {
-    EnumCategory.ECON.value: "경제",
-    EnumCategory.MARKET.value: "주식",
-    EnumCategory.BOND.value: "채권",
-    EnumCategory.INDUSTRY.value: "산업",
-    EnumCategory.STOCK.value: "기업",
-    EnumCategory.CHINA.value: "중국",
-    EnumCategory.FX.value: "외환",
-}
-
-
-def get_date_diff(published_at: datetime) -> str:
-    date_diff = (datetime.now() - published_at).days
-    if date_diff == 0:
-        return "오늘"
-    elif date_diff < 7:
-        return f"{date_diff}일 전"
-    elif date_diff < 14:
-        return "1주 전"
-    elif date_diff < 21:
-        return "2주 전"
-    elif date_diff < 28:
-        return "3주 전"
-    elif date_diff < 35:
-        return "4주 전"
-    elif date_diff < 42:
-        return "한달 전"
-    else:
-        return published_at.strftime("%Y-%m-%d")
