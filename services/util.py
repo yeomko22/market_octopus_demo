@@ -18,6 +18,27 @@ class EnumPrimaryIntent(Enum):
     ALTERNATIVE_ASSET = "대체자산"
     ETC = "기타"
 
+
+class EnumMarketStrategyIntent(Enum):
+    INVESTMENT_STRATEGY = "투자전략"
+    DIVIDEND_STOCK = "배당주"
+    ETF = "ETF"
+    STYLE_FACTOR_ANALYSIS = "스타일 팩터 분석"
+
+
+class EnumIndustryStockIntent(Enum):
+    OVERALL = "전반"
+    ENERGY = "에너지"
+    MATERIALS = "소재"
+    CONSUMER = "경기소비재"
+    INDUSTRIAL = "산업재"
+    FINANCIAL = "금융"
+    IT = "IT"
+    COMMUNICATION = "통신서비스"
+    UTILITIES = "유틸리티"
+    REAL_ESTATE = "부동산"
+
+
 class EnumCategory(Enum):
     STOCK = "R100"
     INDUSTRY = "R200"

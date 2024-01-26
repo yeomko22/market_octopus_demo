@@ -1,10 +1,10 @@
-from typing import List
+from typing import List, Dict, Tuple
 import json
 
 import openai
 import streamlit as st
 
-from services.util import parse_first_json, EnumPrimaryIntent
+from services.util import parse_first_json, EnumPrimaryIntent, EnumMarketStrategyIntent, EnumIndustryStockIntent
 
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -64,6 +64,51 @@ def classify_primary_intent(question: str) -> EnumPrimaryIntent:
             print("RETRY INTENT CLASSIFICATION", e)
             continue
     return intent
+
+
+def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) -> EnumMarketStrategyIntent | EnumIndustryStockIntent:
+    secondary_intent_list = []
+    if primary_intent == EnumPrimaryIntent.MARKET_STRATEGY:
+        secondary_intent_list = [x for x in EnumMarketStrategyIntent]
+    elif primary_intent == EnumPrimaryIntent.INDUSTRY_STOCK:
+        secondary_intent_list = [x for x in EnumIndustryStockIntent]
+    system_message = f"""
+당신은 전문 증권 애널리스트입니다.
+유저의 질문과 질문의 주 카테고리가 주어집니다.
+세부 카테고리로 유저의 질문의 의도를 분류하세요.
+결과는 "category"를 키로 갖는 JSON 포맷으로 리턴하세요.
+
+주요 카테고리: {primary_intent.value} 
+세부 카테고리: {[x.value for x in secondary_intent_list]}
+    """.strip()
+    intent = None
+    for i in range(3):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4-1106-preview",
+                messages=[
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": question}
+                ],
+                response_format={"type": "json_object"},
+            )
+            intent_json = parse_first_json(response.choices[0].message.content)
+            category = intent_json["category"]
+            for intent in secondary_intent_list:
+                if intent.value == category:
+                    return intent
+        except Exception as e:
+            print("RETRY INTENT CLASSIFICATION", e)
+            continue
+    return intent
+
+
+def classify_intent(question: str):
+    primary_intent = classify_primary_intent(question)
+    secondary_intent = None
+    if primary_intent == EnumPrimaryIntent.MARKET_STRATEGY or primary_intent == EnumPrimaryIntent.INDUSTRY_STOCK:
+        secondary_intent = classify_secondary_intent(primary_intent, question)
+    return primary_intent, secondary_intent
 
 
 def extract_query(question: str) -> str:
