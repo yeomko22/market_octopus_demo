@@ -28,7 +28,7 @@ def paginated_get_embedding(text_list: List[str], page_size=5) -> List[List[floa
 
 def get_streaming_response(messages: List[dict]):
     response = client.chat.completions.create(
-        model="gpt-4-1106-preview",
+        model="gpt-4-0125-preview",
         messages=messages,
         timeout=10,
         stream=True,
@@ -48,7 +48,7 @@ def classify_primary_intent(question: str) -> EnumPrimaryIntent:
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-4-1106-preview",
+                model="gpt-4-0125-preview",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}
@@ -86,7 +86,7 @@ def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) 
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-4-1106-preview",
+                model="gpt-4-0125-preview",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}
@@ -124,7 +124,7 @@ def extract_query(question: str) -> str:
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-4-1106-preview",
+                model="gpt-4-0125-preview",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}
