@@ -35,7 +35,7 @@ example_questions = [
 ]
 
 
-def read_stream(response) -> None:
+def read_stream(response) -> str:
     content = ""
     placeholder = st.empty()
     for part in response:
@@ -46,6 +46,7 @@ def read_stream(response) -> None:
             content += delta.content
             placeholder.markdown(content + "▌")
     placeholder.markdown(content)
+    return content
 
 
 def set_page_config():
@@ -53,6 +54,11 @@ def set_page_config():
         page_icon="🐙",
         page_title="Mr. market octopus"
     )
+
+
+def write_common_session_state():
+    if "question" not in st.session_state:
+        st.session_state["question"] = ""
 
 
 def write_common_style():
@@ -103,3 +109,40 @@ def draw_fnguide_report(related_contents: List[dict], expanded: bool = True):
                 url=selected_item_metadata["public_url"],
                 use_container_width=True
             )
+
+
+def click_next_question(question: str):
+    st.session_state.select = NOT_GIVEN
+    st.session_state.question = question
+
+
+def draw_next_questions(questions: List[str]):
+    st.markdown("**다음에 물어보면 좋은 질문들**")
+    for i, question in enumerate(questions):
+        st.button(
+            f"Q. {question}",
+            key=f"question_{i}",
+            on_click=click_next_question,
+            args=(question,)
+        )
+
+
+def change_select():
+    st.session_state.question = ""
+
+
+def draw_auto_complete():
+    return st.selectbox(
+        label="예시 질문 선택",
+        options=example_questions,
+        on_change=change_select,
+        key="select"
+    )
+
+
+def get_question(auto_complete: str):
+    if st.session_state.question != "":
+        return st.session_state.question
+    elif auto_complete != "not select":
+        return auto_complete
+    return ""

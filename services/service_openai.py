@@ -1,4 +1,5 @@
 from typing import List
+import json
 
 import openai
 import streamlit as st
@@ -92,3 +93,36 @@ def extract_query(question: str) -> str:
             continue
     return query
 
+
+def generate_next_questions(question: str, answer: str) -> List[str]:
+    system_message = f"""
+당신은 전문 증권 애널리스트입니다.
+유저의 질문과 그에 대한 답변이 주어집니다.
+이를 참고해서 이어서 물어볼 질문을 3개 생성하세요. 
+반드시 질문들은 20단어 이내로 간결하게 생성하세요.
+결과는 "questions"를 key로 가지고, 이어서 물어볼 질문들을 담은 list를 value로 갖는 JSON 포맷으로 리턴하세요.
+---
+질문: {question}
+답변: {answer}
+---
+        """.strip()
+    questions = []
+    for i in range(3):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-3.5-turbo-1106",
+                messages=[
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": question}
+                ],
+                response_format={"type": "json_object"},
+            )
+            response_json = json.loads(response.choices[0].message.content)
+            questions = response_json["questions"]
+            if not isinstance(questions, list):
+                raise ValueError("questions is not list")
+            break
+        except Exception as e:
+            print("RETRY GENERATE NEXT QUESTION", e)
+            continue
+    return questions

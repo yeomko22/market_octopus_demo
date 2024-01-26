@@ -5,21 +5,21 @@ import streamlit as st
 from st_pages import show_pages_from_config
 
 from services.service_google import translate
-from services.service_openai import get_embedding
+from services.service_openai import get_embedding, generate_next_questions
 from services.service_openai import get_streaming_response
 from services.service_pinecone import search_fnguide
-from services.streamlit_util import default_instruction, NOT_GIVEN, draw_fnguide_report
-from services.streamlit_util import write_common_style, example_questions, set_page_config, read_stream
+from services.streamlit_util import default_instruction, NOT_GIVEN, draw_fnguide_report, draw_auto_complete, write_common_style, example_questions, set_page_config, read_stream, draw_next_questions, write_common_session_state, get_question
 
 set_page_config()
 show_pages_from_config()
 write_common_style()
+write_common_session_state()
 
 st.title("🐙 fnguide")
 st.markdown("""
 유저의 질문과 가장 관련도가 높은 fnguide 리포트 최대 3편을 참고해서 답변을 생성합니다.  
 """.strip())
-auto_complete = st.selectbox("예시 질문 선택", options=example_questions)
+auto_complete = draw_auto_complete()
 example_ai_role = "당신은 전문 증권 애널리스트입니다."
 
 
@@ -54,7 +54,7 @@ with st.form("form"):
     question = st.text_input(
         "질문",
         placeholder="질문을 입력해주세요",
-        value=auto_complete if auto_complete != NOT_GIVEN else ""
+        value=get_question(auto_complete)
     )
     submit = st.form_submit_button(label="제출")
 if submit:
@@ -81,4 +81,7 @@ if submit:
                 {"role": "user", "content": prompt},
             ]
             streaming_response = get_streaming_response(messages)
-        read_stream(streaming_response)
+        answer = read_stream(streaming_response)
+        with st.spinner("다음에 물어보면 좋을 질문들..."):
+            questions = generate_next_questions(question, answer)
+        draw_next_questions(questions)
