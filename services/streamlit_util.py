@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Union
 
 import streamlit as st
 
@@ -150,7 +150,7 @@ def get_question(auto_complete: str):
     return ""
 
 
-def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: EnumMarketStrategyIntent | EnumIndustryStockIntent):
+def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]):
     primary_intent_kor = PRIMARY_INTENT_DICT[primary_intent]
     write_markdown = f"**질문 의도: {primary_intent_kor}"
     if secondary_intent:
