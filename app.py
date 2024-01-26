@@ -7,11 +7,10 @@ from st_pages import show_pages_from_config
 from services.service_google import translate
 from services.service_openai import get_embedding, get_streaming_response, generate_next_questions, classify_intent
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
-from services.service_yfinance import select_ticker, draw_stock_price
+from services.service_yfinance import draw_ticker_information
 from services.streamlit_util import read_stream, default_instruction, write_common_style, \
     draw_seeking_alpha_report, set_page_config, draw_next_questions, draw_auto_complete, get_question, \
-    write_common_session_state,  draw_intent
-
+    write_common_session_state, draw_intent
 
 set_page_config()
 show_pages_from_config()
@@ -74,7 +73,6 @@ if submit:
     draw_intent(primary_intent, secondary_intent)
     col1, col2 = st.columns([0.3, 0.7])
     with col1:
-        st.markdown("**📝seeking alpha report**")
         with st.spinner("관련 리포트 검색 중..."):
             question_embedding = get_embedding([eng_question])[0]
 
@@ -86,19 +84,8 @@ if submit:
             else:
                 related_report_ids = [x["metadata"]["id"] for x in related_report_list]
                 related_contents = search_seeking_alpha_content(question_embedding, related_report_ids, k=num_reports)
-
-                # report 1개만 선택
                 draw_seeking_alpha_report(related_contents)
-                selected_ticker = select_ticker(related_contents)
-                if selected_ticker:
-                    st.markdown("**📈realted stock**")
-                    with st.expander(selected_ticker.ticker, expanded=True):
-                        fig = draw_stock_price(selected_ticker)
-                        st.plotly_chart(
-                            fig,
-                            use_container_width=True,
-                            config={'displayModeBar': False}
-                        )
+                draw_ticker_information(related_report_list)
     with col2:
         st.markdown("**🧠AI 의견**")
         with st.spinner("AI 의견 생성 중..."):

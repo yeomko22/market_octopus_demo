@@ -80,7 +80,7 @@ def write_common_style():
 
 
 def draw_seeking_alpha_report(related_contents: List[dict], expanded: bool = True):
-    st.markdown("**해외 애널리스트 리포트**")
+    st.markdown("**🌎해외 애널리스트 리포트**")
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
         with st.expander(selected_item_metadata["title"], expanded=expanded):
@@ -99,7 +99,7 @@ def draw_seeking_alpha_report(related_contents: List[dict], expanded: bool = Tru
 
 
 def draw_fnguide_report(related_contents: List[dict], expanded: bool = True):
-    st.markdown("**국내 애널리스트 리포트**")
+    st.markdown("**🇰🇷국내 애널리스트 리포트**")
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
         with st.expander(f"{selected_item_metadata['publisher']} - {selected_item_metadata['title']}", expanded=expanded):
@@ -161,3 +161,5 @@ def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: Union[EnumM
         write_markdown += f" > {secondary_intent_kor}"
     write_markdown += "**"
     st.markdown(write_markdown)
+
+

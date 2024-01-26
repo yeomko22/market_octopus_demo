@@ -3,6 +3,7 @@ from typing import Optional, Tuple, List
 
 import pandas as pd
 import plotly.graph_objects as go
+import streamlit as st
 import yfinance as yf
 
 
@@ -96,3 +97,16 @@ def draw_stock_price(ticker: yf.Ticker):
         data=trace_list,
         layout=layout
     )
+
+
+def draw_ticker_information(oversea_report_list: List[dict]):
+    selected_ticker = select_ticker(oversea_report_list)
+    if selected_ticker:
+        st.markdown("**📈realted stock**")
+        with st.expander(selected_ticker.ticker, expanded=True):
+            fig = draw_stock_price(selected_ticker)
+            st.plotly_chart(
+                fig,
+                use_container_width=True,
+                config={'displayModeBar': False}
+            )

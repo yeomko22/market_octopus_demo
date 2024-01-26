@@ -68,7 +68,6 @@ if submit:
     draw_intent(primary_intent, secondary_intent)
     col1, col2 = st.columns([0.3, 0.7])
     with col1:
-        st.markdown("**📝 국내 애널리스트 리포트**")
         with st.spinner("관련 리포트 검색 중..."):
             question_embedding = get_embedding([eng_question])[0]
             related_report_list = search_fnguide(question_embedding, k=num_reports)

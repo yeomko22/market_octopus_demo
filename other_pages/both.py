@@ -8,7 +8,7 @@ from services.service_google import translate
 from services.service_openai import get_embedding, get_streaming_response, generate_next_questions, classify_intent
 from services.service_pinecone import search_fnguide
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
-from services.service_yfinance import select_ticker, draw_stock_price
+from services.service_yfinance import draw_ticker_information
 from services.streamlit_util import read_stream, default_instruction, NOT_GIVEN, write_common_style, \
     draw_seeking_alpha_report, set_page_config, draw_fnguide_report, write_common_session_state, draw_auto_complete, \
     draw_next_questions, get_question, draw_intent
@@ -59,8 +59,6 @@ def get_domestic_reports(question_embedding: List[float]) -> List[dict]:
             domestic_report_list = search_fnguide(question_embedding, k=3)
             if not domestic_report_list:
                 st.markdown("관련 리포트를 찾을 수 없습니다.")
-            else:
-                draw_fnguide_report(domestic_report_list, expanded=False)
     return domestic_report_list
 
 
@@ -74,23 +72,7 @@ def get_oversea_reports(question_embedding: List[float]) -> List[dict]:
             else:
                 oversea_report_ids = [x["metadata"]["id"] for x in oversea_summary_list]
                 oversea_report_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
-    if oversea_report_list:
-        draw_seeking_alpha_report(oversea_report_list, expanded=False)
     return oversea_report_list
-
-
-def draw_ticker_information(oversea_report_list: List[dict]):
-    selected_ticker = select_ticker(oversea_report_list)
-    if selected_ticker:
-        st.markdown("**📈realted stock**")
-        with st.expander(selected_ticker.ticker, expanded=True):
-            fig = draw_stock_price(selected_ticker)
-            st.plotly_chart(
-                fig,
-                use_container_width=True,
-                config={'displayModeBar': False}
-            )
-
 
 st.title("🐙 seeking alpha")
 st.markdown("""
@@ -126,8 +108,11 @@ if submit:
     with col1:
         question_embedding = get_embedding([eng_question])[0]
         domestic_report_list = get_domestic_reports(question_embedding)
+        if domestic_report_list:
+            draw_fnguide_report(domestic_report_list, expanded=False)
         oversea_report_list = get_oversea_reports(question_embedding)
         if oversea_report_list:
+            draw_seeking_alpha_report(oversea_report_list, expanded=False)
             draw_ticker_information(oversea_report_list)
     with col2:
         st.markdown("**🧠AI 의견**")
