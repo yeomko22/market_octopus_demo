@@ -10,33 +10,68 @@ class EnumReferenceType(Enum):
 
 
 class EnumPrimaryIntent(Enum):
-    POLICY = "정책"
-    ECONOMY = "경제"
-    MARKET_STRATEGY = "주식시장 전략"
-    BOND = "채권시장"
-    INDUSTRY_STOCK = "산업 및 종목"
-    ALTERNATIVE_ASSET = "대체자산"
-    ETC = "기타"
+    POLICY = "Policy"
+    ECONOMICS = "Economics"
+    STOCK_MARKET_STRATEGY = "Stock market strategy"
+    BOND_MARKET = "Bond market"
+    INDUSTRIES_AND_SECTORS = "Industries and sectors"
+    ALTERNATIVE_ASSET = "Alternative assets"
+    CHINA = "China"
+    OTHERS = "Others"
+
+
+PRIMARY_INTENT_DICT = {
+    EnumPrimaryIntent.POLICY: "정책",
+    EnumPrimaryIntent.ECONOMICS: "경제",
+    EnumPrimaryIntent.STOCK_MARKET_STRATEGY: "주식시장 전략",
+    EnumPrimaryIntent.BOND_MARKET: "채권시장",
+    EnumPrimaryIntent.INDUSTRIES_AND_SECTORS: "산업 및 종목",
+    EnumPrimaryIntent.ALTERNATIVE_ASSET: "대체자산",
+    EnumPrimaryIntent.CHINA: "중국",
+    EnumPrimaryIntent.OTHERS: "기타",
+}
 
 
 class EnumMarketStrategyIntent(Enum):
-    INVESTMENT_STRATEGY = "투자전략"
-    DIVIDEND_STOCK = "배당주"
+    INVESTMENT_STRATEGY = "Ivestment strategy"
+    DIVIDEND_STOCK = "Dividend stock"
     ETF = "ETF"
-    STYLE_FACTOR_ANALYSIS = "스타일 팩터 분석"
+    STYLE_FACTOR_ANALYSIS = "Style factor analysis"
+
+
+ENUM_MARKET_STRATEGY_INTENT_DICT = {
+    EnumMarketStrategyIntent.INVESTMENT_STRATEGY: "투자 전략",
+    EnumMarketStrategyIntent.DIVIDEND_STOCK: "배당주",
+    EnumMarketStrategyIntent.ETF: "ETF",
+    EnumMarketStrategyIntent.STYLE_FACTOR_ANALYSIS: "스타일 팩터 분석",
+}
 
 
 class EnumIndustryStockIntent(Enum):
-    OVERALL = "전반"
-    ENERGY = "에너지"
-    MATERIALS = "소재"
-    CONSUMER = "경기소비재"
-    INDUSTRIAL = "산업재"
-    FINANCIAL = "금융"
+    OVERALL = "Overall"
+    ENERGY = "Energy"
+    MATERIALS = "Materials"
+    CONSUMER = "Consumer"
+    INDUSTRIAL = "Industrial"
+    FINANCIAL = "Financial"
     IT = "IT"
-    COMMUNICATION = "통신서비스"
-    UTILITIES = "유틸리티"
-    REAL_ESTATE = "부동산"
+    COMMUNICATION = "Commnication"
+    UTILITIES = "Utilities"
+    REAL_ESTATE = "Real Estate"
+
+
+ENUM_INDUSTRY_STOCK_INTENT_DICT = {
+    EnumIndustryStockIntent.OVERALL: "전체",
+    EnumIndustryStockIntent.ENERGY: "에너지",
+    EnumIndustryStockIntent.MATERIALS: "소재",
+    EnumIndustryStockIntent.CONSUMER: "소비재",
+    EnumIndustryStockIntent.INDUSTRIAL: "산업재",
+    EnumIndustryStockIntent.FINANCIAL: "금융",
+    EnumIndustryStockIntent.IT: "IT",
+    EnumIndustryStockIntent.COMMUNICATION: "통신",
+    EnumIndustryStockIntent.UTILITIES: "유틸리티",
+    EnumIndustryStockIntent.REAL_ESTATE: "부동산",
+}
 
 
 class EnumCategory(Enum):
@@ -58,19 +93,6 @@ category_dict = {
     EnumCategory.CHINA.value: "중국",
     EnumCategory.FX.value: "외환",
 }
-
-
-def parse_first_json(input_string: str) -> dict:
-    # 정규 표현식을 사용하여 중괄호로 둘러싸인 모든 내용을 찾음
-    matches = re.findall(r'\{.*?\}', input_string)
-    if not matches:
-        return {}
-    # 첫 번째 JSON 객체를 파싱하려고 시도
-    try:
-        return json.loads(matches[0])
-    except json.JSONDecodeError:
-        # JSON 파싱 에러 발생시 None 반환
-        return {}
 
 
 def get_date_diff(published_at: datetime) -> str:

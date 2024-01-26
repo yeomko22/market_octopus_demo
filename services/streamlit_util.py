@@ -1,6 +1,8 @@
-import streamlit as st
 from typing import List
 
+import streamlit as st
+
+from services.util import PRIMARY_INTENT_DICT, EnumPrimaryIntent, EnumIndustryStockIntent, EnumMarketStrategyIntent, ENUM_MARKET_STRATEGY_INTENT_DICT, ENUM_INDUSTRY_STOCK_INTENT_DICT
 
 default_instruction = f"""
 금융 관련 질문과 참고할만한 애널리스트 리포트 문단이 주어집니다.
@@ -146,3 +148,16 @@ def get_question(auto_complete: str):
     elif auto_complete != "not select":
         return auto_complete
     return ""
+
+
+def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: EnumMarketStrategyIntent | EnumIndustryStockIntent):
+    primary_intent_kor = PRIMARY_INTENT_DICT[primary_intent]
+    write_markdown = f"**질문 의도: {primary_intent_kor}"
+    if secondary_intent:
+        if primary_intent == EnumPrimaryIntent.STOCK_MARKET_STRATEGY:
+            secondary_intent_kor = ENUM_MARKET_STRATEGY_INTENT_DICT[secondary_intent]
+        else:
+            secondary_intent_kor = ENUM_INDUSTRY_STOCK_INTENT_DICT[secondary_intent]
+        write_markdown += f" > {secondary_intent_kor}"
+    write_markdown += "**"
+    st.markdown(write_markdown)

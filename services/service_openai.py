@@ -4,7 +4,7 @@ import json
 import openai
 import streamlit as st
 
-from services.util import parse_first_json, EnumPrimaryIntent, EnumMarketStrategyIntent, EnumIndustryStockIntent
+from services.util import EnumPrimaryIntent, EnumMarketStrategyIntent, EnumIndustryStockIntent
 
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
@@ -38,13 +38,13 @@ def get_streaming_response(messages: List[dict]):
 
 def classify_primary_intent(question: str) -> EnumPrimaryIntent:
     system_message = """
-당신은 전문 증권 애널리스트입니다.
-주요 카테고리로 유저의 질문의 의도를 분류하세요.
-결과는 "category"를 키로 갖는 JSON 포맷으로 리턴하세요.
+You're a professional securities analyst.
+Categorize the intent of the user's question into major categories.
+Return the results in JSON format with "category" as the key.
 
-주요 카테고리: 정책, 경제, 주식시장 전략, 채권시장, 산업 및 종목, 대체자산, 기타 
+Main categories: Policy, Economics, Stock market strategy, Bond market, Industries and sectors, Alternative assets, China, Others
     """.strip()
-    intent = EnumPrimaryIntent.ECONOMY
+    intent = EnumPrimaryIntent.ECONOMICS
     for i in range(3):
         try:
             response = client.chat.completions.create(
@@ -55,7 +55,7 @@ def classify_primary_intent(question: str) -> EnumPrimaryIntent:
                 ],
                 response_format={"type": "json_object"},
             )
-            intent_json = parse_first_json(response.choices[0].message.content)
+            intent_json = json.loads(response.choices[0].message.content)
             category = intent_json["category"]
             for intent in EnumPrimaryIntent:
                 if intent.value == category:
@@ -69,18 +69,18 @@ def classify_primary_intent(question: str) -> EnumPrimaryIntent:
 def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) \
         -> Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]:
     secondary_intent_list = []
-    if primary_intent == EnumPrimaryIntent.MARKET_STRATEGY:
+    if primary_intent == EnumPrimaryIntent.STOCK_MARKET_STRATEGY:
         secondary_intent_list = [x for x in EnumMarketStrategyIntent]
-    elif primary_intent == EnumPrimaryIntent.INDUSTRY_STOCK:
+    elif primary_intent == EnumPrimaryIntent.INDUSTRIES_AND_SECTORS:
         secondary_intent_list = [x for x in EnumIndustryStockIntent]
     system_message = f"""
-당신은 전문 증권 애널리스트입니다.
-유저의 질문과 질문의 주 카테고리가 주어집니다.
-세부 카테고리로 유저의 질문의 의도를 분류하세요.
-결과는 "category"를 키로 갖는 JSON 포맷으로 리턴하세요.
+You are a professional securities analyst.
+You are given a user's question and its main category.
+Use the subcategories to categorize the intent of the user's question.
+Return the results in JSON format with "category" as the key.
 
-주요 카테고리: {primary_intent.value} 
-세부 카테고리: {[x.value for x in secondary_intent_list]}
+Main Category: {primary_intent.value} 
+Sub Categories: {[x.value for x in secondary_intent_list]}
     """.strip()
     intent = None
     for i in range(3):
@@ -93,7 +93,7 @@ def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) 
                 ],
                 response_format={"type": "json_object"},
             )
-            intent_json = parse_first_json(response.choices[0].message.content)
+            intent_json = json.loads(response.choices[0].message.content)
             category = intent_json["category"]
             for intent in secondary_intent_list:
                 if intent.value == category:
@@ -107,7 +107,7 @@ def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) 
 def classify_intent(question: str):
     primary_intent = classify_primary_intent(question)
     secondary_intent = None
-    if primary_intent == EnumPrimaryIntent.MARKET_STRATEGY or primary_intent == EnumPrimaryIntent.INDUSTRY_STOCK:
+    if primary_intent == EnumPrimaryIntent.STOCK_MARKET_STRATEGY or primary_intent == EnumPrimaryIntent.INDUSTRIES_AND_SECTORS:
         secondary_intent = classify_secondary_intent(primary_intent, question)
     return primary_intent, secondary_intent
 
@@ -131,7 +131,7 @@ def extract_query(question: str) -> str:
                 ],
                 response_format={"type": "json_object"},
             )
-            query_json = parse_first_json(response.choices[0].message.content)
+            query_json = json.loads(response.choices[0].message.content)
             query = query_json["query"]
             break
         except Exception as e:

@@ -5,10 +5,11 @@ import streamlit as st
 from st_pages import show_pages_from_config
 
 from services.service_google import translate
-from services.service_openai import get_embedding, generate_next_questions
+from services.service_openai import get_embedding, generate_next_questions, classify_intent
 from services.service_openai import get_streaming_response
 from services.service_pinecone import search_fnguide
-from services.streamlit_util import default_instruction, NOT_GIVEN, draw_fnguide_report, draw_auto_complete, write_common_style, example_questions, set_page_config, read_stream, draw_next_questions, write_common_session_state, get_question
+from services.streamlit_util import default_instruction, draw_fnguide_report, draw_auto_complete, write_common_style, \
+    set_page_config, read_stream, draw_next_questions, write_common_session_state, get_question, draw_intent
 
 set_page_config()
 show_pages_from_config()
@@ -61,11 +62,14 @@ if submit:
     if not question:
         st.error("질문을 입력해주세요.")
         st.stop()
+    eng_question = translate([question])[0]
+    with st.spinner("질문 의도 분류 중..."):
+        primary_intent, secondary_intent = classify_intent(eng_question)
+    draw_intent(primary_intent, secondary_intent)
     col1, col2 = st.columns([0.3, 0.7])
     with col1:
         st.markdown("**📝 국내 애널리스트 리포트**")
         with st.spinner("관련 리포트 검색 중..."):
-            eng_question = translate([question])[0]
             question_embedding = get_embedding([eng_question])[0]
             related_report_list = search_fnguide(question_embedding, k=num_reports)
             if not related_report_list:

@@ -18,19 +18,6 @@ def filter_duplicates(matches: List[dict]) -> List[dict]:
     return filtered_matches[:3]
 
 
-# def search_fnguide(intent: EnumIntent, query_embedding: List[float]) -> List[dict]:
-#     results = fnguide_index.query(
-#         vector=query_embedding,
-#         top_k=10,
-#         include_metadata=True,
-#         namespace="financial_report",
-#         filter={"category": {"$in": search_space_by_intent[intent]}}
-#     )
-#     matches = [x["metadata"] for x in results["matches"]]
-#     matches = filter_duplicates(matches)
-#     return matches
-
-
 def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3) -> List[dict]:
     result = seeking_alpha_index.query(
         vector=query_embedding,

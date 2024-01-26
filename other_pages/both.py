@@ -5,13 +5,13 @@ import streamlit as st
 from st_pages import show_pages_from_config
 
 from services.service_google import translate
-from services.service_openai import get_embedding, get_streaming_response, generate_next_questions
+from services.service_openai import get_embedding, get_streaming_response, generate_next_questions, classify_intent
 from services.service_pinecone import search_fnguide
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_yfinance import select_ticker, draw_stock_price
 from services.streamlit_util import read_stream, default_instruction, NOT_GIVEN, write_common_style, \
     draw_seeking_alpha_report, set_page_config, draw_fnguide_report, write_common_session_state, draw_auto_complete, \
-    draw_next_questions, get_question
+    draw_next_questions, get_question, draw_intent
 
 set_page_config()
 show_pages_from_config()
@@ -118,9 +118,12 @@ if submit:
     if not question:
         st.error("질문을 입력해주세요.")
         st.stop()
+    eng_question = translate([question])[0]
+    with st.spinner("질문 의도 분류 중..."):
+        primary_intent, secondary_intent = classify_intent(eng_question)
+    draw_intent(primary_intent, secondary_intent)
     col1, col2 = st.columns([0.3, 0.7])
     with col1:
-        eng_question = translate([question])[0]
         question_embedding = get_embedding([eng_question])[0]
         domestic_report_list = get_domestic_reports(question_embedding)
         oversea_report_list = get_oversea_reports(question_embedding)

@@ -5,12 +5,12 @@ import streamlit as st
 from st_pages import show_pages_from_config
 
 from services.service_google import translate
-from services.service_openai import get_embedding, get_streaming_response, generate_next_questions
+from services.service_openai import get_embedding, get_streaming_response, generate_next_questions, classify_intent
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_yfinance import select_ticker, draw_stock_price
 from services.streamlit_util import read_stream, default_instruction, write_common_style, \
     draw_seeking_alpha_report, set_page_config, draw_next_questions, draw_auto_complete, get_question, \
-    write_common_session_state
+    write_common_session_state,  draw_intent
 
 
 set_page_config()
@@ -68,11 +68,14 @@ if submit:
     if not question:
         st.error("질문을 입력해주세요.")
         st.stop()
+    eng_question = translate([question])[0]
+    with st.spinner("질문 의도 분류 중..."):
+        primary_intent, secondary_intent = classify_intent(eng_question)
+    draw_intent(primary_intent, secondary_intent)
     col1, col2 = st.columns([0.3, 0.7])
     with col1:
         st.markdown("**📝seeking alpha report**")
         with st.spinner("관련 리포트 검색 중..."):
-            eng_question = translate([question])[0]
             question_embedding = get_embedding([eng_question])[0]
 
             # 1. question과 summary의 유사도를 구해서 가장 유사한 리포트를 3개 찾는다.
