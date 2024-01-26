@@ -4,7 +4,7 @@ import json
 import openai
 import streamlit as st
 
-from services.util import EnumPrimaryIntent, EnumMarketStrategyIntent, EnumIndustryStockIntent
+from utils.intent import EnumPrimaryIntent, EnumMarketStrategyIntent, EnumIndustryStockIntent
 
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 

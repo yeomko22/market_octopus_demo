@@ -1,15 +1,12 @@
 from datetime import datetime
-from typing import List
 
-import streamlit as st
 from st_pages import show_pages_from_config
 
 from services.service_google import translate
 from services.service_openai import get_embedding, generate_next_questions, classify_intent
 from services.service_openai import get_streaming_response
 from services.service_pinecone import search_fnguide
-from services.streamlit_util import default_instruction, draw_fnguide_report, draw_auto_complete, write_common_style, \
-    set_page_config, read_stream, draw_next_questions, write_common_session_state, get_question, draw_intent
+from utils.streamlit_util import *
 
 set_page_config()
 show_pages_from_config()
