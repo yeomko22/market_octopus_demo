@@ -1,4 +1,4 @@
-from typing import List, Dict, Tuple
+from typing import List, Union
 import json
 
 import openai
@@ -66,7 +66,8 @@ def classify_primary_intent(question: str) -> EnumPrimaryIntent:
     return intent
 
 
-def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) -> EnumMarketStrategyIntent | EnumIndustryStockIntent:
+def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) \
+        -> Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]:
     secondary_intent_list = []
     if primary_intent == EnumPrimaryIntent.MARKET_STRATEGY:
         secondary_intent_list = [x for x in EnumMarketStrategyIntent]
