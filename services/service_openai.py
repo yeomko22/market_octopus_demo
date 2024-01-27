@@ -11,8 +11,9 @@ client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 def get_embedding(text_list: List[str]) -> List[List[float]]:
     response = client.embeddings.create(
-       input=text_list,
-       model="text-embedding-ada-002"
+        input=text_list,
+        model="text-embedding-3-large",
+        dimensions=1024
     )
     return [x.embedding for x in response.data]
 

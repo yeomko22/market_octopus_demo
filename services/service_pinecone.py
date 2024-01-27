@@ -4,7 +4,7 @@ from typing import List, Optional
 from pinecone import Pinecone
 
 pc = Pinecone(api_key=os.environ.get("PINECONE_API_KEY"))
-seeking_alpha_index = pc.Index('market-octopus')
+seeking_alpha_index = pc.Index('market-octopus-v2')
 
 
 def filter_duplicates(matches: List[dict]) -> List[dict]:
@@ -28,7 +28,7 @@ def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3, categ
         filter={"categories": {"$in": categories}} if categories else None
     )
     matches = result["matches"]
-    return [x for x in matches if x["score"] >= 0.8]
+    return [x for x in matches if x["score"]]
 
 
 def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str], k: int = 3) -> Optional[List[dict]]:
