@@ -77,6 +77,25 @@ SEARCH_SPACE_BY_INTENT = {
         ],
     },
     EnumPrimaryIntent.INDUSTRIES_AND_SECTORS: {
+        EnumIndustryStockIntent.OVERALL: {
+            EnumDomain.FNGUIDE: [
+                EnumFnguideCategory.INDUSTRY.value,
+            ],
+            EnumDomain.SEEKING_ALPHA_ANALYSIS: [
+                EnumSeekingAlphaCategory.ENERGY.value,
+                EnumSeekingAlphaCategory.BASIC_MATERIALS.value,
+                EnumSeekingAlphaCategory.CONSUMER.value,
+                EnumSeekingAlphaCategory.CONSUMER_STAPLE.value,
+                EnumSeekingAlphaCategory.HEALTHCARE.value,
+                EnumSeekingAlphaCategory.BIOTECH.value,
+                EnumSeekingAlphaCategory.FINANCIALS.value,
+                EnumSeekingAlphaCategory.TECH.value,
+                EnumSeekingAlphaCategory.COMMUNICATION_SERVICES.value,
+                EnumSeekingAlphaCategory.UTILITIES.value,
+                EnumSeekingAlphaCategory.REAL_ESTATE.value,
+                EnumSeekingAlphaCategory.REITS.value,
+            ]
+        },
         EnumIndustryStockIntent.ENERGY: {
             EnumDomain.FNGUIDE: [
                 EnumFnguideCategory.INDUSTRY.value,
