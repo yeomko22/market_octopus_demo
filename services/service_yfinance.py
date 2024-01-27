@@ -100,13 +100,14 @@ def draw_stock_price(ticker: yf.Ticker):
 
 
 def draw_ticker_information(oversea_report_list: List[dict]):
-    selected_ticker = select_ticker(oversea_report_list)
-    if selected_ticker:
-        st.markdown("**📈realted stock**")
-        with st.expander(selected_ticker.ticker, expanded=True):
-            fig = draw_stock_price(selected_ticker)
-            st.plotly_chart(
-                fig,
-                use_container_width=True,
-                config={'displayModeBar': False}
-            )
+    with st.spinner("관련 주식 정보를 가져오고 있습니다..."):
+        selected_ticker = select_ticker(oversea_report_list)
+        if selected_ticker:
+            st.markdown("**📈realted stock**")
+            with st.expander(selected_ticker.ticker, expanded=True):
+                fig = draw_stock_price(selected_ticker)
+                st.plotly_chart(
+                    fig,
+                    use_container_width=True,
+                    config={'displayModeBar': False}
+                )
