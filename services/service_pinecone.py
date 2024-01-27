@@ -18,12 +18,14 @@ def filter_duplicates(matches: List[dict]) -> List[dict]:
     return filtered_matches[:3]
 
 
-def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3) -> List[dict]:
+def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3, categories: Optional[List[str]] = None) \
+        -> List[dict]:
     result = seeking_alpha_index.query(
         vector=query_embedding,
         top_k=k,
         namespace="seeking-alpha-analysis-summary",
         include_metadata=True,
+        filter={"categories": {"$in": categories}} if categories else None
     )
     matches = result["matches"]
     return [x for x in matches if x["score"] >= 0.8]
@@ -52,12 +54,14 @@ def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str
     return filtered_result[:k]
 
 
-def search_fnguide(query_embedding: List[float], k: int = 3) -> Optional[List[dict]]:
+def search_fnguide(query_embedding: List[float], k: int = 3, categories: Optional[List[str]] = None) \
+        -> Optional[List[dict]]:
     result = seeking_alpha_index.query(
         vector=query_embedding,
         top_k=10,
         namespace="fnguide",
         include_metadata=True,
+        filter={"category": {"$in": categories}} if categories else None
     )
     matches = result["matches"]
     if not matches:

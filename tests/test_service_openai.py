@@ -15,6 +15,5 @@ CME FedWatch Tool에 따르면, 3월의 금리 인하 가능성이 이달 초 �
 Fed는 대개 중요한 정책 변경을 천명하기 전에 분명한 신호를 전달하는 경향이 있어, 현재 뚜렷한 신호가 없다는 점이 금리 인하에 대한 기대를 더 낮출 수 있어요.
     """.strip()
     questions = generate_next_questions(question, answer)
-    print(questions)
     assert isinstance(questions, list)
     assert len(questions) == 3

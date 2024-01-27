@@ -14,164 +14,164 @@ SEARCH_SPACE_BY_INTENT = {
     EnumPrimaryIntent.POLICY: {
         EnumDomain.SEEKING_ALPHA_ANALYSIS: [],
         EnumDomain.FNGUIDE: [
-            EnumFnguideCategory.ECON,
+            EnumFnguideCategory.ECON.value,
         ]
     },
     EnumPrimaryIntent.ECONOMICS: {
         EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-            EnumSeekingAlphaCategory.ECONOMY,
-            EnumSeekingAlphaCategory.FOREX,
+            EnumSeekingAlphaCategory.ECONOMY.value,
+            EnumSeekingAlphaCategory.FOREX.value,
         ],
         EnumDomain.FNGUIDE: [
-            EnumFnguideCategory.ECON,
-            EnumFnguideCategory.FX,
+            EnumFnguideCategory.ECON.value,
+            EnumFnguideCategory.FX.value,
         ]
     },
     EnumPrimaryIntent.STOCK_MARKET_STRATEGY: {
         EnumMarketStrategyIntent.INVESTMENT_STRATEGY: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.MARKET
+                EnumFnguideCategory.MARKET.value
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.INVESTING_STRATEGY,
-                EnumSeekingAlphaCategory.LONG_IDEAS,
-                EnumSeekingAlphaCategory.MARKET_OUTLOOK,
-                EnumSeekingAlphaCategory.PORTFOLOIO_STRATEGY,
-                EnumSeekingAlphaCategory.STOCK_IDEAS,
+                EnumSeekingAlphaCategory.INVESTING_STRATEGY.value,
+                EnumSeekingAlphaCategory.LONG_IDEAS.value,
+                EnumSeekingAlphaCategory.MARKET_OUTLOOK.value,
+                EnumSeekingAlphaCategory.PORTFOLOIO_STRATEGY.value,
+                EnumSeekingAlphaCategory.STOCK_IDEAS.value,
             ]
         },
         EnumMarketStrategyIntent.DIVIDEND_STOCK: {
             EnumDomain.FNGUIDE: [],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.DIVIDEND_IDEAS,
-                EnumSeekingAlphaCategory.DIVIDEND_STRATEGY,
-                EnumSeekingAlphaCategory.DIVIDENDS,
+                EnumSeekingAlphaCategory.DIVIDEND_IDEAS.value,
+                EnumSeekingAlphaCategory.DIVIDEND_STRATEGY.value,
+                EnumSeekingAlphaCategory.DIVIDENDS.value,
             ]
         },
         EnumMarketStrategyIntent.ETF: {
             EnumDomain.FNGUIDE: [],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.ETF_ANALYSIS,
-                EnumSeekingAlphaCategory.ETFS_AND_FUNDS,
+                EnumSeekingAlphaCategory.ETF_ANALYSIS.value,
+                EnumSeekingAlphaCategory.ETFS_AND_FUNDS.value,
             ]
         },
         EnumMarketStrategyIntent.STYLE_FACTOR_ANALYSIS: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.MARKET
+                EnumFnguideCategory.MARKET.value
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.GROWTH,
-                EnumSeekingAlphaCategory.MICRO_CAP,
-                EnumSeekingAlphaCategory.SMALL_CAPS,
-                EnumSeekingAlphaCategory.VALUE,
+                EnumSeekingAlphaCategory.GROWTH.value,
+                EnumSeekingAlphaCategory.MICRO_CAP.value,
+                EnumSeekingAlphaCategory.SMALL_CAPS.value,
+                EnumSeekingAlphaCategory.VALUE.value,
             ]
         },
     },
     EnumPrimaryIntent.BOND_MARKET: {
         EnumDomain.FNGUIDE: [
-            EnumFnguideCategory.BOND,
+            EnumFnguideCategory.BOND.value,
         ],
         EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-            EnumSeekingAlphaCategory.BONDS,
-            EnumSeekingAlphaCategory.FIXED_INCOME,
+            EnumSeekingAlphaCategory.BONDS.value,
+            EnumSeekingAlphaCategory.FIXED_INCOME.value,
         ],
     },
     EnumPrimaryIntent.INDUSTRIES_AND_SECTORS: {
         EnumIndustryStockIntent.ENERGY: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.ENERGY,
+                EnumSeekingAlphaCategory.ENERGY.value,
             ]
         },
         EnumIndustryStockIntent.MATERIALS: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.BASIC_MATERIALS,
+                EnumSeekingAlphaCategory.BASIC_MATERIALS.value,
             ]
         },
         EnumIndustryStockIntent.CONSUMER: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.CONSUMER,
+                EnumSeekingAlphaCategory.CONSUMER.value,
             ]
         },
         EnumIndustryStockIntent.INDUSTRIAL: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.INDUSTRIAL,
+                EnumSeekingAlphaCategory.INDUSTRIAL.value,
             ]
         },
         EnumIndustryStockIntent.FINANCIAL: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.FINANCIALS,
+                EnumSeekingAlphaCategory.FINANCIALS.value,
             ]
         },
         EnumIndustryStockIntent.IT: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.TECH,
+                EnumSeekingAlphaCategory.TECH.value,
             ]
         },
         EnumIndustryStockIntent.COMMUNICATION: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.COMMUNICATION_SERVICES,
+                EnumSeekingAlphaCategory.COMMUNICATION_SERVICES.value,
             ]
         },
         EnumIndustryStockIntent.UTILITIES: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.UTILITIES,
+                EnumSeekingAlphaCategory.UTILITIES.value,
             ]
         },
         EnumIndustryStockIntent.REAL_ESTATE: {
             EnumDomain.FNGUIDE: [
-                EnumFnguideCategory.INDUSTRY,
+                EnumFnguideCategory.INDUSTRY.value,
             ],
             EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-                EnumSeekingAlphaCategory.REAL_ESTATE,
-                EnumSeekingAlphaCategory.REITS,
+                EnumSeekingAlphaCategory.REAL_ESTATE.value,
+                EnumSeekingAlphaCategory.REITS.value,
             ]
         },
     },
     EnumPrimaryIntent.ALTERNATIVE_ASSET: {
         EnumDomain.FNGUIDE: [],
         EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-            EnumSeekingAlphaCategory.COMMODITIES,
-            EnumSeekingAlphaCategory.CRYPTOCURRENCY,
-            EnumSeekingAlphaCategory.GOLD_AND_PRECIOUS_METALS,
+            EnumSeekingAlphaCategory.COMMODITIES.value,
+            EnumSeekingAlphaCategory.CRYPTOCURRENCY.value,
+            EnumSeekingAlphaCategory.GOLD_AND_PRECIOUS_METALS.value,
         ]
     },
     EnumPrimaryIntent.OTHERS: {
-        EnumDomain.FNGUIDE: [ ],
+        EnumDomain.FNGUIDE: [],
         EnumDomain.SEEKING_ALPHA_ANALYSIS: [
-            EnumSeekingAlphaCategory.CLOSED_END_FUNDS,
-            EnumSeekingAlphaCategory.FINANCIAL_ADVISOR,
-            EnumSeekingAlphaCategory.IPOS,
-            EnumSeekingAlphaCategory.MUTUAL_FUNDS,
-            EnumSeekingAlphaCategory.RETIREMENT,
+            EnumSeekingAlphaCategory.CLOSED_END_FUNDS.value,
+            EnumSeekingAlphaCategory.FINANCIAL_ADVISOR.value,
+            EnumSeekingAlphaCategory.IPOS.value,
+            EnumSeekingAlphaCategory.MUTUAL_FUNDS.value,
+            EnumSeekingAlphaCategory.RETIREMENT.value,
         ]
     },
     EnumPrimaryIntent.CHINA: {
         EnumDomain.FNGUIDE: [
-            EnumFnguideCategory.CHINA,
+            EnumFnguideCategory.CHINA.value,
         ],
         EnumDomain.SEEKING_ALPHA_ANALYSIS: []
     }

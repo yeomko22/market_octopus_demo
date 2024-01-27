@@ -11,5 +11,9 @@ path = "other_pages/both.py"
 name = "seeking alpha & fnguide"
 
 [[pages]]
+path = "other_pages/both_intent_classification.py"
+name = "seeking alpha & fnguide & intent"
+
+[[pages]]
 path = "other_pages/intent_classification.py"
 name = "intent classification"

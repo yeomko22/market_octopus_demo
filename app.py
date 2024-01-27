@@ -8,7 +8,7 @@ from services.service_google import translate
 from services.service_openai import get_embedding, get_streaming_response, generate_next_questions, classify_intent
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_yfinance import draw_ticker_information
-from services.streamlit_util import read_stream, default_instruction, write_common_style, \
+from utils.streamlit_util import read_stream, default_instruction, write_common_style, \
     draw_seeking_alpha_report, set_page_config, draw_next_questions, draw_auto_complete, get_question, \
     write_common_session_state, draw_intent
 
