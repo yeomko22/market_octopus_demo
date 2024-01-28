@@ -1,17 +1,5 @@
 [[pages]]
 path = "app.py"
-name = "seeking alpha"
-
-[[pages]]
-path = "other_pages/fnguide.py"
-name = "fnguide"
-
-[[pages]]
-path = "other_pages/both.py"
-name = "seeking alpha & fnguide"
-
-[[pages]]
-path = "other_pages/both_intent_classification.py"
 name = "seeking alpha & fnguide & intent"
 
 [[pages]]
