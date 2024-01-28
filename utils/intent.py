@@ -44,6 +44,8 @@ class EnumIndustryStockIntent(Enum):
     ENERGY = "Energy"
     MATERIALS = "Materials"
     CONSUMER = "Consumer"
+    CONSUMER_STAPLE = "Consumer Staples Analysis"
+    HEALTHCARE = "Healthcare"
     INDUSTRIAL = "Industrial"
     FINANCIAL = "Financial"
     IT = "IT"

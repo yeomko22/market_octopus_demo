@@ -128,6 +128,14 @@ SEARCH_SPACE_BY_INTENT = {
                 EnumSeekingAlphaCategory.INDUSTRIAL.value,
             ]
         },
+        EnumIndustryStockIntent.CONSUMER_STAPLE: {
+            EnumDomain.FNGUIDE: [
+                EnumFnguideCategory.INDUSTRY.value,
+            ],
+            EnumDomain.SEEKING_ALPHA_ANALYSIS: [
+                EnumSeekingAlphaCategory.CONSUMER_STAPLE.value,
+            ]
+        },
         EnumIndustryStockIntent.FINANCIAL: {
             EnumDomain.FNGUIDE: [
                 EnumFnguideCategory.INDUSTRY.value,

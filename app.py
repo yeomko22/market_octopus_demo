@@ -80,7 +80,30 @@ def get_oversea_reports(question_embedding: List[float], categories: Optional[Li
                 oversea_report_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
     return oversea_report_list
 
-st.title("🐙 seeking alpha")
+intent_dict = {
+    "경제": (EnumPrimaryIntent.ECONOMICS, None),
+    "주식시장 전략 - 투자전략": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.INVESTMENT_STRATEGY),
+    "주식시장 전략 - 배당주": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.DIVIDEND_STOCK),
+    "주식시장 전략 - ETF": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.ETF),
+    "주식시장 전략 - 스타일, 팩터 분석": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.STYLE_FACTOR_ANALYSIS),
+    "채권시장": (EnumPrimaryIntent.BOND_MARKET, None),
+    "산업 및 종목 - 전반": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.OVERALL),
+    "산업 및 종목 - 에너지": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.ENERGY),
+    "산업 및 종목 - 소재": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.MATERIALS),
+    "산업 및 종목 - 소비재": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.CONSUMER),
+    "산업 및 종목 - 필수소비재": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.CONSUMER_STAPLE),
+    "산업 및 종목 - 헬스케어": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.HEALTHCARE),
+    "산업 및 종목 - 금융": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.FINANCIAL),
+    "산업 및 종목 - IT": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.IT),
+    "산업 및 종목 - 통신": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.COMMUNICATION),
+    "산업 및 종목 - 유틸리티": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.UTILITIES),
+    "산업 및 종목 - 부동산": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.REAL_ESTATE),
+    "대체자산": (EnumPrimaryIntent.ALTERNATIVE_ASSET, None),
+    "중국": (EnumPrimaryIntent.CHINA, None),
+    "기타": (EnumPrimaryIntent.OTHERS, None),
+}
+
+st.title("🐙 market octopus")
 st.markdown("""
 질문 범위를 선택한 다음, 질문을 입력합니다.  
 전체를 선택하면 국내 리포트 3편, 해외 리포트 3편을 참고하여 답변을 생성합니다.  
@@ -92,15 +115,19 @@ example_ai_role = "당신은 전문 증권 애널리스트입니다."
 with st.form("form"):
     system_message = st.text_input(label="AI 역할", value=example_ai_role)
     instruct = st.text_area(label="답변 생성시 고려사항", value=default_instruction, height=200)
-    col1, col2 = st.columns([0.15, 0.85])
+    col1, col2 = st.columns(2)
     with col1:
         question_rage = st.selectbox(label="질문 범위", options=["전체", "국내", "해외"])
     with col2:
-        question = st.text_input(
-            "질문",
-            placeholder="질문을 입력해주세요",
-            value=get_question(auto_complete)
+        intent = st.selectbox(
+            label="질문 의도",
+            options=["자동 분류"] + list(intent_dict.keys()),
         )
+    question = st.text_input(
+        "질문",
+        placeholder="질문을 입력해주세요",
+        value=get_question(auto_complete)
+    )
     submit = st.form_submit_button(label="제출")
 
 if submit:
@@ -108,9 +135,11 @@ if submit:
         st.error("질문을 입력해주세요.")
         st.stop()
     eng_question = translate([question])[0]
-    with st.spinner("질문 의도 분류 중..."):
-        primary_intent, secondary_intent = classify_intent(eng_question)
-
+    if intent != "자동 분류":
+        primary_intent, secondary_intent = intent_dict[intent]
+    else:
+        with st.spinner("질문 의도 분류 중..."):
+            primary_intent, secondary_intent = classify_intent(eng_question)
     draw_intent(primary_intent, secondary_intent)
     col1, col2 = st.columns([0.3, 0.7])
     with col1:
