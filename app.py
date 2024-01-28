@@ -70,7 +70,7 @@ def get_oversea_reports(question_embedding: List[float], categories: Optional[Li
         with st.spinner("해외 애널리스트 리포트를 검색 중입니다..."):
             oversea_summary_list = search_seeking_alpha_summary(
                 question_embedding,
-                k=5,
+                k=10,
                 categories=categories
             )
             if not oversea_summary_list:
@@ -125,8 +125,7 @@ if submit:
             draw_seeking_alpha_report(oversea_report_list, expanded=False)
             draw_ticker_information(oversea_report_list)
     with col2:
-        st.markdown("**🧠AI 의견**")
-        with st.spinner("AI 의견 생성 중..."):
+        with st.spinner("의견 생성 중..."):
             prompt = generate_prompt(instruct, question, domestic_report_list, oversea_report_list)
             messages = [
                 {"role": "system", "content": system_message},

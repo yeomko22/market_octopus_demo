@@ -18,7 +18,7 @@ def filter_duplicates(matches: List[dict]) -> List[dict]:
     return filtered_matches[:3]
 
 
-def search_seeking_alpha_summary(query_embedding: List[float], k: int = 3, categories: Optional[List[str]] = None) \
+def search_seeking_alpha_summary(query_embedding: List[float], k: int = 10, categories: Optional[List[str]] = None) \
         -> List[dict]:
     result = seeking_alpha_index.query(
         vector=query_embedding,
@@ -51,7 +51,10 @@ def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str
             continue
         filtered_result.append(match)
         visited.add(match["metadata"]["id"])
-    return filtered_result[:k]
+
+    # sort by date
+    sorted_result = sorted(filtered_result, key=lambda x: x["metadata"]["published_at"], reverse=True)
+    return sorted_result[:k]
 
 
 def search_fnguide(query_embedding: List[float], k: int = 3, categories: Optional[List[str]] = None) \
@@ -75,4 +78,7 @@ def search_fnguide(query_embedding: List[float], k: int = 3, categories: Optiona
             continue
         filtered_result.append(match)
         visited.add(match["metadata"]["hashkey"])
-    return filtered_result[:k]
+
+    # sort by date
+    sorted_result = sorted(filtered_result, key=lambda x: x["metadata"]["published_at"], reverse=True)
+    return sorted_result[:k]
