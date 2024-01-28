@@ -1,4 +1,5 @@
 from typing import List, Union
+from datetime import datetime
 import json
 
 import openai
@@ -147,6 +148,8 @@ def generate_next_questions(question: str, answer: str) -> List[str]:
 유저의 질문과 그에 대한 답변이 주어집니다.
 이를 참고해서 이어서 물어볼 질문을 3개 생성하세요. 
 반드시 질문들은 30단어 이내로 간결하게 생성하세요.
+생성하는 질문들은 유저의 질문과 비슷하면 안됩니다.
+답변에서 새로운 종목이 언급되었다면, 그 종목과 관련된 질문을 반드시 포함해주세요.
 결과는 "questions"를 key로 가지고, 이어서 물어볼 질문들을 담은 list를 value로 갖는 JSON 포맷으로 리턴하세요.
 ---
 질문: {question}
@@ -157,7 +160,7 @@ def generate_next_questions(question: str, answer: str) -> List[str]:
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo-1106",
+                model="gpt-4-0125-preview",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}
@@ -173,3 +176,34 @@ def generate_next_questions(question: str, answer: str) -> List[str]:
             print("RETRY GENERATE NEXT QUESTION", e)
             continue
     return questions
+
+
+def generate_search_query(question: str) -> List[str]:
+    system_message = f"""
+You are a professional securities analyst.
+You want to use web search to answer a user's question.
+Given the user's question and today's date, generate a query to use in a web search.
+Return the result in JSON format with "query" as the key.
+---
+question: {question}
+today: {datetime.now().strftime("%Y-%m-%d")}
+---
+        """.strip()
+    query = ""
+    for i in range(3):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4-0125-preview",
+                messages=[
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": question}
+                ],
+                response_format={"type": "json_object"},
+            )
+            response_json = json.loads(response.choices[0].message.content)
+            query = response_json["query"]
+            break
+        except Exception as e:
+            print("RETRY GENERATE NEXT QUESTION", e)
+            continue
+    return query
