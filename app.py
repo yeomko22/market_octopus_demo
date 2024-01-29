@@ -8,6 +8,7 @@ from services.service_openai import get_embedding, get_streaming_response, gener
 from services.service_pinecone import search_fnguide
 from services.service_pinecone import search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_yfinance import draw_ticker_information
+from utils.intent import INTENT_DICT
 from utils.search_space import get_search_space, EnumDomain
 from utils.streamlit_util import *
 
@@ -80,28 +81,6 @@ def get_oversea_reports(question_embedding: List[float], categories: Optional[Li
                 oversea_report_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
     return oversea_report_list
 
-intent_dict = {
-    "경제": (EnumPrimaryIntent.ECONOMICS, None),
-    "주식시장 전략 - 투자전략": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.INVESTMENT_STRATEGY),
-    "주식시장 전략 - 배당주": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.DIVIDEND_STOCK),
-    "주식시장 전략 - ETF": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.ETF),
-    "주식시장 전략 - 스타일, 팩터 분석": (EnumPrimaryIntent.STOCK_MARKET_STRATEGY, EnumMarketStrategyIntent.STYLE_FACTOR_ANALYSIS),
-    "채권시장": (EnumPrimaryIntent.BOND_MARKET, None),
-    "산업 및 종목 - 전반": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.OVERALL),
-    "산업 및 종목 - 에너지": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.ENERGY),
-    "산업 및 종목 - 소재": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.MATERIALS),
-    "산업 및 종목 - 소비재": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.CONSUMER),
-    "산업 및 종목 - 필수소비재": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.CONSUMER_STAPLE),
-    "산업 및 종목 - 헬스케어": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.HEALTHCARE),
-    "산업 및 종목 - 금융": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.FINANCIAL),
-    "산업 및 종목 - IT": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.IT),
-    "산업 및 종목 - 통신": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.COMMUNICATION),
-    "산업 및 종목 - 유틸리티": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.UTILITIES),
-    "산업 및 종목 - 부동산": (EnumPrimaryIntent.INDUSTRIES_AND_SECTORS, EnumIndustryStockIntent.REAL_ESTATE),
-    "대체자산": (EnumPrimaryIntent.ALTERNATIVE_ASSET, None),
-    "중국": (EnumPrimaryIntent.CHINA, None),
-    "기타": (EnumPrimaryIntent.OTHERS, None),
-}
 
 st.title("🐙 market octopus")
 st.markdown("""
@@ -121,7 +100,7 @@ with st.form("form"):
     with col2:
         intent = st.selectbox(
             label="질문 의도",
-            options=["자동 분류"] + list(intent_dict.keys()),
+            options=["자동 분류"] + list(INTENT_DICT.keys()),
         )
     question = st.text_input(
         "질문",
@@ -136,7 +115,7 @@ if submit:
         st.stop()
     eng_question = translate([question])[0]
     if intent != "자동 분류":
-        primary_intent, secondary_intent = intent_dict[intent]
+        primary_intent, secondary_intent = INTENT_DICT[intent]
     else:
         with st.spinner("질문 의도 분류 중..."):
             primary_intent, secondary_intent = classify_intent(eng_question)
