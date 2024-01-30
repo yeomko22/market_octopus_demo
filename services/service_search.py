@@ -43,7 +43,7 @@ def _request_search_api(query: str, target: str) -> dict:
         cse_key = st.secrets["GOOGLE_CSE_BOTH"]
 
     today = datetime.now(tz=timezone("Asia/Seoul"))
-    start = (today - timedelta(days=3)).strftime("%Y%m%d")
+    start = (today - timedelta(days=7)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
     url = google_search_url_template.format(
         API_KEY=st.secrets["GOOGLE_API_KEY"],
@@ -52,7 +52,7 @@ def _request_search_api(query: str, target: str) -> dict:
         start=start,
         end=end
     )
-    print(url)
+    print(url, query)
     response = requests.get(url)
     return response.json()
 
@@ -76,10 +76,10 @@ def get_news_items(query: str, target: str) -> List[dict]:
     publisher_count = Counter()
     result = []
     for news_item in news_items:
-        publisher = get_publisher(news_item["link"])
-        if publisher_count[publisher] >= 3:
-            continue
-        publisher_count[publisher] += 1
+        # publisher = get_publisher(news_item["link"])
+        # if publisher_count[publisher] >= 3:
+        #     continue
+        # publisher_count[publisher] += 1
         result.append({
             "title": news_item["title"],
             "publisher": get_publisher(news_item["link"]),
@@ -108,7 +108,9 @@ def search_news(query: str, query_embedding: List[float], target: str) -> List[d
     news_items = get_news_items(query, target)
     info_list = [(news_item, query_embedding) for news_item in news_items]
     news_items = parallel_request_parse_articles(info_list)
-    news_items = [x for x in news_items if x["similarity"] > 0.45]
+    for x in news_items:
+        print(x["title"], x["similarity"])
+    news_items = [x for x in news_items if x["similarity"] > 0.3]
     news_items = sorted(news_items, key=lambda x: x["similarity"], reverse=True)
     return news_items[:3]
 
