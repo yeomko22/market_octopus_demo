@@ -176,7 +176,7 @@ def parse_related_paragraph(query_embedding: List[float], article: str) -> Tuple
     return sorted(similarity_list, key=lambda x: x[0], reverse=True)[0]
 
 
-def request_parse_article(info: Tuple[dict, List[float]]) -> dict:
+def request_parse_article(info: Tuple[dict, List[float]]) -> Optional[dict]:
     news_item, query_embedding = info
     response = requests.get(
         url=news_item["url"],
@@ -187,14 +187,16 @@ def request_parse_article(info: Tuple[dict, List[float]]) -> dict:
     article_html = response.text
     article_content = parse_article(news_item["url"], article_html)
     if not article_content:
-        return 0, ""
+        return None
     similarity, related_paragraph = parse_related_paragraph(query_embedding, article_content)
     news_item["similarity"] = similarity
     news_item["related_paragraph"] = related_paragraph
     return news_item
 
 
-def parallel_request_parse_articles(info_list: List[Tuple[dict, List[float]]]) -> Iterator[dict]:
+def parallel_request_parse_articles(info_list: List[Tuple[dict, List[float]]]) -> List[dict]:
     with concurrent.futures.ThreadPoolExecutor() as executor:
         news_items = executor.map(request_parse_article, info_list)
+    news_items = [x for x in news_items if x]
     return news_items
+
