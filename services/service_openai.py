@@ -115,12 +115,15 @@ def classify_intent(question: str):
 
 
 def extract_query(question: str) -> str:
-    system_message = """
-당신은 전문 증권 애널리스트입니다.
-유저의 질문에 답변하기 위해서 웹 검색을 사용하고자 합니다.
-검색에 필요한 쿼리를 추출하세요.
-쿼리는 반드시 한국어여야 합니다.
-결과는 "query"를 키로 갖는 JSON 포맷으로 리턴하세요.
+    system_message = "You are a professional securities analyst.".strip()
+    prompt = f"""
+You want to search recent news to answer your users' questions.
+Given today's date and the user's question, extract the queries you need for your search.
+Return the results in JSON format with "query" as the key.    
+---
+today: {datetime.now().strftime("%Y-%m-%d")}
+question: {question}
+---
     """.strip()
     query = ""
     for i in range(3):
@@ -129,7 +132,7 @@ def extract_query(question: str) -> str:
                 model="gpt-4-0125-preview",
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": question}
+                    {"role": "user", "content": prompt}
                 ],
                 response_format={"type": "json_object"},
             )

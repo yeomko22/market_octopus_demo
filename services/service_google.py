@@ -14,15 +14,21 @@ credentials = Credentials.from_service_account_info(google_secret_json)
 google_translate_client = translate.TranslationServiceClient(credentials=credentials)
 
 
-def translate(queries: List[str]) -> List[str]:
+def translate(queries: List[str], kor_to_eng: bool = True) -> List[str]:
+    if kor_to_eng:
+        src_language = "ko"
+        tar_language = "en-US"
+    else:
+        src_language = "en-US"
+        tar_language = "ko"
     parent = f"projects/{google_secret_json['project_id']}/locations/global"
     response = google_translate_client.translate_text(
         request={
             "parent": parent,
             "contents": queries,
             "mime_type": "text/plain",
-            "source_language_code": "ko",
-            "target_language_code": "en-US",
+            "source_language_code": src_language,
+            "target_language_code": tar_language,
         }
     )
     translations = response.translations

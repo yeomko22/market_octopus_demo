@@ -24,6 +24,21 @@ default_instruction = f"""
 "질문 요약", "제목" 등의 단어는 반드시 생략하세요.
 """.strip()
 
+
+news_instruction = f"""
+금융 관련 질문과 참고할만한 최신 뉴스 기사들이 주어집니다.
+뉴스 기사를 참고해서 유저의 질문과 관련된 동향을 설명하세요.
+
+먼저 질문 내용과 질문 의도를 한 문장으로 정리하세요. 질문 내용을 칭찬해도 됩니다.
+그 다음 질문에 대한 분석 결과를 한 문장으로 요약한 제목을 제시하세요.
+제목 아래에 불릿포인트를 사용해서 핵심을 3~5가지 내용을 간결하게 설명하세요.
+
+제목은 진하게과 기울임을 적용하세요.
+반드시 친근한 구어체로 답하세요.
+"질문 요약", "제목" 등의 단어는 반드시 생략하세요.
+""".strip()
+
+
 NOT_GIVEN = "선택 안함"
 example_questions = [
     NOT_GIVEN,
@@ -99,17 +114,29 @@ def draw_seeking_alpha_report(related_contents: List[dict], expanded: bool = Tru
             )
 
 
-def draw_fnguide_report(related_contents: List[dict], expanded: bool = True):
+def draw_fnguide_report(related_news: List[dict], expanded: bool = True):
     st.markdown("**🇰🇷국내 애널리스트 리포트**")
-    for related_content in related_contents:
-        selected_item_metadata = related_content["metadata"]
+    for news_item in related_news:
+        selected_item_metadata = news_item["metadata"]
         with st.expander(f"{selected_item_metadata['publisher']} - {selected_item_metadata['title']}", expanded=expanded):
             st.markdown(selected_item_metadata['published_at'])
-            st.markdown(selected_item_metadata['writer'])
-            st.markdown(f"score: {round(related_content['score'], 4)}")
+            st.markdown(f"score: {round(news_item['score'], 4)}")
             st.link_button(
                 label="🌐 See full report",
                 url=selected_item_metadata["public_url"],
+                use_container_width=True
+            )
+
+
+def draw_news(news_items: List[dict], is_domestic: bool = True, expanded: bool = True):
+    prefix = "🇰🇷국내" if is_domestic else "🌎해외"
+    st.markdown(f"**{prefix} 뉴스**")
+    for news_item in news_items:
+        with st.expander(f"{news_item['publisher']} - {news_item['title']}", expanded=expanded):
+            st.markdown(news_item['published_at'])
+            st.link_button(
+                label="🗞️ See full news",
+                url=news_item["url"],
                 use_container_width=True
             )
 
