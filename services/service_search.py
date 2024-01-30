@@ -7,7 +7,7 @@ from urllib.parse import quote
 from pytz import timezone
 from dateutil import parser
 from datetime import datetime, timedelta
-from typing import List, Tuple, Iterator
+from typing import List, Tuple, Iterator, Optional
 import requests
 import streamlit as st
 from langchain.text_splitter import RecursiveCharacterTextSplitter
