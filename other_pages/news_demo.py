@@ -14,17 +14,10 @@ write_common_style()
 write_common_session_state()
 
 
-def generate_prompt(instruct: str, question: str, domestic_news: List[dict], oversea_news: List[dict]) -> str:
-    domestic_text = ""
+def generate_prompt(instruct: str, question: str, news: List[dict]) -> str:
+    news_text = ""
     for i, content in enumerate(domestic_news):
-        domestic_text += f"""
-title: {content["title"]}  
-url: {content["url"]}  
-related_paragraph: {content["related_paragraph"]}  
-"""
-    oversea_text = ""
-    for i, content in enumerate(oversea_news):
-        oversea_text += f"""
+        news_text += f"""
 title: {content["title"]}  
 url: {content["url"]}  
 related_paragraph: {content["related_paragraph"]}  
@@ -35,12 +28,9 @@ related_paragraph: {content["related_paragraph"]}
 today: {datetime.now().strftime("%Y-%m-%d")}  
 question: {question}  
 """
-    if domestic_news:
-        prompt += f"domestic news\n{domestic_text}"
-    if oversea_news:
-        prompt += f"oversea news\n{oversea_text}"
+    if news:
+        prompt += f"news\n{news_text}"
     prompt += "---"
-    prompt += "뉴스 기사를 참고할 때에는 반드시 주석에 출처를 남겨주세요."
     return prompt.strip()
 
 
@@ -89,7 +79,7 @@ if submit:
             draw_news(news, target)
     with col2:
         with st.spinner("의견 생성 중..."):
-            prompt = generate_prompt(instruct, question, domestic_news, oversea_news)
+            prompt = generate_prompt(instruct, question, news)
             messages = [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": prompt},
