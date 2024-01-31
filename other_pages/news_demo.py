@@ -14,12 +14,19 @@ write_common_style()
 write_common_session_state()
 
 
-def generate_prompt(instruct: str, question: str, domestic_news: List[dict]) -> str:
+def generate_prompt(instruct: str, question: str, domestic_news: List[dict], oversea_news: List[dict]) -> str:
     domestic_text = ""
     for i, content in enumerate(domestic_news):
         domestic_text += f"""
 title: {content["title"]}  
-published_at: {content["published_at"]}  
+url: {content["url"]}  
+related_paragraph: {content["related_paragraph"]}  
+"""
+    oversea_text = ""
+    for i, content in enumerate(oversea_news):
+        oversea_text += f"""
+title: {content["title"]}  
+url: {content["url"]}  
 related_paragraph: {content["related_paragraph"]}  
 """
     prompt = f"""
@@ -29,8 +36,11 @@ today: {datetime.now().strftime("%Y-%m-%d")}
 question: {question}  
 """
     if domestic_news:
-        prompt += f"국내 뉴스\n{domestic_text}"
+        prompt += f"domestic news\n{domestic_text}"
+    if oversea_news:
+        prompt += f"oversea news\n{oversea_text}"
     prompt += "---"
+    prompt += "뉴스 기사를 참고할 때에는 반드시 주석에 출처를 남겨주세요."
     return prompt.strip()
 
 
@@ -47,7 +57,7 @@ with st.form("form"):
     instruct = st.text_area(label="답변 생성시 고려사항", value=news_instruction, height=200)
     col1, col2 = st.columns([0.2, 0.8])
     with col1:
-        target = st.selectbox(label="질문 범위", options=["국내"])
+        target = st.selectbox(label="질문 범위", options=["전체", "국내", "해외"])
     with col2:
         question = st.text_input(
             "질문",
@@ -68,15 +78,18 @@ if submit:
         with st.spinner("관련 뉴스 검색 중..."):
             eng_query = extract_query(eng_question)
             kor_query = translate([eng_query], kor_to_eng=False)[0]
+            news = []
             if target == "국내" or target == "전체":
-                domestic_news = search_news(kor_query, kor_question_embedding, target=target)
-                draw_news(domestic_news, is_domestic=True)
+                domestic_news = search_news(kor_query, kor_question_embedding, is_domestic=True)
+                news.extend(domestic_news)
             if target == "해외" or target == "전체":
-                oversea_news = search_news(eng_query, eng_question_embedding, target=target)
-                draw_news(oversea_news, is_domestic=False)
+                oversea_news = search_news(eng_query, eng_question_embedding, is_domestic=False)
+                news.extend(oversea_news)
+            news = sorted(news, key=lambda x: x["similarity"], reverse=True)[:3]
+            draw_news(news, target)
     with col2:
         with st.spinner("의견 생성 중..."):
-            prompt = generate_prompt(instruct, question, domestic_news)
+            prompt = generate_prompt(instruct, question, domestic_news, oversea_news)
             messages = [
                 {"role": "system", "content": system_message},
                 {"role": "user", "content": prompt},

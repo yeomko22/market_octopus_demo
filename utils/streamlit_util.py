@@ -26,14 +26,19 @@ default_instruction = f"""
 
 
 news_instruction = f"""
-금융 관련 질문과 참고할만한 최신 뉴스 기사들이 주어집니다.
-뉴스 기사를 참고해서 유저의 질문과 관련된 동향을 설명하세요.
+금융 관련 질문과 참고할만한 뉴스 기사가 주어집니다.
+뉴스 기사를 참고해서 직접 분석하여 답변을 작성해야합니다.
 
 먼저 질문 내용과 질문 의도를 한 문장으로 정리하세요. 질문 내용을 칭찬해도 됩니다.
 그 다음 질문에 대한 분석 결과를 한 문장으로 요약한 제목을 제시하세요.
 제목 아래에 불릿포인트를 사용해서 핵심을 3~5가지 내용을 간결하게 설명하세요.
 
+다음 문단부터 본격적으로 설명하세요.
+이 때, 소제목을 적극적으로 활용하세요.
+
+마지막 문단에서 결론을 한 문장으로 요약하세요.
 제목은 진하게과 기울임을 적용하세요.
+뉴스 기사를 참고할 때는 반드시 출처를 주석에 남겨주세요.
 반드시 친근한 구어체로 답하세요.
 "질문 요약", "제목" 등의 단어는 반드시 생략하세요.
 """.strip()
@@ -42,6 +47,7 @@ news_instruction = f"""
 NOT_GIVEN = "선택 안함"
 example_questions = [
     NOT_GIVEN,
+    "어제 미국 시장에서는 어떤 일들이 있었지?",
     "최근 발표된 미국 금리 인하가 주식 시장에 어떤 영향을 미칠까?",
     "정부의 새로운 부동산 정책이 주식 시장에 어떤 영향을 미칠까?",
     "최근 주식시장의 전반적인 트렌드는?",
@@ -100,7 +106,8 @@ def draw_seeking_alpha_report(related_contents: List[dict], expanded: bool = Tru
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
         with st.expander(selected_item_metadata["title"], expanded=expanded):
-            st.markdown(selected_item_metadata['published_at'])
+            if "published_at" in selected_item_metadata:
+                st.markdown(selected_item_metadata['published_at'])
             st.markdown(f"score: {round(related_content['score'], 4)}")
             st.link_button(
                 label="🌐 See full report",
@@ -128,12 +135,13 @@ def draw_fnguide_report(related_news: List[dict], expanded: bool = True):
             )
 
 
-def draw_news(news_items: List[dict], is_domestic: bool = True, expanded: bool = True):
-    prefix = "🇰🇷국내" if is_domestic else "🌎해외"
-    st.markdown(f"**{prefix} 뉴스**")
+def draw_news(news_items: List[dict], target: str, expanded: bool = True):
+    st.markdown(f"**{target} 뉴스**")
     for news_item in news_items:
         with st.expander(f"{news_item['publisher']} - {news_item['title']}", expanded=expanded):
-            st.markdown(news_item['published_at'])
+            if "published_at" in news_item:
+                st.markdown(news_item['published_at'])
+            st.markdown(f"score: {round(news_item['similarity'], 4)}")
             st.link_button(
                 label="🗞️ See full news",
                 url=news_item["url"],

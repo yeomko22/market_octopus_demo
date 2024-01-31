@@ -105,11 +105,10 @@ def test_parse_yf(article_yf_html: str):
 
 def test_tmp():
     import requests
-    url = "https://www.reuters.com/business/what-happens-next-after-china-evergrande-ordered-liquidate-2024-01-29/"
+    url = "https://finance.yahoo.com/news/aktia-bank-plc-incentive-plans-160000034.html"
     response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
-    with open("tests/services/data/article_reuter.html", "w") as fw:
+    with open("tests/services/data/article_yf.html", "w") as fw:
         fw.write(response.text)
-
 
 
 def test_parse_related_paragraph(kor_query_embedding: List[float], article_einfomax_html: str):

@@ -18,7 +18,7 @@ import re
 
 google_search_url_template = ("https://www.googleapis.com/customsearch/v1"
                               "?key={API_KEY}&cx={CSE_KEY}&q={QUERY}"
-                              "&num=10&sort=date:r:{start}:{end}")
+                              "&num=5&sort=date:r:{start}:{end}")
 text_splitter = RecursiveCharacterTextSplitter(
     chunk_size=1500,
     chunk_overlap=20,
@@ -34,14 +34,11 @@ def remove_urls(text):
     return clean_text
 
 
-def _request_search_api(query: str, target: str) -> dict:
-    if target == "국내":
+def _request_search_api(query: str, is_domestic: bool) -> dict:
+    if is_domestic:
         cse_key = st.secrets["GOOGLE_CSE_DOMESTIC"]
-    elif target == "해외":
-        cse_key = st.secrets["GOOGLE_CSE_OVERSEA"]
     else:
-        cse_key = st.secrets["GOOGLE_CSE_BOTH"]
-
+        cse_key = st.secrets["GOOGLE_CSE_OVERSEA"]
     today = datetime.now(tz=timezone("Asia/Seoul"))
     start = (today - timedelta(days=7)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
@@ -57,9 +54,9 @@ def _request_search_api(query: str, target: str) -> dict:
     return response.json()
 
 
-def get_news_items(query: str, target: str) -> List[dict]:
+def get_news_items(query: str, is_domestic: bool) -> List[dict]:
     news_items = []
-    response_json = _request_search_api(query, target)
+    response_json = _request_search_api(query, is_domestic)
     total_results = response_json["searchInformation"]["totalResults"]
     if not total_results:
         return news_items
@@ -67,25 +64,22 @@ def get_news_items(query: str, target: str) -> List[dict]:
         if "spelling" not in response_json:
             return news_items
         query = response_json["spelling"]["correctedQuery"]
-        response_json = _request_search_api(query, target)
+        response_json = _request_search_api(query, is_domestic)
     news_items = response_json.get("items", [])
     if not news_items:
         return news_items
 
-    # 같은 언론사의 기사는 최대 3개까지만 선택
-    publisher_count = Counter()
     result = []
     for news_item in news_items:
-        # publisher = get_publisher(news_item["link"])
-        # if publisher_count[publisher] >= 3:
-        #     continue
-        # publisher_count[publisher] += 1
-        result.append({
+        parsed_news = {
             "title": news_item["title"],
             "publisher": get_publisher(news_item["link"]),
-            "published_at": parser.parse(news_item["pagemap"]["metatags"][0]["article:published_time"]),
             "url": news_item["link"]
-        })
+        }
+        metatags = news_item["pagemap"]["metatags"][0]
+        if "article:published_time" in metatags:
+            parsed_news["published_at"] = parser.parse(metatags["article:published_time"])
+        result.append(parsed_news)
     return result
 
 
@@ -104,15 +98,14 @@ def get_publisher(url: str) -> str:
     return publisher
 
 
-def search_news(query: str, query_embedding: List[float], target: str) -> List[dict]:
-    news_items = get_news_items(query, target)
+def search_news(query: str, query_embedding: List[float], is_domestic: bool) -> List[dict]:
+    news_items = get_news_items(query, is_domestic)
     info_list = [(news_item, query_embedding) for news_item in news_items]
     news_items = parallel_request_parse_articles(info_list)
     for x in news_items:
         print(x["title"], x["similarity"])
     news_items = [x for x in news_items if x["similarity"] > 0.3]
-    news_items = sorted(news_items, key=lambda x: x["similarity"], reverse=True)
-    return news_items[:3]
+    return news_items
 
 
 def parse_article_einfomax(article_html: str) -> str:
@@ -149,6 +142,8 @@ def parse_article_bp(article_html: str) -> str:
 def parse_article_yf(article_html: str) -> str:
     soup = BeautifulSoup(article_html, "lxml")
     article_soup = soup.find("div", class_="caas-body")
+    if article_soup is None:
+        return ""
     article_content = article_soup.text
     article_content = remove_urls(article_content)
     return article_content.strip()
