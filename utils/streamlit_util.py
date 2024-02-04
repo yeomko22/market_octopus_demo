@@ -28,19 +28,7 @@ default_instruction = f"""
 news_instruction = f"""
 금융 관련 질문과 참고할만한 뉴스 기사가 주어집니다.
 뉴스 기사를 참고해서 직접 분석하여 답변을 작성해야합니다.
-
-먼저 질문 내용과 질문 의도를 한 문장으로 정리하세요. 질문 내용을 칭찬해도 됩니다.
-그 다음 질문에 대한 분석 결과를 한 문장으로 요약한 제목을 제시하세요.
-제목 아래에 불릿포인트를 사용해서 핵심을 3~5가지 내용을 간결하게 설명하세요.
-
-다음 문단부터 본격적으로 설명하세요.
-이 때, 소제목을 적극적으로 활용하세요.
-
-마지막 문단에서 결론을 한 문장으로 요약하세요.
-제목은 진하게과 기울임을 적용하세요.
-뉴스 기사를 참고할 때는 반드시 출처를 주석에 남겨주세요.
-반드시 친근한 구어체로 답하세요.
-"질문 요약", "제목" 등의 단어는 반드시 생략하세요.
+반드시 세 문단으로 작성해주세요.
 """.strip()
 
 
@@ -134,6 +122,20 @@ def draw_fnguide_report(related_news: List[dict], expanded: bool = True):
                 use_container_width=True
             )
 
+
+def draw_related_report(related_contents: List[dict], expanded: bool = True):
+    st.markdown("**관련 리포트**")
+    for related_content in related_contents:
+        selected_item_metadata = related_content["metadata"]
+        with st.expander(selected_item_metadata["title"], expanded=expanded):
+            if "published_at" in selected_item_metadata:
+                st.markdown(selected_item_metadata['published_at'])
+            st.markdown(f"score: {round(related_content['score'], 4)}")
+            st.link_button(
+                label="🌐 See full report",
+                url=selected_item_metadata["public_url"],
+                use_container_width=True
+            )
 
 def draw_news(news_items: List[dict], target: str, expanded: bool = True):
     st.markdown(f"**{target} 뉴스**")

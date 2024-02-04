@@ -24,7 +24,6 @@ def generate_prompt(instruct: str, question: str, domestic_reports: List[dict], 
         domestic_metadata = content["metadata"]
         domestic_text += f"""
 title: {domestic_metadata["title"]}  
-published_at: {domestic_metadata["published_at"]}  
 summary: {domestic_metadata["summary"]}  
 content: {domestic_metadata["content"]}  
 """
@@ -33,7 +32,6 @@ content: {domestic_metadata["content"]}
         oversea_metadata = content["metadata"]
         oversea_text += f"""
 title: {oversea_metadata["title"]}  
-published_at: {oversea_metadata["published_at"]}  
 summary: {oversea_metadata["summary"]}  
 content: {oversea_metadata["content"]}  
 """

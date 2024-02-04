@@ -1,11 +1,16 @@
 from datetime import datetime
+from typing import Optional
 
 from st_pages import show_pages_from_config
 
 from services.service_google import translate
+from services.service_openai import classify_intent
 from services.service_openai import extract_query
 from services.service_openai import get_embedding, get_streaming_response
+from services.service_pinecone import search_fnguide, search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_search import search_news
+from utils.intent import INTENT_DICT
+from utils.search_space import get_search_space, EnumDomain
 from utils.streamlit_util import *
 
 set_page_config()
@@ -16,7 +21,7 @@ write_common_session_state()
 
 def generate_prompt(instruct: str, question: str, news: List[dict]) -> str:
     news_text = ""
-    for i, content in enumerate(domestic_news):
+    for i, content in enumerate(news):
         news_text += f"""
 title: {content["title"]}  
 url: {content["url"]}  
@@ -34,6 +39,52 @@ question: {question}
     return prompt.strip()
 
 
+def generate_analytics_prompt(instruct: str, paragraph: str, related_reports: List[dict]) -> str:
+    report_text = ""
+    for i, content in enumerate(report_text):
+        domestic_metadata = content["metadata"]
+        report_text += f"""
+title: {domestic_metadata["title"]}  
+content: {domestic_metadata["content"]}  
+"""
+    prompt = f"""
+{instruct}
+--- 
+today: {datetime.now().strftime("%Y-%m-%d")}  
+paragraph: {paragraph}  
+"""
+    if related_reports:
+        prompt += f"analytics reports\n{report_text}"
+    prompt += "---"
+    return prompt.strip()
+
+
+def get_domestic_reports(question_range: str, question_embedding: List[float], categories: Optional[List[str]]) -> List[dict]:
+    domestic_report_list = []
+    if question_range == "전체" or question_range == "국내":
+        with st.spinner("국내 애널리스트 리포트 검색 중..."):
+            domestic_report_list = search_fnguide(
+                question_embedding,
+                k=3,
+                categories=categories
+            )
+    return domestic_report_list
+
+
+def get_oversea_reports(question_range: str, question_embedding: List[float], categories: Optional[List[str]] = None) -> List[dict]:
+    oversea_report_list = []
+    if question_range == "전체" or question_range == "해외":
+        with st.spinner("해외 애널리스트 리포트를 검색 중입니다..."):
+            oversea_summary_list = search_seeking_alpha_summary(
+                question_embedding,
+                k=3,
+                categories=categories
+            )
+            if oversea_summary_list:
+                oversea_report_ids = [x["metadata"]["id"] for x in oversea_summary_list]
+                oversea_report_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
+    return oversea_report_list
+
 st.title("🐙 market octopus")
 st.markdown("""
 질문 범위를 선택한 다음, 질문을 입력합니다.   
@@ -45,44 +96,77 @@ example_ai_role = "당신은 전문 증권 애널리스트입니다."
 with st.form("form"):
     system_message = st.text_input(label="AI 역할", value=example_ai_role)
     instruct = st.text_area(label="답변 생성시 고려사항", value=news_instruction, height=200)
-    col1, col2 = st.columns([0.2, 0.8])
+    col1, col2 = st.columns(2)
     with col1:
-        target = st.selectbox(label="질문 범위", options=["전체", "국내", "해외"])
+        question_range = st.selectbox(label="질문 범위", options=["전체", "국내", "해외"])
     with col2:
-        question = st.text_input(
-            "질문",
-            placeholder="질문을 입력해주세요",
-            value=get_question(auto_complete)
+        intent = st.selectbox(
+            label="질문 의도",
+            options=["자동 분류"] + list(INTENT_DICT.keys()),
         )
+    question = st.text_input(
+        "질문",
+        placeholder="질문을 입력해주세요",
+        value=get_question(auto_complete)
+    )
     submit = st.form_submit_button(label="제출")
 
 if submit:
-    eng_question = translate([question])[0]
-    kor_question_embedding, eng_question_embedding = get_embedding([question, eng_question])
     if not question:
         st.error("질문을 입력해주세요.")
         st.stop()
 
-    col1, col2 = st.columns([0.3, 0.7])
-    with col1:
-        with st.spinner("관련 뉴스 검색 중..."):
-            eng_query = extract_query(eng_question)
-            kor_query = translate([eng_query], kor_to_eng=False)[0]
-            news = []
-            if target == "국내" or target == "전체":
-                domestic_news = search_news(kor_query, kor_question_embedding, is_domestic=True)
-                news.extend(domestic_news)
-            if target == "해외" or target == "전체":
-                oversea_news = search_news(eng_query, eng_question_embedding, is_domestic=False)
-                news.extend(oversea_news)
-            news = sorted(news, key=lambda x: x["similarity"], reverse=True)[:3]
-            draw_news(news, target)
-    with col2:
-        with st.spinner("의견 생성 중..."):
-            prompt = generate_prompt(instruct, question, news)
-            messages = [
-                {"role": "system", "content": system_message},
-                {"role": "user", "content": prompt},
-            ]
-            streaming_response = get_streaming_response(messages)
+    eng_question = translate([question])[0]
+    kor_question_embedding, eng_question_embedding = get_embedding([question, eng_question])
+    if intent != "자동 분류":
+        primary_intent, secondary_intent = INTENT_DICT[intent]
+    else:
+        with st.spinner("질문 의도 분류 중..."):
+            primary_intent, secondary_intent = classify_intent(eng_question)
+    draw_intent(primary_intent, secondary_intent)
+    with st.spinner("관련 뉴스 검색 중..."):
+        eng_query = extract_query(eng_question)
+        kor_query = translate([eng_query], kor_to_eng=False)[0]
+        news = []
+        if question_range == "국내" or question_range == "전체":
+            domestic_news = search_news(kor_query, kor_question_embedding, is_domestic=True)
+            news.extend(domestic_news)
+        if question_range == "해외" or question_range == "전체":
+            oversea_news = search_news(eng_query, eng_question_embedding, is_domestic=False)
+            news.extend(oversea_news)
+        news = sorted(news, key=lambda x: x["similarity"], reverse=True)[:3]
+        draw_news(news, question_range, expanded=False)
+    prompt = generate_prompt(instruct, question, news)
+    messages = [
+        {"role": "system", "content": system_message},
+        {"role": "user", "content": prompt},
+    ]
+    streaming_response = get_streaming_response(messages)
+    answer = read_stream(streaming_response)
+
+    # 문단별로 쪼개서 심화 텍스트 생성
+    answer_paragraph_list = answer.split("\n\n")
+    eng_parapraph_list = translate(answer_paragraph_list)
+    answer_embedding_list = get_embedding(eng_parapraph_list)
+    for i, (eng_paragraph, answer_embedding) in enumerate(zip(eng_parapraph_list, answer_embedding_list)):
+        question_embedding = get_embedding([eng_question])[0]
+        domestic_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.FNGUIDE)
+        domestic_report_list = get_domestic_reports(question_range, answer_embedding, domestic_search_space)
+        oversea_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.SEEKING_ALPHA_ANALYSIS)
+        oversea_report_list = get_oversea_reports(question_range, answer_embedding, oversea_search_space)
+        sorted_report = [sorted(domestic_report_list + oversea_report_list, key=lambda x: x["score"], reverse=True)[0]]
+        draw_related_report(sorted_report, expanded=False)
+        analytics_instruct = """
+유저의 질문에 대해서 최신 뉴스를 바탕으로 생성한 답변이 주어집니다.
+이와 관련된 전문 애널리스트 리포트가 주어집니다.
+이를 참고해서 더 심화된 내용들을 설명해주세요.
+반드시 한국어로 답변하세요.
+반드시 한문단 이내로 간결하게 작성하세요.
+            """.strip()
+        prompt = generate_analytics_prompt(analytics_instruct, eng_paragraph, sorted_report)
+        messages = [
+            {"role": "system", "content": system_message},
+            {"role": "user", "content": prompt},
+        ]
+        streaming_response = get_streaming_response(messages)
         answer = read_stream(streaming_response)
