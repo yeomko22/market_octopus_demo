@@ -121,6 +121,12 @@ def draw_fnguide_report(related_news: List[dict], expanded: bool = True):
                 url=selected_item_metadata["public_url"],
                 use_container_width=True
             )
+            if "kor_chunk_url" in selected_item_metadata:
+                st.link_button(
+                    label="🔗 See chunks",
+                    url=f"https://storage.googleapis.com/financial_analyst/{selected_item_metadata['kor_chunk_url']}",
+                    use_container_width=True
+                )
 
 
 def draw_related_report(related_contents: List[dict], expanded: bool = True):
