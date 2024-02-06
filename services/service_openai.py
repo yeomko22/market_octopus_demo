@@ -28,9 +28,9 @@ def paginated_get_embedding(text_list: List[str], page_size=5) -> List[List[floa
     return result
 
 
-def get_streaming_response(messages: List[dict]):
+def get_streaming_response(messages: List[dict], model="gpt-3.5-turbo-0125"):
     response = client.chat.completions.create(
-        model="gpt-4-0125-preview",
+        model=model,
         messages=messages,
         timeout=10,
         stream=True,
@@ -50,7 +50,7 @@ Main categories: Policy, Economics, Stock market strategy, Bond market, Industri
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-4-0125-preview",
+                model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}
@@ -88,7 +88,7 @@ Sub Categories: {[x.value for x in secondary_intent_list]}
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-4-0125-preview",
+                model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}
@@ -163,7 +163,7 @@ def generate_next_questions(question: str, answer: str) -> List[str]:
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-4-0125-preview",
+                model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}
@@ -196,7 +196,7 @@ today: {datetime.now().strftime("%Y-%m-%d")}
     for i in range(3):
         try:
             response = client.chat.completions.create(
-                model="gpt-4-0125-preview",
+                model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
                     {"role": "user", "content": question}

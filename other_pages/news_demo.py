@@ -75,7 +75,7 @@ def get_domestic_reports(question_range: str, question_embedding: List[float], c
 def get_oversea_reports(question_range: str, question_embedding: List[float], categories: Optional[List[str]] = None) -> List[dict]:
     oversea_report_list = []
     if question_range == "전체" or question_range == "해외":
-        with st.spinner("해외 애널리스트 리포트를 검색 중입니다..."):
+        with st.spinner("해외 애널리스트 리포트 검색 중..."):
             oversea_summary_list = search_seeking_alpha_summary(
                 question_embedding,
                 k=3,
@@ -85,6 +85,7 @@ def get_oversea_reports(question_range: str, question_embedding: List[float], ca
                 oversea_report_ids = [x["metadata"]["id"] for x in oversea_summary_list]
                 oversea_report_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
     return oversea_report_list
+
 
 st.title("🐙 market octopus")
 st.markdown("""
@@ -173,4 +174,3 @@ if submit:
     with st.spinner("다음에 물어보면 좋을 질문들..."):
         questions = generate_next_questions(question, answer)
     draw_next_questions(questions)
-
