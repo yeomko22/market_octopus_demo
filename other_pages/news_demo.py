@@ -6,6 +6,7 @@ from st_pages import show_pages_from_config
 from services.service_google import translate
 from services.service_openai import classify_intent
 from services.service_openai import extract_query
+from services.service_openai import generate_next_questions, generate_advanced_analytics
 from services.service_openai import get_embedding, get_streaming_response
 from services.service_pinecone import search_fnguide, search_seeking_alpha_summary, search_seeking_alpha_content
 from services.service_search import search_news
@@ -111,6 +112,20 @@ with st.form("form"):
     )
     submit = st.form_submit_button(label="제출")
 
+def search_related_reports(
+        question_range: str,
+        answer_embedding: List[float],
+        primary_intent: EnumPrimaryIntent,
+        secondary_intent: Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]
+) -> List[dict]:
+    domestic_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.FNGUIDE)
+    domestic_report_list = get_domestic_reports(question_range, answer_embedding, domestic_search_space)
+    oversea_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.SEEKING_ALPHA_ANALYSIS)
+    oversea_report_list = get_oversea_reports(question_range, answer_embedding, oversea_search_space)
+    related_report = [sorted(domestic_report_list + oversea_report_list, key=lambda x: x["score"], reverse=True)[0]]
+    return related_report
+
+
 if submit:
     if not question:
         st.error("질문을 입력해주세요.")
@@ -149,24 +164,13 @@ if submit:
     eng_parapraph_list = translate(answer_paragraph_list)
     answer_embedding_list = get_embedding(eng_parapraph_list)
     for i, (eng_paragraph, answer_embedding) in enumerate(zip(eng_parapraph_list, answer_embedding_list)):
-        question_embedding = get_embedding([eng_question])[0]
-        domestic_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.FNGUIDE)
-        domestic_report_list = get_domestic_reports(question_range, answer_embedding, domestic_search_space)
-        oversea_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.SEEKING_ALPHA_ANALYSIS)
-        oversea_report_list = get_oversea_reports(question_range, answer_embedding, oversea_search_space)
-        sorted_report = [sorted(domestic_report_list + oversea_report_list, key=lambda x: x["score"], reverse=True)[0]]
-        draw_related_report(sorted_report, expanded=False)
-        analytics_instruct = """
-유저의 질문에 대해서 최신 뉴스를 바탕으로 생성한 답변이 주어집니다.
-이와 관련된 전문 애널리스트 리포트가 주어집니다.
-이를 참고해서 더 심화된 내용들을 설명해주세요.
-반드시 한국어로 답변하세요.
-반드시 한문단 이내로 간결하게 작성하세요.
-            """.strip()
-        prompt = generate_analytics_prompt(analytics_instruct, eng_paragraph, sorted_report)
-        messages = [
-            {"role": "system", "content": system_message},
-            {"role": "user", "content": prompt},
-        ]
-        streaming_response = get_streaming_response(messages)
-        answer = read_stream(streaming_response)
+        related_reports = search_related_reports(question_range, answer_embedding, primary_intent, secondary_intent)
+        draw_related_report(related_reports, expanded=False)
+        streaming_response = generate_advanced_analytics(eng_paragraph, related_reports)
+        advanced_answer = read_stream(streaming_response)
+        answer += f"\n\n{advanced_answer}"
+
+    with st.spinner("다음에 물어보면 좋을 질문들..."):
+        questions = generate_next_questions(question, answer)
+    draw_next_questions(questions)
+

@@ -210,3 +210,41 @@ today: {datetime.now().strftime("%Y-%m-%d")}
             print("RETRY GENERATE NEXT QUESTION", e)
             continue
     return query
+
+
+def generate_analytics_prompt(instruct: str, paragraph: str, related_reports: List[dict]) -> str:
+    report_text = ""
+    for i, content in enumerate(report_text):
+        domestic_metadata = content["metadata"]
+        report_text += f"""
+title: {domestic_metadata["title"]}  
+content: {domestic_metadata["content"]}  
+"""
+    prompt = f"""
+{instruct}
+--- 
+today: {datetime.now().strftime("%Y-%m-%d")}  
+paragraph: {paragraph}  
+"""
+    if related_reports:
+        prompt += f"analytics reports\n{report_text}"
+    prompt += "---"
+    return prompt.strip()
+
+
+def generate_advanced_analytics(eng_paragraph: str, related_reports: List[dict]):
+    analytics_instruct = """
+유저의 질문에 대해서 최신 뉴스를 바탕으로 생성한 답변이 주어집니다.
+이와 관련된 전문 애널리스트 리포트가 주어집니다.
+이를 참고해서 더 심화된 내용들을 설명해주세요.
+구체적인 수치와 디테일한 내용들을 언급해주세요.
+반드시 한국어로 답변하세요.
+반드시 한문단 이내로 간결하게 작성하세요.
+""".strip()
+    prompt = generate_analytics_prompt(analytics_instruct, eng_paragraph, related_reports)
+    messages = [
+        {"role": "system", "content": analytics_instruct},
+        {"role": "user", "content": prompt},
+    ]
+    response = get_streaming_response(messages)
+    return response

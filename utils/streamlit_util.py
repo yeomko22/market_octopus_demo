@@ -28,6 +28,7 @@ default_instruction = f"""
 news_instruction = f"""
 금융 관련 질문과 참고할만한 뉴스 기사가 주어집니다.
 뉴스 기사를 참고해서 직접 분석하여 답변을 작성해야합니다.
+구체적인 수치와 디테일한 내용들을 언급해주세요.
 반드시 세 문단으로 작성해주세요.
 """.strip()
 
@@ -142,6 +143,19 @@ def draw_related_report(related_contents: List[dict], expanded: bool = True):
                 url=selected_item_metadata["public_url"],
                 use_container_width=True
             )
+            if "kor_chunk_url" in selected_item_metadata:
+                st.link_button(
+                    label="🔗 See chunks",
+                    url=f"https://storage.googleapis.com/financial_analyst/{selected_item_metadata['kor_chunk_url']}",
+                    use_container_width=True
+                )
+            if "chunk_url" in selected_item_metadata:
+                st.link_button(
+                    label="🔗 See chunks",
+                    url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
+                    use_container_width=True
+                )
+
 
 def draw_news(news_items: List[dict], target: str, expanded: bool = True):
     st.markdown(f"**{target} 뉴스**")
