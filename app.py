@@ -1,8 +1,9 @@
 from datetime import datetime
 from typing import Optional
+from utils.streamlit_util import *
+set_page_config()
 
 from st_pages import show_pages_from_config
-
 from services.service_google import translate
 from services.service_openai import classify_intent
 from services.service_openai import extract_query
@@ -10,11 +11,11 @@ from services.service_openai import generate_next_questions, generate_advanced_a
 from services.service_openai import get_embedding, get_streaming_response
 from services.service_pinecone import search_fnguide, search_seeking_alpha_summary, search_seeking_alpha_content, search_investment_bank
 from services.service_search import search_news
+from services.service_db import insert_question_answer
 from utils.intent import INTENT_DICT
 from utils.search_space import get_search_space, EnumDomain
-from utils.streamlit_util import *
 
-set_page_config()
+
 show_pages_from_config()
 write_common_style()
 write_common_session_state()
@@ -143,7 +144,8 @@ if submit:
     else:
         with st.spinner("질문 의도 분류 중..."):
             primary_intent, secondary_intent = classify_intent(eng_question)
-    draw_intent(primary_intent, secondary_intent)
+    primary_intent_kor, secondary_intent_kor = draw_intent(primary_intent, secondary_intent)
+
     title_main_idea = extract_query(eng_question)
     kor_query = translate([title_main_idea], kor_to_eng=False)[0]
     news = []
@@ -157,17 +159,24 @@ if submit:
             news.extend(oversea_news)
     news = sorted(news, key=lambda x: x["similarity"], reverse=True)[:3]
     draw_news(news, question_range, expanded=False)
+
     prompt = generate_prompt(instruct, question, news)
     messages = [
         {"role": "system", "content": system_message},
         {"role": "user", "content": prompt},
     ]
     streaming_response = get_streaming_response(messages)
-    answer = read_stream(streaming_response)
-
+    news_based_answer = read_stream(streaming_response)
+    answer_dict = {
+        "primary_intent": primary_intent_kor,
+        "secondary_intent": secondary_intent_kor,
+        "related_news": news,
+        "news_based_answer": news_based_answer,
+        "report_based_answer": []
+    }
     # 핵심 아이디어 3개 추출
     with st.spinner("핵심 아이디어 정리 중..."):
-        main_ideas = generate_main_ideas(question, answer)
+        main_ideas = generate_main_ideas(question, news_based_answer)
     st.markdown("**핵심 아이디어**")
     for i, main_idea in enumerate(main_ideas):
         st.write(f"{i+1}. {main_idea}")
@@ -176,12 +185,19 @@ if submit:
     eng_main_ideas = translate(main_ideas)
     title_main_idea_list = [f"question{eng_question}\nmain idea: {x}" for x in eng_main_ideas]
     title_main_idea_embeddings = get_embedding(title_main_idea_list)
-    for title_main_idea, title_main_idea_embedding in zip(title_main_idea_list, title_main_idea_embeddings):
+    for i, (title_main_idea, title_main_idea_embedding) in enumerate(zip(title_main_idea_list, title_main_idea_embeddings)):
         related_reports = search_related_reports(question_range, title_main_idea_embedding, primary_intent, secondary_intent)
         draw_related_report(related_reports, expanded=False)
         streaming_response = generate_advanced_analytics(title_main_idea, related_reports)
-        advanced_answer = read_stream(streaming_response)
-        answer += f"\n\n{advanced_answer}"
+        report_based_answer = read_stream(streaming_response)
+        news_based_answer += f"\n\n{report_based_answer}"
+        answer_dict["report_based_answer"].append({
+            "main_idea": main_ideas[i],
+            "related_reports": related_reports,
+            "report_based_answer": report_based_answer
+        })
     with st.spinner("다음에 물어보면 좋을 질문들..."):
-        questions = generate_next_questions(question, answer)
-    draw_next_questions(questions)
+        next_questions = generate_next_questions(question, news_based_answer)
+    draw_next_questions(next_questions)
+    answer_dict["next_questions"] = next_questions
+    insert_question_answer(question, answer_dict)

@@ -220,6 +220,7 @@ def get_question(auto_complete: str):
 
 def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]):
     primary_intent_kor = PRIMARY_INTENT_DICT[primary_intent]
+    secondary_intent_kor = ""
     write_markdown = f"**질문 의도: {primary_intent_kor}"
     if secondary_intent:
         if primary_intent == EnumPrimaryIntent.STOCK_MARKET_STRATEGY:
@@ -229,5 +230,6 @@ def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: Union[EnumM
         write_markdown += f" > {secondary_intent_kor}"
     write_markdown += "**"
     st.markdown(write_markdown)
+    return primary_intent_kor, secondary_intent_kor
 
 
