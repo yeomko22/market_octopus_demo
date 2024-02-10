@@ -13,3 +13,7 @@ name = "investment bank"
 [[pages]]
 path = "other_pages/news_demo.py"
 name = "news demo"
+
+[[pages]]
+path = "other_pages/final_demo.py"
+name = "final demo"

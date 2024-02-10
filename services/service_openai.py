@@ -181,6 +181,39 @@ def generate_next_questions(question: str, answer: str) -> List[str]:
     return questions
 
 
+def generate_main_ideas(question: str, answer: str) -> List[str]:
+    system_message = f"""
+당신은 전문 증권 애널리스트입니다.
+유저의 질문과 그에 대해 생성한 AI의 답변이 주어집니다.
+AI의 답변에서 핵심 아이디어를 최대 3개 추출하세요.
+결과는 "ideas"를 key로 가지고, 핵심 아이디어를 담은 list를 value로 갖는 JSON 포맷으로 리턴하세요.
+---
+질문: {question}
+답변: {answer}
+---
+        """.strip()
+    questions = []
+    for i in range(3):
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4-0125-preview",
+                messages=[
+                    {"role": "system", "content": system_message},
+                    {"role": "user", "content": question}
+                ],
+                response_format={"type": "json_object"},
+            )
+            response_json = json.loads(response.choices[0].message.content)
+            questions = response_json["ideas"]
+            if not isinstance(questions, list):
+                raise ValueError("ideas is not list")
+            break
+        except Exception as e:
+            print("RETRY GENERATE NEXT QUESTION", e)
+            continue
+    return questions
+
+
 def generate_search_query(question: str) -> List[str]:
     system_message = f"""
 You are a professional securities analyst.
@@ -232,19 +265,24 @@ paragraph: {paragraph}
     return prompt.strip()
 
 
-def generate_advanced_analytics(eng_paragraph: str, related_reports: List[dict]):
+def generate_advanced_analytics(question_main_idea: str, related_reports: List[dict]):
     analytics_instruct = """
-유저의 질문에 대해서 최신 뉴스를 바탕으로 생성한 답변이 주어집니다.
+유저의 질문과 이에 대한 답변의 핵심 아이디어가 주어집니다.
 이와 관련된 전문 애널리스트 리포트가 주어집니다.
 이를 참고해서 더 심화된 내용들을 설명해주세요.
 구체적인 수치와 디테일한 내용들을 언급해주세요.
 반드시 한국어로 답변하세요.
-반드시 한문단 이내로 간결하게 작성하세요.
+반드시 한문단 이내로 작성하세요.
 """.strip()
-    prompt = generate_analytics_prompt(analytics_instruct, eng_paragraph, related_reports)
+    prompt = generate_analytics_prompt(analytics_instruct, question_main_idea, related_reports)
     messages = [
         {"role": "system", "content": analytics_instruct},
         {"role": "user", "content": prompt},
     ]
-    response = get_streaming_response(messages)
+    response = client.chat.completions.create(
+        model="gpt-4-0125-preview",
+        messages=messages,
+        timeout=10,
+        stream=True,
+    )
     return response
