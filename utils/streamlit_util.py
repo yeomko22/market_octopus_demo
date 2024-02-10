@@ -139,7 +139,12 @@ def draw_related_report(related_contents: List[dict], expanded: bool = True):
     st.markdown("**관련 리포트**")
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
-        with st.expander(selected_item_metadata["title"], expanded=expanded):
+        expander_header = ""
+        if "title" in selected_item_metadata:
+            expander_header = selected_item_metadata["title"]
+        elif "filename" in selected_item_metadata:
+            expander_header = selected_item_metadata["filename"]
+        with st.expander(expander_header, expanded=expanded):
             if "published_at" in selected_item_metadata:
                 st.markdown(selected_item_metadata['published_at'])
             st.markdown(f"score: {round(related_content['score'], 4)}")

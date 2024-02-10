@@ -8,7 +8,7 @@ from services.service_openai import classify_intent
 from services.service_openai import extract_query
 from services.service_openai import generate_next_questions, generate_advanced_analytics, generate_main_ideas
 from services.service_openai import get_embedding, get_streaming_response
-from services.service_pinecone import search_fnguide, search_seeking_alpha_summary, search_seeking_alpha_content
+from services.service_pinecone import search_fnguide, search_seeking_alpha_summary, search_seeking_alpha_content, search_investment_bank
 from services.service_search import search_news
 from utils.intent import INTENT_DICT
 from utils.search_space import get_search_space, EnumDomain
@@ -76,14 +76,17 @@ def get_seeking_alpha_reports(question_range: str, question_embedding: List[floa
     oversea_report_list = []
     if question_range == "전체" or question_range == "해외":
         with st.spinner("해외 애널리스트 리포트 검색 중..."):
-            oversea_summary_list = search_seeking_alpha_summary(
+            seeking_alpha_summary_list = search_seeking_alpha_summary(
                 question_embedding,
                 k=3,
                 categories=categories
             )
-            if oversea_summary_list:
-                oversea_report_ids = [x["metadata"]["id"] for x in oversea_summary_list]
-                oversea_report_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
+            if seeking_alpha_summary_list:
+                oversea_report_ids = [x["metadata"]["id"] for x in seeking_alpha_summary_list]
+                seeking_alpha_content_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
+                oversea_report_list.extend(seeking_alpha_content_list)
+                investment_bank_list = search_investment_bank(question_embedding, k=3)
+                oversea_report_list.extend(investment_bank_list)
     return oversea_report_list
 
 
