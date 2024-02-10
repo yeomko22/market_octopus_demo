@@ -13,7 +13,3 @@ name = "news demo"
 [[pages]]
 path = "other_pages/investment_bank.py"
 name = "investment bank demo"
-
-[[pages]]
-path = "other_pages/final_demo.py"
-name = "final demo"
