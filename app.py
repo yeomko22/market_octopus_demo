@@ -128,7 +128,7 @@ if submit:
         oversea_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.SEEKING_ALPHA_ANALYSIS)
         oversea_report_list = get_oversea_reports(question_embedding, categories=oversea_search_space)
         if oversea_report_list:
-            draw_seeking_alpha_report(oversea_report_list, expanded=False)
+            draw_oversea_report(oversea_report_list, expanded=False)
             draw_ticker_information(oversea_report_list)
     with col2:
         with st.spinner("의견 생성 중..."):
