@@ -1,7 +1,0 @@
-[[pages]]
-path = "app.py"
-name = "market octopus"
-
-[[pages]]
-path = "other_pages/history.py"
-name = "history"

@@ -1,7 +1,5 @@
-from copy import deepcopy, copy
+from copy import deepcopy
 from datetime import datetime
-
-from st_pages import show_pages_from_config
 
 from services.service_db import insert_question_answer
 from services.service_google import translate, upload_html
@@ -15,7 +13,6 @@ from services.service_search import search_news
 from utils.html_util import get_reference_page_html
 from utils.streamlit_util import *
 
-show_pages_from_config()
 set_page_config()
 write_common_style()
 write_common_session_state()
@@ -207,9 +204,7 @@ if submit:
     with st.spinner("핵심 아이디어 정리 중..."):
         main_ideas = generate_main_ideas(question, generated_answer)
         eng_main_ideas = translate(main_ideas)
-    st.markdown("**💡 핵심 아이디어**")
-    for i, main_idea in enumerate(main_ideas):
-        st.write(f"{i+1}. {main_idea}")
+    draw_main_ideas(main_ideas)
 
     # 핵심 아이디어에 대한 애널리틱스 리포트 검색
     title_main_idea_list = [f"question: {eng_question}  \nmain idea: {x}" for x in eng_main_ideas]
@@ -241,6 +236,7 @@ if submit:
         streaming_response = generate_conclusion(question, generated_answer)
     st.markdown("**결론**")
     conclusion = read_stream(streaming_response)
+    answer_dict["conclusion"] = conclusion
     generated_answer += f"\n\n{conclusion}"
 
     with st.spinner("다음에 물어보면 좋을 질문들..."):
