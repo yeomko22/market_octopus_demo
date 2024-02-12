@@ -165,6 +165,8 @@ def draw_related_report(related_contents: List[dict], expanded: bool = True):
                     url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
                     use_container_width=True
                 )
+            if "content" in selected_item_metadata:
+                st.markdown(selected_item_metadata["content"])
 
 
 def draw_news(news_items: List[dict], target: str, expanded: bool = True):
