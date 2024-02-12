@@ -250,7 +250,7 @@ def generate_analytics_prompt(instruct: str, paragraph: str, related_reports: Li
     for i, related_report in enumerate(related_reports):
         metadata = related_report["metadata"]
         report_text += f"""
-title: {metadata["title"]}  
+title: {metadata["title"] if "title" in metadata else metadata["filename"]}  
 content: {metadata["content"] if "content" in metadata else metadata["eng_text"]}  
 """
     prompt = f"""
