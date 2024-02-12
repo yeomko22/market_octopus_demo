@@ -170,7 +170,7 @@ if submit:
     with st.spinner("핵심 아이디어 정리 중..."):
         main_ideas = generate_main_ideas(question, generated_answer)
         eng_main_ideas = translate(main_ideas)
-    st.markdown("**핵심 아이디어**")
+    st.markdown("**💡 핵심 아이디어**")
     for i, main_idea in enumerate(main_ideas):
         st.write(f"{i+1}. {main_idea}")
 

@@ -28,8 +28,8 @@ news_instruction = f"""
 뉴스 기사를 참고해서 직접 분석하여 답변을 작성해야합니다.
 구체적인 수치와 디테일한 내용들을 언급해주세요.
 반드시 세 문단으로 작성해주세요.
-
-문장마다 인용한 자료를 명시해주세요.
+각 문단마다 핵심 아이디어를 굵은 글씨로 표시합니다.
+문장마다 인용한 자료를 링크로 표시해주세요. 답변은 반드시 한글로 합니다.
 """.strip()
 
 
@@ -138,7 +138,7 @@ def draw_fnguide_report(related_news: List[dict], expanded: bool = True):
 
 
 def draw_related_report(related_contents: List[dict], expanded: bool = True):
-    st.markdown("**관련 리포트**")
+    st.markdown("**전문가 의견**")
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
         expander_header = ""
@@ -194,7 +194,7 @@ def click_next_question(question: str):
 
 
 def draw_next_questions(questions: List[str]):
-    st.markdown("**다음에 물어보면 좋은 질문들**")
+    st.markdown("**❓ 다음에 물어보면 좋은 질문들**")
     for i, question in enumerate(questions):
         st.button(
             f"Q. {question}",
