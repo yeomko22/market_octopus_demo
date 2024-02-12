@@ -3,17 +3,5 @@ path = "app.py"
 name = "market octopus"
 
 [[pages]]
-path = "other_pages/intent_classification_demo.py"
-name = "intent classification demo"
-
-[[pages]]
-path = "other_pages/news_demo.py"
-name = "news demo"
-
-[[pages]]
-path = "other_pages/investment_bank.py"
-name = "investment bank demo"
-
-[[pages]]
 path = "other_pages/history.py"
 name = "history"

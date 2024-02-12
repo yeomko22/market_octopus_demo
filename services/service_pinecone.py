@@ -18,32 +18,30 @@ def filter_duplicates(matches: List[dict]) -> List[dict]:
     return filtered_matches[:3]
 
 
-def search_seeking_alpha_summary(query_embedding: List[float], k: int = 10, categories: Optional[List[str]] = None) \
-        -> List[dict]:
+def search_seeking_alpha_summary(query_embedding: List[float], top_k: int = 5) -> List[dict]:
     result = index.query(
         vector=query_embedding,
-        top_k=k,
+        top_k=top_k,
         namespace="seeking-alpha-analysis-summary",
         include_metadata=True,
-        filter={"categories": {"$in": categories}} if categories else None
     )
     matches = result["matches"]
-    return [x for x in matches if x["score"]]
+    return [x for x in matches if x["score"] if x["score"] > 0.5]
 
 
-def search_investment_bank(query_embedding: List[float], k: int = 10) \
+def search_investment_bank(query_embedding: List[float], top_k: int = 5) \
         -> List[dict]:
     result = index.query(
         vector=query_embedding,
-        top_k=k,
+        top_k=top_k,
         namespace="investment_bank_v2",
         include_metadata=True,
     )
     matches = result["matches"]
-    return [x for x in matches if x["score"]]
+    return [x for x in matches if x["score"] if x["score"]]
 
 
-def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str], k: int = 3) -> Optional[List[dict]]:
+def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str], top_k: int = 3) -> Optional[List[dict]]:
     result = index.query(
         vector=query_embedding,
         top_k=10,
@@ -63,20 +61,16 @@ def search_seeking_alpha_content(query_embedding: List[float], id_list: List[str
             continue
         filtered_result.append(match)
         visited.add(match["metadata"]["id"])
-
-    # sort by date
-    sorted_result = sorted(filtered_result, key=lambda x: x["metadata"]["published_at"], reverse=True)
-    return sorted_result[:k]
+    return [x for x in filtered_result if x["score"] > 0.5]
 
 
-def search_fnguide(query_embedding: List[float], k: int = 3, categories: Optional[List[str]] = None) \
+def search_fnguide(query_embedding: List[float], top_k: int = 3) \
         -> Optional[List[dict]]:
     result = index.query(
         vector=query_embedding,
-        top_k=10,
+        top_k=top_k,
         namespace="fnguide",
         include_metadata=True,
-        filter={"category": {"$in": categories}} if categories else None
     )
     matches = result["matches"]
     if not matches:
@@ -90,7 +84,4 @@ def search_fnguide(query_embedding: List[float], k: int = 3, categories: Optiona
             continue
         filtered_result.append(match)
         visited.add(match["metadata"]["hashkey"])
-
-    # sort by date
-    sorted_result = sorted(filtered_result, key=lambda x: x["metadata"]["published_at"], reverse=True)
-    return sorted_result[:k]
+    return [x for x in filtered_result if x["score"] > 0.5]

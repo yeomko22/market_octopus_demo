@@ -33,7 +33,7 @@ news_instruction = f"""
 """.strip()
 
 
-NOT_GIVEN = "선택 안함"
+NOT_GIVEN = "질문 선택"
 example_questions = [
     NOT_GIVEN,
     "어제 미국 시장에서는 어떤 일들이 있었지?",
@@ -173,8 +173,8 @@ def draw_related_report(related_contents: List[dict], expanded: bool = True):
                 st.markdown(selected_item_metadata["kor_text"])
 
 
-def draw_news(news_items: List[dict], target: str, expanded: bool = True):
-    st.markdown(f"**{target} 뉴스**")
+def draw_news(news_items: List[dict], expanded: bool = True):
+    st.markdown(f"**관련 최신 뉴스**")
     for news_item in news_items:
         with st.expander(f"{news_item['publisher']} - {news_item['title']}", expanded=expanded):
             if "published_at" in news_item:
