@@ -167,6 +167,8 @@ def draw_related_report(related_contents: List[dict], expanded: bool = True):
                 )
             if "content" in selected_item_metadata:
                 st.markdown(selected_item_metadata["content"])
+            if "kor_text" in selected_item_metadata:
+                st.markdown(selected_item_metadata["kor_text"])
 
 
 def draw_news(news_items: List[dict], target: str, expanded: bool = True):
