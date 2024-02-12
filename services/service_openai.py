@@ -247,11 +247,11 @@ today: {datetime.now().strftime("%Y-%m-%d")}
 
 def generate_analytics_prompt(instruct: str, paragraph: str, related_reports: List[dict]) -> str:
     report_text = ""
-    for i, content in enumerate(report_text):
-        domestic_metadata = content["metadata"]
+    for i, related_report in enumerate(related_reports):
+        metadata = related_report["metadata"]
         report_text += f"""
-title: {domestic_metadata["title"]}  
-content: {domestic_metadata["content"]}  
+title: {metadata["title"]}  
+content: {metadata["content"] if "content" in metadata else metadata["eng_text"]}  
 """
     prompt = f"""
 {instruct}
