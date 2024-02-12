@@ -1,5 +1,7 @@
+import webbrowser
 from typing import List, Union
 
+import requests
 import streamlit as st
 
 from utils.intent import PRIMARY_INTENT_DICT, EnumPrimaryIntent, EnumIndustryStockIntent, \
@@ -173,19 +175,32 @@ def draw_related_report(idx: int, related_contents: List[dict], expanded: bool =
                 st.markdown(selected_item_metadata["kor_text"])
 
 
+def on_click_button(news_item: dict):
+    response = requests.post(
+        url="https://asia-northeast3-skilled-chalice-402604.cloudfunctions.net/reference_page",
+        json={
+            "origin_url": news_item["url"],
+            "related_paragraph": news_item["related_paragraph"]
+        }
+    )
+    response_json = response.json()
+    webbrowser.open_new_tab(response_json["url"])
+
+
 def draw_news(news_items: List[dict], expanded: bool = True):
     st.markdown(f"**관련 최신 뉴스**")
-    for news_item in news_items:
+    for i, news_item in enumerate(news_items):
         with st.expander(f"{news_item['publisher']} - {news_item['title']}", expanded=expanded):
             if "published_at" in news_item:
                 st.markdown(news_item['published_at'])
             st.markdown(f"score: {round(news_item['similarity'], 4)}")
-            st.link_button(
-                label="🗞️ See full news",
-                url=news_item["url"],
-                use_container_width=True
+            st.button(
+                key=f"news_{i}",
+                label="🗞️ 뉴스 원문 / 참고 문단 보기",
+                use_container_width=True,
+                on_click=on_click_button,
+                args=(news_item,)
             )
-            st.markdown(news_item["related_paragraph"])
 
 
 def click_next_question(question: str):
@@ -238,5 +253,3 @@ def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: Union[EnumM
     write_markdown += "**"
     st.markdown(write_markdown)
     return primary_intent_kor, secondary_intent_kor
-
-
