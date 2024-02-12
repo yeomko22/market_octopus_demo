@@ -96,7 +96,7 @@ st.markdown("""
 auto_complete = draw_auto_complete()
 example_ai_role = "당신은 전문 증권 애널리스트입니다."
 with st.form("form"):
-    system_message = st.text_input(label="AI 역할", value=example_ai_role)
+    system_message = example_ai_role
     instruct = st.text_area(label="답변 생성시 고려사항", value=news_instruction, height=200)
     col1, col2 = st.columns(2)
     with col1:
