@@ -49,7 +49,6 @@ def _request_search_api(query: str, is_domestic: bool) -> dict:
         start=start,
         end=end
     )
-    print(url, query)
     response = requests.get(url)
     return response.json()
 
