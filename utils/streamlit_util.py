@@ -153,26 +153,10 @@ def draw_related_report(idx: int, related_contents: List[dict], expanded: bool =
                 st.markdown(selected_item_metadata['published_at'])
             st.markdown(f"score: {round(related_content['score'], 4)}")
             st.link_button(
-                label="🌐 See full report",
-                url=selected_item_metadata["public_url"],
+                label="🌐 리포트 원문 / 참고 문단 보기",
+                url=selected_item_metadata["reference_page_url"],
                 use_container_width=True
             )
-            if "kor_chunk_url" in selected_item_metadata:
-                st.link_button(
-                    label="🔗 See chunks",
-                    url=f"https://storage.googleapis.com/financial_analyst/{selected_item_metadata['kor_chunk_url']}",
-                    use_container_width=True
-                )
-            if "chunk_url" in selected_item_metadata:
-                st.link_button(
-                    label="🔗 See chunks",
-                    url=f"https://storage.googleapis.com/mactopus-seeking-alpha/{selected_item_metadata['chunk_url']}",
-                    use_container_width=True
-                )
-            if "content" in selected_item_metadata:
-                st.markdown(selected_item_metadata["content"])
-            if "kor_text" in selected_item_metadata:
-                st.markdown(selected_item_metadata["kor_text"])
 
 
 def on_click_button(news_item: dict):

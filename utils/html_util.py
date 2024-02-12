@@ -1,3 +1,5 @@
+from typing import Optional
+
 html_template = """
     <!DOCTYPE html>
     <html lang="ko">
@@ -42,10 +44,7 @@ html_template = """
 
         <!-- 텍스트 컨테이너 -->
         <div class="text-container">
-            <h1>원문</h1>
-            <a href="{reference_url}">{reference_url}</a>
-            <h1>관련 문단</h1>
-            <p>{related_paragraph}</p>
+            {text}
         </div>
     </div>
 
@@ -54,9 +53,20 @@ html_template = """
     """
 
 
-def get_reference_page_html(origin_url: str, reference_url: str, related_paragraph: str) -> str:
+def get_reference_page_html(origin_url: str, reference_url: Optional[str], related_paragraph: str) -> str:
+    if reference_url is not None:
+        text = f"""
+            <h1>원문</h1>
+            <a href="{reference_url}">{reference_url}</a>
+            <h1>관련 문단</h1>
+            <p>{related_paragraph}</p> 
+        """
+    else:
+        text = f"""
+            <h1>관련 문단</h1>
+            <p>{related_paragraph}</p>
+        """
     return html_template.format(
         origin_url=origin_url,
-        reference_url=reference_url,
-        related_paragraph=related_paragraph
+        text=text,
     )

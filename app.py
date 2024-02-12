@@ -1,4 +1,4 @@
-from copy import deepcopy
+from copy import deepcopy, copy
 from datetime import datetime
 
 from st_pages import show_pages_from_config
@@ -134,19 +134,22 @@ def upload_related_news(related_news_list: List[dict]) -> List[dict]:
     return updated_news_list
 
 
-# def upload_related_reports(related_reports: List[dict]) -> List[dict]:
-#     updated_report_list = []
-#     for related_report in related_reports:
-#         updated_report = deepcopy(related_report)
-#         reference_page_html = get_reference_page_html(
-#             origin_url=related_report["url"],
-#             reference_url=related_report["url"],
-#             related_paragraph=related_report["related_paragraph"]
-#         )
-#         reference_page_url = upload_html(related_news["uploaded_news_url"], reference_page_html)
-#         updated_news["reference_page_url"] = reference_page_url
-#         updated_news_list.append(updated_news)
-#     return updated_news_list
+def upload_related_reports(related_report_list: List[dict]) -> List[dict]:
+    updated_report_list = []
+    for related_report in related_report_list:
+        if "content" in related_report["metadata"]:
+            related_paragraph = related_report["metadata"]["content"]
+        else:
+            related_paragraph = related_report["metadata"]["kor_text"]
+        reference_page_html = get_reference_page_html(
+            origin_url=related_report["metadata"]["public_url"],
+            reference_url=None,
+            related_paragraph=related_paragraph
+        )
+        reference_page_url = upload_html(related_report["metadata"]["public_url"], reference_page_html)
+        related_report["metadata"]["reference_page_url"] = reference_page_url
+        updated_report_list.append(related_report)
+    return updated_report_list
 
 
 st.title("🐙 market octopus")
@@ -214,6 +217,7 @@ if submit:
     visited_report = set()
     for i, (title_main_idea, title_main_idea_embedding) in enumerate(zip(title_main_idea_list, title_main_idea_embeddings)):
         related_reports = search_related_reports(question_range, title_main_idea_embedding)
+        related_reports = upload_related_reports(related_reports)
         selected_report = None
         for related_report in related_reports:
             if related_report["id"] in visited_report:
