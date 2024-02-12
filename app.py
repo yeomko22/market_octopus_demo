@@ -184,9 +184,9 @@ if submit:
     title_main_idea_embeddings = get_embedding(title_main_idea_list)
     for i, (title_main_idea, title_main_idea_embedding) in enumerate(zip(title_main_idea_list, title_main_idea_embeddings)):
         related_reports = search_related_reports(question_range, title_main_idea_embedding, primary_intent, secondary_intent)
-        draw_related_report(related_reports, expanded=False)
         # top 1만 선택
         related_reports = related_reports[:1]
+        draw_related_report(related_reports, expanded=False)
         streaming_response = generate_advanced_analytics(title_main_idea, related_reports)
         report_based_answer = read_stream(streaming_response)
         news_based_answer += f"\n\n{report_based_answer}"
