@@ -137,8 +137,8 @@ def draw_fnguide_report(related_news: List[dict], expanded: bool = True):
                 )
 
 
-def draw_related_report(related_contents: List[dict], expanded: bool = True):
-    st.markdown("**전문가 의견**")
+def draw_related_report(idx: int, related_contents: List[dict], expanded: bool = True):
+    st.markdown(f"**전문가 의견 {idx}.**")
     for related_content in related_contents:
         selected_item_metadata = related_content["metadata"]
         expander_header = ""

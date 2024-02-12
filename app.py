@@ -189,7 +189,7 @@ if submit:
             break
         if not selected_report:
             continue
-        draw_related_report(selected_report, expanded=False)
+        draw_related_report(i+1, selected_report, expanded=False)
         streaming_response = generate_advanced_analytics(title_main_idea, selected_report)
         report_based_answer = read_stream(streaming_response)
         generated_answer += f"\n\n{report_based_answer}"
