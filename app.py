@@ -6,7 +6,7 @@ from services.service_db import insert_question_answer
 from services.service_google import translate
 from services.service_openai import extract_query
 from services.service_openai import generate_next_questions, generate_advanced_analytics, generate_main_ideas
-from services.service_openai import get_embedding, get_streaming_response
+from services.service_openai import get_embedding, get_streaming_response, generate_conclusion
 from services.service_pinecone import search_fnguide, search_seeking_alpha_summary, search_seeking_alpha_content, \
     search_investment_bank
 from services.service_search import search_news
@@ -160,15 +160,15 @@ if submit:
         {"role": "user", "content": prompt},
     ]
     streaming_response = get_streaming_response(messages)
-    news_based_answer = read_stream(streaming_response)
+    generated_answer = read_stream(streaming_response)
     answer_dict = {
         "related_news": related_news,
-        "news_based_answer": news_based_answer,
+        "news_based_answer": generated_answer,
         "report_based_answer": []
     }
     # 핵심 아이디어 3개 추출
     with st.spinner("핵심 아이디어 정리 중..."):
-        main_ideas = generate_main_ideas(question, news_based_answer)
+        main_ideas = generate_main_ideas(question, generated_answer)
         eng_main_ideas = translate(main_ideas)
     st.markdown("**핵심 아이디어**")
     for i, main_idea in enumerate(main_ideas):
@@ -192,14 +192,21 @@ if submit:
         draw_related_report(selected_report, expanded=False)
         streaming_response = generate_advanced_analytics(title_main_idea, selected_report)
         report_based_answer = read_stream(streaming_response)
-        news_based_answer += f"\n\n{report_based_answer}"
+        generated_answer += f"\n\n{report_based_answer}"
         answer_dict["report_based_answer"].append({
             "main_idea": main_ideas[i],
             "related_reports": selected_report,
             "report_based_answer": report_based_answer
         })
+
+    with st.spinner("종합 정리 중..."):
+        streaming_response = generate_conclusion(question, generated_answer)
+    st.markdown("**결론**")
+    conclusion = read_stream(streaming_response)
+    generated_answer += f"\n\n{conclusion}"
+
     with st.spinner("다음에 물어보면 좋을 질문들..."):
-        next_questions = generate_next_questions(question, news_based_answer)
+        next_questions = generate_next_questions(question, generated_answer)
     draw_next_questions(next_questions)
     answer_dict["next_questions"] = next_questions
     insert_question_answer(question, answer_dict)

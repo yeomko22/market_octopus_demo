@@ -286,3 +286,28 @@ def generate_advanced_analytics(question_main_idea: str, related_reports: List[d
         stream=True,
     )
     return response
+
+
+def generate_conclusion(question:str, generated_answer: str):
+    prompt = f"""
+유저의 질문과 이에 대해 최신 뉴스와 애널리스트 리포트를 참고해서 생성한 답변이 주어집니다.
+이를 참고해서 결론을 작성하세요. 
+답변에서 구체적인 종목이나 지표를 언급했다면 포함해주세요.
+반드시 한국어로 답변하세요.
+반드시 한문단 이내로 간결하게 작성하세요.
+---
+question: {question}
+generated_answer: {generated_answer}
+---
+""".strip()
+    messages = [
+        {"role": "system", "content": "당신은 전문 증권 애널리스트입니다."},
+        {"role": "user", "content": prompt},
+    ]
+    response = client.chat.completions.create(
+        model="gpt-4-0125-preview",
+        messages=messages,
+        timeout=10,
+        stream=True,
+    )
+    return response
