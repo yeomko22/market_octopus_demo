@@ -44,3 +44,19 @@ OFFSET {page_size * (page - 1)}
         cursor.execute(select_sql)
         result = cursor.fetchall()
     return result
+
+
+def select_question_answer(question_id: int):
+    select_sql = f"""
+SELECT
+    question, 
+    answer
+FROM
+    question_answer
+WHERE
+    id={question_id}
+"""
+    with conn.cursor() as cursor:
+        cursor.execute(select_sql)
+        result = cursor.fetchone()
+    return result

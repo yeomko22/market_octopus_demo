@@ -153,10 +153,16 @@ def draw_related_report(idx: int, related_contents: List[dict], expanded: bool =
                 st.markdown(selected_item_metadata['published_at'])
             st.markdown(f"score: {round(related_content['score'], 4)}")
             st.link_button(
-                label="🌐 리포트 원문 / 참고 문단 보기",
-                url=selected_item_metadata["reference_page_url"],
+                label="🌐 리포트 원문",
+                url=selected_item_metadata["public_url"],
                 use_container_width=True
             )
+            if "reference_page_url" in selected_item_metadata:
+                st.link_button(
+                    label="📎 리포트 원문 / 참고 문단 보기",
+                    url=selected_item_metadata["reference_page_url"],
+                    use_container_width=True
+                )
 
 
 def on_click_button(news_item: dict):
@@ -183,6 +189,12 @@ def draw_news(news_items: List[dict], expanded: bool = True):
                 use_container_width=True,
                 url=news_item["reference_page_url"]
             )
+
+
+def draw_main_ideas(main_ideas: List[dict]):
+    st.markdown("**💡 핵심 아이디어**")
+    for i, main_idea in enumerate(main_ideas):
+        st.write(f"{i + 1}. {main_idea}")
 
 
 def click_next_question(question: str):

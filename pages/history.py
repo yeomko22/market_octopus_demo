@@ -27,6 +27,6 @@ total_questions = select_questions(page=selected_page)
 for id_, question, created_at in total_questions:
     st.link_button(
         label=f"{id_}\. ({created_at.strftime('%Y-%m-%d')}) {question}",
-        url=f"/question_answer/{id_}",
+        url=f"/question_answer?question={id_}",
         use_container_width=True,
     )
