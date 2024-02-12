@@ -194,12 +194,10 @@ def draw_news(news_items: List[dict], expanded: bool = True):
             if "published_at" in news_item:
                 st.markdown(news_item['published_at'])
             st.markdown(f"score: {round(news_item['similarity'], 4)}")
-            st.button(
-                key=f"news_{i}",
+            st.link_button(
                 label="🗞️ 뉴스 원문 / 참고 문단 보기",
                 use_container_width=True,
-                on_click=on_click_button,
-                args=(news_item,)
+                url=news_item["reference_page_url"]
             )
 
 

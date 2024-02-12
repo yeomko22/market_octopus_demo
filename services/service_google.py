@@ -1,8 +1,11 @@
 import base64
 import json
+from datetime import datetime
+from hashlib import md5
 from typing import List
 
 import streamlit as st
+from google.cloud import storage
 from google.cloud import translate
 from google.oauth2.service_account import Credentials
 
@@ -12,6 +15,7 @@ google_secret_json = json.loads(decoded_google_secret)
 
 credentials = Credentials.from_service_account_info(google_secret_json)
 google_translate_client = translate.TranslationServiceClient(credentials=credentials)
+storage_client = storage.Client(credentials=credentials)
 
 
 def translate(queries: List[str], kor_to_eng: bool = True) -> List[str]:
@@ -43,3 +47,25 @@ def paginated_translate(chunks: List[str], metadata:dict, pagesize: int = 5) -> 
         translated = translate(queries)
         result.extend(translated)
     return result
+
+
+def upload_html(url: str, html: str) -> str:
+    bucket = storage_client.bucket("reference_page")
+    datetime_str = datetime.now().strftime("%Y%m%d")
+    hashkey = md5(url.encode()).hexdigest()
+    destination_path = f"{datetime_str}/reference_page/{hashkey}.html"
+    blob = bucket.blob(destination_path)
+    blob.upload_from_string(html, content_type="text/html")
+    reference_page_url = f"https://storage.googleapis.com/reference_page/{destination_path}"
+    return reference_page_url
+
+
+def upload_news_html(url: str, html: str) -> str:
+    bucket = storage_client.bucket("reference_page")
+    datetime_str = datetime.now().strftime("%Y%m%d")
+    hashkey = md5(url.encode()).hexdigest()
+    destination_path = f"{datetime_str}/news/{hashkey}.html"
+    blob = bucket.blob(destination_path)
+    blob.upload_from_string(html, content_type="text/html")
+    reference_page_url = f"https://storage.googleapis.com/reference_page/{destination_path}"
+    return reference_page_url

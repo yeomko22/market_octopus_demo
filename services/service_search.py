@@ -1,26 +1,25 @@
 import concurrent.futures
-from collections import Counter
-
-from dateutil import parser
-import numpy as np
-from urllib.parse import quote
-from pytz import timezone
-from dateutil import parser
+import re
 from datetime import datetime, timedelta
-from typing import List, Tuple, Iterator, Optional
+from typing import List, Tuple, Optional
+from urllib.parse import quote
+
+import numpy as np
 import requests
 import streamlit as st
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from services.service_openai import get_embedding
 from bs4 import BeautifulSoup
-import os
-import re
+from dateutil import parser
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+from pytz import timezone
+
+from services.service_google import upload_news_html
+from services.service_openai import get_embedding
 
 google_search_url_template = ("https://www.googleapis.com/customsearch/v1"
                               "?key={API_KEY}&cx={CSE_KEY}&q={QUERY}"
                               "&num=5&sort=date:r:{start}:{end}")
 text_splitter = RecursiveCharacterTextSplitter(
-    chunk_size=1500,
+    chunk_size=2000,
     chunk_overlap=20,
     length_function=len,
     is_separator_regex=False,
@@ -179,6 +178,8 @@ def request_parse_article(info: Tuple[dict, List[float]]) -> Optional[dict]:
         }
     )
     article_html = response.text
+    uploaded_news_url = upload_news_html(news_item["url"], article_html)
+
     article_content = parse_article(news_item["url"], article_html)
     if not article_content:
         return None
@@ -186,6 +187,7 @@ def request_parse_article(info: Tuple[dict, List[float]]) -> Optional[dict]:
     news_item["index"] = idx
     news_item["similarity"] = similarity
     news_item["related_paragraph"] = related_paragraph
+    news_item["uploaded_news_url"] = uploaded_news_url
     return news_item
 
 

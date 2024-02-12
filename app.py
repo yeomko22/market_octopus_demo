@@ -1,15 +1,15 @@
+from copy import deepcopy
 from datetime import datetime
 
 from st_pages import show_pages_from_config
 
-from services.service_db import insert_question_answer
-from services.service_google import translate
+from services.service_google import translate, upload_html
 from services.service_openai import extract_query
-from services.service_openai import generate_next_questions, generate_advanced_analytics, generate_main_ideas
-from services.service_openai import get_embedding, get_streaming_response, generate_conclusion
+from services.service_openai import get_embedding
 from services.service_pinecone import search_fnguide, search_seeking_alpha_summary, search_seeking_alpha_content, \
     search_investment_bank
 from services.service_search import search_news
+from utils.html_util import get_reference_page_html
 from utils.streamlit_util import *
 
 show_pages_from_config()
@@ -116,6 +116,21 @@ def search_related_reports(
     return related_reports
 
 
+def upload_related_news(related_news_list: List[dict]) -> List[dict]:
+    updated_news_list = []
+    for related_news in related_news_list:
+        updated_news = deepcopy(related_news)
+        reference_page_html = get_reference_page_html(
+            origin_url=related_news["uploaded_news_url"],
+            reference_url=related_news["url"],
+            related_paragraph=related_news["related_paragraph"]
+        )
+        reference_page_url = upload_html(related_news["uploaded_news_url"], reference_page_html)
+        updated_news["reference_page_url"] = reference_page_url
+        updated_news_list.append(updated_news)
+    return updated_news_list
+
+
 st.title("🐙 market octopus")
 st.markdown("""
 질문 범위를 선택한 다음, 질문을 입력합니다.   
@@ -153,7 +168,9 @@ if submit:
         eng_query,
         eng_question_embedding
     )
+    related_news = upload_related_news(related_news)
     draw_news(related_news, expanded=False)
+    st.stop()
     prompt = generate_prompt(instruct, question, related_news)
     messages = [
         {"role": "system", "content": system_message},
