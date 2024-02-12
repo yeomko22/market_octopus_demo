@@ -73,21 +73,17 @@ def get_fnguide_reports(question_range: str, question_embedding: List[float], ca
     return domestic_report_list
 
 
-def get_seeking_alpha_reports(question_range: str, question_embedding: List[float], categories: Optional[List[str]] = None) -> List[dict]:
+def get_oversea_reports(question_range: str, question_embedding: List[float], categories: Optional[List[str]] = None) -> List[dict]:
     oversea_report_list = []
     if question_range == "전체" or question_range == "해외":
         with st.spinner("해외 애널리스트 리포트 검색 중..."):
-            seeking_alpha_summary_list = search_seeking_alpha_summary(
-                question_embedding,
-                k=3,
-                categories=categories
-            )
+            seeking_alpha_summary_list = search_seeking_alpha_summary(question_embedding, k=3, categories=categories)
             if seeking_alpha_summary_list:
                 oversea_report_ids = [x["metadata"]["id"] for x in seeking_alpha_summary_list]
                 seeking_alpha_content_list = search_seeking_alpha_content(question_embedding, oversea_report_ids, k=3)
                 oversea_report_list.extend(seeking_alpha_content_list)
-                investment_bank_list = search_investment_bank(question_embedding, k=3)
-                oversea_report_list.extend(investment_bank_list)
+            investment_bank_list = search_investment_bank(question_embedding, k=3)
+            oversea_report_list.extend(investment_bank_list)
     return oversea_report_list
 
 
@@ -127,9 +123,10 @@ def search_related_reports(
     fnguide_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.FNGUIDE)
     fnguide_report_list = get_fnguide_reports(question_range, answer_embedding, fnguide_search_space)
     seeking_alpha_search_space = get_search_space(primary_intent, secondary_intent, EnumDomain.SEEKING_ALPHA_ANALYSIS)
-    seeking_alpha_report_list = get_seeking_alpha_reports(question_range, answer_embedding, seeking_alpha_search_space)
-    related_report = [sorted(fnguide_report_list + seeking_alpha_report_list, key=lambda x: x["score"], reverse=True)[0]]
-    return related_report
+    oversea_report_list = get_oversea_reports(question_range, answer_embedding, seeking_alpha_search_space)
+    related_reports = fnguide_report_list + oversea_report_list
+    related_reports = sorted(related_reports, key=lambda x: x["metadata"]["published_at"], reverse=True)
+    return related_reports
 
 
 if submit:
@@ -188,6 +185,8 @@ if submit:
     for i, (title_main_idea, title_main_idea_embedding) in enumerate(zip(title_main_idea_list, title_main_idea_embeddings)):
         related_reports = search_related_reports(question_range, title_main_idea_embedding, primary_intent, secondary_intent)
         draw_related_report(related_reports, expanded=False)
+        # top 1만 선택
+        related_reports = related_reports[:1]
         streaming_response = generate_advanced_analytics(title_main_idea, related_reports)
         report_based_answer = read_stream(streaming_response)
         news_based_answer += f"\n\n{report_based_answer}"
