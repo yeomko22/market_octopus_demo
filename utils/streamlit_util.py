@@ -179,6 +179,7 @@ def draw_news(news_items: List[dict], target: str, expanded: bool = True):
                 url=news_item["url"],
                 use_container_width=True
             )
+            st.markdown(news_item["related_paragraph"])
 
 
 def click_next_question(question: str):

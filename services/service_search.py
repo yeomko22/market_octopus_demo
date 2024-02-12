@@ -102,8 +102,6 @@ def search_news(query: str, query_embedding: List[float], is_domestic: bool) -> 
     news_items = get_news_items(query, is_domestic)
     info_list = [(news_item, query_embedding) for news_item in news_items]
     news_items = parallel_request_parse_articles(info_list)
-    for x in news_items:
-        print(x["title"], x["similarity"])
     news_items = [x for x in news_items if x["similarity"] > 0.3]
     return news_items
 
@@ -162,14 +160,14 @@ def parse_article(url: str, article_html: str) -> str:
         return parse_article_yf(article_html)
 
 
-def parse_related_paragraph(query_embedding: List[float], article: str) -> Tuple[float, str]:
+def parse_related_paragraph(query_embedding: List[float], article: str) -> Tuple[int, float, str]:
     query_embedding = np.array(query_embedding)
     text_chunks = text_splitter.split_text(article)
     embeddings = get_embedding(text_chunks)
     similarity_list = []
     for i, (embedding, text_chunk) in enumerate(zip(embeddings, text_chunks)):
         similarity = query_embedding.dot(embedding)
-        similarity_list.append((similarity, text_chunk))
+        similarity_list.append((i, similarity, text_chunk))
     return sorted(similarity_list, key=lambda x: x[0], reverse=True)[0]
 
 
@@ -185,7 +183,8 @@ def request_parse_article(info: Tuple[dict, List[float]]) -> Optional[dict]:
     article_content = parse_article(news_item["url"], article_html)
     if not article_content:
         return None
-    similarity, related_paragraph = parse_related_paragraph(query_embedding, article_content)
+    idx, similarity, related_paragraph = parse_related_paragraph(query_embedding, article_content)
+    news_item["index"] = idx
     news_item["similarity"] = similarity
     news_item["related_paragraph"] = related_paragraph
     return news_item
