@@ -158,7 +158,7 @@ auto_complete = draw_auto_complete()
 example_ai_role = "당신은 전문 증권 애널리스트입니다."
 with st.form("form"):
     system_message = example_ai_role
-    instruct = st.text_area(label="답변 생성시 고려사항", value=news_instruction, height=200)
+    instruct = news_instruction
     col1, col2 = st.columns([0.15, 0.85])
     with col1:
         question_range = st.selectbox(label="질문 범위", options=["전체", "국내", "해외"])
