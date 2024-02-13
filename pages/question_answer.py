@@ -27,6 +27,7 @@ for i, report_based_answer in enumerate(answer["report_based_answer"]):
     st.write(report_based_answer["report_based_answer"])
 
 if "conclusion" in answer:
+    st.markdown("**결론**")
     st.write(answer["conclusion"])
 
 draw_next_questions(answer["next_questions"])
