@@ -215,9 +215,10 @@ if submit:
         related_reports = upload_related_reports(related_reports)
         selected_report = None
         for related_report in related_reports:
-            if related_report["id"] in visited_report:
+            report_id = related_report["id"].split("_")[0]
+            if report_id in visited_report:
                 continue
-            visited_report.add(related_report["id"])
+            visited_report.add(report_id)
             selected_report = [related_report]
             break
         if not selected_report:
