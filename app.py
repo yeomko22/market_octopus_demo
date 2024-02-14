@@ -196,7 +196,6 @@ if submit:
             break
     if related_news:
         draw_news(related_news, expanded=False)
-    st.stop()
     prompt = generate_prompt(instruct, question, related_news)
     messages = [
         {"role": "system", "content": system_message},
