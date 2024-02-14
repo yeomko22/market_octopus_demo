@@ -19,6 +19,8 @@ with st.spinner("답변 데이터 가져오는 중..."):
 st.write(f"**질문 생성일: {created_at.strftime('%Y-%m-%d %H:%M:%S')}**")
 st.write(f"**질문: {question}**")
 answer = eval(answer)
+if "question_range" in answer:
+    st.write(f"**질문 범위: {answer['question_range']}**")
 draw_news(answer["related_news"], expanded=False)
 st.write(answer["news_based_answer"])
 main_ideas = [x["main_idea"] for x in answer["report_based_answer"]]

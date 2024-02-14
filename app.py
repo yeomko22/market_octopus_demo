@@ -204,6 +204,7 @@ if submit:
     streaming_response = get_streaming_response(messages)
     generated_answer = read_stream(streaming_response)
     answer_dict = {
+        "question_range": question_range,
         "related_news": related_news,
         "news_based_answer": generated_answer,
         "report_based_answer": []
