@@ -176,18 +176,23 @@ if submit:
         st.stop()
     with st.spinner("검색 키워드 추출 중..."):
         eng_question = translate([question])[0]
-        eng_query = extract_query(eng_question)
-        kor_query = translate([eng_query], kor_to_eng=False)[0]
         kor_question_embedding, eng_question_embedding = get_embedding([question, eng_question])
-    related_news = search_related_news(
-        question_range,
-        kor_query,
-        kor_question_embedding,
-        eng_query,
-        eng_question_embedding
-    )
-    related_news = upload_related_news(related_news)
-    draw_news(related_news, expanded=False)
+        eng_query_list = extract_query(eng_question)
+        kor_query_list = translate(eng_query_list, kor_to_eng=False)
+    related_news = []
+    for kor_query, eng_query in zip(kor_query_list, eng_query_list):
+        related_news = search_related_news(
+            question_range,
+            kor_query,
+            kor_question_embedding,
+            eng_query,
+            eng_question_embedding
+        )
+        if related_news:
+            related_news = upload_related_news(related_news)
+            break
+    if related_news:
+        draw_news(related_news, expanded=False)
     prompt = generate_prompt(instruct, question, related_news)
     messages = [
         {"role": "system", "content": system_message},

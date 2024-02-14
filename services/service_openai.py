@@ -114,18 +114,19 @@ def classify_intent(question: str):
     return primary_intent, secondary_intent
 
 
-def extract_query(question: str) -> str:
+def extract_query(question: str) -> List[str]:
     system_message = "You are a professional securities analyst.".strip()
     prompt = f"""
-You want to search recent news to answer your users' questions.
-Given today's date and the user's question, extract the queries you need for your search.
-Return the results in JSON format with "query" as the key.    
----
-today: {datetime.now().strftime("%Y-%m-%d")}
-question: {question}
----
-    """.strip()
-    query = ""
+    You want to search recent news to answer your users' questions.
+    Given today's date and the user's question, generate 3 queries you need for your search.
+    Each query must be closely related to the user's question.
+    Return the results in JSON format with "queries" as the key.    
+    ---
+    today: {datetime.now().strftime("%Y-%m-%d")}
+    question: {question}
+    ---
+        """.strip()
+    queries = ""
     for i in range(3):
         try:
             response = client.chat.completions.create(
@@ -137,12 +138,12 @@ question: {question}
                 response_format={"type": "json_object"},
             )
             query_json = json.loads(response.choices[0].message.content)
-            query = query_json["query"]
+            queries = query_json["queries"]
             break
         except Exception as e:
             print("RETRY INTENT CLASSIFICATION", e)
             continue
-    return query
+    return queries
 
 
 def generate_next_questions(question: str, answer: str) -> List[str]:

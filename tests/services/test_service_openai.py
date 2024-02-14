@@ -22,6 +22,5 @@ Fed는 대개 중요한 정책 변경을 천명하기 전에 분명한 신호를
 
 def test_generate_search_query():
     question = "Explain how the US markets moved yesterday"
-    query = extract_query(question)
-    assert query is not None
-    assert len(query) > 10
+    queries = extract_query(question)
+    assert len(queries) == 3
