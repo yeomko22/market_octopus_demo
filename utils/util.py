@@ -1,5 +1,7 @@
 from datetime import datetime
 
+import pytz
+
 
 def get_date_diff(published_at: datetime) -> str:
     date_diff = (datetime.now() - published_at).days
@@ -21,4 +23,5 @@ def get_date_diff(published_at: datetime) -> str:
         return published_at.strftime("%Y-%m-%d")
 
 
-
+def convert_timezone(created_at: datetime) -> datetime:
+    return created_at.replace(tzinfo=pytz.UTC).astimezone(pytz.timezone("Asia/Seoul"))

@@ -46,6 +46,7 @@ OFFSET {page_size * (page - 1)}
 def select_question_answer(question_id: int):
     select_sql = text(f"""
 SELECT
+    created_at,
     question,
     answer
 FROM

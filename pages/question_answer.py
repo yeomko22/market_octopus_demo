@@ -2,6 +2,7 @@ import streamlit as st
 
 from services.service_db import select_question_answer
 from utils.streamlit_util import draw_news, draw_main_ideas, draw_related_report, draw_next_questions
+from utils.util import convert_timezone
 
 st.title("Question & Answer")
 st.write("유저의 질문에 대해서 마켓 옥토퍼스의 답변을 확인합니다.")
@@ -12,8 +13,10 @@ if not question_id:
     st.stop()
 
 with st.spinner("답변 데이터 가져오는 중..."):
-    question, answer = select_question_answer(question_id)
+    created_at, question, answer = select_question_answer(question_id)
+    created_at = convert_timezone(created_at)
 
+st.write(f"**질문 생성일: {created_at.strftime('%Y-%m-%d %H:%M:%S')}**")
 st.write(f"**질문: {question}**")
 answer = eval(answer)
 draw_news(answer["related_news"], expanded=False)
