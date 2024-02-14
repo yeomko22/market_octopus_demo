@@ -1,0 +1,2445 @@
+<!--
+"We are stuck with technology when what we really want is just stuff that works."
+Douglas Adams, The Salmon of Doubt.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="com">
+<head>
+<meta charset="utf-8">
+<script>
+					window.dataLayer = window.dataLayer || [];
+					(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+						new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+					j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+					'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+					})(window,document,'script','dataLayer','GTM-PGT3R3D');
+				</script>
+
+<script type="text/javascript" src="https://i-invdn-com.investing.com/js/protectedMedia.js"> </script>
+<script type="text/javascript">
+	window.domainId = 1;
+    window.CDN_URL = "https://i-invdn-com.investing.com";
+	function setCookie(name,value,days) {
+		var expires = "";
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + (days*24*60*60*1000));
+			expires = "; expires=" + date.toUTCString();
+		}
+		document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+	}
+
+	function getCookie(c_name) {
+		var c_value = " " + document.cookie;
+		var c_start = c_value.indexOf(" " + c_name + "=");
+		if (c_start == -1) {
+			c_value = null;
+		}
+		else {
+			c_start = c_value.indexOf("=", c_start) + 1;
+			var c_end = c_value.indexOf(";", c_start);
+			if (c_end == -1) {
+				c_end = c_value.length;
+			}
+			c_value = unescape(c_value.substring(c_start,c_end));
+		}
+		return c_value;
+	}
+
+	/**
+	 * Protected Media Score politics:
+	 * 1. fraudScore means: fraud [2 - clean - 100 fraud]
+	 * 2. suspScore means: suspicious [2 - clean - 100 suspicious]
+	 * 3. se means means: load by search engine or ad crawler (for Google Publishers recommended to not block this
+	 * so Google can score your page for quality
+	 *
+	 * JIRA: ADTECH-619
+	 */
+	var PM_COOKIE_NAME = "protectedMedia";
+    const PM_SCORE_COOKIE_NAME = "pms";
+	var protectedMediaCookie =  getCookie(PM_COOKIE_NAME);
+    const pmScoreCookie        = getCookie(PM_SCORE_COOKIE_NAME);
+	window.fraud = 0;
+	if(protectedMediaCookie === null  || pmScoreCookie === null || pmScoreCookie === "") { // only hit once per user
+		PMScore({
+			callback: function(result) {
+				if(result.status.indexOf("timeout") !== -1) {
+					console.log("timeout: " + JSON.stringify(result));
+				}
+				else { // success PM call
+
+					if(result.status.indexOf("se") !== -1 && result.se !== 0) {
+						// Load by Search engine or ad crawler (for Google Publishers, recommended to not block this so Google
+						// can score your page for quality
+						console.log("google bot / ad crawler detected");
+						return;
+					}
+					// mark the PM score to user (first time)
+                    if(protectedMediaCookie === null) {
+                        setCookie(PM_COOKIE_NAME, result.fraudScore ,365, "/");
+                    }
+                    if(pmScoreCookie === null || pmScoreCookie === "") {
+                        setCookie(PM_SCORE_COOKIE_NAME, JSON.stringify({'f':result.fraudScore, 's':result.suspScore}),30, "/");
+                    }
+
+					if (result.fraudScore > 70) { // result.suspScore > 70
+						console.log("fraud: " + JSON.stringify(result));
+					}
+					else {
+						console.log("clean: " + JSON.stringify(result));
+					}
+				}
+			},
+			mode: "rt",
+			timeout: 4000,
+		})
+	}
+	else { // user or bot already tagged by protected media (used for second load only)
+		if(window.domainId === 1 && protectedMediaCookie > 70) {
+			window.fraud = 1;
+		}
+	}
+	</script>
+<script type="text/javascript">
+        (function(){
+            window.appsFlyerOneLink = 'https://investing-mweb.onelink.me/bNKd/40mxd095?pid=direct_inv&c=mobile_web&af_channel=/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929&af_adset=www&af_ad=install_popup&af_pmod_priority=null&af_sub_siteid=null&click_id=null&af_sub1=null&af_ad_id=null&af_sub2=null&af_sub3=null&af_sub4=null&af_sub5=null&af_keywords=null&af_adset_id=null';
+            window.appsFlyerOneLinkContentPopup = 'https://investing-mweb.onelink.me/bNKd/40mxd095?pid=direct_inv&c=mobile_web&af_channel=/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929&af_adset=www&af_ad=content_app_install_top&af_pmod_priority=null&af_sub_siteid=null&click_id=null&af_sub1=null&af_ad_id=null&af_sub2=null&af_sub3=null&af_sub4=null&af_sub5=null&af_keywords=null&af_adset_id=null';
+        })();
+
+    </script>
+<script>
+        // checks
+		    </script>
+<title>BofA sees South African stocks undervalued, expects rate cut in Q3 By Investing.com</title>
+<meta name="twitter:url" content="https://m.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929" />
+<meta name="twitter:site" content="@investingcom" />
+<meta name="twitter:title" content="BofA sees South African stocks undervalued, expects rate cut in Q3 By " />
+<meta name="twitter:description" content="BofA sees South African stocks undervalued, expects rate cut in Q3" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:image" content="https://i-invdn-com.investing.com/news/LYNXNPEC0E0NI_L.jpg" /><meta property="og:image" content="https://i-invdn-com.investing.com/news/LYNXNPEC0E0NI_L.jpg" />
+<meta property="og:title" content="BofA sees South African stocks undervalued, expects rate cut in Q3 By Investing.com" />
+<meta property="og:description" content="BofA sees South African stocks undervalued, expects rate cut in Q3" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://m.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929" />
+<meta property="og:site_name" content="Investing.com" />
+<meta property="og:locale" content="en_US" />
+<meta name="referrer" content="unsafe-url" />
+<meta property="al:android:package" content="com.fusionmedia.investing" />
+<meta property="al:android:url" content="android-app://com.fusionmedia.investing/app/www.investing.com/news/news-item-3301929" />
+<meta property="al:ios:app_store_id" content="909998122" />
+<meta property="al:ios:url" content="https://www.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929" />
+<meta name="description" content="BofA sees South African stocks undervalued, expects rate cut in Q3" />
+<script>desktopVersion = "/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929";var siteData = {
+                             userLoggedIn: false,
+                             sideMenuCurrentCategoryID: "",
+                             currentCategory: "news",
+                             currentCategoryId: "1",
+                             currentPage: "9",
+                             mmID: "",
+                             adSlot: "EN",
+                             sml: "25",
+                             currencyPosition: "left",
+                             numeric_format: "us",
+                             restore_to_defaults: "Are you sure?",
+                             no: "No",
+                             yes: "Yes",
+                             broker_name: "Broker Name",
+                             ok: "Ok",
+                             just_now: "Just Now",
+                             reply: "Reply",
+                             cancel: "Cancel",
+                             disableSideMenuCurrent: false,
+                             restore_filters_calendar_popup_title: "Restore Default Settings",
+                             restore_filters_ec_msg: "Restore settings to default?",
+                             no_earnings_result: "No Earning Reports have been scheduled",
+                             recently_searched: "Recently Searched",
+                             show_less:"Show Less",
+                             search_input: "EUR/USD or AAPL",
+                             loading: "Loading",
+                             show_more_history: "Show more",
+                             no_holidays: "No holidays in this date range",
+                             search_no_results: "Please try another search",
+                             week_start: 0,
+                             time_zone: 8,
+                             site_side: "left",
+                             country_list: [25,32,6,37,72,22,17,39,14,10,35,43,36,110,11,26,12,4,5,56],
+                             defaultDomain: "www.investing.com",
+                             validation_2_to_16_char : "should be between 2 and 16 characters",
+                             validation_4_to_15_char_min_2_letter_2_digits : "Use 4-15 characters including a minimum of 2 letters and 2 digits.",
+                             validation_error_password_not_match : "Password does not match the password verification field.",
+                             validation_login_err_passwords_not_match : "Passwords do not match",
+                             validation_auth_resetpassword_donotmatch : "Confirmation password does not match",
+                             appNexusUrl: "https://secure.adnxs.com/seg?t=2&add=19833590",
+                             formsGlobalErrors: {
+                                    full_name : "Full Name",
+                                    email : "Email",
+                                    message : "Message",
+                                    full_name_required : "Full Name is required.",
+                                    email_required : "Email is required.",
+                                    email_valid : "Invalid Email",
+                                    message_required : "Message is required.",
+                             },
+                             logoutConfirmTexts: {
+                                    title: "Sign out",
+                                    content: "Are you sure you want to sign out?",
+                                    cancelBtn: "No",
+                                    confirmBtn: "Yes",
+                             },
+                             FB_GLOBAL: {
+                                    1:  "Actual",
+                                    2:  "Forecast",
+                                    3:  "Revised from",
+                                    4:  "No data to display",
+                                    5:  "Area Chart",
+                                    6:  "Histogram Chart",
+                                    7:  "%NUMBER% months",
+                                    8:  "Bonds1 Year",
+                                    9:  "Chart2 Years",
+                                    10: "ChartMaximum",
+                                },
+                            ChartParams: {
+    								open:  "Open",
+                                    high:  "High",
+                                    low:  "Low",
+                                    close:  "Close",
+                                    volume:  "Volume",
+                            	}
+                            };
+</script>
+<link rel="alternate" href="android-app://com.fusionmedia.investing/app/www.investing.com/news/news-item-3301929" />
+<link rel="alternate" href="ios-app://909998122/com.investing.app/1/news/3301929" />
+<link rel="canonical" href="https://www.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929" />
+<link rel="alternate" hreflang="en-za" href="https://za.investing.com/news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3009357" />
+<link rel="alternate" hreflang="en-au" href="https://au.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3116113" />
+<link rel="alternate" hreflang="en-ca" href="https://ca.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3262222" />
+<link rel="alternate" hreflang="en-in" href="https://in.investing.com/news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-4016557" />
+<link rel="alternate" hreflang="en-ng" href="https://ng.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-1218317" />
+<link rel="alternate" hreflang="en-ph" href="https://ph.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-1122789" />
+<link rel="alternate" hreflang="en-gb" href="https://uk.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3335442" />
+<link rel="alternate" hreflang="x-default" href="https://www.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929" />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="amphtml" href="https://m.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929?ampMode=1" />
+<script>
+		window.isGDPR = 0;
+		window.isCCPA = 0;
+        window.isAdFox = 0;
+        
+		console.log("GDPR:"+window.isGDPR);
+		console.log("isCCPA:"+window.isCCPA);
+        console.log("isAdFox:"+window.isAdFox);
+        
+		function loadGpt () {
+			if(window.fraud === 1 && window.domainId === 1) {
+				console.log('fraud detected, no gpt');
+				return;
+			}
+			var useSSL = 'https:' == document.location.protocol;
+			var src = (useSSL ? 'https:' : 'http:') +
+				'//www.googletagservices.com/tag/js/gpt_mobile.js';
+
+			var gptScript = document.createElement( 'script' );
+			gptScript.onload = function () {
+				console.log('gpt loaded');
+			};
+			gptScript.src = src;
+			document.head.appendChild(gptScript);
+		}
+        
+        function loadAdFox()
+        {
+            window.adFoxOwnerId = 316703;
+            const gptScript = document.createElement('script');
+            gptScript.src = 'https://yandex.ru/ads/system/context.js';
+            document.head.appendChild(gptScript);
+            window.yaContextCb = window.yaContextCb || [];
+        }
+        
+        function getAdFoxParams(pp, ps, p2)
+        {
+            const params = {
+                'pp': pp,
+                'ps': ps,
+                'p2': p2
+            };
+            
+            for (let i = 1; i <= 32; i++) {
+                let key = 'puid' + i;
+                params[key] = '';
+                if (window.allPuIds[key] !== undefined) {
+                    params[key] = window.allPuIds[key];
+                }
+            }
+            
+            return params;
+        }
+
+        /**
+         * https://inv.atlassian.net/browse/REVUX-1555
+         * Function called from push-to-install.js. Its call will depend on wether we show interstitial popup or not.
+         */
+        window.showGDPRPopup = function () {
+                        if( window.isGDPR) {
+                var consentSetInterval = setInterval(() => {
+                    console.log("enter interval")
+                    if( typeof window.__tcfapi !== 'undefined' )
+                    {
+                        clearInterval(consentSetInterval);
+                        window.__tcfapi( 'addEventListener', 2, function( tcData,listenerSuccess )
+                        {
+                            if(listenerSuccess) {
+                                if( tcData && (tcData.eventStatus === 'tcloaded' || tcData.eventStatus === 'useractioncomplete') ) {
+                                    var hasDeviceStorageAndAccessConsent = tcData.purpose.consents[1] || false;
+                                    // Google Requires Consent for Purpose 1
+                                    if (hasDeviceStorageAndAccessConsent) {
+                                        // GLOBAL VENDOR LIST - https://iabeurope.eu/vendor-list-tcf-v2-0/
+                                        // CHECK FOR GOOGLE ADVERTISING PRODUCTS CONSENT. (IAB Vendor ID 755)
+                                        var hasGoogleAdvertisingProductsConsent = tcData.vendor.consents[755] || false;
+                                        // Check if the user gave Google Advertising Products consent (iab vendor 755)
+                                        if(hasGoogleAdvertisingProductsConsent) {
+                                            console.log("gpt load gdpr")
+                                            loadGpt();
+                                        }
+                                    }
+                                }
+                            }
+                        })
+                    }
+
+                }, 50);
+            }
+        }
+
+        if (window.isAdFox) {
+            window.allPuIds = '{"puid1":{"name":"CID","value":""},"puid29":{"name":"pm","value":null},"puid2":{"name":"User_type","value":"Not_Logged_in"},"puid3":{"name":"smd","value":"4e85bd7490fc8f0efa9cddd01873fc17-1707890397"},"puid21":{"name":"udid","value":"4e85bd7490fc8f0efa9cddd01873fc17"},"puid22":{"name":"edition_id","value":"1"},"puid4":{"name":"Traffic_Type","value":"OG"},"puid12":{"name":"pair_id","value":"3301929"},"puid5":{"name":"Section","value":"content"}}';
+            loadAdFox();
+        } else {
+            if(window.isCCPA) {
+                loadGpt();
+            }
+            else if(!window.isGDPR) {
+                console.log("gpt non-gdpr");
+                loadGpt();
+            }
+            window.googletag = window.googletag || {};
+            window.googletag.cmd = window.googletag.cmd || [];
+        }
+	</script>
+<script type="text/javascript">
+        var clickPenalty = false;
+        if (window.googletag) {
+            googletag.cmd.push(function() {
+                if(window.domainId === 6) { // prevent empty spaces on CN - ADTECH-783
+                    googletag.pubads().collapseEmptyDivs(true, true);
+                }
+                                 googletag.defineSlot('/6938/FP_EN_touch/FP_EN_touch_header', [[320,50], 'fluid'], 'div-gpt-ad-1333374405327-0').addService(googletag.pubads());
+                                       googletag.defineSlot('/6938/FP_EN_touch/FP_EN_touch_box_BTF', [[320,100],[300,250],[320,246]], 'div-gpt-ad-1511256560202-0').addService(googletag.pubads());
+                          
+                                     googletag.defineSlot('/6938/FP_EN_touch/FP_EN_touch_MidPage_1', [[320,100],[300,250]], 'div-gpt-ad-1447236129660-0').addService(googletag.pubads());
+                                         googletag.defineOutOfPageSlot('/6938/FP_EN_touch/FP_EN_touch_Out_of_page_video_Content','div-gpt-ad-Out_of_page_video_Content').addService(googletag.pubads());
+                     
+var interstitialSlot;
+let showInterstitialSlot = true;
+let queryParamsObj = new URLSearchParams(window.location.search);
+if(queryParamsObj.get('ttw') == 1 || getCookie('ttw_stage') !== null) {
+    showInterstitialSlot = false;
+}
+
+if (window.googletag && showInterstitialSlot) {
+    googletag.cmd.push(function() {
+        // Define a web interstitial ad slot.
+        interstitialSlot = googletag.defineOutOfPageSlot(
+            '/6938/FP_EN_touch/FP_EN_touch_inter',
+            googletag.enums.OutOfPageFormat.INTERSTITIAL);
+    
+    
+        if (interstitialSlot) {
+            interstitialSlot.addService(googletag.pubads());
+    
+            console.log('Interstitial is loading...');
+    
+            // Add event listener to enable navigation once the interstitial loads.
+            // If this event doesn't fire, try clearing local storage and refreshing
+            // the page.
+            googletag.pubads().addEventListener('slotOnload', function(event) {
+                if (interstitialSlot === event.slot) {
+                    console.log('Interstitial is loaded.');
+                }
+            });
+        }
+    });
+}
+    
+                googletag.pubads().setTargeting('CID', '');googletag.pubads().setTargeting('pm', );googletag.pubads().setTargeting('session_number', '1');googletag.pubads().setTargeting('Page_URL', '/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929');googletag.pubads().setTargeting('User_type', 'Not_Logged_in');googletag.pubads().setTargeting('Domain', 'www.investing.com');googletag.pubads().setTargeting('smd', '4e85bd7490fc8f0efa9cddd01873fc17-1707890397');googletag.pubads().setTargeting('udid', '4e85bd7490fc8f0efa9cddd01873fc17');googletag.pubads().setTargeting('edition_id', '1');googletag.pubads().setTargeting('Traffic_Type', 'OG');googletag.pubads().setTargeting('page_path', 'm.investing.com/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929');googletag.pubads().setTargeting('page_path_level1', 'News');googletag.pubads().setTargeting('page_path_level2', 'News_Articles');googletag.pubads().setTargeting('pair_id', '3301929');googletag.pubads().setTargeting('Section', 'content');googletag.pubads().setTargeting('redesign', '0');googletag.pubads().setTargeting('Charts_Page', 'no');                googletag.pubads().enableSingleRequest();
+                googletag.enableServices();
+                googletag.pubads().addEventListener('slotRenderEnded', adRendered);
+            });
+        }
+        
+        //swat-763
+        function adRendered(ad) {
+            if(!clickPenalty) {
+                try {
+                    var ads = Array.from(document.querySelectorAll('section[data-google-query-id]:not([data-cp-checked])'));
+                    ads.forEach(function(ad) {
+                        var cp = ad.querySelector('iframe:not([src]');
+
+                        if (! cp) {
+                            return;
+                        }
+
+                        cp = cp.contentWindow.document.body.querySelectorAll('#common_15click_overlay').length;
+
+                        if (cp > 0) {
+                            window.ga && window.ga('allSitesTracker.send', 'event', 'ads', '2click-penalty', 'GA2ClickEvent');
+                            clickPenalty = true;
+                        }
+
+                        ad.setAttribute('data-cp-checked', 'true');
+
+                    });
+                }
+
+                catch (err) {
+                    console.log(err,'err');
+                    // do nothing
+                }
+            }
+        }
+	</script>
+<meta name="google-site-verification" content="tgOca35Gp1qjyXxayd07aCd_JXrieGm0AwE4ZjURAp0" />
+
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="format-detection" content="telephone=no">
+<meta name="HandheldFriendly" content="true">
+
+<link rel="apple-touch-icon" href="https://i-invdn-com.investing.com/touch/icns/inv_57x57.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="https://i-invdn-com.investing.com/touch/icns/inv_57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="https://i-invdn-com.investing.com/touch/icns/inv_72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="https://i-invdn-com.investing.com/touch/icns/inv_114x114.png" />
+
+<meta name="msapplication-TileImage" content="https://i-invdn-com.investing.com/msite/img/touch/apple-touch-icon-144x144-precomposed.png">
+<meta name="msapplication-TileColor" content="#222222">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&amp;subset=latin,greek,cyrillic" rel="stylesheet" type="text/css">
+<link href="https://i-invdn-com.investing.com/msite/css/mainCss_ltr-15.42.min.css" rel="stylesheet" type="text/css">
+<link rel="shortcut icon" href="https://i-invdn-com.investing.com/msite/favicon.ico">
+<script src="https://i-invdn-com.investing.com/msite/js/jquery.js"></script>
+<script type="text/javascript" src="https://i-invdn-com.investing.com/js/cmp-1.02.min.js"></script>
+<script>
+        thisWindow = document.window;
+        refreshByClickRequested = null;
+        var newRefresherSupportedDomains = [9]; // IT
+
+        //Code to detect if user is clicking on google ad.
+        if(newRefresherSupportedDomains.includes(parseInt(window.domainId))) {
+            window.focus();
+            addEventListener('blur', (e) => {
+                if( !refreshByClickRequested
+                    && document.activeElement
+                    && document.activeElement.tagName == 'IFRAME'
+                    && document.activeElement.id.indexOf("google") !== -1
+                    && document.activeElement.id.indexOf("video") === -1
+                ){
+                    for (var slotname in window.refreshableSlots) {
+                        if(document.activeElement.id.indexOf(slotname) !== -1) {
+                            refreshByClickRequested = slotname;
+                            window.refreshableSlots[slotname]['loadtime'] = window.refreshableSlots[slotname]['loadtime'] - window.refreshableSlots[slotname]['refresh_time'];
+                            window.refreshableSlots[slotname]['min_viewable'] = 10;
+                            // console.log('edgs clicked on  ' + slotname + '. Refresh when coming back');
+                        }
+                    }
+                    $(window).focus();
+                }
+            });
+        }
+
+        // init refreshable slots
+        window.refreshableSlots = [];
+        var networkAdvertisers = [0, -1, 25671931, 4509632563, 42166531, 31182691];
+
+        // Push a slot to refreshableSlots when a slot is viewable from a specific percentage.
+        // (triggered by Google event listener "slotVisibilityChanged" )
+        window.googletag = window.googletag || {};
+        window.googletag.cmd = window.googletag.cmd || [];
+
+        window.googletag.cmd.push(function () {
+            if(newRefresherSupportedDomains.includes(parseInt(window.domainId))) {
+                window.googletag.pubads().addEventListener('slotRenderEnded', function (event) {
+                    refreshByClickRequested = null;
+                    var slotname = event.slot.getSlotId().getName();
+                    if(event.isEmpty || event.size[1] == 1) { //if pixel or no ad were returned, no need for refresh
+                        delete window.refreshableSlots[slotname];
+                    } else if(slotname.indexOf("video") === -1) { // do not refresh video ads.
+                        if(typeof window.refreshableSlots[slotname] === "undefined") {
+                            window.refreshableSlots[slotname] = {};
+                            window.refreshableSlots[slotname]['times_refreshed'] = 0;
+                        }
+                        window.refreshableSlots[slotname]['min_viewable'] = 30;
+                        window.refreshableSlots[slotname]['slot'] = event.slot;
+                        window.refreshableSlots[slotname]['viewed'] = false;
+                        window.refreshableSlots[slotname]['loadtime'] = Date.now();
+                        window.refreshableSlots[slotname]['refreshing'] = false;
+                        if (networkAdvertisers.includes(event.advertiserId)) {
+                            window.refreshableSlots[slotname]['refresh_time'] = 50000;
+                        } else {
+                            window.refreshableSlots[slotname]['refresh_time'] = 120000;
+                        }
+                        // console.log('edgs - track ' + slotname + ' for ' + window.refreshableSlots[slotname]['refresh_time'] / 1000 + 'seconds. AdvertiserID:' + event.advertiserId);
+                    }
+                });
+
+                window.googletag.pubads().addEventListener('impressionViewable', function (event) {
+                    var slotname = event.slot.getSlotId().getName();
+                    if(typeof window.refreshableSlots[slotname] !== "undefined") {
+                        window.refreshableSlots[slotname]['viewed'] = Date.now();
+                        // console.log('edgs -  ' + slotname + ' viewable');
+                    }
+                });
+                window.googletag.pubads().addEventListener('slotVisibilityChanged', function (event) {
+                    var slotname = event.slot.getSlotId().getName();
+                    if(typeof window.refreshableSlots[slotname] !== "undefined") {
+                        window.refreshableSlots[slotname]['viewableArea'] = event.inViewPercentage;
+                        // console.log('edgs -  ' + slotname + ' is ' + window.refreshableSlots[slotname]['viewableArea'] + '% visible');
+                    }
+                });
+                setInterval(window.userAdsRefresh, 1000);
+            }
+        });
+
+
+        window.userAdsRefresh = function() {
+            if (newRefresherSupportedDomains.includes(parseInt(window.domainId))) {
+                var MIN_SINCE_VIEWED = 10000;
+                var ts = Date.now();
+
+                var refreshList = [];
+                for (var slotname in window.refreshableSlots) {
+                    var adSlotEligible = true;
+
+                    if (
+                        !window.refreshableSlots[slotname]['viewed']
+                        || window.refreshableSlots[slotname]['refreshing']
+                        || window.refreshableSlots[slotname]['viewableArea'] < window.refreshableSlots[slotname]['min_viewable']
+                        || ts - window.refreshableSlots[slotname]['loadtime'] < window.refreshableSlots[slotname]['refresh_time']
+                        || (
+                            (
+                                !refreshByClickRequested
+                                || refreshByClickRequested != slotname
+                            )
+                            && ts - window.refreshableSlots[slotname]['viewed'] < MIN_SINCE_VIEWED
+                        )
+                    ) {
+                        adSlotEligible = false;
+                    }
+                    if (!adSlotEligible) continue;
+
+                    //avoid race condition from refreshing twice.
+                    window.refreshableSlots[slotname]['refreshing'] = true;
+                    refreshList.push(window.refreshableSlots[slotname]['slot']);
+                }
+
+                if (refreshList.length == 0) return;
+
+                var refreshNames = '';
+                // Update the refresh count of slots to be refreshed
+                for (var i = 0; i < refreshList.length; i++) {
+                    var slotname = refreshList[i].getSlotId().getName();
+                    refreshNames = refreshNames + slotname + ' (times refreshed:' + window.refreshableSlots[slotname]['times_refreshed'] + ') ';
+                    // for each slot, update the refresh count
+                    window.refreshableSlots[slotname]['times_refreshed'] += 1;
+                    refreshList[i].setTargeting('refresh_counter', window.refreshableSlots[slotname]['times_refreshed']);
+                }
+
+                // console.log('edgs slots to refresh: ' + refreshNames);
+
+                // refresh the ad slots. This will send a new ad request to DFP.
+                googletag.pubads().refresh(refreshList);
+            }
+        };
+        jQuery(thisWindow)
+            .on('focus', window.userAdsRefresh)
+	</script>
+<script>
+            var addAdverisementText = setInterval((function() {
+                if(window.googletag && googletag.pubadsReady) {
+                    googletag.pubads().addEventListener('slotRenderEnded', (event) => {_manageAd(event)});
+                    clearInterval(addAdverisementText);
+                }
+            }),50);
+
+            function _manageAd(event) {
+                console.log('manageAd');
+                console.log(event.slot.getSlotElementId());
+
+                let lineItemId = 0;
+                if(event.lineItemId) {
+                    lineItemId = event.lineItemId;
+                } else if(event.sourceAgnosticLineItemId) {
+                    lineItemId = event.sourceAgnosticLineItemId;
+                }
+                sessionStorage.setItem(event.slot.getSlotElementId(), JSON.stringify({'advertiserId':event.advertiserId,'lineItemId':lineItemId}));
+
+                let slodId = event.slot.getSlotElementId();
+                if(slodId.includes('_touch_inter')) {
+                    return;
+                }
+                if(!event.isEmpty) {
+                    var dfpElement = $('#'+ event.slot.getSlotElementId());
+                    if (_isShowAdvertisementPrefix(dfpElement)) {
+                        _showAdvertisementPrefix(dfpElement);
+                    }
+                    else {
+                        // center vertically child div
+                        if(typeof dfpElement !== "undefined") {
+                            dfpElement.css("display", "flex");
+                            dfpElement.css("align-items", "center");
+                        }
+                    }
+                    _removeGreyBackground(dfpElement);
+                }
+            }
+
+            function _isShowAdvertisementPrefix (dfpElement) {
+                var advertisementText = dfpElement.attr('advertisementText');
+                return (typeof advertisementText !== typeof undefined && advertisementText);
+            }
+
+            function _removeGreyBackground(dfpElement) {
+                dfpElement.css('background-color', '');
+            }
+
+            function _showAdvertisementPrefix (dfpElement) {
+                var advertisementDiv = _createAdvertisementPrefix(dfpElement.attr('advertisementText'));
+                dfpElement.prepend(advertisementDiv);
+            }
+
+            function _createAdvertisementPrefix(text) {
+                var advertisementDiv     		= document.createElement('div');
+                var advertisementText 			= document.createElement('span');
+                advertisementDiv.className 		= "advertisement-header";
+                advertisementText.className 	= "text";
+                advertisementText.textContent 	= text;
+                advertisementDiv.append(advertisementText);
+                return advertisementDiv;
+            }
+        </script>
+<meta name="apple-itunes-app" content="app-id=909998122">
+<meta name="google-play-app" content="app-id=com.fusionmedia.investing">
+<script>
+                    !function(f,b,e,v,n,t,s)
+                    {if(f.fbq)return;n=f.fbq=function()
+                    {n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                    n.queue=[];t=b.createElement(e);t.async=!0;
+                    t.src=v;s=b.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t,s)}(window, document,'script',
+                    'https://connect.facebook.net/en_US/fbevents.js');
+                    fbq('init', '751110881643258');
+                    fbq('track', 'PageView');
+                </script>
+<noscript><img height='1' width='1' style='display:none'
+                    src='https://www.facebook.com/tr?id=751110881643258&ev=PageView&noscript=1'
+                /></noscript>
+<link rel="dns-prefetch" href="https://i-invdn-com.investing.com">
+<link rel="prefetch" href="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/components/moment/min/moment-with-locales.min.js">
+<link rel="prefetch" href="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js">
+<link rel="prefetch" href="https://i-invdn-com.investing.com/js/jscharts-economic-calendar-2.6.12.min.js">
+<link rel="prefetch" href="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/internal-components/dest/jscharts.min.js">
+<link rel="prefetch" href="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/internal-components/dest/earnings-chart.min.js">
+<link rel="prefetch" href="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/internal-components/dest/videojs.min.js">
+<link rel="prefetch" href="//imasdk.googleapis.com/js/sdkloader/ima3.js">
+<script type="text/javascript">
+        function sendPrimisEventToPubSub(params)
+        {
+            $.ajax({
+                type: 'post',
+                data: params,
+                url: "/pubsub/services/message/",
+                cache: false,
+                dataType: 'html'
+            });
+        }
+
+        function getSekindoParamsFromDFPScript()
+        {
+            var sekindoParams = {};
+            var iframes = $('body').find('iframe');
+            for (var i = 0; i < iframes.length; i++) {
+                if(iframes[i].id && (iframes[i].id.indexOf('_touch_MidPage_') !== -1)){
+                    var scripts = iframes[i].contentWindow.document.getElementsByTagName("script");
+                    for (var q = 0; q < scripts.length; q++) {
+                        if (scripts[q].src && (scripts[q].src.indexOf('https://live.sekindo.com/live/liveView.php') !== -1)) {
+                            var url = new URL(scripts[q].src);
+                            var queryParams = new URLSearchParams(url.search);
+                            if(queryParams.get('s') && queryParams.get('vp_template')){
+                                sekindoParams.media_placement_id = queryParams.get('s');
+                                sekindoParams.vp_template = queryParams.get('vp_template');
+                                sekindoParams.delivery_system = 'dfp';
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return sekindoParams;
+        }
+
+        window.addEventListener('primisPlayerInit', function (e) {
+            var player = e.detail;
+
+            /**
+             * Ad started event
+             */
+            player.addEventListener('adStarted', function (val){
+                var sekindoParams = getSekindoParamsFromDFPScript();
+
+                cb_params = {};
+                cb_params.impValue = val.impValue;
+                cb_params.servingFee = val.servingFee;
+                sekindoParams.cb_params = cb_params;
+                sekindoParams.event_type = 'adStarted';
+
+                sendPrimisEventToPubSub(sekindoParams);
+            });
+
+            /**
+             * Video Start event
+             */
+            player.addEventListener('videoStart', function (val){
+                console.log('Playing video: ' + val.title);
+            });
+        });
+    </script>
+</head>
+<body>
+
+<noscript>
+        <iframe src='https://www.googletagmanager.com/ns.html?id=GTM-PGT3R3D'
+                height='0' width='0' style='display:none;visibility:hidden'>
+        </iframe>
+    </noscript>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayerExtraData = window.dataLayerExtraData || [];
+	window.dataLayerPopulatorInput = {"event":"GTM page to GA","object":"screen","item_id":3301929,"item_type":"news","first_level":"News","second_level":"News Articles","page_pattern_name":"News Articles","page_type":"Article","page_orientation":"content consumption","client_name":"legacy-mobile","edition":1,"service_version":"1.2.6"} || [];
+    let dataLayerPopulatorAlive = window.dataLayerPopulatorInput.service_version || false;
+    function addGtmToGAEvent(gtmToGaEvent = {}) {
+        gtmToGaEvent.event = "GTM event to GA";
+        dataLayer.push(gtmToGaEvent);
+    }
+    function pushExtraDataToDataLayer(data = {}) {
+        window.dataLayerExtraData = window.dataLayerExtraData || {};
+        Object.assign(window.dataLayerExtraData, data);
+    }
+</script>
+<div id="siteWrapper">
+<div class="installAppPopup-top">
+<div class="close" id="appInstallTopClose"></div>
+<div class="logo"><img src="https://i-invdn-com.investing.com/msite/img/install_apps/app_icon2.svg" alt></div>
+<div class="description">
+<span class="caption">Investing.com</span><br/>
+<span class="rating">4.5 ★ </span><span class="star"></span> <br/>
+<span class="callToAction">Get Investing.com App</span>
+</div>
+<button class="installBtn" data-google-interstitial="false">Install</button>
+</div> <header>
+<div id="topHeader" class="topHeader">
+<a id="navTopMenuIcoSideMenu" class="leftNavIcon" href="javascript:void(0);"><span id="hamburger_img" class="hamburgerIcon"></span></a>
+<a class="investingLogo articleHeaderIcons" href="/"></a>
+<a id="text-size-btn" class="textSizeIconWrap" href="#"><span id="text-size-btn" class="textSizeIcon"></span></a>
+<a id="share-btn" class="headerShareIconWrap" href="#"><span id="share_img" class="headerShareIcon"></span></a>
+</div> 
+<div id="topHeaderPaddingTopMenuNone"></div>
+</header>
+<div class="wrapper">
+<div id="articleFloatTitleWrapper" class="articleFloatTitleWrapper js-article-header-toggle">
+<a href="/news" class="articleBackBtn">
+<span class="arrowLeftGray"></span>
+</a>
+<div class="articleFloatTitle">BofA sees South African stocks undervalued, expects rate cut in Q3</div>
+</div>
+
+<section id="newsArticle" class="boxItem">
+<h1 class="contentH1">BofA sees South African stocks undervalued, expects rate cut in Q3</h1>
+<p class="subtitleAuthorBox">
+<img class="inline-image small-logo" style="margin-left: 0px;" src="https://i-invdn-com.investing.com/small-investing-logo-news.png" alt="Investing.com" />&nbsp;&nbsp;|&nbsp;&nbsp;Editor&nbsp;<a href="/members/contributors/255551908">Emilio Ghigini</a> </p>
+<p class="subtitleTimeBox">
+<span class="bidiSupport">Published Feb 13, 2024 06:21AM ET</span>
+</p>
+<div class="commentsHeader js-comments-link">
+<i class="blueComments"></i> <span class="after-chevron">Be the first to comment</span>
+</div>
+<div id="imgWrapper">
+<script>
+                var width = $('#newsArticle').width()
+                var el = $("#imgWrapper");
+                $(el).css('min-height', width * 0.666666667)
+                $(el).css('background-color', '#e3e3e3');
+            </script>
+<div id="articleImage" class="newsMainImg displayNone">
+<div class="box loading"></div>
+<img id="articleBigImg" class="articleBigImg" src="https://i-invdn-com.investing.com/news/LYNXNPEC0E0NI_M.jpg" alt="BofA sees South African stocks undervalued, expects rate cut in Q3">
+</div>
+</div>
+<div class="WYSIWYG">
+<p>On Tuesday, BofA's South Africa strategist provided insights into the financial market sentiment, revealing a bullish stance on the country's equities. A significant 69% of managers surveyed believe equities are undervalued, a notable increase from 50% previously. This contrasts with a lower 38% who see bonds in the same light. Additionally, 88% of respondents see more buying opportunities than selling in the equity market.</p>
+<p>The market is anticipating the national budget announcement on February 21, with 25% expecting it to disappoint. Concerns include the performance of State-Owned Enterprises (SOEs) and weaker earnings per share (EPS). Contrary to earlier predictions, the first interest rate cut is now expected in the third quarter of 2024, adjusted from the second quarter. This adjustment reflects a cautious approach to monetary policy.</p>
+<p>Looking ahead 12 months, a higher number of managers, 38% compared to the previous 29%, anticipate the South African economy will strengthen slightly. There is also a strong consensus, with 75% of respondents, expecting a slight decrease in inflation rates. The USD to ZAR exchange rate forecast for the next year is set at 18.35, up from 17.73. The repo rate and the R2035 government bond yield are predicted to be at 7.50% and 10.77%, respectively, showing a slight increase from prior estimates.</p>
+</p>
+<p class="boxItem boxItemAdd articleParagraph " id="div-gpt-ad-1447236129660-0" style="min-height:278px; background-color: #e3e3e3" advertisementText="Advertisement"> <script>
+                if (window.isAdFox) {
+                    window.yaContextCb.push(() => {
+                        Ya.adfoxCode.create({
+                            ownerId: window.adFoxOwnerId,
+                            containerId: 'div-gpt-ad-1447236129660-0',
+                            params: getAdFoxParams(
+                                '',
+                                '',
+                                ''
+                            ),
+                            type: '',
+                            lazyLoad: '',
+                            onLoad: function()
+                            {
+                                const container = $('#div-gpt-ad-1447236129660-0');
+                                if (container) {
+                                    container.removeClass('grey-background');
+                                }
+                            }
+                        })
+                    });
+                } else if (window.googletag) {
+                    googletag.cmd.push(function () {
+                        googletag.display('div-gpt-ad-1447236129660-0');
+                    });
+                }
+			</script>
+<style>
+    .boxItemAdd > div.advertisement-header{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+</style>
+</p><p>Investor sentiment towards domestic equities is optimistic, with a high net 75% of managers willing to overweight domestic stocks over the next 12 months. This marks a shift in consumer confidence, as for the first time in six months, a net 31% of respondents believe the worst of the high interest rates and inflation impact on consumer spending is over. However, there remains a divide on the timing to invest in interest rate-sensitive assets, with 50% suggesting it is premature, likely due to expectations of a persistent high repo rate.</p>
+<div class="inlineBanner" id="inlineBannerForApp">
+<div class="title">
+<img class="bannerImg" src="https://i-invdn-com.investing.com/msite/img/install_apps/mobile-icon-banner.svg" />
+<span>Get The News You Want</span>
+</div>
+<div class="content">Read market moving news with a personalized feed of stocks you care about.</div>
+<div id="inlineInstallButton" class="button" data-google-interstitial="false">Get The App</div>
+</div></p><p>In terms of investment preferences, there is a growing interest in offshore assets, with 38% of managers looking to invest abroad. Local bonds and equities attracted 25% and 19% of investment interest, respectively. Offshore equity weight reached a survey high of 27%, indicating a strategy to diversify investments. The most favored sectors for the coming year include banks, food producers, healthcare, and retailers, while gold, chemicals, and telecoms are least preferred. Notably, previously out-of-favor sectors like telecom, gold, and real estate are starting to gain traction among investors.</p>
+<p><em>This article was generated with the support of AI and reviewed by an editor. For more information see our T&C.</em></p> </div>
+<p class="byLine">
+<span>Written By:</span> Investing.com </p>
+<div class="sectionFooter socialFooterArticle">
+<a href="https://www.facebook.com/sharer/sharer.php?app_id=179222828858436&u=https://invst.ly/13fw-p&display=popup&ref=plugin" class="facebook" data-text="BofA sees South African stocks undervalued, expects rate cut in Q3" title="facebook"><i></i></a>
+<a href="http://twitter.com/intent/tweet?url=https://invst.ly/13fw-p&text=+-+BofA+sees+South+African+stocks+undervalued%2C+expects+rate+cut+in+Q3" class="twitter" title="twitter"><i></i></a>
+<a href="https://stocktwits.com/widgets/share?body=BofA sees South African stocks undervalued, expects rate cut in Q3 via @investingcom https://invst.ly/13fw-p" class="stocktwits" data-text="BofA sees South African stocks undervalued, expects rate cut in Q3" title="stocktwits"><i></i></a>
+<a href="mailto:?subject=BofA%20sees%20South%20African%20stocks%20undervalued%2C%20expects%20rate%20cut%20in%20Q3&body=BofA%20sees%20South%20African%20stocks%20undervalued%2C%20expects%20rate%20cut%20in%20Q3%0D%0Ahttps%3A%2F%2Finvst.ly%2F13fw-p %0D%0AInvesting.com" class="shareLink" title="Email">
+<i></i>
+</a>
+</div>
+</section>
+
+
+
+
+
+
+<section class="boxItem">
+<div class="boxItemTitle"><span>Related News</span></div>
+<article data-href="/news/stock-market-news/australia-stocks-lower-at-close-of-trade-spasx-200-down-074-3302800" data-article-id="0" data-position="1" data-ntype="Auto" data-writer data-content-id="3302800" data-content-prov="investing" data-article-type="news" data-event-location="related article" class="mediaItem  js-link-item">
+<div><img src="https://i-invdn-com.investing.com/news/LYNXNPED4F00M_S.jpg" alt="Australia stocks lower at close of trade; S&P/ASX 200 down 0.74%" onerror="javascript:this.src='https://i-invdn-com.investing.com/news/news-paper_309x143.png';"></div>
+<div>
+<a href="/news/stock-market-news/australia-stocks-lower-at-close-of-trade-spasx-200-down-074-3302800" class="titleNewsItem">Australia stocks lower at close of trade; S&P/ASX 200 down 0.74% </a>
+<p class="subtitleBoxItemNewsItem">Investing.com&nbsp;|&nbsp;29 minutes ago</p>
+</div>
+</article> 
+<article data-href="/news/stock-market-news/private-us-moon-lander-set-for-launch-half-century-after-last-apollo-lunar-mission-3302792" data-article-id="1" data-position="2" data-ntype="AkapiAdmin" data-writer data-content-id="3302792" data-content-prov="3rd-party" data-article-type="news" data-event-location="related article" class="mediaItem  js-link-item">
+<div><img src="https://i-invdn-com.investing.com/news/external-images-thumbnails/LYNXNPEK1D02J_L.jpg" alt="Launch of private US moon lander postponed by technical glitch in Florida" onerror="javascript:this.src='https://i-invdn-com.investing.com/news/news-paper_309x143.png';"></div>
+<div>
+<a href="/news/stock-market-news/private-us-moon-lander-set-for-launch-half-century-after-last-apollo-lunar-mission-3302792" class="titleNewsItem">Launch of private US moon lander postponed by technical glitch in Florida </a>
+<p class="subtitleBoxItemNewsItem">Reuters&nbsp;|&nbsp;39 minutes ago | 1<i class="replyBubble"></i></p>
+</div>
+</article> 
+<article data-href="/news/stock-market-news/exclusivenec-spurned-private-equity-offers-before-selling-discounted-stake-in-iphone-supplier-sources-say-3302799" data-article-id="2" data-position="3" data-ntype="AkapiAdmin" data-writer data-content-id="3302799" data-content-prov="3rd-party" data-article-type="news" data-event-location="related article" class="mediaItem  js-link-item">
+<div><img src="https://i-invdn-com.investing.com/news/external-images-thumbnails/LYNXNPEK1D03Y_L.jpg" alt="Exclusive-NEC spurned private equity offers before selling discounted stake in iPhone supplier, sources say" onerror="javascript:this.src='https://i-invdn-com.investing.com/news/news-paper_309x143.png';"></div>
+<div>
+<a href="/news/stock-market-news/exclusivenec-spurned-private-equity-offers-before-selling-discounted-stake-in-iphone-supplier-sources-say-3302799" class="titleNewsItem">Exclusive-NEC spurned private equity offers before selling discounted stake in iPhone supplier, sources say </a>
+<p class="subtitleBoxItemNewsItem">Reuters&nbsp;|&nbsp;44 minutes ago</p>
+</div>
+</article> 
+<script type="application/javascript">
+        var proNewsCount = 0    </script>
+</section>
+
+
+<section class="boxItem mainCommentWrapper js-comments-list" js-server-time="2024-02-14 05:59:57">
+<div class="boxItemTitle">
+<h2>
+Latest comments </h2>
+</div>
+<div class="commentForm js-comment-form">
+<div class="newCommentCont">
+<div class="commentText">
+<textarea class="textDiv js-content black" placeholder="Write a comment..." maxlength="999"></textarea>
+<div class="whiteOverlay js-open">Add a Comment</div>
+</div>
+<div class="retry js-antispam-message">Please wait a minute before you try to comment again.</div>
+<div class="userImgWrapper">
+<img src="https://i-invdn-com.investing.com/defaultUserMaleTmp.png" class="userImgFile">
+</div>
+</div>
+<div class="btnCont js-buttons">
+<a class="newBtn Orange2 btn send disabled js-save" data-reg_ep="article add a comment">Post</a>
+<a class="btn cancel js-cancel">Cancel</a>
+</div>
+</div> 
+<span class="scrollUpLightIcon js-float-reply-btn"></span>
+</section>
+
+<div id="discussionWrapper" class="discussionWrapper filtersWrapper displayNone">
+<div id="topHeader" class="topHeader">
+<a class="leftNavIcon js-close"><span class="arrowLeftWhite"></span></a>
+<div id="filtersHeaderTitle" class="topHeaderTxtTitle">Discussion</div>
+</div>
+<div class="formFilters">
+
+<div id="discussionTree" class="discussionTree js-discussion-content noReplies">
+<a class="showMoreRepliesBtn js-load-more-btn displayNone">Show more replies<i>(XX)</i></a>
+<div class="js-replies"></div>
+</div>
+<div class="commentForm js-comment-form">
+<div class="newCommentCont">
+<div class="commentText">
+<textarea class="textDiv js-content black" placeholder="Write a comment..." maxlength="999"></textarea>
+<div class="whiteOverlay js-open">Write a reply...</div>
+</div>
+<div class="retry js-antispam-message">Please wait a minute before you try to comment again.</div>
+<div class="userImgWrapper">
+<img src="https://i-invdn-com.investing.com/defaultUserMaleTmp.png" class="userImgFile">
+</div>
+</div>
+<div class="btnCont js-buttons">
+<a class="newBtn Orange2 btn send disabled js-save" data-reg_ep="article add a comment">Post</a>
+<a class="btn cancel js-cancel">Cancel</a>
+</div>
+</div> </div>
+</div>
+<script>
+window.pageData = window.pageData || {};
+window.pageData.commentary = {
+    isScrollable: true,
+    userName: '',
+    discussion: {},
+    pairID: 3301929,
+    massageStatus: 'none',
+    texts: {
+        _agreementBoxTitle: 'Comment Guidelines',
+        _agreementBoxText: "<p><span style=\"color: #333333; font-family: Arial, sans-serif; font-size: 10pt;\">We encourage you to use comments to engage with other users, share your perspective and ask questions of authors and each other. However, in order to maintain the high level of discourse we&rsquo;ve all come to value and expect, please keep the following criteria in mind:&nbsp;<\/span>&nbsp;<\/p>\r\n<ul>\r\n<li>\r\n<p class=\"MsoNormal\" style=\"margin: 0cm; text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt;\"><!--[if !supportLists]--><span style=\"font-size: 10.0pt; font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<\/span><\/span><strong><span style=\"font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\">Enrich<\/span><\/strong><span style=\"font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\">&nbsp;<\/span><span style=\"font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\">the conversation, don&rsquo;t trash it.<\/span><\/p>\r\n<\/li>\r\n<li>\r\n<p class=\"MsoNormal\" style=\"margin: 0cm; text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt;\"><!--[if !supportLists]--><span style=\"font-size: 10.0pt; font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<\/span><\/span><!--[endif]--><strong><span style=\"font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\">Stay focused and on track.<\/span><\/strong><span style=\"font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\">&nbsp;Only post material that&rsquo;s relevant to the topic being discussed.&nbsp;<\/span><\/p>\r\n<\/li>\r\n<li>\r\n<p class=\"MsoNormal\" style=\"margin: 0cm; text-indent: -18.0pt; line-height: normal; mso-list: l0 level1 lfo1; tab-stops: list 36.0pt;\"><!--[if !supportLists]--><span style=\"font-size: 10.0pt; font-family: Symbol; mso-fareast-font-family: Symbol; mso-bidi-font-family: Symbol; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\"><span style=\"font-variant-numeric: normal; font-variant-east-asian: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: 'Times New Roman';\">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<\/span><\/span><!--[endif]--><strong><span style=\"font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\">Be respectful.<\/span><\/strong><span style=\"font-size: 10.0pt; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK;\" lang=\"EN-US\">&nbsp;Even negative opinions can be framed positively and diplomatically. <span style=\"border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-bidi-font-weight: bold;\">Avoid profanity, slander or personal attacks<\/span>&nbsp;directed at an author or another user. Racism, sexism and other forms of discrimination will not be tolerated.<\/span><\/p>\r\n<\/li>\r\n<li><strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">Use standard writing style.<\/span><\/strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">&nbsp;Include punctuation and upper and lower cases. Comments that are written in all caps and contain excessive use of symbols will be removed.<\/span><\/li>\r\n<li><strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">NOTE<\/span><\/strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">: Spam and\/or promotional messages and comments containing links will be removed. <\/span><span style=\"font-size: 10pt; line-height: 107%; font-family: Arial, sans-serif; color: #333333; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;\" lang=\"EN-US\">Phone numbers, email addresses, links to personal or business websites, Skype\/Telegram\/WhatsApp etc. addresses (including links to groups) will also be removed; self-promotional material or business-related solicitations or PR (ie, contact me for signals\/advice etc.), and\/or any other comment that contains personal contact specifcs or advertising will be removed as well. In addition, any of the above-mentioned violations may result in suspension of your account.<\/span><\/li>\r\n<li><strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">Doxxing. <\/span><\/strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA; mso-bidi-font-weight: bold;\" lang=\"EN-US\">We do not allow any sharing of private or personal contact or other information about any individual or organization. This will result in immediate suspension of the commentor and his or her account.<\/span><\/li>\r\n<li><strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">Don&rsquo;t monopolize the conversation.<\/span><\/strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">&nbsp;We appreciate passion and conviction, but we also strongly believe in giving everyone a chance to air their point of view. Therefore, in addition to civil interaction, we expect commenters to offer their opinions succinctly and thoughtfully, but not so repeatedly that others are annoyed or offended. If we receive complaints about individuals who take over a thread or forum, we reserve the right to ban them from the site, without recourse.<\/span><\/li>\r\n<li><strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; border: none windowtext 1.0pt; mso-border-alt: none windowtext 0cm; padding: 0cm; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">Only English<\/span><\/strong><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">&nbsp;comments will be allowed.<\/span><\/li>\r\n<li><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; mso-fareast-font-family: 'Times New Roman'; color: #333333; mso-ansi-language: EN-US; mso-fareast-language: UK; mso-bidi-language: AR-SA;\" lang=\"EN-US\">Any comment you publish, together with your investing.com profile, <strong>will be public<\/strong> on investing.com and <strong>may be indexed<\/strong> and available through third party search engines, such as Google.<\/span><\/li>\r\n<\/ul>\r\n<p class=\"MsoNormal\"><span style=\"font-size: 10.0pt; line-height: 107%; font-family: 'Arial',sans-serif; color: #333333; background: white; mso-ansi-language: EN-US;\" lang=\"EN-US\">Perpetrators of spam or abuse will be deleted from the site and prohibited from future registration at Investing.com&rsquo;s discretion.<\/span><\/p>",
+        _agreementBoxSaveText: 'I Agree',
+        _AgreementCheckbox: 'I have read Investing.com\'s comments guidelines and agree to the terms described.',
+        _pendingMessageTitle: 'Comment Pending',
+        _pendingMessageText: 'Thanks for your comment. Please note that all comments are pending until approved by our moderators. It may therefore take some time before it appears on our website.',
+        _retry: '_retry',
+        _ok: siteData.ok
+    },
+    params: {
+        isFirstComment: 1,
+        isAgree: false,
+        section: '2',
+        content: '1',
+        contentURL: '/news/stock-market-news/bofa-sees-south-african-stocks-undervalued-expects-rate-cut-in-q3-93CH-3301929',
+                text: ''
+    }
+};
+</script>
+
+<div id="socialArticleWrapper" class="fullPopupWrapper sideMenu socialSlide">
+<ul class="openUL">
+<li id="x_close_social" class="js-close">
+<a href="#">
+<span class="menuClose black"></span>Share </a>
+</li>
+<li>
+<a href="https://www.facebook.com/sharer/sharer.php?app_id=179222828858436&u=https://invst.ly/13fw-p&display=popup&ref=plugin">
+<i class="facebook"></i>
+facebook </a>
+</li>
+<li>
+<a href="http://twitter.com/intent/tweet?url=https://invst.ly/13fw-p&text=+-+BofA+sees+South+African+stocks+undervalued%2C+expects+rate+cut+in+Q3">
+<i class="twitter"></i>
+twitter </a>
+</li>
+<li>
+<a href="https://stocktwits.com/widgets/share?body=BofA sees South African stocks undervalued, expects rate cut in Q3 via @investingcom https://invst.ly/13fw-p">
+<i class="stocktwits"></i>
+stocktwits </a>
+</li>
+<li>
+<a href="mailto:?subject=BofA%20sees%20South%20African%20stocks%20undervalued%2C%20expects%20rate%20cut%20in%20Q3&body=BofA%20sees%20South%20African%20stocks%20undervalued%2C%20expects%20rate%20cut%20in%20Q3%0D%0Ahttps%3A%2F%2Finvst.ly%2F13fw-p %0D%0AInvesting.com">
+<i class="shareLink"></i>
+Email </a>
+</li>
+</ul>
+</div>
+
+<div id="fontSizeWrapper" class="fullPopupWrapper sideMenu">
+<ul class="openUL">
+<li id="x_close_fonts">
+<a href="javascript:void(0);"><span class="menuClose black"></span>
+Text Size </a>
+</li>
+<li id="make-text-normal">
+<a href="javascript:void(0);">
+Normal </a>
+</li>
+<li id="make-text-large">
+<a href="javascript:void(0);">
+Large </a>
+</li>
+<li id="make-text-extra-large">
+<a href="javascript:void(0);">
+Extra Large </a>
+</li>
+</ul>
+</div>
+
+<img src="//m.investing.com/tp.php?i=3301929&t=2&mobile=true" width="1" height="1"><div id="div-gpt-ad-Out_of_page_video_Content"><script>if (window.googletag) {googletag.cmd.push(function() { googletag.display('div-gpt-ad-Out_of_page_video_Content'); });}</script></div><script>
+    $(document).ready(function () {
+        $('.WYSIWYG').find('a.aqlink').on('click',function () {
+            var symbol = $(this).attr('href');
+            var chunks = symbol.split('/');
+            symbol = chunks[chunks.length - 1];
+            contentAqlLinkEvent('news',symbol,$(this).attr('data-pairid'),3301929,'3rd-party');
+        });
+
+        $('.mainCommentWrapper').find('.js-save').on('click',function () {
+            if(!$(this).hasClass('disabled')){
+                postCommentEvent('news',3301929,'3rd-party')
+            }
+        });
+        
+        $('#socialArticleWrapper, .socialFooterArticle').find('a').on('click',function () {
+            if($(this).attr('href').length > 1){
+                var trackedObject = 'footer buttons';
+                if($(this).parent().prop('tagName').toLowerCase() === 'li'){
+                    trackedObject = 'sticky header icon';
+                }
+                shareArticleEvent('news',trackedObject,3301929,'3rd-party')
+            }
+        });
+
+        handleContentScroll(3301929,'news','3rd-party');
+
+        $("a[href*='investing.com/pro/']").each(function(){
+            $(this).attr('data-google-interstitial',"false");
+            $(this).click(function (e) {
+                if ($(this).find('img').length) {
+                    var dim167 = 'inv_in_article_banner';
+                    var dim148 = 'banner';
+                    var dim137 = '25-'.concat($(this).find('img').attr('alt'));
+                } else {
+                    var dim167 = 'inv_in_article_anchor';
+                    var dim148 = 'anchor_text';
+                    var dim137 = '24-'.concat($(this).text());
+                }
+
+                if (window.sessionStorage && window.sessionStorage.setItem)
+                    window.sessionStorage.setItem('investing.referralComponent', dim167);
+
+                ga('allSitesTracker.send', 'event', {
+                    eventCategory: 'inv pro premium',
+                    eventAction: 'click on investing pro hook',
+                    eventLabel: dim167,
+                    dimension147 /* event_name_cd */: "click_on_investing_pro_premium_hook",
+                    dimension163 /* action_cd */: 'click',
+                    dimension148 /* object */: dim148,
+                    dimension162 /* product_feature */: 'none',
+                    dimension167 /* referral_component */: dim167,
+                    dimension137 /* ui_template */: dim137,
+                    dimension150: /* event_cd_description1 */ 'destination URL',
+                    dimension151: /* event_cd_value1 */ $(this).attr('href'),
+                    dimension118 /* content_id */: 3301929                });
+            });
+        });
+    })
+</script>
+</div>
+<section class="boxItem boxItemAdd  " id="div-gpt-ad-1338276709958-0" style="min-height:280px; background-color: #e3e3e3" advertisementText="Advertisement"> <script>
+                if (window.isAdFox) {
+                    window.yaContextCb.push(() => {
+                        Ya.adfoxCode.create({
+                            ownerId: window.adFoxOwnerId,
+                            containerId: 'div-gpt-ad-1338276709958-0',
+                            params: getAdFoxParams(
+                                '',
+                                '',
+                                ''
+                            ),
+                            type: '',
+                            lazyLoad: '',
+                            onLoad: function()
+                            {
+                                const container = $('#div-gpt-ad-1338276709958-0');
+                                if (container) {
+                                    container.removeClass('grey-background');
+                                }
+                            }
+                        })
+                    });
+                } else if (window.googletag) {
+                    googletag.cmd.push(function () {
+                        googletag.display('div-gpt-ad-1338276709958-0');
+                    });
+                }
+			</script>
+</section>
+<style>
+    .boxItemAdd > div.advertisement-header{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+</style>
+<div class="adDrawer" style="z-index: 10;"><section class="boxItem boxItemAdd fixedAd " id="div-gpt-ad-1333374405327-0" advertisementText="Advertisement"> <script>
+                if (window.isAdFox) {
+                    window.yaContextCb.push(() => {
+                        Ya.adfoxCode.create({
+                            ownerId: window.adFoxOwnerId,
+                            containerId: 'div-gpt-ad-1333374405327-0',
+                            params: getAdFoxParams(
+                                '',
+                                '',
+                                ''
+                            ),
+                            type: '',
+                            lazyLoad: '',
+                            onLoad: function()
+                            {
+                                const container = $('#div-gpt-ad-1333374405327-0');
+                                if (container) {
+                                    container.removeClass('grey-background');
+                                }
+                            }
+                        })
+                    });
+                } else if (window.googletag) {
+                    googletag.cmd.push(function () {
+                        googletag.display('div-gpt-ad-1333374405327-0');
+                    });
+                }
+			</script>
+</section></div>
+<style>
+    .boxItemAdd > div.advertisement-header{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+</style>
+<section class="boxItem disclaimer js-toggled-box js-disclaimer-box">
+<input type="checkbox" class="displayNone" id="disclaimerCB">
+<p class="disclaimerText js-content">Trading in financial instruments and/or cryptocurrencies involves high risks including the risk of losing some, or all, of your investment amount, and may not be suitable for all investors. Prices of cryptocurrencies are extremely volatile and may be affected by external factors such as financial, regulatory or political events. Trading on margin increases the financial risks.<br>
+Before deciding to trade in financial instrument or cryptocurrencies you should be fully informed of the risks and costs associated with trading the financial markets, carefully consider your investment objectives, level of experience, and risk appetite, and seek professional advice where needed.<br/>
+<b>Fusion Media</b> would like to remind you that the data contained in this website is not necessarily real-time nor accurate. The data and prices on the website are not necessarily provided by any market or exchange, but may be provided by market makers, and so prices may not be accurate and may differ from the actual price at any given market, meaning prices are indicative and not appropriate for trading purposes. <b>Fusion Media</b> and any provider of the data contained in this website will not accept liability for any loss or damage as a result of your trading, or your reliance on the information contained within this website.<br/>
+It is prohibited to use, store, reproduce, display, modify, transmit or distribute the data contained in this website without the explicit prior written permission of Fusion Media and/or the data provider. All intellectual property rights are reserved by the providers and/or the exchange providing the data contained in this website.<br/>
+<b>Fusion Media</b> may be compensated by the advertisers that appear on the website, based on your interaction with the advertisements or advertisers.</p>
+<p class="sectionFooter js-toggle-btn">Show more</p>
+</section>
+
+<footer>
+<div class="row">
+<a id="backToTop">
+<span class="middle footerArrowUp"></span>
+Back to Top </a>
+<a href="https://www.investing-support.com/hc/en-us" target="_blank">
+<span class="middle sendFeedback"></span>
+Send Feedback </a>
+<div class="clear"></div>
+</div>
+<div class="row">
+<a href="#" id="desktopVersionBtnFooter">
+Desktop Version </a>
+</div> 
+<div class="row">
+<a href="#" id="changeEditionBtnFooter" class="changeEditionBtn">
+<span class="ceFlags USA"></span>
+Change Edition </a>
+</div>
+<div class="row">
+<a href="/privacy-policy">
+Privacy & Disclaimer </a>
+</div>
+<div class="footerBottom">
+<div class="followUs">
+<p>Follow us</p>
+<a href="https://www.facebook.com/investingcom" title="Facebook"><span class="facebook"></span></a>
+<a href="https://twitter.com/investingcom" title="Twitter"><span class="twitter"></span></a>
+</div>
+<div class="copyRight">
+&copy; 2007-2024 Fusion Media Limited.<br>
+All Rights Reserved </div>
+</div>
+</footer>
+
+<section id="editionListWrapper" class="radioBtnsPopup chgEdition">
+<a href="https://m.uk.investing.com">
+<span class="ceFlags UK"></span>
+<span>English (UK)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.in.investing.com">
+<span class="ceFlags India"></span>
+<span>English (India)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.ca.investing.com">
+<span class="ceFlags Canada"></span>
+<span>English (Canada)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.au.investing.com">
+<span class="ceFlags Australia"></span>
+<span>English (Australia)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.za.investing.com">
+<span class="ceFlags South_Africa"></span>
+<span>English (South Africa)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.ph.investing.com">
+<span class="ceFlags Philippines"></span>
+<span>English (Philippines)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.ng.investing.com">
+<span class="ceFlags Nigeria"></span>
+<span>English (Nigeria)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.de.investing.com">
+<span class="ceFlags Germany"></span>
+<span>Deutsch</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.es.investing.com">
+<span class="ceFlags Spain"></span>
+<span>Español (España)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.mx.investing.com">
+<span class="ceFlags Mexico"></span>
+<span>Español (México)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.fr.investing.com">
+<span class="ceFlags France"></span>
+<span>Français</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.it.investing.com">
+<span class="ceFlags Italy"></span>
+<span>Italiano</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.nl.investing.com">
+<span class="ceFlags Netherlands"></span>
+<span>Nederlands</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.pt.investing.com">
+<span class="ceFlags Portugal"></span>
+<span>Português (Portugal)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.pl.investing.com">
+<span class="ceFlags Poland"></span>
+<span>Polski</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.br.investing.com">
+<span class="ceFlags Brazil"></span>
+<span>Português (Brasil)</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.ru.investing.com">
+<span class="ceFlags Russian_Federation"></span>
+<span>Русский</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.tr.investing.com">
+<span class="ceFlags Turkey"></span>
+<span>Türkçe</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.sa.investing.com">
+<span class="ceFlags Saudi_Arabia"></span>
+<span>‏العربية‏</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.gr.investing.com">
+<span class="ceFlags Greece"></span>
+<span>Ελληνικά</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.se.investing.com">
+<span class="ceFlags Sweden"></span>
+<span>Svenska</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.fi.investing.com">
+<span class="ceFlags Finland"></span>
+<span>Suomi</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.il.investing.com">
+<span class="ceFlags Israel"></span>
+<span>עברית</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.jp.investing.com">
+<span class="ceFlags Japan"></span>
+<span>日本語</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.kr.investing.com">
+<span class="ceFlags South_Korea"></span>
+<span>한국어</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.cn.investing.com">
+<span class="ceFlags China"></span>
+<span>简体中文</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.hk.investing.com">
+<span class="ceFlags Hong_Kong"></span>
+<span>繁體中文</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.id.investing.com">
+<span class="ceFlags Indonesia"></span>
+<span>Bahasa Indonesia</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.ms.investing.com">
+<span class="ceFlags Malaysia"></span>
+<span>Bahasa Melayu</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.th.investing.com">
+<span class="ceFlags Thailand"></span>
+<span>ไทย</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.vn.investing.com">
+<span class="ceFlags Vietnam"></span>
+<span>Tiếng Việt</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+<a href="https://m.hi.investing.com">
+<span class="ceFlags India"></span>
+<span>हिंदी</span>
+<span class="radioBtnWrap pullRight">
+<i class="radioBtn"></i>
+</span>
+</a>
+</section>
+
+
+<img src="https://secure.adnxs.com/seg?t=2&add=19833489" width="1" height="1" />
+ </div> 
+<nav id="sideMenu" class="sideMenu">
+<ul>
+<li class="navUserBtn">
+<div class="userImgWrapper">
+<img src="/img/smallHead.png" class="userImgFile" alt="User Default Image">
+<div class="userImgContainer"></div>
+</div>
+<span class="navUserLinks"><a href="/members-admin/login" data-reg_ep="menu sign in">Sign In</a>|<a href="/members-admin/registration" data-reg_ep="menu sign up">Free Sign Up</a></span>
+</li>
+<li class="mainCat">Live Markets</li>
+<li id="cat_0" class="hasSub js-category">
+<a href="/markets/" class>
+<i class="marketsSmallIcon"></i>
+Markets <span class="openSub js-opener"></span>
+</a>
+<ul>
+<li id="sub_0"><a href="/markets/">Overview</a></li>
+<li id="sub_1"><a href="/indices/">Indices</a></li>
+<li id="sub_2"><a href="/indices/indices-futures">Indices Futures</a></li>
+<li id="sub_3"><a href="/currencies/">Forex</a></li>
+<li id="sub_4"><a href="/commodities/">Commodities</a></li>
+<li id="sub_67"><a href="/crypto/top-pairs">Cryptocurrency</a></li>
+<li id="sub_5"><a href="/equities/">Stocks</a></li>
+<li id="sub_6"><a href="/rates-bonds/">Bonds</a></li>
+<li id="sub_7"><a href="/etfs/">ETFs</a></li>
+<li id="sub_81"><a href="/funds/">Funds</a></li>
+<li id="sub_92"><a href="/">Pre-Market</a></li>
+</ul>
+</li>
+<li id="cat_20" class="hasSub js-category">
+<a href="/crypto/" class>
+<i class="crypto-overviewSmallIcon"></i>
+Cryptocurrency <span class="openSub js-opener"></span>
+</a>
+<ul>
+<li id="sub_85"><a href="/crypto/">Top Coins</a></li>
+<li id="sub_86"><a href="/crypto/currencies">All Coins</a></li>
+<li id="sub_87"><a href="/crypto/currency-pairs">Crypto Pairs</a></li>
+<li id="sub_88"><a href="/currency-converter/?tag=Cryptocurrency">Currency Converter</a></li>
+</ul>
+</li>
+<li id="cat_2">
+<a href="/economic-calendar/" class>
+<i class="economic-calendarSmallIcon"></i>
+Economic Calendar </a>
+</li>
+<li id="cat_4">
+<a href="/portfolio/" class>
+<i class="portfolioSmallIcon"></i>
+My Portfolio </a>
+</li>
+<li>
+<a href="https://www.investing.com/pro?entry=mobile_side_menu" title="InvestingPro" style="display:flex;align-items:center;" data-google-interstitial="false">
+<img alt="InvestingPro" src="https://i-invdn-com.investing.com/InvestingProShield.svg" width="18" style="margin-left: 2px" />
+<img alt="InvestingPro" src="https://i-invdn-com.investing.com/InvestingProBlackText.svg" width="109" style="margin-left: 13px" />
+</a>
+</li>
+<li class="mainCat">Content</li>
+<li id="cat_1" class="hasSub js-category">
+<a href="/news/most-popular-news" class>
+<i class="newsSmallIcon"></i>
+News <span class="openSub js-opener"></span>
+</a>
+<ul>
+<li id="sub_39"><a href="/news/most-popular-news">Most Popular</a></li>
+<li id="sub_8"><a href="/news/">Latest</a></li>
+<li id="sub_9"><a href="/news/stock-market-news">Stocks</a></li>
+<li id="sub_10"><a href="/news/commodities-news">Commodities</a></li>
+<li id="sub_11"><a href="/news/forex-news">Forex</a></li>
+<li id="sub_12"><a href="/news/economic-indicators">Economic Indicators</a></li>
+<li id="sub_13"><a href="/news/economy">Economy</a></li>
+<li id="sub_68"><a href="/news/cryptocurrency-news">Cryptocurrency</a></li>
+<li id="sub_14"><a href="/news/world-news">World</a></li>
+<li id="sub_16"><a href="/news/politics">Politics</a></li>
+<li id="sub_17"><a href="/news/general">Sports</a></li>
+</ul>
+</li>
+<li id="cat_3" class="hasSub js-category">
+<a href="/analysis/most-popular-analysis" class>
+<i class="analysisSmallIcon"></i>
+Analysis <span class="openSub js-opener"></span>
+</a>
+<ul>
+<li id="sub_38"><a href="/analysis/most-popular-analysis">Most Popular</a></li>
+<li id="sub_22"><a href="/news/">Latest</a></li>
+<li id="sub_923"><a href="/analysis/editors-picks">Editor's Picks</a></li>
+<li id="sub_23"><a href="/analysis/market-overview">Market Overview</a></li>
+<li id="sub_24"><a href="/analysis/stock-markets">Stock Markets</a></li>
+<li id="sub_25"><a href="/analysis/commodities">Commodities</a></li>
+<li id="sub_26"><a href="/analysis/forex">Forex</a></li>
+<li id="sub_83"><a href="/analysis/cryptocurrency">Cryptocurrency</a></li>
+<li id="sub_93"><a href="/analysis/etfs">ETFs</a></li>
+<li id="sub_27"><a href="/analysis/bonds">Bonds</a></li>
+</ul>
+</li>
+<li id="cat_18">
+<a href="/education/webinars" class=" trk_webinar_widget" data-webinar_ep="nav_menu_more">
+<i class="webinarsSmallIcon"></i>
+Webinars </a>
+</li>
+<li id="cat_21" class="hasSub js-category">
+<a href="/blog/" class>
+<i class="blogSmallIcon"></i>
+Blog <span class="openSub js-opener"></span>
+</a>
+<ul>
+<li id="sub_92"><a href="/blog/">All</a></li>
+<li id="sub_89"><a href="/blog/whats-new">What's New</a></li>
+<li id="sub_90"><a href="/blog/company-news">Company News</a></li>
+<li id="sub_91"><a href="/blog/inside-investing">Inside Investing</a></li>
+</ul>
+</li>
+<li id="cat_24">
+<a href="https://www.investing.com/academy/" class>
+<i class="webinarsSmallIcon"></i>
+Academy </a>
+</li>
+<li class="mainCat">Tools</li>
+<li id="cat_12">
+<a href="/currency-converter/" class>
+<i class="currency-converterSmallIcon"></i>
+Currency Converter </a>
+</li>
+<li id="cat_11">
+<a href="/brokers/" class>
+<i class="top-brokersSmallIcon"></i>
+Top Brokers </a>
+</li>
+<li id="cat_19">
+<a href="/central-banks/fed-rate-monitor" class>
+<i class="fed-rate-monitor-toolSmallIcon"></i>
+Fed Rate Monitor Tool </a>
+</li>
+<li id="cat_13">
+<a href="/holiday-calendar/" class>
+<i class="holiday-calendarSmallIcon"></i>
+Holiday Calendar </a>
+</li>
+<li id="cat_10">
+<a href="/earnings-calendar/" class>
+<i class="earnings-calendarSmallIcon"></i>
+Earnings Calendar </a>
+</li>
+<li id="cat_16">
+<a href="/dividends-calendar/" class>
+<i class="dividends-calendarSmallIcon"></i>
+Dividend Calendar </a>
+</li>
+<li id="cat_15">
+<a href="/stock-split-calendar/" class>
+<i class="stock-split-calendarSmallIcon"></i>
+Splits Calendar </a>
+</li>
+<li class="mainCatMore">More</li>
+<li id="cat_22">
+<a href="/ad-free-subscription/?source=mobile&medium=side_menu" class>
+<i class="removeadsSmallIcon"></i>
+Remove Ads </a>
+</li>
+<li id="cat_5">
+<a href="/about-us/" class>
+<i class="aboutusSmallIcon"></i>
+About us </a>
+</li>
+<li id="cat_6">
+<a href="https://www.investing-support.com/hc/en-us" target="_blank" class>
+<i class="send_feedbackSmallIcon"></i>
+Send Feedback </a>
+</li>
+<li id="cat_7">
+<a href="#" class id="desktopVersionBtn">
+<i class="desktopVersionSmallIcon"></i>
+View Desktop Version </a>
+</li>
+<li id="cat_8">
+<a href="#" class id="sideMenuChangeEditionBtn">
+<i class="ceFlags USA"></i>
+Change Edition </a>
+</li>
+</ul>
+<div id="sideMenuSpacer" class="sideMenuSpacer"></div>
+</nav> 
+
+<div id="logoutWrapper" class="floatingPopup popupWrapper displayNone">
+<div class="popupTop">Sign out</div>
+<div class="popupMiddle">Are you sure you want to sign out?</div>
+<a class="js-cancel-logout">No</a><a class="confirmAction js-logout">Yes</a>
+</div>
+
+<div id="generalOverlay" class="generalOverlay displayNone"></div>
+<div class="floatingPopup popupWrapper displayNone js-confirm-modal">
+<div class="popupTop js-modal-title"></div>
+<div class="popupMiddle js-modal-content"></div>
+<a class="cancel js-cancel">Cancel</a><a class="confirmAction js-confirm">Yes</a>
+</div>
+
+<div id="savingChangesWrapper" class="floatingPopup popupWrapper displayNone">
+<div class="loadingWrapper">
+<svg class="spinner-container" width="40" height="40" viewBox="0 0 50 50">
+<circle class="path" cx="25px" cy="25px" r="19px" fill="none" stroke-width="5px"></circle>
+</svg>
+Saving Changes </div>
+</div>
+
+
+<section class="radioBtnsPopup termsAndCond commentGuidelines js-advanced-confirm-modal">
+<div class="flexContainer">
+<h2 class="titleWrapper js-modal-title"></h2>
+<div class="termsAndCondContent js-modal-content">
+<div class="cbCont beigeTooltip js-checkbox">
+<input type="checkbox" id="commentsCB" name="commentsCB" class="js-required js-noscroll"><label for="commentsCB" class="js-checkbox-text"></label>
+</div>
+</div>
+</div>
+<div class="btnWrap">
+<button class="newBtn Orange2 js-confirm">Yes</button>
+</div>
+</section>
+
+<div class="centerContainer js-full-image-modal displayNone">
+<span class="closer js-close"><i>+</i></span>
+<img src="/" class="centeredContent">
+</div>
+<script src="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/internal-components/dest/fronter.min.js"></script><script src="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/components/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script><script src="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/components/sockjs/sockjs.min.js"></script><script src="https://i-invdn-com.investing.com/js/lightslider.min.js"></script><script src="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/components/moment/min/moment-with-locales.min.js"></script><script src="https://i-invdn-com.investing.com/msite/fronter/c5fbdb3071/dist/application.min.js"></script><script>$(document).ready(fronter.$apply);</script>
+<script>window.isLoggedIn = 0;</script>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-11014008-1', 'investing.com');
+ga('create', 'UA-11014008-20', 'auto', {'name': 'allMobileSitesTracker'});  // ALL Mobile sites tracker.
+ga('create', 'UA-2555300-55', 'auto', {'name': 'allSitesTracker'});  // ALL sites tracker.
+ga('require', 'displayfeatures');
+
+ga('set', 'dimension73','Web');
+ga('allSitesTracker.set', 'dimension127', 0 );
+ga('allSitesTracker.set', 'dimension49', '4e85bd7490fc8f0efa9cddd01873fc17-1707890397');
+ga('allSitesTracker.set', 'dimension38', '4e85bd7490fc8f0efa9cddd01873fc17');ga('allSitesTracker.set', 'dimension58', '1');
+ga('allSitesTracker.set', 'dimension95', '1');
+ga('send', 'pageview');
+
+ga('allSitesTracker.set', 'dimension73','Web');
+
+var myDate = new Date();
+ga('allSitesTracker.set', 'dimension81',myDate.getFullYear() + '/' +('0' + (myDate.getMonth()+1)).slice(-2)+ '/' +  ('0' + (myDate.getDate()+1)).slice(-2) + ' '+('0' + (myDate.getHours()+1)).slice(-2)+ ':'+('0' + (myDate.getMinutes())).slice(-2)+ ':'+('0' + (myDate.getSeconds()+1)).slice(-2));
+pushExtraDataToDataLayer({Local_Time_Stamp:myDate.getFullYear() + '/' +('0' + (myDate.getMonth()+1)).slice(-2)+ '/' +  ('0' + (myDate.getDate()+1)).slice(-2) + ' '+('0' + (myDate.getHours()+1)).slice(-2)+ ':'+('0' + (myDate.getMinutes())).slice(-2)+ ':'+('0' + (myDate.getSeconds()+1)).slice(-2)});
+
+	ga('allSitesTracker.set', 'dimension47','Investing.com');
+pushExtraDataToDataLayer({'News provider name':'Investing.com'});
+
+ga('allMobileSitesTracker.send', 'pageview');
+
+ga('allSitesTracker.set', 'dimension106', 'No');
+ga('allSitesTracker.set', 'dimension17','');
+
+if (typeof proNewsCount !== 'undefined' && proNewsCount > 0) {
+    ga('allSitesTracker.set', 'dimension150', 'invpro+ article preview');
+    ga('allSitesTracker.set', 'dimension151', proNewsCount);
+
+    pushExtraDataToDataLayer({'event_cd_description1':'invpro+ article preview'});
+    pushExtraDataToDataLayer({'event_cd_value1':proNewsCount});
+}
+ga('allSitesTracker.send', 'pageview');
+
+if(localStorage.getItem('adsFreePurchasedPlan') && !localStorage.getItem('adsFreePurchasedEventAlreadySent')){
+    ga(
+        'allSitesTracker.send',
+        'event',
+        'Ad-Free Subscription',
+        'Purchase Completed',
+        localStorage.getItem('adsFreePurchasedPlan'),
+        {
+            dimension132:localStorage.getItem('adsFreePurchasedTier'),
+            dimension133:localStorage.getItem('adsFreePurchasedPlanId')
+        }
+    );
+
+    localStorage.setItem('adsFreePurchasedEventAlreadySent','1');
+    localStorage.removeItem('adsFreePurchasedPlan');
+    localStorage.removeItem('adsFreePurchasedTier');
+    localStorage.removeItem('adsFreePurchasedPlanId');
+}
+</script>
+<script>
+    var _comscore = _comscore || [];
+    _comscore.push(
+    { c1: "2", c2: "16896267" }
+    
+    );
+    (function()
+    { var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js"; el.parentNode.insertBefore(s, el); }
+    
+    )();
+    </script><script>
+$.ajax({
+    url: "/jp.php?b=2&k=NGJjOGY3M2kwb2sxZjQ0Pz5tMms-OmBkNmU1MTo0YWk0NDVlNGRhZjI3PDIzOWRjZGEzYmU2NmI0PzI-NjVvMjQrYypmaDM0MHtrJ2Z3NGk-OzJ0Pn5gNzZlNWo6aGE8NGM1MDR7YXkyYzxnM25kOGRiMzRlYTZjNDIyNjYubz40OWN4ZngzPA==&d=1&i=1707890399&e=3740095309&lip=hk-prod-weblegacy-67db67b758-48xxc&ti=1707890399",
+    type: 'get',
+    cache: false,
+    type: 'GET',
+    dataType: 'html',
+    success: function (data) {
+    	  console.log('server jp b1 hk-prod-weblegacy-67db67b758-48xxc');
+    }
+});
+
+</script>
+
+<script> var ezt = ezt ||[];
+
+(function(){ var elem = document.createElement('script');
+elem.src = (document.location.protocol == "https:" ? "https://secure" : "http://pixel") + ".quantserve.com/aquant.js?a=p-WSPjmcyyuDvN0"; elem.async = true;
+elem.type = "text/javascript"; var scpt = document.getElementsByTagName('script')[0];
+scpt.parentNode.insertBefore(elem,scpt);
+}());
+
+ezt.push({qacct: 'p-WSPjmcyyuDvN0',
+uid: 'USER-ID-HERE' 
+});
+</script>
+<noscript>
+<img src="//pixel.quantserve.com/pixel/p-WSPjmcyyuDvN0.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/></noscript>
+
+<script>
+    window.shouldClearGOTTimeout = window.shouldClearGOTTimeout ?? false;
+    window.onload = function () { // Google One Tap
+        if(window.isLoggedIn !== 1) {
+            google.accounts.id.initialize({
+                client_id: '606447380154-9825jtap5as2sm0f868m536j6v8ptgo7.apps.googleusercontent.com',
+                callback: handleCredentialResponse
+            });
+            if(!window.shouldClearGOTTimeout) {
+                window.googleOneTapTimeout = window.setTimeout(function() {
+                    google.accounts.id.prompt();
+                }, 1000);
+            }
+        }
+    };
+
+    function handleCredentialResponse(response) {
+        var formdata = {
+            gsi_token: response.credential
+        };
+
+        var expirationDate = new Date();
+        expirationDate.setMinutes(expirationDate.getMinutes()+30);
+        if(
+            response.select_by == 'user'
+            || response.select_by == 'fedcm'
+            || (
+                typeof response.clientId === "undefined"
+                && typeof response.client_id === "undefined"
+            )
+        ) {
+            window.setEntryPoint('google one tap', expirationDate, 'reg_trk_ep');
+        }
+
+        jQuery.ajax({
+            url : '/members-admin/googleplus',
+            type: 'POST',
+            dataType: 'json',
+            data : formdata,
+            success: function(result) {
+                // move to the last page the user visited before tried to login/signup
+                console.log(result);
+                if(result.url) window.location = result.url;
+            },
+            async : false
+        });
+    };
+</script>
+
+<script>
+    var webinarPageType = 'Listing page';
+    $(function(){
+        $('body').on('click', '.trk_webinar_widget', function(){
+            var expirationDate = new Date();
+            expirationDate.setMinutes(expirationDate.getMinutes()+30);
+            window.setEntryPoint($(this).data('webinar_ep'), expirationDate, 'webinar_trk_ep');
+        });
+    });
+
+    getWebinarEP = function() {
+        return getCookie('webinar_trk_ep') ? getCookie('webinar_trk_ep') : 'none';
+    }
+
+    setTrkWebinarValue = function(cookieName, webinarId) {
+        var expirationDate = new Date();
+        expirationDate.setMinutes(expirationDate.getMinutes()+30);
+        document.cookie = cookieName + "=" + webinarId + ";expires=" + expirationDate + ";domain=.investing.com;path=/";
+    }
+
+    getTrkWebinarValue = function(cookieName) {
+        return getCookie(cookieName) ?? null;
+    }
+
+    function triggerWebinarEvent(eventType, webinarType, webinarId) {
+        var eventAction = '';
+        switch (eventType) {
+            case 'enroll':
+                eventAction = 'Click to Enroll - CTA button';
+                var expirationDate = new Date();
+                expirationDate.setMinutes(expirationDate.getMinutes()+30);
+                window.setEntryPoint("enroll webinar", expirationDate, 'reg_trk_ep');
+                break;
+            case 'enrolled':
+                eventAction = 'Enrolled Successfully';
+                break;
+            case 'consent':
+                eventAction = 'Active Consent';
+                break;
+        }
+        registerWebinarEvent(eventAction, webinarPageType + ' - ' + webinarType, webinarId, getWebinarEP());
+    }
+
+    function processWebinarPhoneVerifShown() {
+        var webinarId = getTrkWebinarValue('trk_pv_webinar_id');
+        if(webinarId){
+            registerWebinarEvent('Phone verification popup presented', '', webinarId, getWebinarEP());
+        }
+    }
+
+    function processWebinarPhoneVerifSendCodeClick(codeSentBy) {
+        var webinarId = getTrkWebinarValue('trk_pv_webinar_id');
+        if(webinarId) {
+            setTrkWebinarValue('trk_pv_code_webinar', codeSentBy);
+            registerWebinarEvent('Click to send phone verification code - CTA button', codeSentBy, webinarId, getWebinarEP());
+        }
+    }
+
+    function processWebinarPhoneVerifVerifyCodeClick()  {
+        var webinarId = getTrkWebinarValue('trk_pv_webinar_id');
+        if(webinarId) {
+            var codeSentBy = getTrkWebinarValue('trk_pv_code_webinar');
+            if(codeSentBy) {
+                registerWebinarEvent('Click to verify phone code - CTA button', codeSentBy, webinarId, getWebinarEP());
+            }
+        }
+    }
+
+    function registerWebinarEvent(gaEventAction, gaEventLabel, webinarId, entryPoint){
+        var webinarEventObject = Object.assign({}, window.trackingObj);
+        webinarEventObject.gaEventCategory = 'Webinars';
+        webinarEventObject.gaEventAction = gaEventAction;
+        webinarEventObject.gaEventLabel = gaEventLabel;
+        webinarEventObject.webinarId = webinarId;
+        webinarEventObject.entryPoint = entryPoint;
+
+        window.addGAEvent(webinarEventObject);
+
+    }
+</script>
+
+<script>
+    window.addRegistrationEvent = function(eventNameCd, gaEventAction, actionCd, trackedObject, eventCdDescription2, eventCdValue2, eventCdDescription3, eventCdValue3) {
+        var Storage = window.localStorage;
+        var socialSignup = Storage.getItem('reg_trk_socialSignup');
+        var notifyConnectTypeEvents = ['reg_popup_input_field_typed', 'reg_tooltip_error_message_loaded'];
+        if(
+            window.pageData.regPopupName === 'incomplete screen'
+            && socialSignup
+            && !notifyConnectTypeEvents.includes(eventNameCd)
+        ) {
+            eventCdDescription2 = 'connect type';
+            eventCdValue2 = socialSignup;
+        }
+        var registrationEventObj = Object.assign({}, window.trackingObj);
+        registrationEventObj.eventNameCd = eventNameCd;
+        registrationEventObj.gaEventCategory = 'registration';
+        registrationEventObj.gaEventAction = gaEventAction;
+        registrationEventObj.actionCd = actionCd;
+        registrationEventObj.trackedObject = trackedObject;
+        registrationEventObj.eventCdDescription1 = 'popup name';
+        registrationEventObj.eventCdValue1 = window.pageData.regPopupName;
+        registrationEventObj.eventCdDescription2 = eventCdDescription2;
+        registrationEventObj.eventCdValue2 = eventCdValue2;
+        registrationEventObj.eventCdDescription3 = eventCdDescription3;
+        registrationEventObj.eventCdValue3 = eventCdValue3;
+        registrationEventObj.entryPoint = getRegistrationEP();
+        window.addGAEvent(registrationEventObj);
+    }
+
+    $('body').on('click', '[data-reg_ep]', function(){
+        var expirationDate = new Date();
+        expirationDate.setMinutes(expirationDate.getMinutes()+30);
+        window.setEntryPoint($(this).data('reg_ep'), expirationDate, 'reg_trk_ep');
+    });
+
+    $('.registrationBtn').on('click', function() {
+        var btnName = $(this).data('regbtn');
+        var socialButtons = ['vkontakte', 'facebook', 'google'];
+        if(socialButtons.includes(btnName)) {
+            var Storage = window.localStorage;
+            Storage.setItem('reg_trk_socialSignup', btnName);
+        }
+        window.addRegistrationEvent('reg_popup_button_clicked', 'button clicked', 'click', 'button', undefined, undefined, 'button name', btnName);
+    });
+    $('.registrationLink').on('click', function(){
+        var linkName = $(this).data('reglink');
+        window.addRegistrationEvent('reg_popup_hyperlink_clicked', 'hyperlink clicked', 'click', 'link', undefined, undefined, 'hyperlink type', linkName);
+    });
+    $('.registrationField').on('keyup', function(e){
+        var ignoreKeys = [9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 35, 36, 37, 38, 39, 40, 45, 92, 93, 94];
+        if(typeof e.keyCode !== 'undefined' && !ignoreKeys.includes(e.keyCode)) {
+            var fieldId = $(this).attr('id');
+            var Storage = window.localStorage;
+            var inputFields = JSON.parse(Storage.getItem('reg_trk_inputFields'));
+            if(inputFields === null || typeof inputFields[fieldId] === "undefined") {
+                window.signupDataSetter('set', fieldId);
+                var fieldName = $(this).data('regfld');
+                window.addRegistrationEvent('reg_popup_input_field_typed', 'input field typed', 'type', 'input field', undefined, undefined, 'input field type', fieldName);
+            }
+        }
+    });
+    window.signupDataSetter = function(action, field) {
+        var Storage = window.localStorage;
+        if(action === 'set' && typeof field !== "undefined") {
+            var fields = Storage.getItem('reg_trk_inputFields') ? JSON.parse(Storage.getItem('reg_trk_inputFields')) : {};
+            fields[field] = 1;
+            Storage.setItem('reg_trk_inputFields', JSON.stringify(fields));
+        } else if(action === 'reset') {
+            Storage.removeItem('reg_trk_inputFields');
+        }
+    }
+    getRegistrationEP = function() {
+        return getCookie('reg_trk_ep') ? getCookie('reg_trk_ep') : '';
+    }
+</script>
+
+<script>
+    window.addGAEvent = function(trackingObj) {
+        var customDimensionsMapper = {
+            'webinarId':'dimension40',
+            'instrumentType':'dimension75',
+            'contentId':'dimension118',
+            'instrumentId':'dimension138',
+            'pageType' : 'dimension142',
+            'eventNameCd':'dimension147',
+            'trackedObject':'dimension148',
+            'eventCdDescription1':'dimension150',
+            'eventCdValue1':'dimension151',
+            'eventCdDescription2':'dimension152',
+            'eventCdValue2':'dimension153',
+            'eventCdDescription3':'dimension154',
+            'eventCdValue3':'dimension155',
+            'eventCdDescription4':'dimension156',
+            'eventCdValue4':'dimension157',
+            'eventCdDescription5':'dimension158',
+            'eventCdValue5':'dimension159',
+            'entryPoint':'dimension161',
+            'productFeature':'dimension162',
+            'actionCd':'dimension163'
+        }
+        var customDimensions = {};
+        for (var key in customDimensionsMapper) {
+            if(typeof trackingObj[key] !== "undefined") {
+                customDimensions[customDimensionsMapper[key]] = trackingObj[key];
+            }
+        }
+        window.ga && window.ga('allSitesTracker.send', 'event', trackingObj.gaEventCategory, trackingObj.gaEventAction, trackingObj.gaEventLabel, customDimensions);
+    }
+    window.trackingObj = {
+        'eventNameCd':undefined,
+        'gaEventCategory':undefined,
+        'gaEventAction':undefined,
+        'gaEventLabel':'',
+        'actionCd':undefined,
+        'trackedObject':undefined,
+        'eventCdDescription1':undefined,
+        'eventCdValue1':undefined,
+        'eventCdDescription2':undefined,
+        'eventCdValue2':undefined,
+        'eventCdDescription3':undefined,
+        'eventCdValue3':undefined,
+        'eventCdDescription4':undefined,
+        'eventCdValue4':undefined,
+        'eventCdDescription5':undefined,
+        'eventCdValue5':undefined,
+        'entryPoint':undefined,
+        'productFeature':undefined,
+        'webinarId':undefined,
+        'contentId':undefined,
+        'pageType':undefined,
+        'instrumentType':undefined,
+        'instrumentId':undefined
+    }
+
+    window.scrollingEventData = {
+        'sent0':false,
+        'sent25':false,
+        'sent50':false,
+        'sent75':false,
+        'sent100':false
+    };
+
+    setEntryPoint = function(entryPoint, expirationTime, entryPointKey) {
+        document.cookie = entryPointKey + "=" + entryPoint + ";expires=" + expirationTime + ";domain=.investing.com;path=/";
+    }
+
+    relatedArticleSelectEvent = function (articleId,articleProvider,contentType){
+        var obj = {
+            event_name_cd:         "select_article_from_related_articles_list",
+            GA_event_category:     "content",
+            GA_event_action:       "select article from related articles list",
+            action_cd:             "tap",
+            page_type:             "article",
+            object:                "related articles",
+            content_id:            articleId,
+            event_cd_description1: "tap type",
+            event_cd_value1:       "select related article",
+            event_cd_description2: "article provider",
+            event_cd_value2:       articleProvider,
+            event_cd_description4: "content type",
+            event_cd_value4:       contentType
+        }
+        addGtmToGAEvent(obj);
+    }
+
+    articleSelectEvent = function (articleId,articleProvider,contentType,location){
+        var obj = {
+            event_name_cd:         "select_article_from_list",
+            GA_event_category:     "content",
+            GA_event_action:       "select article from list",
+            action_cd:             "tap",
+            page_type:             "content list",
+            object:                location,
+            content_id:            articleId,
+            event_cd_description1: "tap type",
+            event_cd_value1:       "select item",
+            event_cd_description2: "article provider",
+            event_cd_value2:       articleProvider,
+            event_cd_description4: "content type",
+            event_cd_value4:       contentType
+        }
+        addGtmToGAEvent(obj);
+    }
+
+    contentShowMoreEvent = function (contentType) {
+        var obj = {
+            event_name_cd:         "show_more_news",
+            GA_event_category:     "content",
+            GA_event_action:       "show more news",
+            action_cd:             "tap",
+            page_type:             "content list",
+            object:                'more items link',
+            event_cd_description1: "tap type",
+            event_cd_value1:       "show more",
+            event_cd_description4: "content type",
+            event_cd_value4:       contentType,
+        }
+        addGtmToGAEvent(obj);
+    }
+
+    contentAqlLinkEvent = function (contentType,symbol,pairId,articleId,articleSource) {
+        var obj = {
+            event_name_cd:         "symbol_link_clicked",
+            GA_event_category:     "content",
+            GA_event_action:       "symbol link clicked",
+            action_cd:             "tap",
+            page_type:             "article",
+            object:                "symbol",
+            product_feature:       symbol,
+            instrument_id:         pairId,
+            content_id:            articleId,
+            event_cd_description1: "tap type",
+            event_cd_value1:       "move to instrument",
+            event_cd_description2: "article provider",
+            event_cd_value2:       articleSource,
+            event_cd_description4: "content type",
+            event_cd_value4:       contentType
+        }
+        addGtmToGAEvent(obj);
+    }
+
+    postCommentEvent = function (contentType,articleId,articleSource) {
+        var obj = {
+            event_name_cd:         "articles_comment_was_saved",
+            GA_event_category:     "content",
+            GA_event_action:       "articles comment was saved",
+            action_cd:             "tap",
+            page_type:             "article",
+            object:                "post comment button",
+            content_id:            articleId,
+            event_cd_description1: "tap type",
+            event_cd_value1:       "save comment",
+            event_cd_description2: "article provider",
+            event_cd_value2:       articleSource,
+            event_cd_description4: "content type",
+            event_cd_value4:       contentType
+        }
+        addGtmToGAEvent(obj);
+    }
+
+    shareArticleEvent = function (contentType,trackedObject,articleId,articleSource) {
+        var obj = {
+            event_name_cd:         "click_to_share_article",
+            GA_event_category:     "content",
+            GA_event_action:       "click to share article",
+            action_cd:             "tap",
+            page_type:             "article",
+            object:                trackedObject,
+            content_id:            articleId,
+            event_cd_description1: "tap type",
+            event_cd_value1:       "move to share article",
+            event_cd_description2: "article provider",
+            event_cd_value2:       articleSource,
+            event_cd_description4: "content type",
+            event_cd_value4:       contentType
+        }
+        addGtmToGAEvent(obj);
+    }
+
+    scrollArticleEvent = function (scrollDepth,contentType,articleId,articleSource) {
+        var obj = {
+            event_name_cd:         "scroll_down_in_article's_screen",
+            GA_event_category:     "content",
+            GA_event_action:       "scroll down in article's screen",
+            action_cd:             "scroll",
+            page_type:             "article",
+            object:                "article",
+            content_id:            articleId,
+            event_cd_description2: "article provider",
+            event_cd_value2:       articleSource,
+            event_cd_description3: "scroll depth",
+            event_cd_value3:       scrollDepth + "%",
+            event_cd_description4: "content type",
+            event_cd_value4:       contentType
+        }
+        addGtmToGAEvent(obj);
+    }
+
+    handleContentScroll = function (articleId,contentType,articleSource) {
+        $(window).on('scroll', function(){
+            var s = $(window).scrollTop(),
+                d = $(document).height(),
+                c = $(window).height();
+
+            var scrollPercent = Math.floor((s / (d - c)) * 100);
+            if(scrollPercent === 100 && !window.scrollingEventData.sent100){
+                scrollArticleEvent(100,contentType,articleId,articleSource);
+                window.scrollingEventData.sent100 = true;
+            }else if(scrollPercent >= 75 && !window.scrollingEventData.sent75){
+                scrollArticleEvent(75,contentType,articleId,articleSource);
+                window.scrollingEventData.sent75 = true;
+            }else if(scrollPercent >= 50 && scrollPercent < 75 && !window.scrollingEventData.sent50){
+                scrollArticleEvent(50,contentType,articleId,articleSource);
+                window.scrollingEventData.sent50 = true;
+            }else if(scrollPercent >= 25 && scrollPercent < 50 && !window.scrollingEventData.sent25){
+                scrollArticleEvent(25,contentType,articleId,articleSource);
+                window.scrollingEventData.sent25 = true;
+            }else if(scrollPercent >= 0 && scrollPercent < 25 && !window.scrollingEventData.sent0){
+                scrollArticleEvent(0,contentType,articleId,articleSource);
+                window.scrollingEventData.sent0 = true;
+            }
+        });
+    }
+</script>
+<script type="text/javascript">
+    const urlParams = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    startTnbTracking = function() {
+        if( window.$ ) {
+            $(window).blur(function(e){
+                if(
+                    document.activeElement
+                    && document.activeElement.tagName == 'IFRAME'
+                    && document.activeElement.id.indexOf("google") !== -1
+                ){
+                    $(window).focus();
+                    let adData = JSON.parse(sessionStorage.getItem(document?.activeElement?.parentElement?.parentElement.id));
+                    let nonTnbAdvertisers = [0, -1, 25671931, 4509632563, 42166531, 31182691];
+                    if (adData.advertiserId && !nonTnbAdvertisers.includes(adData.advertiserId)) {
+                        var iframeId = document?.activeElement?.id;
+                        // remove 'google_ads_iframe_' from the beginning and '_0' from the end
+                        var adUnitPath = iframeId?.slice(18, iframeId?.length - 2);
+                        let lineItemId = adData.lineItemId;
+                        var obj = {
+                            event_name_cd:         "click_on_tnb_button",
+                            GA_event_category:     "Trade Now Button",
+                            GA_event_action:       "tnb button clicked",
+                            GA_event_label:        lineItemId + "-" + adUnitPath,
+                            action_cd:             "click",
+                            object:                "button",
+                            event_cd_description1: "last paid source",
+                            event_cd_value1:       getCookie('lastPaidSource'),
+                            event_cd_description2: "click id",
+                            event_cd_value2:       getCookie('lastPaidSourceClickId'),
+                            event_cd_description3: "campaign id",
+                            event_cd_value3:       getCookie('lastPaidSourceCampaignId')
+                        }
+                        addGtmToGAEvent(obj);
+                    }
+                }
+            });
+            getClickId = function (getValue) {
+                if (!!urlParams.gclid) {
+                    return getValue ? urlParams.gclid : 'gclid';
+                }
+                if (!!urlParams.msclkid) {
+                    return getValue ? urlParams.msclkid : 'msclkid';
+                }
+                if (!!urlParams.fbclid) {
+                    return getValue ? urlParams.fbclid : 'fbclid';
+                }
+                if (!!urlParams.click_id) {
+                    return getValue ? urlParams.click_id : 'click_id';
+                }
+                if (!!urlParams.clickid) {
+                    return getValue ? urlParams.click_id : 'clickid';
+                }
+                if (!!urlParams.wbraid) {
+                    return getValue ? urlParams.click_id : 'wbraid';
+                }
+
+                if (!!urlParams.gbraid) {
+                    return getValue ? urlParams.click_id : 'gbraid';
+                }
+            }
+            setLastPaidSourceCookies = function () {
+                if (!!getClickId() && !!urlParams.utm_source) {
+
+                    setCookie('lastPaidSource', urlParams.utm_source, 30, '/', '.investing.com');
+                    setCookie('lastPaidSourceClickIdType', getClickId(false), 30, '/', '.investing.com');
+                    setCookie('lastPaidSourceClickId', getClickId(true), 30, '/', '.investing.com');
+                    setCookie('lastPaidSourceCampaignId', urlParams.utm_campaign, 30, '/', '.investing.com');
+                }
+            }
+            $(function(){
+                setLastPaidSourceCookies();
+            });
+        } else {
+            window.setTimeout( startTnbTracking, 50 );
+        }
+    }
+    startTnbTracking();
+
+    window.web2appDownloadEvent = function(referralComponent) {
+        /**
+         * REVUX-2076 - we need to stop displaying interstitial popup when clicking on download app.
+         * Every download app triggers this function.
+         * Not all elements that redirect to download the app are <a> tags.
+         * per chatGPT, this should ensure not showing the interstitial popup when the click is done on non <a> elements
+         */
+        if (typeof window.googletag !== 'undefined' && window.googletag.pubads) {
+            window.googletag.pubads().setForceSafeFrame(true);
+        }
+        let object = '';
+        switch (referralComponent) {
+            case 'Install popup':
+                object = 'popup';
+                break;
+            case 'top strip all':
+            case 'top strip content':
+                object = 'strip';
+                break;
+            case 'inline banner':
+                object = 'banner';
+                break;
+            case 'store download button':
+                object = 'button';
+        }
+        var obj = {
+            event_name_cd:         "click_to_download_app",
+            GA_event_category:     "app download",
+            GA_event_action:       "click to download app",
+            GA_event_label:        referralComponent,
+            action_cd:             "click",
+            object:                object,
+            referral_component:    referralComponent,
+            event_cd_description1: "last paid source",
+            event_cd_value1:       getCookie('lastPaidSource') ?? '',
+            event_cd_description2: "click id type",
+            event_cd_value2:       getCookie('lastPaidSourceClickIdType') ?? '',
+            event_cd_description3: "click id",
+            event_cd_value3:       getCookie('lastPaidSourceClickId') ?? '',
+            event_cd_description4: "campaign id",
+            event_cd_value4:       getCookie('lastPaidSourceCampaignId') ?? ''
+        }
+        addGtmToGAEvent(obj);
+    }
+</script>
+
+<script type="text/javascript">
+    if(dataLayerPopulatorAlive !== false) {
+        Object.assign(window.dataLayerPopulatorInput, window.dataLayerExtraData);
+        dataLayer.push(window.dataLayerPopulatorInput);
+        dataLayer.push({'event': 'client-ready'});
+    }
+</script>
+<div class="installAppPopup ios displayNoneImp">
+<span class="popupCloseButton js-apps-popup-close-button"></span>
+<div class="logo"><img src="https://i-invdn-com.investing.com/msite/img/install_apps/app_icon2.svg" alt></div>
+<h3>Download the <b>Investing.com App</b></h3>
+<p>Free access to Real-time quotes, Financial news, Market data and investing analysis</p>
+<button class="downloadAppButton" data-google-interstitial="false"><img src="https://i-invdn-com.investing.com/msite/img/install_apps/icon-ios-black.svg" alt="Apple Logo" class="appleIcon"><img src="https://i-invdn-com.investing.com/msite/img/install_apps/icon-android-black.svg" alt="Android Logo" class="androidIcon"><span class="text">Download App</span></button>
+<button class="downloadAppsNotNowBtn js-apps-popup-close-button">Not Now</button>
+</div>
+<div class="seeThisInPopup displayNoneImp">
+<h3>Open this in...</h3>
+<div class="seeThisInButtons">
+<div class="seeInBlock">
+<div class="image"><img src="https://i-invdn-com.investing.com/msite/img/install_apps/invAppIcon.svg" alt> Investing.com App</div>
+<button id="openAppButton" data-google-interstitial="false"><span class="text">Open</span></button>
+</div>
+<div class="seeInBlock">
+<div class="image"><img src="https://i-invdn-com.investing.com/msite/img/install_apps/worldInternet.svg" alt> Browser</div>
+<button id="continueButton"><span class="text">Continue</span></button>
+</div>
+</div>
+</div> <div class="ttwPopup displayNoneImp">
+<svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_12311_98342)">
+<rect x="4" y="4.5" width="44.5" height="44.5" fill="black" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M53.7197 46.591V27.4391L48.7336 31.7889L36.1456 42.6966L29.3001 36.9852L18.1553 47.5013L12.3205 42.4305L4.23466 49.3307L0.887695 52.2606C2.48157 54.1109 4.84169 55.2824 7.47542 55.2824H45.0283C49.8284 55.2824 53.7197 51.3911 53.7197 46.591Z" fill="#20282E" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M-1.21484 45.8327V46.5908C-1.21484 47.6232 -1.03486 48.6135 -0.704551 49.5321L3.72078 45.7254L12.3216 38.3852L18.1564 43.4571L29.3013 32.941L36.1468 38.6524L48.7347 27.7447L53.7208 23.4689V19.338L48.7347 23.7007L36.1468 34.6084L29.3013 28.897L18.1564 39.4121L12.3216 34.3412L3.72078 41.6814L-1.21484 45.8327Z" fill="#F7A400" />
+<path d="M32.9318 24.7924C32.849 24.7924 32.779 24.7638 32.7217 24.7065C32.6644 24.6492 32.6357 24.5792 32.6357 24.4964C32.6357 24.4137 32.6644 24.3447 32.7217 24.2895C32.779 24.2322 32.849 24.2036 32.9318 24.2036C33.0145 24.2036 33.0835 24.2322 33.1386 24.2895C33.1959 24.3447 33.2246 24.4137 33.2246 24.4964C33.2246 24.5792 33.1959 24.6492 33.1386 24.7065C33.0835 24.7638 33.0145 24.7924 32.9318 24.7924Z" fill="white" />
+<path d="M34.8481 24.8115C34.5425 24.8115 34.2762 24.7415 34.0492 24.6015C33.8243 24.4593 33.6503 24.2598 33.5272 24.0031C33.4041 23.7463 33.3426 23.4429 33.3426 23.0928V23.0896C33.3426 22.7416 33.4041 22.4403 33.5272 22.1856C33.6524 21.9289 33.8275 21.7305 34.0524 21.5904C34.2794 21.4504 34.5425 21.3804 34.8417 21.3804C35.1006 21.3804 35.3255 21.4302 35.5165 21.53C35.7096 21.6297 35.8634 21.7602 35.978 21.9215C36.0947 22.0827 36.1679 22.2588 36.1976 22.4498L36.2008 22.4785H35.7902L35.7839 22.4498C35.7372 22.2567 35.6332 22.0933 35.472 21.9597C35.3128 21.8239 35.1027 21.756 34.8417 21.756C34.6274 21.756 34.4396 21.8111 34.2784 21.9215C34.1192 22.0297 33.9951 22.1846 33.906 22.3862C33.8168 22.5856 33.7723 22.8222 33.7723 23.0959V23.0991C33.7723 23.3771 33.8168 23.6158 33.906 23.8153C33.9951 24.0147 34.1203 24.1686 34.2815 24.2768C34.4449 24.3829 34.6338 24.4359 34.8481 24.4359C35.0964 24.4359 35.3011 24.3723 35.4624 24.245C35.6258 24.1155 35.7329 23.9479 35.7839 23.7421L35.7902 23.7134H36.204L36.1976 23.7389C36.1658 23.9447 36.0884 24.1283 35.9653 24.2895C35.8443 24.4508 35.6884 24.5781 35.4974 24.6715C35.3064 24.7648 35.09 24.8115 34.8481 24.8115Z" fill="white" />
+<path d="M37.8116 24.8115C37.5124 24.8094 37.2493 24.7394 37.0223 24.6015C36.7952 24.4614 36.618 24.263 36.4907 24.0063C36.3655 23.7495 36.3029 23.4461 36.3029 23.0959V23.0896C36.3029 22.7395 36.3655 22.4371 36.4907 22.1825C36.618 21.9257 36.7952 21.7284 37.0223 21.5904C37.2493 21.4504 37.5114 21.3804 37.8084 21.3804C38.1098 21.3804 38.3729 21.4504 38.5978 21.5904C38.8248 21.7284 39.002 21.9246 39.1293 22.1793C39.2567 22.4339 39.3203 22.7373 39.3203 23.0896V23.0959C39.3203 23.4482 39.2567 23.7527 39.1293 24.0094C39.002 24.2641 38.8259 24.4614 38.601 24.6015C38.3761 24.7415 38.1129 24.8115 37.8116 24.8115ZM37.8148 24.4359C38.0312 24.4359 38.2201 24.3829 38.3814 24.2768C38.5426 24.1707 38.6678 24.0169 38.7569 23.8153C38.8461 23.6137 38.8906 23.3739 38.8906 23.0959V23.0896C38.8906 22.8095 38.8461 22.5697 38.7569 22.3702C38.6678 22.1708 38.5416 22.0191 38.3782 21.9151C38.2169 21.809 38.027 21.756 37.8084 21.756C37.5941 21.756 37.4063 21.809 37.2451 21.9151C37.0838 22.0212 36.9576 22.174 36.8663 22.3734C36.7772 22.5729 36.7326 22.8116 36.7326 23.0896V23.0959C36.7326 23.3739 36.7772 23.6137 36.8663 23.8153C36.9576 24.0169 37.0838 24.1707 37.2451 24.2768C37.4063 24.3829 37.5963 24.4359 37.8148 24.4359Z" fill="white" />
+<path d="M39.6198 24.751V21.4408H40.0399V22.0138H40.0495C40.1174 21.8292 40.233 21.6785 40.3964 21.5618C40.5598 21.443 40.7571 21.3836 40.9884 21.3836C41.1518 21.3836 41.2971 21.4133 41.4245 21.4727C41.5539 21.53 41.6632 21.6117 41.7523 21.7178C41.8414 21.8217 41.9061 21.9437 41.9465 22.0838H41.9592C42.0122 21.9459 42.0876 21.8249 42.1852 21.7209C42.2849 21.6148 42.4037 21.5321 42.5417 21.4727C42.6796 21.4133 42.8324 21.3836 43 21.3836C43.2164 21.3836 43.4042 21.4292 43.5634 21.5204C43.7246 21.6117 43.8498 21.74 43.9389 21.9055C44.0281 22.0689 44.0726 22.2631 44.0726 22.488V24.751H43.6525V22.5835C43.6525 22.4116 43.6217 22.2642 43.5602 22.1411C43.4986 22.0159 43.4106 21.9204 43.296 21.8546C43.1835 21.7888 43.0467 21.756 42.8854 21.756C42.722 21.756 42.5777 21.7952 42.4525 21.8737C42.3273 21.9501 42.2297 22.0573 42.1597 22.1952C42.0897 22.331 42.0547 22.488 42.0547 22.6663V24.751H41.6345V22.5453C41.6345 22.3862 41.6027 22.2482 41.539 22.1315C41.4754 22.0127 41.3863 21.9204 41.2717 21.8546C41.1592 21.7888 41.0277 21.756 40.877 21.756C40.7136 21.756 40.5693 21.7973 40.4441 21.8801C40.3189 21.9607 40.2203 22.0732 40.1481 22.2175C40.076 22.3618 40.0399 22.5294 40.0399 22.7204V24.751H39.6198Z" fill="white" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32.334 10.8571L33.9854 10.4102V11.7884L32.334 12.2354V10.8571Z" fill="#FFA500" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.7142 10.8447L7.99805 11.3353V17.6755H9.7142V10.8447ZM13.4325 17.6755H15.0057V14.4299C15.0057 13.2223 14.5409 12.4675 13.2895 12.4675C12.9816 12.4692 12.6792 12.5532 12.4104 12.7115C12.1416 12.8699 11.9151 13.0975 11.7521 13.3732V12.4675L10.2505 12.8826V17.6755H11.8236V14.9205C11.8236 14.3167 11.9666 13.8638 12.7175 13.8638C13.4358 13.8638 13.4341 14.5202 13.4327 15.1058C13.4326 15.1323 13.4325 15.1586 13.4325 15.1847V17.6755ZM14.8984 12.6185L16.5073 17.6755H18.2949L19.9038 12.6185H18.3307L17.4369 16.015L16.543 12.6185H14.8984ZM22.7187 13.8485C22.8867 13.9985 23.0032 14.2029 23.0501 14.4299L21.0837 14.996C21.0837 14.279 21.4055 13.5997 22.1205 13.5997C22.3404 13.6109 22.5506 13.6984 22.7187 13.8485ZM23.2389 16.4935C22.9353 16.6505 22.6016 16.7321 22.2635 16.732C22.0498 16.7466 21.8368 16.6933 21.652 16.5789C21.4672 16.4646 21.3191 16.2944 21.2267 16.0904L24.5517 15.1092C24.5517 13.5242 23.6221 12.4675 22.1205 12.4675C21.7829 12.4573 21.4467 12.5193 21.1324 12.6499C20.818 12.7804 20.532 12.9768 20.2915 13.2271C20.0509 13.4775 19.8609 13.7767 19.7329 14.1066C19.6048 14.4366 19.5413 14.7904 19.5463 15.147C19.5463 16.883 20.6546 17.8264 22.192 17.8264C23.0047 17.8292 23.7959 17.5508 24.4445 17.0339L24.0154 15.8263C23.8082 16.1083 23.5426 16.3365 23.2389 16.4935ZM28.6276 14.8828C28.303 14.7077 27.9522 14.5928 27.5907 14.5431L27.0902 14.4677C27.0821 14.4652 27.0738 14.4627 27.0651 14.4601C26.8059 14.3823 26.3036 14.2315 26.3036 13.9393C26.3036 13.6374 26.3751 13.5619 26.8757 13.5619C27.3762 13.5619 27.6622 13.7129 27.7338 14.1658L29.0924 13.7884C28.9494 12.7694 27.841 12.4675 26.9114 12.4675C25.9819 12.4675 24.7305 12.9204 24.7305 14.0148C24.7305 15.1092 25.5171 15.3734 26.3036 15.5244L26.9114 15.6753C26.9539 15.6865 27.001 15.6969 27.0505 15.7078C27.3349 15.7703 27.698 15.8501 27.698 16.2037C27.698 16.6188 27.2332 16.7698 26.9114 16.7698C26.794 16.7801 26.6757 16.7658 26.5636 16.7277C26.4514 16.6896 26.3474 16.6284 26.2577 16.5477C26.168 16.4671 26.0942 16.3685 26.0408 16.2576C25.9873 16.1467 25.9551 16.0258 25.9461 15.9018L24.6232 16.3169C24.802 17.4491 25.7673 17.8264 26.9114 17.8264C28.0555 17.8264 29.2354 17.3736 29.2354 16.015C29.2258 15.789 29.1658 15.5687 29.0601 15.3719C28.9545 15.1752 28.8063 15.0076 28.6276 14.8828ZM31.0588 15.9772V13.7129H31.9169L32.2029 12.6185H31.0588V11.2599L29.4857 11.7127V15.9018C29.4857 17.2981 29.8432 17.6755 31.1661 17.6755H31.8811L32.2029 16.3924C31.9245 16.4815 31.6292 16.4945 31.3448 16.4301C31.1303 16.3924 31.0588 16.2037 31.0588 15.9772ZM33.9905 12.4675L32.4174 12.9204V17.6755H33.9905V12.4675ZM37.709 15.1091C37.7089 15.1345 37.7089 15.1597 37.7089 15.1847V17.6755H39.282V14.4299C39.282 13.2223 38.8172 12.4675 37.5659 12.4675C37.258 12.4692 36.9556 12.5532 36.6867 12.7115C36.4179 12.8699 36.1915 13.0975 36.0285 13.3732V12.4675L34.5268 12.8826V17.6755H36.0642V14.9205C36.049 14.7875 36.0608 14.6525 36.0988 14.5246C36.1369 14.3968 36.2003 14.2789 36.2849 14.1789C36.3694 14.0789 36.4732 13.9991 36.5893 13.9448C36.7054 13.8905 36.8311 13.8629 36.958 13.8638C37.712 13.8638 37.7104 14.5227 37.709 15.1091Z" fill="white" />
+<path fill-rule="evenodd" clip-rule="evenodd" d="M42.035 19.4492C41.1054 19.4492 40.1043 19.185 39.7825 18.0906L41.1769 17.7132C41.2445 17.9152 41.3708 18.0896 41.5376 18.2116C41.7045 18.3335 41.9036 18.3968 42.1065 18.3925C42.75 18.3925 43.0003 17.8264 43.0003 17.1849V16.6943C42.8679 16.9287 42.6791 17.1221 42.4531 17.2546C42.227 17.3872 41.9718 17.4543 41.7132 17.4491C40.2831 17.4491 39.6038 16.3924 39.6038 14.9583C39.6038 13.5242 40.3546 12.4675 41.7132 12.4675C41.9753 12.4661 42.2329 12.5389 42.4593 12.6783C42.6857 12.8176 42.8725 13.0185 43.0003 13.26V12.8826L44.502 12.4675V17.0717C44.502 18.6567 43.3936 19.4492 42.035 19.4492ZM41.1769 14.996C41.1769 14.3922 41.3914 13.7506 42.1065 13.7506C42.7858 13.7506 43.0361 14.3922 43.0361 15.0338C43.0361 15.6753 42.7143 16.2037 42.0707 16.2037C41.4272 16.2037 41.1769 15.5998 41.1769 14.996Z" fill="white" />
+</g>
+<rect x="2.14583" y="2.64583" width="48.2083" height="48.2083" rx="10.5456" stroke="white" stroke-width="3.70833" />
+<defs>
+<clipPath id="clip0_12311_98342">
+<rect x="4" y="4.5" width="44.5" height="44.5" rx="8.69141" fill="white" />
+</clipPath>
+</defs>
+</svg>
+<label id="ttwTitle">Investing.com<br/>is better on the app</label>
+<p>Open this in the Investing.com app to get the full experience.</p>
+<div id="ttwDownloadButton" data-google-interstitial="false"><span class="text">Switch to the app</span></div>
+</div> <div class="adbBetterExperiencePopup displayNoneImp">
+<label id="adbBetterExperienceTitle">Investing.com is better on the app</label>
+<label id="adbBetterExperienceTitleShort">Get the app</label>
+<p>Open this in the Investing.com app to get the full experience.</p>
+<div class="adbBetterExperienceButtons">
+<div class="adbBetterExperienceBlock">
+<button id="notNowButton"><span class="text">Not now</span></button>
+<button id="switchButton" data-google-interstitial="false"><span class="text">Switch to the app</span></button>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+    function OptanonWrapper() { }
+
+    // temp copied from fronter-cookie
+    // we will replace this function in the next steps.
+    function setCookie(cname, cvalue, exdays,path)
+	{
+        var d=new Date(), pathValue = path || '/' ;
+        d.setTime(d.getTime()+ exdays*24*60*60*1000);
+        var expires ="expires=" + d.toUTCString();
+        document.cookie=cname + "=" + cvalue + ";" + expires+';path='+pathValue;
+    }
+
+        window.addEventListener('consent.onetrust', (e) => {
+
+            var uprivacyValue = '1---';
+
+            if (e.detail.indexOf('C0004') === 0) {
+                uprivacyValue = '1YYN';
+            } else {
+                uprivacyValue = '1YNN';
+            }
+
+            setCookie('usprivacy', uprivacyValue, 365);
+        });
+
+</script>
+<script>
+    $(document).ready(function(){
+        var $cookieConsent = $('.js-cookie-consent');
+        $cookieConsent.on("click", '#truste-consent-button', function (e) {
+            $cookieConsent.css('right', '-99999px');
+            $cookieConsent.hide();
+        });
+
+        setTimeout(function() {
+            if (!$cookieConsent.find('#truste-consent-button').length) {
+                $cookieConsent.hide();
+            }
+        }, 3500);
+
+        if (window.googletag) {
+            window.googletag.cmd.push(function () {
+                // ADX ccpa (output - 1YYN) restricted data processing
+                if(getCookie('usprivacy') === '1YYN') {
+                    //log opt out
+                    console.log('CCPA - opt out');
+                    window.googletag.pubads().setPrivacySettings({
+                        'restrictDataProcessing': true
+                    });
+                }
+            });
+        }
+
+        function getCookie(name) {
+            var dc = document.cookie;
+            var prefix = name + "=";
+            var begin = dc.indexOf("; " + prefix);
+            if (begin == -1) {
+                begin = dc.indexOf(prefix);
+                if (begin != 0) return null;
+            }
+            else {
+                begin += 2;
+                var end = document.cookie.indexOf(";", begin);
+                if (end == -1) {
+                    end = dc.length;
+                }
+            }
+            return decodeURI(dc.substring(begin + prefix.length, end));
+        }
+
+        $(document).on('click', '.cookieProPreferences', function (event) {
+            OneTrust.ToggleInfoDisplay();
+        });
+    });
+</script> <script async src="https://dggaenaawxe8z.cloudfront.net/ic/audiencesegment/investing.js"></script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'85531685293d3121',t:'MTcwNzg5MDM5OS45NjEwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317" integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA==" data-cf-beacon='{"rayId":"85531685293d3121","version":"2024.2.0","token":"00ab903b5e184b1a9d53b0a7a5085300"}' crossorigin="anonymous"></script>
+</body>
+</html>
+ - status code: 200, sizes: 598/135112

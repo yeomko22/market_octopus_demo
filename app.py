@@ -95,11 +95,14 @@ def search_related_news(
     related_news = []
     if question_range == "국내" or question_range == "전체":
         with st.spinner("국내 뉴스 검색 중..."):
-            domestic_news = search_news(kor_query, kor_question_embedding, is_domestic=True)
+            domestic_news = search_news(kor_query, kor_question_embedding, target="domestic")
             related_news.extend(domestic_news)
     if question_range == "해외" or question_range == "전체":
         with st.spinner("해외 뉴스 검색 중..."):
-            oversea_news = search_news(eng_query, eng_question_embedding, is_domestic=False)
+            yf_news = search_news(eng_query, eng_question_embedding, target="yf")
+            investing_news = search_news(eng_query, eng_question_embedding, target="investing")
+            oversea_news = yf_news + investing_news
+            oversea_news = sorted(oversea_news, key=lambda x: x["similarity"], reverse=True)[:3]
             related_news.extend(oversea_news)
     related_news = sorted(related_news, key=lambda x: x["similarity"], reverse=True)[:3]
     return related_news
@@ -193,6 +196,7 @@ if submit:
             break
     if related_news:
         draw_news(related_news, expanded=False)
+    st.stop()
     prompt = generate_prompt(instruct, question, related_news)
     messages = [
         {"role": "system", "content": system_message},

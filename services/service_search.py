@@ -1,4 +1,5 @@
 import concurrent.futures
+import subprocess
 import re
 from datetime import datetime, timedelta
 from typing import List, Tuple, Optional
@@ -33,11 +34,15 @@ def remove_urls(text):
     return clean_text
 
 
-def _request_search_api(query: str, is_domestic: bool) -> dict:
-    if is_domestic:
+def _request_search_api(query: str, target: str) -> dict:
+    if target == "domestic":
         cse_key = st.secrets["GOOGLE_CSE_DOMESTIC"]
+    elif target == "yf":
+        cse_key = st.secrets["GOOGLE_CSE_YF"]
+    elif target == "investing":
+        cse_key = st.secrets["GOOGLE_CSE_INVESTING"]
     else:
-        cse_key = st.secrets["GOOGLE_CSE_OVERSEA"]
+        raise ValueError("Invalid target")
     today = datetime.now(tz=timezone("Asia/Seoul"))
     start = (today - timedelta(days=7)).strftime("%Y%m%d")
     end = today.strftime("%Y%m%d")
@@ -52,9 +57,9 @@ def _request_search_api(query: str, is_domestic: bool) -> dict:
     return response.json()
 
 
-def get_news_items(query: str, is_domestic: bool) -> List[dict]:
+def get_news_items(query: str, target: str) -> List[dict]:
     news_items = []
-    response_json = _request_search_api(query, is_domestic)
+    response_json = _request_search_api(query, target)
     total_results = response_json["searchInformation"]["totalResults"]
     if not total_results:
         return news_items
@@ -62,7 +67,7 @@ def get_news_items(query: str, is_domestic: bool) -> List[dict]:
         if "spelling" not in response_json:
             return news_items
         query = response_json["spelling"]["correctedQuery"]
-        response_json = _request_search_api(query, is_domestic)
+        response_json = _request_search_api(query, target)
     news_items = response_json.get("items", [])
     if not news_items:
         return news_items
@@ -93,11 +98,15 @@ def get_publisher(url: str) -> str:
         publisher = "비즈니스 포스트"
     elif url.startswith("https://finance.yahoo.com/"):
         publisher = "yahoo finance"
+    elif url.startswith("https://www.investing.com/"):
+        publisher = "investing.com"
+    elif url.startswith("https://www.bloomberg.com/"):
+        publisher = "bloomberg"
     return publisher
 
 
-def search_news(query: str, query_embedding: List[float], is_domestic: bool) -> List[dict]:
-    news_items = get_news_items(query, is_domestic)
+def search_news(query: str, query_embedding: List[float], target: str) -> List[dict]:
+    news_items = get_news_items(query, target)
     info_list = [(news_item, query_embedding) for news_item in news_items]
     news_items = parallel_request_parse_articles(info_list)
     news_items = [x for x in news_items if x["similarity"] > 0.3]
@@ -135,9 +144,28 @@ def parse_article_bp(article_html: str) -> str:
     return article_content.strip()
 
 
+def parse_article_cbiz(article_html: str) -> str:
+    soup = BeautifulSoup(article_html, "lxml")
+    article_soup = soup.find("script", id="fusion-metadata")
+    if article_soup is None:
+        return ""
+    article_content = article_soup.text
+    article_content = remove_urls(article_content)
+    return article_content.strip()
+
+
 def parse_article_yf(article_html: str) -> str:
     soup = BeautifulSoup(article_html, "lxml")
     article_soup = soup.find("div", class_="caas-body")
+    if article_soup is None:
+        return ""
+    article_content = article_soup.text
+    article_content = remove_urls(article_content)
+    return article_content.strip()
+
+def parse_article_investing(article_html: str) -> str:
+    soup = BeautifulSoup(article_html, "lxml")
+    article_soup = soup.find("div", class_="WYSIWYG")
     if article_soup is None:
         return ""
     article_content = article_soup.text
@@ -156,6 +184,8 @@ def parse_article(url: str, article_html: str) -> str:
         return parse_article_bp(article_html)
     elif url.startswith("https://finance.yahoo.com"):
         return parse_article_yf(article_html)
+    elif url.startswith("https://www.investing.com/"):
+        return parse_article_investing(article_html)
 
 
 def parse_related_paragraph(query_embedding: List[float], article: str) -> Tuple[int, float, str]:
@@ -169,18 +199,37 @@ def parse_related_paragraph(query_embedding: List[float], article: str) -> Tuple
     return sorted(similarity_list, key=lambda x: x[0], reverse=True)[0]
 
 
-def request_parse_article(info: Tuple[dict, List[float]]) -> Optional[dict]:
-    news_item, query_embedding = info
+def crawl_with_curl(url: str) -> str:
+    curl_cmd = ["curl",
+                "-L",
+                "-w", " - status code: %{http_code}, sizes: %{size_request}/%{size_download}",
+                url,
+                "-H", "user-agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Mobile Safari/537.36"]
+    result = subprocess.run(curl_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    article_html = result.stdout
+    return article_html
+
+
+def crawl_with_requests(url: str) -> str:
     response = requests.get(
-        url=news_item["url"],
+        url=url,
         headers={
             'User-Agent': 'Mozilla/5.0',
         }
     )
     article_html = response.text
-    uploaded_news_url = upload_news_html(news_item["url"], article_html)
+    return article_html
 
-    article_content = parse_article(news_item["url"], article_html)
+
+def request_parse_article(info: Tuple[dict, List[float]]) -> Optional[dict]:
+    news_item, query_embedding = info
+    url = news_item["url"]
+    if url.startswith("https://www.investing.com"):
+        article_html = crawl_with_curl(url)
+    else:
+        article_html = crawl_with_requests(url)
+    uploaded_news_url = upload_news_html(url, article_html)
+    article_content = parse_article(url, article_html)
     if not article_content:
         return None
     idx, similarity, related_paragraph = parse_related_paragraph(query_embedding, article_content)
