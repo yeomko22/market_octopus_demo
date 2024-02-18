@@ -209,6 +209,9 @@ if submit:
         "news_based_answer": generated_answer,
         "report_based_answer": []
     }
+    if not related_news:
+        insert_question_answer(question, answer_dict)
+        st.stop()
     # 핵심 아이디어 3개 추출
     with st.spinner("핵심 아이디어 정리 중..."):
         main_ideas = generate_main_ideas(question, generated_answer)
