@@ -109,7 +109,7 @@ def search_news(query: str, query_embedding: List[float], target: str) -> List[d
     news_items = get_news_items(query, target)
     info_list = [(news_item, query_embedding) for news_item in news_items]
     news_items = parallel_request_parse_articles(info_list)
-    news_items = [x for x in news_items if x["similarity"] > 0.3]
+    news_items = [x for x in news_items if x["similarity"] > 0.4]
     return news_items
 
 
