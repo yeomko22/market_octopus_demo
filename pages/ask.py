@@ -128,7 +128,7 @@ if submit:
         st.error("질문을 입력해주세요.")
         st.stop()
     eng_question = translate([question])[0]
-    question_related_news = search_news(eng_question)
+    question_related_news = search_news(ticker, tickers_dict[ticker], eng_question)
     if question_related_news:
         draw_horizontal_news(question_related_news["result"])
     generated_answer = generate_news_based_answer(ticker, eng_question, news_items)
