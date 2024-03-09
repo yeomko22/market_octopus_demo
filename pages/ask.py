@@ -111,7 +111,7 @@ candlestick_chart.update_layout(
 st.plotly_chart(candlestick_chart, use_container_width=True)
 st.markdown("**🗞️ 주요 뉴스**")
 query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
-results = search_news(query)
+results = search_news(ticker, tickers_dict[ticker], query)
 news_items = results["result"]
 draw_horizontal_news(news_items)
 
