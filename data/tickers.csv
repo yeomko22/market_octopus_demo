@@ -1,0 +1,5320 @@
+Ticker,Name
+MSFT,Microsoft Corp
+AAPL,Apple Inc
+GOOG,Alphabet Inc
+GOOGL,Alphabet Inc
+AMZN,Amazon.com Inc
+NVDA,NVIDIA Corp
+META,Meta Platforms Inc
+BRK-A,Berkshire Hathaway Inc
+BRK-B,Berkshire Hathaway Inc
+LLY,Eli Lilly and Co
+TSLA,Tesla Inc
+AVGO,Broadcom Inc
+TSM,Taiwan Semiconductor Manufacturing Co Ltd
+V,Visa Inc
+NVO,Novo Nordisk A/S
+JPM,JPMorgan Chase & Co
+UNH,UnitedHealth Group Inc
+WMT,Walmart Inc
+MA,Mastercard Inc
+XOM,Exxon Mobil Corp
+JNJ,Johnson & Johnson
+CSCO,Cisco Systems Inc
+PG,Procter & Gamble Co
+TM,Toyota Motor Corp
+HD,Home Depot Inc
+ASML,ASML Holding NV
+VZ,Verizon Communications Inc
+MRK,Merck & Co Inc
+COST,Costco Wholesale Corp
+ABBV,AbbVie Inc
+ORCL,Oracle Corp
+CVX,Chevron Corp
+CRM,Salesforce Inc
+BAC,Bank of America Corp
+AMD,Advanced Micro Devices Inc
+KO,Coca-Cola Co
+NFLX,Netflix Inc
+ADBE,Adobe Inc
+ACN,Accenture PLC
+NVS,Novartis AG
+PEP,PepsiCo Inc
+SAP,Sap Se
+MCD,McDonald's Corp
+TMO,Thermo Fisher Scientific Inc
+LIN,Linde PLC
+SBUX,Starbucks Corp
+SHEL,Shell PLC
+ABT,Abbott Laboratories
+DIS,Walt Disney Co
+AZN,AstraZeneca PLC
+TMUS,T-Mobile US Inc
+WFC,Wells Fargo & Co
+INTC,Intel Corp
+BABA,Alibaba Group Holding Ltd
+DHR,Danaher Corp
+INTU,Intuit Inc
+PDD,PDD Holdings Inc
+QCOM,Qualcomm Inc
+IBM,International Business Machines Corp
+CMCSA,Comcast Corp
+GE,General Electric Co
+UBER,Uber Technologies Inc
+AMAT,Applied Materials Inc
+CAT,Caterpillar Inc
+NKE,Nike Inc
+PFE,Pfizer Inc
+BX,Blackstone Inc
+HSBC,HSBC Holdings PLC
+NOW,ServiceNow Inc
+AXP,American Express Co
+AMGN,Amgen Inc
+BHP,BHP Group Ltd
+TTE,TotalEnergies SE
+UNP,Union Pacific Corp
+TXN,Texas Instruments Inc
+MS,Morgan Stanley
+PM,Philip Morris International Inc
+RY,Royal Bank of Canada
+SPGI,S&P Global Inc
+ISRG,Intuitive Surgical Inc
+HDB,HDFC Bank Ltd
+SYK,Stryker Corp
+BKNG,Booking Holdings Inc
+HON,Honeywell International Inc
+LOW,Lowe's Companies Inc
+COP,Conocophillips
+UL,Unilever PLC
+BUD,Anheuser-Busch Inbev SA
+GS,Goldman Sachs Group Inc
+UPS,United Parcel Service Inc
+ARM,Arm Holdings PLC
+BA,Boeing Co
+PLD,Prologis Inc
+MUFG,Mitsubishi UFJ Financial Group Inc
+T,AT&T Inc
+RTX,RTX Corp
+ELV,Elevance Health Inc
+BLK,BlackRock Inc
+SNY,Sanofi SA
+LRCX,Lam Research Corp
+NEE,Nextera Energy Inc
+SCHW,Charles Schwab Corp
+PANW,Palo Alto Networks Inc
+MDT,Medtronic PLC
+RIO,Rio Tinto PLC
+PBR,Petroleo Brasileiro SA Petrobras
+PBR-A,Petroleo Brasileiro SA Petrobras
+SONY,Sony Group Corp
+PGR,Progressive Corp
+TJX,TJX Companies Inc
+ETN,Eaton Corporation PLC
+VRTX,Vertex Pharmaceuticals Inc
+TD,Toronto-Dominion Bank
+CRH,CRH PLC
+C,Citigroup Inc
+REGN,Regeneron Pharmaceuticals Inc
+ADP,Automatic Data Processing Inc
+LMT,Lockheed Martin Corp
+STLA,Stellantis NV
+CB,Chubb Ltd
+BMY,Bristol-Myers Squibb Co
+RACE,Ferrari NV
+SHOP,Shopify Inc
+DE,Deere & Co
+BP,BP PLC
+CI,Cigna Group
+MMC,Marsh & McLennan Companies Inc
+MDLZ,Mondelez International Inc
+BSX,Boston Scientific Corp
+CVS,CVS Health Corp
+ABNB,Airbnb Inc
+UBS,UBS Group AG
+ADI,Analog Devices Inc
+GILD,Gilead Sciences Inc
+MU,Micron Technology Inc
+FI,Fiserv Inc
+IBN,ICICI Bank Ltd
+KLAC,KLA Corp
+AMT,American Tower Corp
+MELI,MercadoLibre Inc
+GSK,GSK plc
+ZTS,Zoetis Inc
+INFY,Infosys Ltd
+SNPS,Synopsys Inc
+DEO,Diageo PLC
+KKR,KKR & Co Inc
+CNI,Canadian National Railway Co
+HCA,HCA Healthcare Inc
+RELX,RELX PLC
+ANET,Arista Networks Inc
+WM,Waste Management Inc
+EQIX,Equinix Inc
+SHW,Sherwin-Williams Co
+CDNS,Cadence Design Systems Inc
+WDAY,Workday Inc
+CP,Canadian Pacific Kansas City Ltd
+ICE,Intercontinental Exchange Inc
+CRWD,CrowdStrike Holdings Inc
+ITW,Illinois Tool Works Inc
+CME,CME Group Inc
+EQNR,Equinor ASA
+GD,General Dynamics Corp
+ENB,Enbridge Inc
+SO,Southern Co
+SNOW,Snowflake Inc.
+CSX,CSX Corp
+SMFG,Sumitomo Mitsui Financial Group Inc
+TRI,Thomson Reuters Corp
+MO,Altria Group Inc
+DUK,Duke Energy Corp
+CMG,Chipotle Mexican Grill Inc
+MAR,Marriott International Inc
+CL,Colgate-Palmolive Co
+BDX,Becton Dickinson and Co
+NTES,NetEase Inc
+SLB,Schlumberger NV
+TGT,Target Corp
+BMO,Bank of Montreal
+CNQ,Canadian Natural Resources Ltd
+MCO,Moody's Corp
+NOC,Northrop Grumman Corp
+BTI,British American Tobacco plc
+PH,Parker-Hannifin Corp
+MCK,Mckesson Corp
+BN,Brookfield Corp
+EOG,EOG Resources Inc
+ITUB,Itau Unibanco Holding SA
+SAN,Banco Santander SA
+TDG,TransDigm Group Inc
+USB,US Bancorp
+SCCO,Southern Copper Corp
+HMC,Honda Motor Co Ltd
+PSX,Phillips 66
+TT,Trane Technologies PLC
+PYPL,PayPal Holdings Inc
+APH,Amphenol Corp
+AON,Aon PLC
+CTAS,Cintas Corp
+APO,Apollo Global Management Inc
+ECL,Ecolab Inc
+ORLY,O'Reilly Automotive Inc
+MPC,Marathon Petroleum Corp
+VALE,Vale SA
+EMR,Emerson Electric Co
+FDX,FedEx Corp
+NXPI,NXP Semiconductors NV
+PNC,PNC Financial Services Group Inc
+DELL,Dell Technologies Inc
+ROP,Roper Technologies Inc
+MNST,Monster Beverage Corp
+BNS,Bank of Nova Scotia
+AMX,America Movil SAB de CV
+NSC,Norfolk Southern Corp
+BBVA,Banco Bilbao Vizcaya Argentaria SA
+RSG,Republic Services Inc
+MRVL,Marvell Technology Inc
+PCAR,Paccar Inc
+FCX,Freeport-McMoRan Inc
+ADSK,Autodesk Inc
+LULU,Lululemon Athletica Inc
+MSI,Motorola Solutions Inc
+PXD,Pioneer Natural Resources Co
+FTNT,Fortinet Inc
+TEAM,Atlassian Corp
+WELL,Welltower Inc
+AJG,Arthur J. Gallagher & Co.
+OXY,Occidental Petroleum Corp
+COF,Capital One Financial Corp
+EW,Edwards Lifesciences Corp
+EL,Estee Lauder Companies Inc
+E,Eni SpA
+MMM,3M Co
+APD,Air Products and Chemicals Inc
+TRV,Travelers Companies Inc
+PLTR,Palantir Technologies Inc
+PSA,Public Storage
+HLT,Hilton Worldwide Holdings Inc
+MET,MetLife Inc
+F,Ford Motor Co
+NGG,National Grid PLC
+NU,Nu Holdings Ltd
+ROST,Ross Stores Inc
+SPG,Simon Property Group Inc
+CARR,Carrier Global Corp
+SPOT,Spotify Technology SA
+ING,ING Groep NV
+DHI,DR Horton Inc
+TFC,Truist Financial Corp
+CCI,Crown Castle Inc
+TAK,Takeda Pharmaceutical Co Ltd
+AZO,Autozone Inc
+CPRT,Copart Inc
+GWW,WW Grainger Inc
+AIG,American International Group Inc
+COR,Cencora Inc
+MFG,Mizuho Financial Group Inc
+DASH,DoorDash Inc
+VLO,Valero Energy Corp
+ODFL,Old Dominion Freight Line Inc
+IDXX,IDEXX Laboratories Inc
+NUE,Nucor Corp
+AFL,Aflac Inc
+DXCM,Dexcom Inc
+O,Realty Income Corp
+HES,Hess Corp
+GM,General Motors Co
+STZ,Constellation Brands Inc
+PAYX,Paychex Inc
+MCHP,Microchip Technology Inc
+SRE,Sempra
+HUM,Humana Inc
+MFC,Manulife Financial Corp
+IBKR,Interactive Brokers Group Inc
+SMCI,Super Micro Computer Inc
+MSCI,MSCI Inc
+KDP,Keurig Dr Pepper Inc
+CM,Canadian Imperial Bank of Commerce
+TEL,TE Connectivity Ltd
+URI,United Rentals Inc
+KHC,Kraft Heinz Co
+WCN,Waste Connections Inc
+FMX,Fomento Economico Mexicano SAB de CV
+CHTR,Charter Communications Inc
+IQV,IQVIA Holdings Inc
+AEP,American Electric Power Company Inc
+SU,Suncor Energy Inc
+SQ,Block Inc
+CEG,Constellation Energy Corp
+CNC,Centene Corp
+LEN,Lennar Corp
+LEN-B,Lennar Corp
+COIN,Coinbase Global Inc
+ALL,Allstate Corp
+OKE,ONEOK Inc
+BK,Bank of New York Mellon Corp
+WMB,Williams Companies Inc
+DDOG,Datadog Inc
+TRP,TC Energy Corp
+FERG,Ferguson PLC
+DLR,Digital Realty Trust Inc
+ABEV,Ambev SA
+ARES,Ares Management Corp
+TTD,Trade Desk Inc
+AME,AMETEK Inc
+STM,STMicroelectronics NV
+LHX,L3Harris Technologies Inc
+KMB,Kimberly-Clark Corp
+FAST,Fastenal Co
+LVS,Las Vegas Sands Corp
+AMP,Ameriprise Financial Inc
+HSY,Hershey Co
+SYY,Sysco Corp
+GEHC,GE Healthcare Technologies Inc
+A,Agilent Technologies Inc
+ALC,Alcon AG
+PRU,Prudential Financial Inc
+JCI,Johnson Controls International PLC
+DOW,Dow Inc
+CTSH,Cognizant Technology Solutions Corp
+CTVA,Corteva Inc
+D,Dominion Energy Inc
+KMI,Kinder Morgan Inc
+HLN,HALEON PLC
+EA,Electronic Arts Inc
+YUM,Yum! Brands Inc
+WDS,Woodside Energy Group Ltd
+GIS,General Mills Inc
+FIS,Fidelity National Information Services Inc
+JD,JD.Com Inc
+CMI,Cummins Inc
+ZS,Zscaler Inc
+OTIS,Otis Worldwide Corp
+BIDU,Baidu Inc
+KVUE,Kenvue Inc
+VRSK,Verisk Analytics Inc
+PCG,PG&E Corp
+TME,Tencent Music Entertainment Group
+LYG,Lloyds Banking Group PLC
+VEEV,Veeva Systems Inc
+IR,Ingersoll Rand Inc
+IT,Gartner Inc
+BCE,BCE Inc
+EXC,Exelon Corp
+KR,Kroger Co
+MPWR,Monolithic Power Systems Inc
+LI,Li Auto Inc
+GPN,Global Payments Inc
+WIT,Wipro Ltd
+VMC,Vulcan Materials Co
+PPG,PPG Industries Inc
+CSGP,CoStar Group Inc
+MRNA,Moderna Inc
+ON,ON Semiconductor Corp
+NET,Cloudflare Inc
+MLM,Martin Marietta Materials Inc
+XEL,Xcel Energy Inc
+CDW,CDW Corp
+CVE,Cenovus Energy Inc
+MDB,MongoDB Inc
+NEM,Newmont Corporation
+DLTR,Dollar Tree Inc
+BIIB,Biogen Inc
+FANG,Diamondback Energy Inc
+ACGL,Arch Capital Group Ltd
+SLF,Sun Life Financial Inc
+EFX,Equifax Inc
+CCEP,Coca-Cola Europacific Partners PLC
+FICO,Fair Isaac Corp
+DG,Dollar General Corp
+HAL,Halliburton Co
+ORAN,Orange SA
+ROK,Rockwell Automation Inc
+LYB,LyondellBasell Industries NV
+DFS,Discover Financial Services
+BCS,Barclays PLC
+VICI,VICI Properties Inc
+PWR,Quanta Services Inc
+CHT,Chunghwa Telecom Co Ltd
+ED,Consolidated Edison Inc
+HUBS,HubSpot Inc
+GFS,GlobalFoundries Inc
+PEG,Public Service Enterprise Group Inc
+XYL,Xylem Inc
+EXR,Extra Space Storage Inc
+RCL,Royal Caribbean Cruises Ltd
+FTV,Fortive Corp
+BKR,Baker Hughes Co
+ANSS,ANSYS Inc
+FWONA,Liberty Media Corp
+FWONK,Liberty Media Corp
+LLYVA,Liberty Media Corp
+LLYVK,Liberty Media Corp
+LSXMA,Liberty Media Corp
+LSXMB,Liberty Media Corp
+LSXMK,Liberty Media Corp
+TCOM,Trip.com Group Ltd
+BBD,Banco Bradesco SA
+BBDO,Banco Bradesco SA
+ADM,Archer-Daniels-Midland Co
+DD,Dupont De Nemours Inc
+HPQ,HP Inc
+WTW,Willis Towers Watson PLC
+PUK,Prudential PLC
+BF-A,Brown-Forman Corp
+BF-B,Brown-Forman Corp
+CPNG,Coupang Inc
+PKX,Posco Holdings Inc
+HIG,Hartford Financial Services Group Inc
+DVN,Devon Energy Corp
+CBRE,CBRE Group Inc
+GLW,Corning Inc
+SE,Sea Ltd
+NDAQ,Nasdaq Inc
+KEYS,Keysight Technologies Inc
+TLK,Telkom Indonesia (Persero) Tbk PT
+RMD,Resmed Inc
+GIB,CGI Inc
+ULTA,Ulta Beauty Inc
+DB,Deutsche Bank AG
+TU,Telus Corp
+SPLK,Splunk Inc
+RBLX,Roblox Corp
+DAL,Delta Air Lines Inc
+ZBH,Zimmer Biomet Holdings Inc
+GOLD,Barrick Gold Corp
+TTWO,Take-Two Interactive Software Inc
+WST,West Pharmaceutical Services Inc
+HWM,Howmet Aerospace Inc
+TSCO,Tractor Supply Co
+CAH,Cardinal Health Inc
+EIX,Edison International
+MTD,Mettler-Toledo International Inc
+NWG,NatWest Group PLC
+NTR,Nutrien Ltd
+AVB,Avalonbay Communities Inc
+OWL,Blue Owl Capital Inc
+IX,ORIX Corp
+RYAAY,Ryanair Holdings PLC
+WEC,WEC Energy Group Inc
+TROW,T Rowe Price Group Inc
+RJF,Raymond James Financial Inc
+RCI,Rogers Communications Inc
+AEM,Agnico Eagle Mines Ltd
+WY,Weyerhaeuser Co
+WBD,Warner Bros Discovery Inc
+SYM,Symbotic Inc
+ALGN,Align Technology Inc
+EC,Ecopetrol SA
+CHD,Church & Dwight Co Inc
+QSR,Restaurant Brands International Inc
+PINS,Pinterest Inc
+WAB,Westinghouse Air Brake Technologies Corp
+VRT,Vertiv Holdings Co
+NVR,NVR Inc
+AWK,American Water Works Company Inc
+HEI,HEICO Corp
+HEI-A,HEICO Corp
+BRO,Brown & Brown Inc
+GRMN,Garmin Ltd
+MOH,Molina Healthcare Inc
+ARGX,argenx SE
+ICLR,ICON PLC
+FCNCA,First Citizens BancShares Inc (Delaware)
+EBAY,eBay Inc
+FITB,Fifth Third Bancorp
+BR,Broadridge Financial Solutions Inc
+VOD,Vodafone Group PLC
+MTB,M&T Bank Corp
+EQR,Equity Residential
+TEF,Telefonica SA
+STE,STERIS plc
+BLDR,Builders FirstSource Inc
+MT,ArcelorMittal SA
+SBAC,SBA Communications Corp
+DOV,Dover Corp
+ILMN,Illumina Inc
+DTE,DTE Energy Co
+DECK,Deckers Outdoor Corp
+RKT,Rocket Companies Inc
+BSBR,Banco Santander Brasil SA
+BNTX,BioNTech SE
+PHM,Pultegroup Inc
+TW,Tradeweb Markets Inc
+APTV,Aptiv PLC
+STT,State Street Corp
+TRGP,Targa Resources Corp
+FE,FirstEnergy Corp
+BAX,Baxter International Inc
+KOF,Coca-Cola Femsa SAB de CV
+ETR,Entergy Corp
+PTC,PTC Inc
+VLTO,Veralto Corp
+LYV,Live Nation Entertainment Inc
+WRB,W R Berkley Corp
+EBR,Brazilian Electric Power Co
+EBR-B,Brazilian Electric Power Co
+IFF,International Flavors & Fragrances Inc
+FNV,Franco-Nevada Corp
+ARE,Alexandria Real Estate Equities Inc
+JBHT,J B Hunt Transport Services Inc
+KB,KB Financial Group Inc
+ENTG,Entegris Inc
+MBLY,Mobileye Global Inc
+TDY,Teledyne Technologies Inc
+STLD,Steel Dynamics Inc
+GPC,Genuine Parts Co
+LUV,Southwest Airlines Co
+FLT,Fleetcor Technologies Inc
+ES,Eversource Energy
+WPM,Wheaton Precious Metals Corp
+INVH,Invitation Homes Inc
+AXON,Axon Enterprise Inc
+IRM,Iron Mountain Inc
+APP,Applovin Corp
+ROL,Rollins Inc
+DRI,Darden Restaurants Inc
+TECK,Teck Resources Ltd
+UMC,United Microelectronics Corp
+NOK,Nokia Oyj
+DKNG,Draftkings Inc
+HPE,Hewlett Packard Enterprise Co
+PPL,PPL Corp
+BALL,Ball Corp
+FTS,Fortis Inc
+VRSN,"VeriSign, Inc"
+TSN,Tyson Foods Inc
+WBA,Walgreens Boots Alliance Inc
+K,Kellanova
+WAT,Waters Corp
+PFG,Principal Financial Group Inc
+ASX,ASE Technology Holding Co Ltd
+LPLA,LPL Financial Holdings Inc
+MKL,Markel Group Inc
+HUBB,Hubbell Inc
+COO,Cooper Companies Inc
+GMAB,Genmab A/S
+CLX,Clorox Co
+KSPI,Kaspi.kz AO
+ALNY,Alnylam Pharmaceuticals Inc
+BAH,Booz Allen Hamilton Holding Corp
+TS,Tenaris SA
+CHKP,Check Point Software Technologies Ltd
+ZM,Zoom Video Communications Inc
+CTRA,Coterra Energy Inc
+ERIE,Erie Indemnity Co
+PBA,Pembina Pipeline Corp
+EXPE,Expedia Group Inc
+HBAN,Huntington Bancshares Inc
+WMG,Warner Music Group Corp
+CCL,Carnival Corp
+CUK,Carnival PLC
+PHG,Koninklijke Philips NV
+AEE,Ameren Corp
+TYL,Tyler Technologies Inc
+J,Jacobs Solutions Inc
+MKC,McCormick & Company Inc
+MKCv,McCormick & Company Inc
+RS,Reliance Inc
+STX,Seagate Technology Holdings PLC
+SIRI,Sirius XM Holdings Inc
+RPRX,Royalty Pharma PLC
+LH,Laboratory Corporation of America Holdings
+SNAP,Snap Inc
+CCJ,Cameco Corp
+ERIC,Telefonaktiebolaget LM Ericsson
+IOT,Samsara Inc
+VIV,Telefonica Brasil SA
+WDC,Western Digital Corp
+NTAP,NetApp Inc
+CNP,CenterPoint Energy Inc
+NMR,Nomura Holdings Inc
+JBL,Jabil Inc
+HOLX,Hologic Inc
+OMC,Omnicom Group Inc
+IEX,IDEX Corp
+CINF,Cincinnati Financial Corp
+FDS,Factset Research Systems Inc
+IHG,InterContinental Hotels Group PLC
+VTR,Ventas Inc
+ENPH,Enphase Energy Inc
+BEKE,Ke Holdings Inc
+EPAM,Epam Systems Inc
+SHG,Shinhan Financial Group Co Ltd
+ATO,Atmos Energy Corp
+EXPD,Expeditors International of Washington Inc
+RF,Regions Financial Corp
+VST,Vistra Corp
+WLK,Westlake Corp
+WSO,Watsco Inc
+WSOb,Watsco Inc
+AVY,Avery Dennison Corp
+BAM,BROOKFIELD ASSET MANAGEMENT LTD
+CMS,CMS Energy Corp
+LDOS,Leidos Holdings Inc
+YUMC,Yum China Holdings Inc
+BMRN,Biomarin Pharmaceutical Inc
+SWKS,Skyworks Solutions Inc
+CSL,Carlisle Companies Inc
+SYF,Synchrony Financial
+L,Loews Corp
+AER,AerCap Holdings NV
+FSLR,First Solar Inc
+AKAM,Akamai Technologies Inc
+NTRS,Northern Trust Corp
+AVTR,Avantor Inc
+TXT,Textron Inc
+CNHI,CNH Industrial NV
+SUI,Sun Communities Inc
+CE,Celanese Corp
+MAS,Masco Corp
+BGNE,Beigene Ltd
+JHX,James Hardie Industries PLC
+HRL,Hormel Foods Corp
+GDDY,GoDaddy Inc
+EG,Everest Group Ltd
+LII,Lennox International Inc
+CG,Carlyle Group Inc
+VTRS,Viatris Inc
+SSNC,SS&C Technologies Holdings Inc
+BBY,Best Buy Co Inc
+CRBG,Corebridge Financial Inc
+BAP,Credicorp Ltd
+MGA,Magna International Inc
+BSY,Bentley Systems Inc
+TER,Teradyne Inc
+PKG,Packaging Corp of America
+NWS,News Corp
+NWSA,News Corp
+LOGI,Logitech International SA
+NDSN,Nordson Corp
+RIVN,Rivian Automotive Inc
+TEVA,Teva Pharmaceutical Industries Ltd
+ZTO,ZTO Express (Cayman) Inc
+EDU,New Oriental Education & Technology Group Inc
+ESS,Essex Property Trust Inc
+MANH,Manhattan Associates Inc
+TRMB,Trimble Inc
+CF,CF Industries Holdings Inc
+POOL,Pool Corp
+DT,Dynatrace Inc
+EQT,EQT Corp
+GGG,Graco Inc
+TKO,TKO Group Holdings Inc
+MAA,Mid-America Apartment Communities Inc
+LW,Lamb Weston Holdings Inc
+CELH,Celsius Holdings Inc
+DPZ,Domino's Pizza Inc
+TRU,TransUnion
+NICE,Nice Ltd
+CFG,Citizens Financial Group Inc
+WSM,Williams-Sonoma Inc
+BEN,Franklin Resources Inc
+UAL,United Airlines Holdings Inc
+FNF,Fidelity National Financial Inc
+SNA,Snap-On Inc
+SUZ,Suzano SA
+LECO,Lincoln Electric Holdings Inc
+SAIA,Saia Inc
+MRO,Marathon Oil Corp
+RPM,RPM International Inc
+HST,Host Hotels & Resorts Inc
+GFL,GFL Environmental Inc
+ZBRA,Zebra Technologies Corp
+H,Hyatt Hotels Corp
+OKTA,Okta Inc
+MGM,MGM Resorts International
+GEN,Gen Digital Inc
+XP,XP Inc
+DGX,Quest Diagnostics Inc
+XPO,XPO Inc
+FOX,Fox Corp
+FOXA,Fox Corp
+GRAB,Grab Holdings Ltd
+NTNX,Nutanix Inc
+CAG,Conagra Brands Inc
+DKS,DICK'S Sporting Goods Inc
+SWK,Stanley Black & Decker Inc
+RTO,Rentokil Initial PLC
+PATH,UiPath Inc
+ALB,Albemarle Corp
+PODD,Insulet Corp
+SJM,J M Smucker Co
+LKQ,LKQ Corp
+BG,Bunge Global SA
+KEY,KeyCorp
+KIM,Kimco Realty Corp
+INCY,Incyte Corp
+NBIX,Neurocrine Biosciences Inc
+AMCR,Amcor PLC
+DUO,Fangdd Network Group Ltd
+TAP,Molson Coors Beverage Co
+TAPa,Molson Coors Beverage Co
+TPG,TPG Inc
+PSTG,Pure Storage Inc
+BZ,Kanzhun Ltd
+HOOD,Robinhood Markets Inc
+UHAL,U-Haul Holding Co
+UHALb,U-Haul Holding Co
+AEG,Aegon Ltd
+RDY,Dr Reddy's Laboratories Ltd
+SRPT,Sarepta Therapeutics Inc
+RVTY,Revvity Inc
+JKHY,Jack Henry & Associates Inc
+CPB,Campbell Soup Co
+BURL,Burlington Stores Inc
+ESTC,Elastic NV
+IPG,Interpublic Group of Companies Inc
+WMS,Advanced Drainage Systems Inc
+WPC,WP Carey Inc
+AMH,American Homes 4 Rent
+SNN,Smith & Nephew PLC
+ELS,Equity LifeStyle Properties Inc
+RBA,RB Global Inc
+GFI,Gold Fields Ltd
+NIO,NIO Inc
+Z,Zillow Group Inc
+ZG,Zillow Group Inc
+IP,International Paper Co
+LNT,Alliant Energy Corp
+PNR,Pentair PLC
+OC,Owens Corning
+U,Unity Software Inc
+CRL,Charles River Laboratories International Inc
+ACI,Albertsons Companies Inc
+TFII,TFI International Inc
+USFD,US Foods Holding Corp
+BLD,TopBuild Corp
+AGR,Avangrid Inc
+VFS,VinFast Auto Ltd
+KRTX,Karuna Therapeutics Inc
+RYAN,Ryan Specialty Holdings Inc
+OVV,Ovintiv Inc
+GLPI,Gaming and Leisure Properties Inc
+SQM,Sociedad Quimica y Minera de Chile SA
+CNA,CNA Financial Corp
+BCH,Banco de Chile
+HTHT,H World Group Ltd
+MSTR,Microstrategy Inc
+ACM,AECOM
+CX,Cemex SAB de CV
+GL,Globe Life Inc
+FMS,Fresenius Medical Care AG
+BRKR,Bruker Corp
+JNPR,Juniper Networks Inc
+NRG,NRG Energy Inc
+TOST,Toast Inc
+MEDP,Medpace Holdings Inc
+EME,EMCOR Group Inc
+TFX,Teleflex Inc
+UDR,UDR Inc
+WYNN,Wynn Resorts Ltd
+RNR,Renaissancere Holdings Ltd
+AOS,A O Smith Corp
+RL,Ralph Lauren Corp
+FND,Floor & Decor Holdings Inc
+FLEX,Flex Ltd
+AFRM,Affirm Holdings Inc
+MORN,Morningstar Inc
+PFGC,Performance Food Group Co
+ALLE,Allegion PLC
+EVRG,Evergy Inc
+KNSL,Kinsale Capital Group Inc
+EDR,Endeavor Group Holdings Inc
+EQH,Equitable Holdings Inc
+TPL,Texas Pacific Land Corp
+PAA,Plains All American Pipeline LP
+REXR,Rexford Industrial Realty Inc
+EXAS,Exact Sciences Corp
+HII,Huntington Ingalls Industries Inc
+UHS,Universal Health Services Inc
+KEP,Korea Electric Power Corp
+WRK,WestRock Co
+SBS,Basic Sanitation Company of the State of Sao Paulo SABESP
+REG,Regency Centers Corp
+DAY,Dayforce Inc
+PR,Permian Resources Corp
+KMX,Carmax Inc
+AZPN,Aspen Technology Inc
+RGEN,Repligen Corp
+ALLY,Ally Financial Inc
+TECH,Bio-Techne Corp
+AES,AES Corp
+LAMR,Lamar Advertising Co
+PAYC,Paycom Software Inc
+GTLB,GitLab Inc
+LEGN,Legend Biotech Corp
+COTY,Coty Inc
+PCOR,Procore Technologies Inc
+QRVO,Qorvo Inc
+UWMC,UWM Holdings Corp
+TOL,Toll Brothers Inc
+DVA,DaVita Inc
+FFIV,F5 Inc
+NI,NiSource Inc
+TPR,Tapestry Inc
+CASY,Caseys General Stores Inc
+BBWI,Bath & Body Works Inc
+OTEX,Open Text Corp
+WPP,WPP PLC
+DINO,HF Sinclair Corp
+FIVE,Five Below Inc
+RRX,Regal Rexnord Corp
+DOX,Amdocs Ltd
+MNDY,Monday.Com Ltd
+CTLT,Catalent Inc
+CYBR,Cyberark Software Ltd
+NVT,nVent Electric PLC
+SCI,Service Corporation International
+BXP,Boston Properties Inc
+AFG,American Financial Group Inc
+PEN,Penumbra Inc
+CHK,Chesapeake Energy Corp
+TWLO,Twilio Inc
+X,United States Steel Corp
+DOCU,DocuSign Inc
+CLH,Clean Harbors Inc
+EWBC,East West Bancorp Inc
+CPT,Camden Property Trust
+MOS,Mosaic Co
+CFLT,Confluent Inc
+UTHR,United Therapeutics Corp
+ONON,On Holding AG
+ITT,ITT Inc
+OZK,Bank Ozk
+FBIN,Fortune Brands Innovations Inc
+LSCC,Lattice Semiconductor Corp
+PCTY,Paylocity Holding Corp
+EMN,Eastman Chemical Co
+WSC,Willscot Mobile Mini Holdings Corp
+WTRG,Essential Utilities Inc
+BIO,Bio Rad Laboratories Inc
+BIOb,Bio Rad Laboratories Inc
+TREX,Trex Co Inc
+HSIC,Henry Schein Inc
+MTCH,Match Group Inc
+TXRH,Texas Roadhouse Inc
+CVNA,Carvana Co
+TTC,Toro Co
+CLF,Cleveland-Cliffs Inc
+CUBE,CubeSmart
+PAG,Penske Automotive Group Inc
+GWRE,Guidewire Software Inc
+ROKU,Roku Inc
+AAL,American Airlines Group Inc
+WING,Wingstop Inc
+SWAV,Shockwave Medical Inc
+UNM,Unum Group
+ELF,elf Beauty Inc
+INFA,Informatica Inc
+TTEK,Tetra Tech Inc
+QGEN,Qiagen NV
+BSAC,Banco Santander-Chile
+STN,Stantec Inc
+LNW,Light & Wonder Inc
+GLOB,Globant SA
+WEX,WEX Inc
+NLY,Annaly Capital Management Inc
+APA,APA Corp (US)
+ETSY,ETSY Inc
+ROIV,Roivant Sciences Ltd
+ESLT,Elbit Systems Ltd
+PEAK,Healthpeak Properties Inc
+BIRK,Birkenstock Holding PLC
+CNM,Core & Main Inc
+ATR,Aptargroup Inc
+KNX,Knight-Swift Transportation Holdings Inc
+BJ,BJ's Wholesale Club Holdings Inc
+THC,Tenet Healthcare Corp
+ALV,Autoliv Inc
+AIZ,Assurant Inc
+ASND,Ascendis Pharma A/S
+SNX,TD Synnex Corp
+ASR,Grupo Aeroportuario del Sureste SAB de CV
+SKX,Skechers USA Inc
+CW,Curtiss-Wright Corp
+VIPS,Vipshop Holdings Ltd
+CZR,Caesars Entertainment Inc
+HLI,Houlihan Lokey Inc
+STVN,Stevanato Group SpA
+YPF,YPF SA
+CHE,Chemed Corp
+CCK,Crown Holdings Inc
+FIX,Comfort Systems USA Inc
+SKM,SK Telecom Co Ltd
+PRI,Primerica Inc
+OLED,Universal Display Corp
+TPX,Tempur Sealy International Inc
+TAL,TAL Education Group
+JLL,Jones Lang LaSalle Inc
+LBRDA,Liberty Broadband Corp
+LBRDK,Liberty Broadband Corp
+S,SentinelOne Inc
+EGP,Eastgroup Properties Inc
+JEF,Jefferies Financial Group Inc
+SEIC,SEI Investments Co
+FTI,TechnipFMC PLC
+CHDN,Churchill Downs Inc
+MTN,Vail Resorts Inc
+COHR,Coherent Corp
+NVEI,Nuvei Corp
+RHI,Robert Half Inc
+NXT,Nextracker Inc
+XPEV,Xpeng Inc
+IEP,Icahn Enterprises LP
+APG,APi Group Corp
+LCID,Lucid Group Inc
+NTRA,Natera Inc
+CHRW,CH Robinson Worldwide Inc
+MUSA,Murphy USA Inc
+APPF,Appfolio Inc
+WF,Woori Financial Group Inc
+EXP,Eagle Materials Inc
+DBX,Dropbox Inc
+PSO,Pearson PLC
+SOFI,SoFi Technologies Inc
+WWD,Woodward Inc
+ONTO,Onto Innovation Inc
+FRT,Federal Realty Investment Trust
+SSD,Simpson Manufacturing Co Inc
+GNTX,Gentex Corp
+PARA,Paramount Global
+PARAA,Paramount Global
+WBS,Webster Financial Corp
+CACI,CACI International Inc
+MKTX,Marketaxess Holdings Inc
+ARMK,Aramark
+ORI,Old Republic International Corp
+APLS,Apellis Pharmaceuticals Inc
+BWXT,BWX Technologies Inc
+KT,KT Corp
+MKSI,MKS Instruments Inc
+JAZZ,Jazz Pharmaceuticals PLC
+AGCO,AGCO Corp
+DCI,Donaldson Company Inc
+ELAN,Elanco Animal Health Inc
+MIDD,Middleby Corp
+PSN,Parsons Corp
+CIEN,Ciena Corp
+RBC,RBC Bearings Inc
+FHN,First Horizon Corp
+DOOO,BRP Inc
+PCVX,Vaxcyte Inc
+COKE,Coca-Cola Consolidated Inc
+PNW,Pinnacle West Capital Corp
+LAD,Lithia Motors Inc
+SF,Stifel Financial Corp
+LEA,Lear Corp
+CART,Maplebear Inc
+KBR,KBR Inc
+ACHC,Acadia Healthcare Company Inc
+CIB,Bancolombia SA
+PVH,PVH Corp
+UI,Ubiquiti Inc
+OHI,Omega Healthcare Investors Inc
+ASAI,Sendas Distribuidora SA
+GPK,Graphic Packaging Holding Co
+GMED,Globus Medical Inc
+INGR,Ingredion Inc
+AS,Amer Sports Inc
+DLB,Dolby Laboratories Inc
+NNN,NNN REIT Inc
+DUOL,Duolingo Inc
+AU,Anglogold Ashanti PLC
+WCC,Wesco International Inc
+CERE,Cerevel Therapeutics Holdings Inc
+COLD,Americold Realty Trust Inc
+GGB,Gerdau SA
+EHC,Encompass Health Corp
+SITE,SiteOne Landscape Supply Inc
+AYI,Acuity Brands Inc
+CYTK,Cytokinetics Inc
+DSGX,Descartes Systems Group Inc
+FSV,Firstservice Corp
+RRC,Range Resources Corp
+TX,Ternium SA
+AMKR,Amkor Technology Inc
+KVYO,Klaviyo Inc
+SN,Sharkninja Inc
+SWN,Southwestern Energy Co
+WFRD,Weatherford International PLC
+MHK,Mohawk Industries Inc
+FR,First Industrial Realty Trust Inc
+GRFS,Grifols SA
+VOYA,Voya Financial Inc
+AIT,Applied Industrial Technologies Inc
+LBTYA,Liberty Global Ltd
+LBTYB,Liberty Global Ltd
+LBTYK,Liberty Global Ltd
+BRBR,Bellring Brands Inc
+LEVI,Levi Strauss & Co
+WIX,Wix.Com Ltd
+XRAY,DENTSPLY SIRONA Inc
+ALTR,Altair Engineering Inc
+GNRC,Generac Holdings Inc
+CHWY,Chewy Inc
+AR,Antero Resources Corp
+NYT,New York Times Co
+CSAN,Cosan SA
+ITCI,Intra-Cellular Therapies Inc
+OSK,Oshkosh Corp
+GPS,Gap Inc
+ALTM,Arcadium Lithium PLC
+RGLD,Royal Gold Inc
+STAG,STAG Industrial Inc
+RHP,Ryman Hospitality Properties Inc
+SAIC,Science Applications International Corp
+MTDR,Matador Resources Co
+CROX,Crocs Inc
+IVZ,Invesco Ltd
+HQY,Healthequity Inc
+MSA,MSA Safety Inc
+SUM,Summit Materials Inc
+HAS,Hasbro Inc
+FUTU,Futu Holdings Ltd
+MASI,Masimo Corp
+BWA,Borgwarner Inc
+CFR,Cullen/Frost Bankers Inc
+DV,DoubleVerify Holdings Inc
+AXTA,Axalta Coating Systems Ltd
+DDS,Dillard's Inc
+PPC,Pilgrims Pride Corp
+EVR,Evercore Inc
+NCLH,Norwegian Cruise Line Holdings Ltd
+BRX,Brixmor Property Group Inc
+ENSG,Ensign Group Inc
+UGP,Ultrapar Participacoes SA
+LSTR,Landstar System Inc
+SPSC,SPS Commerce Inc
+MAT,Mattel Inc
+CCCS,CCC Intelligent Solutions Holdings Inc
+BERY,Berry Global Group Inc
+UFPI,Ufp Industries Inc
+YMM,Full Truck Alliance Co Ltd
+CHRD,Chord Energy Corp
+CACC,Credit Acceptance Corp
+CGNX,Cognex Corp
+FCN,FTI Consulting Inc
+NOV,Nov Inc
+PAC,Grupo Aeroportuario del Pacifico SAB de CV
+DAR,Darling Ingredients Inc
+CBSH,Commerce Bancshares Inc
+AAON,Aaon Inc
+FN,Fabrinet
+CMA,Comerica Inc
+BILL,BILL Holdings Inc
+GLBE,Global-E Online Ltd
+OGE,OGE Energy Corp
+WAL,Western Alliance Bancorp
+CRSP,CRISPR Therapeutics AG
+NFE,New Fortress Energy Inc
+WTS,Watts Water Technologies Inc
+AZEK,Azek Company Inc
+NSIT,Insight Enterprises Inc
+G,Genpact Ltd
+PNFP,Pinnacle Financial Partners Inc
+RLI,Rli Corp
+ZI,Zoominfo Technologies Inc
+WH,Wyndham Hotels & Resorts Inc
+LYFT,Lyft Inc
+WFG,West Fraser Timber Co Ltd
+GXO,GXO Logistics Inc
+HRB,H & R Block Inc
+ICL,ICL Group Ltd
+POST,Post Holdings Inc
+THO,Thor Industries Inc
+CMC,Commercial Metals Co
+FMC,FMC Corp
+IONS,Ionis Pharmaceuticals Inc
+HLNE,Hamilton Lane Inc
+VNT,Vontier Corp
+VFC,VF Corp
+FOUR,Shift4 Payments Inc
+EXEL,Exelixis Inc
+KGC,Kinross Gold Corp
+FRSH,Freshworks Inc
+CIVI,Civitas Resources Inc
+TNET,TriNet Group Inc
+ADT,ADT Inc
+SIGI,Selective Insurance Group Inc
+ALSN,Allison Transmission Holdings Inc
+ARW,Arrow Electronics Inc
+BBIO,BridgeBio Pharma Inc
+MMYT,MakeMyTrip Ltd
+BFAM,Bright Horizons Family Solutions Inc
+CAVA,CAVA Group Inc
+OLN,Olin Corp
+CAE,CAE Inc
+REYN,Reynolds Consumer Products Inc
+BPOP,Popular Inc
+HXL,Hexcel Corp
+LFUS,Littelfuse Inc
+STWD,Starwood Property Trust Inc
+BYD,Boyd Gaming Corp
+RRR,Red Rock Resorts Inc
+CLVT,Clarivate PLC
+MTSI,MACOM Technology Solutions Holdings Inc
+MUR,Murphy Oil Corp
+QLYS,Qualys Inc
+ELP,Companhia Paranaense de Energia
+ELPC,Companhia Paranaense de Energia
+RMBS,Rambus Inc
+FAF,First American Financial Corp
+AM,Antero Midstream Corp
+WHR,Whirlpool Corp
+NXST,Nexstar Media Group Inc
+GIL,Gildan Activewear Inc
+W,Wayfair Inc
+NE,Noble Corporation PLC
+ALGM,Allegro Microsystems Inc
+BC,Brunswick Corp
+ZION,Zions Bancorporation NA
+SMAR,Smartsheet Inc
+CIGI,Colliers International Group Inc
+OPCH,Option Care Health Inc
+BNRE,Brookfield Reinsurance Ltd
+BNREa,Brookfield Reinsurance Ltd
+MNSO,MINISO Group Holding Ltd
+WTFC,Wintrust Financial Corp
+PB,Prosperity Bancshares Inc
+ANF,Abercrombie & Fitch Co
+TENB,Tenable Holdings Inc
+IBP,Installed Building Products Inc
+CIG,Energy of Minas Gerais Co
+CIGc,Energy of Minas Gerais Co
+NEU,NewMarket Corp
+TMHC,Taylor Morrison Home Corp
+PLNT,Planet Fitness Inc
+AN,AutoNation Inc
+AGNC,AGNC Investment Corp
+CHH,Choice Hotels International Inc
+ATI,Allegheny Technologies Inc
+NOVT,Novanta Inc
+ENLC,EnLink Midstream LLC
+CHX,ChampionX Corp
+VNOM,Viper Energy Inc
+BRZE,Braze Inc
+ESI,Element Solutions Inc
+INSP,Inspire Medical Systems Inc
+OMF,OneMain Holdings Inc
+ADC,Agree Realty Corp
+TXG,10X Genomics Inc
+TKR,Timken Co
+VTMX,Vesta Real Estate Corporation SAB de CV
+ESAB,ESAB Corp
+FG,F&G Annuities & Life Inc
+BPMC,Blueprint Medicines Corp
+MSM,MSC Industrial Direct Co Inc
+PBF,PBF Energy Inc
+ESNT,Essent Group Ltd
+FLS,Flowserve Corp
+MLI,Mueller Industries Inc
+SON,Sonoco Products Co
+TRNO,Terreno Realty Corp
+DRS,Leonardo DRS Inc
+DOCS,Doximity Inc
+CPRI,Capri Holdings Ltd
+MTZ,MasTec Inc
+IMVT,Immunovant Inc
+MTH,Meritage Homes Corp
+BOKF,BOK Financial Corp
+PEGA,Pegasystems Inc
+SNV,Synovus Financial Corp
+SFM,Sprouts Farmers Market Inc
+DTM,DT Midstream Inc
+ZWS,Zurn Elkay Water Solutions Corp
+GTLS,Chart Industries Inc
+BCC,Boise Cascade Co
+CNXC,Concentrix Corp
+BECN,Beacon Roofing Supply Inc
+EEFT,Euronet Worldwide Inc
+HR,Healthcare Realty Trust Inc
+LANC,Lancaster Colony Corp
+HOG,Harley-Davidson Inc
+FYBR,Frontier Communications Parent Inc
+FTAI,FTAI Aviation Ltd
+ALIT,Alight Inc
+FCFS,Firstcash Holdings Inc
+VVV,Valvoline Inc
+M,Macy's Inc
+SEE,Sealed Air Corp
+FLR,Fluor Corp
+AXS,AXIS Capital Holdings Ltd
+VRNS,Varonis Systems Inc
+CWST,Casella Waste Systems Inc
+ATKR,Atkore Inc
+FRO,Frontline Plc
+PII,Polaris Inc
+MTG,MGIC Investment Corp
+IGT,International Game Technology PLC
+AWI,Armstrong World Industries Inc
+STNE,StoneCo Ltd
+MARA,Marathon Digital Holdings Inc
+ASO,Academy Sports and Outdoors Inc
+FIVN,Five9 Inc
+JHG,Janus Henderson Group PLC
+NUVL,Nuvalent Inc
+KNTK,Kinetik Holdings Inc
+ST,Sensata Technologies Holding PLC
+UGI,UGI Corp
+BLCO,Bausch + Lomb Corp
+AMG,Affiliated Managers Group Inc
+RITM,Rithm Capital Corp
+BCPC,Balchem Corp
+ALKS,Alkermes Plc
+EXLS,Exlservice Holdings Inc
+BILI,Bilibili Inc
+WK,Workiva Inc
+KEX,Kirby Corp
+CADE,Cadence Bank
+MMS,Maximus Inc
+RYN,Rayonier Inc
+TIXT,Telus International Cda Inc
+SPXC,SPX Technologies Inc
+TIMB,Tim SA
+PHI,PLDT Inc
+LPX,Louisiana-Pacific Corp
+OLLI,Ollie's Bargain Outlet Holdings Inc
+IAC,IAC Inc
+COLM,Columbia Sportswear Co
+ALK,Alaska Air Group Inc
+VNO,Vornado Realty Trust
+AGO,Assured Guaranty Ltd
+KD,Kyndryl Holdings Inc
+SSL,Sasol Ltd
+QFIN,Qifu Technology Inc
+IPAR,Inter Parfums Inc
+AMR,Alpha Metallurgical Resources Inc
+CWAN,Clearwater Analytics Holdings Inc
+CRUS,Cirrus Logic Inc
+BIPC,Brookfield Infrastructure Corp
+SLGN,Silgan Holdings Inc
+PTEN,Patterson-UTI Energy Inc
+HGV,Hilton Grand Vacations Inc
+R,Ryder System Inc
+SID,Companhia Siderurgica Nacional SA
+FSS,Federal Signal Corp
+TKC,Turkcell Iletisim Hizmetleri AS
+THG,Hanover Insurance Group Inc
+FLO,Flowers Foods Inc
+FNB,FNB Corp
+ONB,Old National Bancorp
+RH,RH
+SEDG,Solaredge Technologies Inc
+PWSC,PowerSchool Holdings Inc
+AA,Alcoa Corp
+SIG,Signet Jewelers Ltd
+BROS,Dutch Bros Inc
+HALO,Halozyme Therapeutics Inc
+VMI,Valmont Industries Inc
+HOMB,Home BancShares Inc
+PAAS,Pan American Silver Corp
+OGN,Organon & Co
+BRFS,BRF SA
+CWEN,Clearway Energy Inc
+CWENa,Clearway Energy Inc
+COOP,Mr Cooper Group Inc
+FIZZ,National Beverage Corp
+MOGa,Moog Inc
+MOGb,Moog Inc
+UBSI,United Bankshares Inc
+DLO,Dlocal Ltd
+AGI,Alamos Gold Inc
+KBH,KB Home
+KRG,Kite Realty Group Trust
+ESGR,Enstar Group Ltd
+MDC,MDC Holdings Inc
+DNB,Dun & Bradstreet Holdings Inc
+VAL,Valaris Ltd
+NVMI,Nova Ltd
+MMSI,Merit Medical Systems Inc
+ASH,Ashland Inc
+FRHC,Freedom Holding Corp
+LNC,Lincoln National Corp
+BMI,Badger Meter Inc
+ASGN,ASGN Inc
+SKY,Skyline Champion Corp
+SHC,Sotera Health Co
+FELE,Franklin Electric Co Inc
+AIRC,Apartment Income REIT Corp
+ETRN,Equitrans Midstream Corp
+FFIN,First Financial Bankshares Inc
+WU,Western Union Co
+SRCL,Stericycle Inc
+MDGL,Madrigal Pharmaceuticals Inc
+WTM,White Mountains Insurance Group Ltd
+FROG,Jfrog Ltd
+RCM,R1 RCM Inc
+IDA,Idacorp Inc
+MSGS,Madison Square Garden Sports Corp
+AL,Air Lease Corp
+GKOS,Glaukos Corp
+GOLF,Acushnet Holdings Corp
+SM,SM Energy Co
+BEPC,Brookfield Renewable Corp
+CBT,Cabot Corp
+CLS,Celestica Inc
+NFG,National Fuel Gas Co
+SLM,SLM Corp
+GATX,GATX Corp
+HCP,HashiCorp Inc
+LPL,LG Display Co Ltd
+SWX,Southwest Gas Holdings Inc
+SLAB,Silicon Laboratories Inc
+PRGO,Perrigo Company PLC
+MGY,Magnolia Oil & Gas Corp
+PFSI,PennyMac Financial Services Inc
+AUR,Aurora Innovation Inc
+FRPT,Freshpet Inc
+AEL,American Equity Investment Life Holding Co
+AEO,American Eagle Outfitters Inc
+ACT,Enact Holdings Inc
+JOBY,Joby Aviation Inc
+LAZ,Lazard Inc
+ABG,Asbury Automotive Group Inc
+CRVL,CorVel Corp
+SGRY,Surgery Partners Inc
+CPG,Crescent Point Energy Corp
+SQSP,Squarespace Inc
+MDU,MDU Resources Group Inc
+KRC,Kilroy Realty Corp
+ALVO,Alvotech SA
+HUN,Huntsman Corp
+SAM,Boston Beer Company Inc
+VLY,Valley National Bancorp
+CC,Chemours Co
+PAGS,PagSeguro Digital Ltd
+FUL,H.B. Fuller Company
+RDN,Radian Group Inc
+JXN,Jackson Financial Inc
+INSM,Insmed Inc
+ASAN,Asana Inc
+ENIC,Enel Chile SA
+HRI,Herc Holdings Inc
+SNDR,Schneider National Inc
+CPA,Copa Holdings SA
+GBCI,Glacier Bancorp Inc
+POR,Portland General Electric Co
+PECO,Phillips Edison & Co Inc
+SYNA,Synaptics Inc
+NJR,New Jersey Resources Corp
+POWI,Power Integrations Inc
+SHAK,Shake Shack Inc
+GME,GameStop Corp
+GGAL,Grupo Financiero Galicia SA
+EPRT,Essential Properties Realty Trust Inc
+AQN,Algonquin Power & Utilities Corp
+MATX,Matson Inc
+AVT,Avnet Inc
+ACAD,ACADIA Pharmaceuticals Inc
+MOD,Modine Manufacturing Co
+CVLT,Commvault Systems Inc
+ORA,Ormat Technologies Inc
+OSCR,Oscar Health Inc
+URBN,Urban Outfitters Inc
+NXE,Nexgen Energy Ltd
+IPGP,IPG Photonics Corp
+UMBF,UMB Financial Corp
+ACA,Arcosa Inc
+RIG,Transocean Ltd
+MC,Moelis & Co
+FOLD,Amicus Therapeutics Inc
+EXPO,Exponent Inc
+NVST,Envista Holdings Corp
+EURN,Euronav NV
+STEP,StepStone Group Inc
+RARE,Ultragenyx Pharmaceutical Inc
+LNTH,Lantheus Holdings Inc
+LOPE,Grand Canyon Education Inc
+COLB,Columbia Banking System Inc
+PGNY,Progyny Inc
+HP,Helmerich and Payne Inc
+AXSM,Axsome Therapeutics Inc
+HHH,Howard Hughes Holdings Inc
+RYZB,RayzeBio Inc
+DXC,DXC Technology Co
+TDC,Teradata Corp
+KMPR,Kemper Corp
+VRRM,Verra Mobility Corp
+BHVN,Biohaven Ltd
+HWC,Hancock Whitney Corp
+CAR,Avis Budget Group Inc
+ATS,ATS Corp
+BCO,Brinks Co
+CCOI,Cogent Communications Holdings Inc
+AEIS,Advanced Energy Industries Inc
+VERX,Vertex Inc
+SATS,EchoStar Corp
+TSEM,Tower Semiconductor Ltd
+NEOG,Neogen Corp
+BVN,Compania de Minas Buenaventura SAA
+MAC,Macerich Co
+PYCR,Paycor HCM Inc
+KAI,Kadant Inc
+TRIP,Tripadvisor Inc
+OTTR,Otter Tail Corp
+TFSL,TFS Financial Corp
+BLKB,Blackbaud Inc
+CBAY,CymaBay Therapeutics Inc
+WEN,Wendys Co
+CAMT,Camtek Ltd
+MLCO,Melco Resorts & Entertainment Ltd
+AAP,Advance Auto Parts Inc
+BOX,Box Inc
+CRC,California Resources Corp
+ENS,EnerSys
+ACLS,Axcelis Technologies Inc
+KWR,Quaker Chemical Corp
+APLE,Apple Hospitality REIT Inc
+NSP,Insperity Inc
+HAE,Haemonetics Corp
+CSWI,CSW Industrials Inc
+TDW,Tidewater Inc
+ARWR,Arrowhead Pharmaceuticals Inc
+WHD,Cactus Inc
+CBZ,CBIZ Inc
+SPT,Sprout Social Inc
+RPD,Rapid7 Inc
+VKTX,Viking Therapeutics Inc
+SWTX,SpringWorks Therapeutics Inc
+GPI,Group 1 Automotive Inc
+IRDM,Iridium Communications Inc
+AZTA,Azenta Inc
+WDFC,WD-40 Co
+BKH,Black Hills Corp
+XENE,Xenon Pharmaceuticals Inc
+CUZ,Cousins Properties Inc
+BGC,Bgc Group Inc
+IART,Integra Lifesciences Holdings Corp
+AVNT,Avient Corp
+HMY,Harmony Gold Mining Company Ltd
+PSNY,Polestar Automotive Holding Uk Plc
+RUSHA,Rush Enterprises Inc
+RUSHB,Rush Enterprises Inc
+KTB,Kontoor Brands Inc
+GT,Goodyear Tire & Rubber Co
+GTES,Gates Industrial Corporation PLC
+STNG,Scorpio Tankers Inc
+SMPL,Simply Good Foods Co
+CNS,Cohen & Steers Inc
+AVAV,AeroVironment Inc
+GMS,GMS Inc
+BL,Blackline Inc
+LBRT,Liberty Energy Inc
+PCH,Potlatchdeltic Corp
+UA,Under Armour Inc
+UAA,Under Armour Inc
+EVH,Evolent Health Inc
+CXM,Sprinklr Inc
+AYX,Alteryx Inc
+CVI,CVR Energy Inc
+RUN,Sunrun Inc
+WIRE,Encore Wire Corp
+GFF,Griffon Corp
+SFBS,ServisFirst Bancshares Inc
+AXNX,Axonics Inc
+MQ,Marqeta Inc
+ALRM,Alarm.com Holdings Inc
+MAN,ManpowerGroup Inc
+BUR,Burford Capital Ltd
+OGS,ONE Gas Inc
+ARVN,Arvinas Inc
+IQ,iQIYI Inc
+IRTC,iRhythm Technologies Inc
+ITRI,Itron Inc
+IRT,Independence Realty Trust Inc
+SEM,Select Medical Holdings Corp
+ATHM,Autohome Inc
+CRDO,Credo Technology Group Holding Ltd
+PBH,Prestige Consumer Healthcare Inc
+INST,Instructure Holdings Inc
+STR,Sitio Royalties Corp
+SPR,Spirit AeroSystems Holdings Inc
+ERJ,Embraer SA
+TDOC,Teladoc Health Inc
+NCNO,nCino Inc
+NYCB,New York Community Bancorp Inc
+IMCR,Immunocore Holdings PLC
+DY,Dycom Industries Inc
+TPH,Tri Pointe Homes Inc (Delaware)
+APAM,Artisan Partners Asset Management Inc
+BXMT,Blackstone Mortgage Trust Inc
+NARI,Inari Medical Inc
+YETI,Yeti Holdings Inc
+ITGR,Integer Holdings Corp
+NOG,Northern Oil and Gas Inc
+PIPR,Piper Sandler Companies
+GSHD,Goosehead Insurance Inc
+ARCB,ArcBest Corp
+RELY,Remitly Global Inc
+SANM,Sanmina Corp
+LITE,Lumentum Holdings Inc
+CXT,Crane NXT Co
+ZGN,Ermenegildo Zegna NV
+NNI,Nelnet Inc
+ACIW,ACI Worldwide Inc
+PAGP,Plains GP Holdings LP
+ALE,ALLETE Inc
+MLTX,MoonLake Immunotherapeutics
+PK,Park Hotels & Resorts Inc
+ERF,Enerplus Corp
+BDC,Belden Inc
+IFS,Intercorp Financial Services Inc
+SR,Spire Inc
+DOCN,DigitalOcean Holdings Inc
+SHOO,Steven Madden Ltd
+CLSK,CleanSpark Inc
+MHO,M/I Homes Inc
+JBT,John Bean Technologies Corp
+VC,Visteon Corp
+NSA,National Storage Affiliates Trust
+SMG,Scotts Miracle-Gro Co
+ENOV,Enovis Corp
+IDYA,IDEAYA Biosciences Inc
+AI,C3.ai Inc
+GHC,Graham Holdings Co
+HI,Hillenbrand Inc
+NWL,Newell Brands Inc
+PNM,PNM Resources Inc
+JWN,Nordstrom Inc
+ABCB,Ameris Bancorp
+RLX,RLX Technology Inc
+EPR,EPR Properties
+QS,Quantumscape Corp
+CRS,Carpenter Technology Corp
+RVMD,Revolution Medicines Inc
+SBRA,Sabra Health Care REIT Inc
+UCBI,United Community Banks Inc
+RIOT,Riot Platforms Inc
+WOLF,Wolfspeed Inc
+IBOC,International Bancshares Corp
+FLNC,Fluence Energy Inc
+BTU,Peabody Energy Corp
+NOMD,Nomad Foods Ltd
+BRP,BRP Group Inc
+JOE,St Joe Co
+IBRX,Immunitybio Inc
+NPO,Enpro Inc
+MGRC,McGrath RentCorp
+BAK,Braskem SA
+WD,Walker & Dunlop Inc
+SBSW,Sibanye Stillwater Ltd
+UNF,UniFirst Corp
+PAM,Pampa Energia SA
+FTRE,Fortrea Holdings Inc
+ASB,Associated Banc-Corp
+SKT,Tanger Inc
+ADNT,Adient PLC
+VAC,Marriott Vacations Worldwide Corp
+KRYS,Krystal Biotech Inc
+WOR,Worthington Enterprises Inc
+DIOD,Diodes Inc
+BHC,Bausch Health Companies Inc
+QDEL,QuidelOrtho Corp
+SVV,Savers Value Village Inc
+REZI,Resideo Technologies Inc
+KFY,Korn Ferry
+KSS,Kohls Corp
+FORM,FormFactor Inc
+TRMD,Torm PLC
+OMAB,Grupo Aeroportuario del Centro Norte SAB de CV
+CVCO,Cavco Industries Inc
+IOSP,Innospec Inc
+FL,Foot Locker Inc
+ZD,Ziff Davis Inc
+DFH,Dream Finders Homes Inc
+AMED,Amedisys Inc
+SDRL,Seadrill Ltd
+LCII,LCI Industries
+TCN,Tricon Residential Inc
+BRC,Brady Corp
+CNO,CNO Financial Group Inc
+BHF,Brighthouse Financial Inc
+AX,Axos Financial Inc
+FHI,Federated Hermes Inc
+TEX,Terex Corp
+DBRG,DigitalBridge Group Inc
+CTRE,CareTrust REIT Inc
+CRI,Carter's Inc
+VSH,Vishay Intertechnology Inc
+VIST,Vista Energy SAB de CV
+NWE,NorthWestern Corp
+TNL,Travel + Leisure Co
+AVAL,Grupo Aval Acciones y Valores SA
+CNX,CNX Resources Corp
+SLG,SL Green Realty Corp
+IOVA,Iovance Biotherapeutics Inc
+INTA,Intapp Inc
+PRKS,United Parks & Resorts Inc
+SITC,Site Centers Corp
+SRAD,Sportradar Group AG
+GPRE,Green Plains Inc
+TGNA,Tegna Inc
+BANF,BancFirst Corp
+ACLX,Arcellx Inc
+HELE,Helen of Troy Ltd
+HASI,Hannon Armstrong Sustainable Infrastructure Capital Inc
+HCC,Warrior Met Coal Inc
+GEF,Greif Inc
+GEFb,Greif Inc
+BNL,Broadstone Net Lease Inc
+LU,Lufax Holding Ltd
+ARCH,Arch Resources Inc
+RNG,RingCentral Inc
+CATY,Cathay General Bancorp
+TMDX,Transmedics Group Inc
+MP,MP Materials Corp
+ZKH,ZKH Group Ltd
+AIN,Albany International Corp
+CALM,Cal-Maine Foods Inc
+ICFI,ICF International Inc
+MEOH,Methanex Corp
+WNS,WNS (Holdings) Ltd
+DOOR,Masonite International Corp
+LIVN,LivaNova PLC
+GNW,Genworth Financial Inc
+OLK,Olink Holding AB (publ)
+IDCC,InterDigital Inc
+AWR,American States Water Co
+JJSF,J & J Snack Foods Corp
+CGON,CG Oncology Inc
+NMRA,Neumora Therapeutics Inc
+MCW,Mister Car Wash Inc
+FBP,First BanCorp
+TCBI,Texas Capital Bancshares Inc
+HGTY,Hagerty Inc
+MCY,Mercury General Corp
+FLYW,Flywire Corp
+USM,United States Cellular Corp
+RYTM,Rhythm Pharmaceuticals Inc
+HAYW,Hayward Holdings Inc
+CABO,Cable One Inc
+FOXF,Fox Factory Holding Corp
+DAVA,Endava PLC
+CERT,Certara Inc
+GH,Guardant Health Inc
+PLTK,Playtika Holding Corp
+AROC,Archrock Inc
+TIGO,Millicom International Cellular SA
+BMA,Banco Macro SA
+SXT,Sensient Technologies Corp
+AGL,agilon health inc
+PI,Impinj Inc
+YOU,Clear Secure Inc
+CWT,California Water Service Group
+BTE,Baytex Energy Corp
+LGIH,LGI Homes Inc
+KLIC,Kulicke and Soffa Industries Inc
+FHB,First Hawaiian Inc
+HUBG,Hub Group Inc
+LEG,Leggett & Platt Inc
+CSTM,Constellium SE
+CDP,COPT Defense Properties
+FIBK,First Interstate Bancsystem Inc
+ENV,Envestnet Inc
+MTRN,Materion Corp
+BOOT,Boot Barn Holdings Inc
+CCS,Century Communities Inc
+DNA,Ginkgo Bioworks Holdings Inc
+SHLS,Shoals Technologies Group Inc
+DOC,Physicians Realty Trust
+MODG,Topgolf Callaway Brands Corp
+EVTC,Evertec Inc
+GBTG,Global Business Travel Group Inc
+RXRX,Recursion Pharmaceuticals Inc
+KTOS,Kratos Defense and Security Solutions Inc
+VIRT,Virtu Financial Inc
+MOR,MorphoSys AG
+APPN,Appian Corp
+KOS,Kosmos Energy Ltd
+ESE,ESCO Technologies Inc
+PDCO,Patterson Companies Inc
+AVA,Avista Corp
+UTZ,UTZ Brands Inc
+EVO,Evotec SE
+OR,Osisko Gold Royalties Ltd
+SMMT,Summit Therapeutics Inc
+CARG,CarGurus Inc
+GLPG,Galapagos NV
+PENN,PENN Entertainment Inc
+JAMF,Jamf Holding Corp
+ALG,Alamo Group Inc
+PTVE,Pactiv Evergreen Inc
+ROCK,Gibraltar Industries Inc
+MRUS,Merus NV
+PLXS,Plexus Corp
+MYRG,MYR Group Inc
+DORM,Dorman Products Inc
+RCKT,Rocket Pharmaceuticals Inc
+CENT,Central Garden & Pet Co
+CENTA,Central Garden & Pet Co
+FTDR,Frontdoor Inc
+PINC,Premier Inc
+WSFS,WSFS Financial Corp
+GO,Grocery Outlet Holding Corp
+AMPH,Amphastar Pharmaceuticals Inc
+RDNT,RadNet Inc
+GDRX,GoodRx Holdings Inc
+ATAT,Atour Lifestyle Holdings Ltd
+IIPR,Innovative Industrial Properties Inc
+FULT,Fulton Financial Corp
+YELP,Yelp Inc
+LXP,LXP Industrial Trust
+ABM,ABM Industries Inc
+VSTS,Vestis Corp
+ICUI,ICU Medical Inc
+IAS,Integral Ad Science Holding Corp
+STRL,Sterling Infrastructure Inc
+WERN,Werner Enterprises Inc
+CWK,Cushman & Wakefield PLC
+OI,O-I Glass Inc
+ABR,Arbor Realty Trust Inc
+LFST,Lifestance Health Group Inc
+BEAM,Beam Therapeutics Inc
+AUB,Atlantic Union Bankshares Corp
+HIW,Highwoods Properties Inc
+FA,First Advantage Corp
+INSW,International Seaways Inc
+CNMD,Conmed Corp
+BATRA,Atlanta Braves Holdings Inc
+BATRK,Atlanta Braves Holdings Inc
+TFPM,Triple Flag Precious Metals Corp
+HCM,HUTCHMED (China) Ltd
+PJT,PJT Partners Inc
+LTH,Life Time Group Holdings Inc
+VSAT,Viasat Inc
+PATK,Patrick Industries Inc
+CRNX,Crinetics Pharmaceuticals Inc
+COUR,Coursera Inc
+SPB,Spectrum Brands Holdings Inc
+QTWO,Q2 Holdings Inc
+GRBK,Green Brick Partners Inc
+PRCT,Procept Biorobotics Corp
+BOH,Bank of Hawaii Corp
+AVDX,Avidxchange Holdings Inc
+RXO,RXO Inc
+SKYW,SkyWest Inc
+PSMT,PriceSmart Inc
+MWA,Mueller Water Products Inc
+PLAY,Dave & Buster's Entertainment Inc
+BANC,Banc of California Inc
+PRGS,Progress Software Corp
+ARCO,Arcos Dorados Holdings Inc
+PRMW,Primo Water Corp
+TBBB,BBB Foods Inc
+PRVA,Privia Health Group Inc
+GPOR,Gulfport Energy Corp
+AMK,AssetMark Financial Holdings Inc
+CVBF,CVB Financial Corp
+ALKT,Alkami Technology Inc
+PGTI,PGT Innovations Inc
+ROAD,Construction Partners Inc
+CBU,Community Bank System Inc
+NABL,N-Able Inc
+RAMP,Liveramp Holdings Inc
+PRFT,Perficient Inc
+NTLA,Intellia Therapeutics Inc
+LRN,Stride Inc
+ARLP,Alliance Resource Partners LP
+DRVN,Driven Brands Holdings Inc
+EBC,Eastern Bankshares Inc
+CAAP,Corporacion America Airports SA
+SITM,SiTime Corp
+JBLU,JetBlue Airways Corp
+AIR,AAR Corp
+VCEL,Vericel Corp
+UP,Wheels Up Experience Inc
+VCTR,Victory Capital Holdings Inc
+RNW,Renew Energy Global PLC
+MGEE,MGE Energy Inc
+SFNC,Simmons First National Corp
+INDB,Independent Bank Corp (Massachusetts)
+TBBK,Bancorp Inc
+CMPR,Cimpress PLC
+VERA,Vera Therapeutics Inc
+BLMN,Bloomin' Brands Inc
+NMIH,NMI Holdings Inc
+CORT,Corcept Therapeutics Inc
+PZZA,Papa John's International Inc
+CPK,Chesapeake Utilities Corp
+RKLB,Rocket Lab USA Inc
+PPBI,Pacific Premier Bancorp Inc
+IRWD,Ironwood Pharmaceuticals Inc
+PARR,Par Pacific Holdings Inc
+PAX,Patria Investments Ltd
+MTX,Minerals Technologies Inc
+INTR,Inter & Co Inc
+XRX,Xerox Holdings Corp
+NHI,National Health Investors Inc
+AMBP,Ardagh Metal Packaging SA
+SONO,Sonos Inc
+EGO,Eldorado Gold Corp
+STRA,Strategic Education Inc
+TWST,Twist Bioscience Corp
+TROX,Tronox Holdings PLC
+DNLI,Denali Therapeutics Inc
+SOVO,Sovos Brands Inc
+DEI,Douglas Emmett Inc
+SLVM,Sylvamo Corp
+ODD,Oddity Tech Ltd
+OSIS,OSI Systems Inc
+WB,Weibo Corp
+CEIX,CONSOL Energy Inc
+ACVA,ACV Auctions Inc
+KYMR,Kymera Therapeutics Inc
+VSCO,Victoria's Secret & Co
+SHO,Sunstone Hotel Investors Inc
+SIMO,Silicon Motion Technology Corp
+PLUG,Plug Power Inc
+INDV,Indivior PLC
+CCU,Compania Cervecerias Unidas SA
+MIR,Mirion Technologies Inc
+SDGR,Schrodinger Inc
+HTZ,Hertz Global Holdings Inc
+DNUT,Krispy Kreme Inc
+AY,Atlantica Sustainable Infrastructure PLC
+GLNG,Golar LNG Ltd
+GTX,Garrett Motion Inc
+HL,Hecla Mining Co
+ROG,Rogers Corp
+CLBT,Cellebrite DI Ltd
+JBI,Janus International Group Inc
+AMN,AMN Healthcare Services Inc
+UPST,Upstart Holdings Inc
+AKOa,Embotelladora Andina SA
+AKOb,Embotelladora Andina SA
+GVA,Granite Construction Inc
+ZETA,Zeta Global Holdings Corp
+TR,Tootsie Roll Industries Inc
+FCPT,Four Corners Property Trust Inc
+OII,Oceaneering International Inc
+AMBA,Ambarella Inc
+GOGL,Golden Ocean Group Ltd
+CALX,Calix Inc
+PD,PagerDuty Inc
+VZIO,Vizio Holding Corp
+VYX,NCR Voyix Corp
+CWH,Camping World Holdings Inc
+MPW,Medical Properties Trust Inc
+AGYS,Agilysys Inc
+TRN,Trinity Industries Inc
+ENR,Energizer Holdings Inc
+ARRY,Array Technologies Inc
+IONQ,IONQ Inc
+CPE,Callon Petroleum Co
+BTSG,Brightspring Health Services Inc
+XPRO,Expro Group Holdings NV
+TAC,TransAlta Corp
+PLUS,ePlus inc
+VIAV,Viavi Solutions Inc
+SNEX,Stonex Group Inc
+FFBC,First Financial Bancorp
+CRK,Comstock Resources Inc
+ATEC,Alphatec Holdings Inc
+ENLT,Enlight Renewable Energy Ltd
+VICR,Vicor Corp
+MLKN,MillerKnoll Inc
+LSPD,Lightspeed Commerce Inc
+SBCF,Seacoast Banking Corporation of Florida
+MYGN,Myriad Genetics Inc
+SIX,Six Flags Entertainment Corp
+TALO,Talos Energy Inc
+TGLS,Tecnoglass Inc
+SWI,SolarWinds Corp
+TGH,Textainer Group Holdings Ltd
+TOWN,TowneBank
+SBLK,Star Bulk Carriers Corp
+OUT,OUTFRONT Media Inc
+PRIM,Primoris Services Corp
+LAUR,Laureate Education Inc
+LGFa,Lions Gate Entertainment Corp
+LGFb,Lions Gate Entertainment Corp
+SCL,Stepan Co
+GOOS,Canada Goose Holdings Inc
+HPK,Highpeak Energy Inc
+HIMS,Hims & Hers Health Inc
+LVWR,LiveWire Group Inc
+WGO,Winnebago Industries Inc
+FRME,First Merchants Corp
+HTH,Hilltop Holdings Inc
+SPNT,Siriuspoint Ltd
+MGPI,MGP Ingredients Inc
+BKU,BankUnited Inc
+KROS,Keros Therapeutics Inc
+HNI,HNI Corp
+GPCR,Structure Therapeutics Inc
+UE,Urban Edge Properties
+BE,Bloom Energy Corp
+EAT,Brinker International Inc
+IESC,IES Holdings Inc
+ALPN,Alpine Immune Sciences Inc
+CNK,Cinemark Holdings Inc
+TGTX,TG Therapeutics Inc
+ROVR,Rover Group Inc
+ZLAB,Zai Lab Ltd
+HURN,Huron Consulting Group Inc
+ODP,ODP Corp
+BKE,Buckle Inc
+RXST,Rxsight Inc
+VRNT,Verint Systems Inc
+THS,TreeHouse Foods Inc
+HEES,H&E Equipment Services Inc
+RUM,Rumble Inc
+YY,JOYY Inc
+CRGY,Crescent Energy Co
+EQC,Equity Commonwealth
+PEB,Pebblebrook Hotel Trust
+PTCT,PTC Therapeutics Inc
+PLAB,Photronics Inc
+AGM,Federal Agricultural Mortgage Corp
+AGMa,Federal Agricultural Mortgage Corp
+TUYA,Tuya Inc
+TNK,Teekay Tankers Ltd
+MBC,MasterBrand Inc
+SNDX,Syndax Pharmaceuticals Inc
+PAYO,Payoneer Global Inc
+DRH,Diamondrock Hospitality Co
+NWTN,NWTN Inc
+KGS,Kodiak Gas Services Inc
+BOWL,Bowlero Corp
+LZ,LegalZoom.com Inc
+FSLY,Fastly Inc
+PAY,Paymentus Holdings Inc
+KMT,Kennametal Inc
+SJW,SJW Group
+SXI,Standex International Corp
+VECO,Veeco Instruments Inc
+OPEN,Opendoor Technologies Inc
+TNC,Tennant Co
+AHR,American Healthcare REIT Inc
+VCYT,Veracyte Inc
+EPC,Edgewell Personal Care Co
+ENVX,Enovix Corp
+EVCM,EverCommerce Inc
+AMEH,Apollo Medical Holdings Inc
+HBM,Hudbay Minerals Inc
+ATMU,Atmus Filtration Technologies Inc
+NEO,Neogenomics Inc
+UCTT,Ultra Clean Holdings Inc
+PLMR,Palomar Holdings Inc
+ARDX,Ardelyx Inc
+BFH,Bread Financial Holdings Inc
+AFYA,Afya Ltd
+TV,Grupo Televisa SAB
+IBTX,Independent Bank Group Inc
+NAVI,Navient Corp
+NMRK,Newmark Group Inc
+STGW,Stagwell Inc
+RLJ,RLJ Lodging Trust
+WAFD,WaFd Inc
+AESI,Atlas Energy Solutions Inc
+NAMS,NewAmsterdam Pharma Company NV
+UPBD,Upbound Group Inc
+MSGE,Madison Square Garden Entertainment Corp
+SEMR,SEMrush Holdings Inc
+WLY,John Wiley & Sons Inc
+WLYB,John Wiley & Sons Inc
+CLDX,Celldex Therapeutics Inc
+B,Barnes Group Inc
+BMBL,Bumble Inc
+DFIN,Donnelley Financial Solutions Inc
+AZZ,AZZ Inc
+ENVA,Enova International Inc
+INBX,Inhibrx Inc
+ATGE,Adtalem Global Education Inc
+ARHS,Arhaus Inc
+POWL,Powell Industries Inc
+ANDE,Andersons Inc
+DAN,Dana Inc
+CLBK,Columbia Financial Inc
+MBIN,Merchants Bancorp
+EPAC,Enerpac Tool Group Corp
+TFIN,Triumph Financial Inc
+DYN,Dyne Therapeutics Inc
+CAKE,Cheesecake Factory Inc
+HRMY,Harmony Biosciences Holdings Inc
+GNL,Global Net Lease Inc
+NPWR,NET Power Inc
+DHT,DHT Holdings Inc
+RNST,Renasant Corp
+AMRX,Amneal Pharmaceuticals Inc
+DK,Delek US Holdings Inc
+COMP,Compass Inc
+VSTO,Vista Outdoor Inc
+CNXN,PC Connection Inc
+INMD,Inmode Ltd
+LOB,Live Oak Bancshares Inc
+GETY,Getty Images Holdings Inc
+NWLI,National Western Life Group Inc
+AMAM,Ambrx Biopharma Inc
+BBUC,Brookfield Business Corp
+NVEE,NV5 Global Inc
+VGR,Vector Group Ltd
+APGE,Apogee Therapeutics Inc
+SANA,Sana Biotechnology Inc
+UPWK,Upwork Inc
+CODI,Compass Diversified Holdings
+CRTO,Criteo SA
+HLMN,Hillman Solutions Corp
+VET,Vermilion Energy Inc
+SAH,Sonic Automotive Inc
+FBK,FB Financial Corp
+MORF,Morphic Holding Inc
+CEPU,Central Puerto SA
+WSBC,WesBanco Inc
+MRCY,Mercury Systems Inc
+IVT,Inventrust Properties Corp
+EXPI,eXp World Holdings Inc
+AKR,Acadia Realty Trust
+ULCC,Frontier Group Holdings Inc
+GIC,Global Industrial Co
+NVCR,Novocure Ltd
+CTOS,Custom Truck One Source Inc
+STC,Stewart Information Services Corp
+BORR,Borr Drilling Ltd
+VRTS,Virtus Investment Partners Inc
+PRO,Pros Holdings Inc
+OFG,OFG Bancorp
+DWAC,Digital World Acquisition Corp
+NGVT,Ingevity Corp
+WMK,Weis Markets Inc
+SPNS,Sapiens International Corporation NV
+JBGS,JBG SMITH Properties
+AMPL,Amplitude Inc
+VTLE,Vital Energy Inc
+TRMK,Trustmark Corp
+CUBI,Customers Bancorp Inc
+OMI,Owens & Minor Inc
+WRBY,Warby Parker Inc
+NBTB,NBT Bancorp Inc
+LKFN,Lakeland Financial Corp
+UDMY,Udemy Inc
+ROIC,Retail Opportunity Investments Corp
+HG,Hamilton Insurance Group Ltd
+TTMI,TTM Technologies Inc
+CPRX,Catalyst Pharmaceuticals Inc
+CXW,CoreCivic Inc
+THRM,Gentherm Inc
+NSSC,NAPCO Security Technologies Inc
+LZB,La-Z-Boy Inc
+GENI,Genius Sports Ltd
+EYE,National Vision Holdings Inc
+SSTK,Shutterstock Inc
+IRON,Disc Medicine Inc
+SFL,SFL Corporation Ltd
+ERO,Ero Copper Corp
+PTON,Peloton Interactive Inc
+HOLI,Hollysys Automation Technologies Ltd
+SGHC,SGHC Ltd
+HBI,HanesBrands Inc
+FOR,Forestar Group Inc
+CBRL,Cracker Barrel Old Country Store Inc
+TARO,Taro Pharmaceutical Industries Ltd
+BB,BlackBerry Ltd
+DVAX,Dynavax Technologies Corp
+ESRT,Empire State Realty Trust Inc
+GCMG,GCM Grosvenor Inc
+BBAR,Banco Bbva Argentina SA
+VEON,VEON Ltd
+RES,RPC Inc
+EVEX,Eve Holding Inc
+ATRC,AtriCure Inc
+MXL,Maxlinear Inc
+RC,Ready Capital Corp
+PTGX,Protagonist Therapeutics Inc
+NTCT,Netscout Systems Inc
+LUMN,Lumen Technologies Inc
+FIHL,Fidelis Insurance Holdings Ltd
+OXM,Oxford Industries Inc
+JELD,JELD-WEN Holding Inc
+WS,Worthington Steel Inc
+KAR,Openlane Inc
+AUTL,Autolus Therapeutics PLC
+ARI,Apollo Commercial Real Estate Finance Inc
+KURA,Kura Oncology Inc
+MRTN,Marten Transport Ltd
+ABCL,Abcellera Biologics Inc
+TNDM,Tandem Diabetes Care Inc
+CSGS,CSG Systems International Inc
+SUPN,Supernus Pharmaceuticals Inc
+USPH,US Physical Therapy Inc
+BANR,Banner Corp
+TDS,Telephone and Data Systems Inc
+DSGR,Distribution Solutions Group Inc
+EXTR,Extreme Networks Inc
+ZIM,ZIM Integrated Shipping Services Ltd
+AGIO,Agios Pharmaceuticals Inc
+ABVX,Abivax SA
+EFSC,Enterprise Financial Services Corp
+CHCO,City Holding Co
+GEO,Geo Group Inc
+HLIT,Harmonic Inc
+DH,Definitive Healthcare Corp
+ALGT,Allegiant Travel Co
+FBYD,Falcon's Beyond Global Inc
+ANGI,Angi Inc
+XPEL,Xpel Inc
+SDHC,Smith Douglas Homes Corp
+EWTX,Edgewise Therapeutics Inc
+GBX,Greenbrier Companies Inc
+CNNE,Cannae Holdings Inc
+STAA,STAAR Surgical Co
+DQ,Daqo New Energy Corp
+KN,Knowles Corp
+MLNK,MeridianLink Inc
+SLNO,Soleno Therapeutics Inc
+SAFE,Safehold Inc
+HMN,Horace Mann Educators Corp
+NWBI,Northwest Bancshares Inc
+ADUS,Addus Homecare Corp
+MMI,Marcus & Millichap Inc
+XMTR,Xometry Inc
+EE,Excelerate Energy Inc
+UFPT,UFP Technologies Inc
+GRND,Grindr Inc
+NTB,Bank of NT Butterfield & Son Ltd
+PHIN,Phinia Inc
+AVPT,AvePoint Inc
+GTY,Getty Realty Corp
+CSIQ,Canadian Solar Inc
+AMWD,American Woodmark Corp
+PRTA,Prothena Corporation PLC
+COHU,Cohu Inc
+HLX,Helix Energy Solutions Group Inc
+ACHR,Archer Aviation Inc
+HE,Hawaiian Electric Industries Inc
+FWRG,First Watch Restaurant Group Inc
+GIII,G-III Apparel Group Ltd
+HWKN,Hawkins Inc
+HLIO,Helios Technologies Inc
+FLNG,FLEX LNG Ltd
+SCS,Steelcase Inc
+IMKTA,Ingles Markets Inc
+WKC,World Kinect Corporation
+FBNC,First Bancorp (North Carolina)
+VRE,Veris Residential Inc
+CHEF,Chefs' Warehouse Inc
+PRG,PROG Holdings Inc
+JACK,Jack in the Box Inc
+SPHR,Sphere Entertainment Co
+PHR,Phreesia Inc
+SBH,Sally Beauty Holdings Inc
+HTLF,Heartland Financial USA Inc
+XNCR,Xencor Inc
+TBLA,Taboola.com Ltd
+USLM,United States Lime & Minerals Inc
+LILA,Liberty Latin America Ltd
+LILAK,Liberty Latin America Ltd
+MSC,Studio City International Holdings Ltd
+ZIP,Ziprecruiter Inc
+KW,Kennedy-Wilson Holdings Inc
+SGML,Sigma Lithium Corp
+PHVS,Pharvaris NV
+NWN,Northwest Natural Holding Co
+CTS,CTS Corp
+FINV,FinVolution Group
+LESL,Leslie's Inc
+DCBO,Docebo Inc
+KNSA,Kiniksa Pharmaceuticals Ltd
+WINA,Winmark Corp
+OLPX,Olaplex Holdings Inc
+OSW,Onespaworld Holdings Ltd
+LMAT,LeMaitre Vascular Inc
+CRSR,Corsair Gaming Inc
+SYBT,Stock Yards Bancorp Inc
+PCRX,Pacira Biosciences Inc
+XHR,Xenia Hotels & Resorts Inc
+DAC,Danaos Corp
+SKWD,Skyward Specialty Insurance Group Inc
+LTC,LTC Properties Inc
+NOVA,Sunnova Energy International Inc
+LPG,Dorian LPG Ltd
+VIR,Vir Biotechnology Inc
+TWKS,Thoughtworks Holding Inc
+TLRY,Tilray Brands Inc
+CLMT,Calumet Specialty Products Partners LP
+FCF,First Commonwealth Financial Corp
+ZJYL,Jin Medical International Ltd
+RLAY,Relay Therapeutics Inc
+NEXT,NextDecade Corp
+CMTG,Claros Mortgage Trust Inc
+KEN,Kenon Holdings Ltd
+LNN,Lindsay Corp
+EYPT,EyePoint Pharmaceuticals Inc
+FDMT,4D Molecular Therapeutics Inc
+VRNA,Verona Pharma PLC
+MGNI,Magnite Inc
+PDFS,PDF Solutions Inc
+TGS,Transportadora de Gas del Sur SA
+KFRC,Kforce Inc
+HOPE,Hope Bancorp Inc
+DNOW,DNOW Inc
+VTEX,VTEX
+MRVI,Maravai LifeSciences Holdings Inc
+PRTC,PureTech Health PLC
+JKS,JinkoSolar Holding Co Ltd
+LADR,Ladder Capital Corp
+SAGE,SAGE Therapeutics Inc
+UNIT,Uniti Group Inc
+PACB,Pacific Biosciences of California Inc
+KC,Kingsoft Cloud Holdings Ltd
+CDRE,Cadre Holdings Inc
+SEAT,Vivid Seats Inc
+AAT,American Assets Trust Inc
+CASH,Pathward Financial Inc
+INDI,indie Semiconductor Inc
+CAL,Caleres Inc
+ADV,Advantage Solutions Inc
+STEL,Stellar Bancorp Inc
+BLTE,Belite Bio Inc
+DBD,Diebold Nixdorf Inc
+AG,First Majestic Silver Corp
+OEC,Orion SA
+GDS,GDS Holdings Ltd
+ASPN,Aspen Aerogels Inc
+SG,Sweetgreen Inc
+DAWN,Day One Biopharmaceuticals Inc
+MCRI,Monarch Casino & Resort Inc
+BASE,Couchbase Inc
+PLYA,Playa Hotels & Resorts NV
+SMTC,Semtech Corp
+TEO,Telecom Argentina SA
+GES,Guess? Inc
+LAZR,Luminar Technologies Inc
+PAR,PAR Technology Corp
+BUSE,First Busey Corp
+NBHC,National Bank Holdings Corp
+ALHC,Alignment Healthcare Inc
+KAMN,Kaman Corp
+CMRE,Costamare Inc
+SAFT,Safety Insurance Group Inc
+KLG,WK Kellogg Co
+OMCL,Omnicell Inc
+GOTU,Gaotu Techedu Inc
+NMFC,New Mountain Finance Corp
+IAG,IAMGOLD Corp
+ADEA,Adeia Inc
+SVC,Service Properties Trust
+FWRD,Forward Air Corp
+ETWO,E2open Parent Holdings Inc
+ALEX,Alexander & Baldwin Inc (Hawaii)
+DCPH,Deciphera Pharmaceuticals Inc
+LGND,Ligand Pharmaceuticals Inc
+NTST,Netstreit Corp
+ECPG,Encore Capital Group Inc
+LMND,Lemonade Inc
+RSI,Rush Street Interactive Inc
+WABC,Westamerica Bancorp
+RCUS,Arcus Biosciences Inc
+TVGN,Tevogen Bio Holdings Inc
+SAND,Sandstorm Gold Ltd
+STER,Sterling Check Corp
+SRCE,1st Source Corp
+TWO,Two Harbors Investment Corp
+IMNM,Immunome Inc
+ICHR,Ichor Holdings Ltd
+RVLV,Revolve Group Inc
+KYTX,Kyverna Therapeutics Inc
+UVV,Universal Corp
+NRDS,NerdWallet Inc
+COCO,Vita Coco Company Inc
+CARS,Cars.com Inc
+STBA,S&T Bancorp Inc
+ACDC,ProFrac Holding Corp
+AKRO,Akero Therapeutics Inc
+VVX,V2X Inc
+APOG,Apogee Enterprises Inc
+GOGO,Gogo Inc
+ELME,Elme Communities
+PMT,PennyMac Mortgage Investment Trust
+TNGX,Tango Therapeutics Inc
+MOMO,Hello Group Inc
+ANIP,ANI Pharmaceuticals Inc
+CMCO,Columbus McKinnon Corp
+AMRC,Ameresco Inc
+RYI,Ryerson Holding Corp
+DO,Diamond Offshore Drilling Inc
+NIC,Nicolet Bankshares Inc
+WNC,Wabash National Corp
+HY,Hyster-Yale Materials Handling Inc
+CALT,Calliditas Therapeutics AB
+SCHL,Scholastic Corp
+IMTX,Immatics NV
+JBSS,John B Sanfilippo & Son Inc
+DMLP,Dorchester Minerals LP
+EVBG,Everbridge Inc
+PFS,Provident Financial Services Inc
+ZUO,Zuora Inc
+TCBK,Trico Bancshares
+BITF,Bitfarms Ltd
+SOS,Sos Ltd
+BKD,Brookdale Senior Living Inc
+ADMA,ADMA Biologics Inc
+FDP,Fresh Del Monte Produce Inc
+AVDL,Avadel Pharmaceuticals PLC
+ENFN,Enfusion Inc
+ECVT,Ecovyst Inc
+INFN,Infinera Corp
+CRCT,Cricut Inc
+REVG,REV Group Inc
+EIG,Employers Holdings Inc
+TASK,Taskus Inc
+EDN,Empresa Distribuidora y Comercializadora Norte SA
+CTKB,Cytek Biosciences Inc
+AIV,Apartment Investment and Management Co
+FNA,Paragon 28 Inc
+AMPS,Altus Power Inc
+ALX,Alexander's Inc
+PRDO,Perdoceo Education Corp
+TGI,Triumph Group Inc
+COLL,Collegium Pharmaceutical Inc
+MIRM,Mirum Pharmaceuticals Inc
+PWP,Perella Weinberg Partners
+VBTX,Veritex Holdings Inc
+NVGS,Navigator Holdings Ltd
+FORTY,Formula Systems 1985 Ltd
+DGII,Digi International Inc
+WT,Wisdomtree Inc
+BCRX,BioCryst Pharmaceuticals Inc
+KRUS,Kura Sushi USA Inc
+ACMR,ACM Research Inc
+CGAU,Centerra Gold Inc
+VSEC,VSE Corp
+PERI,Perion Network Ltd
+MFA,MFA Financial Inc
+NVTS,Navitas Semiconductor Corp
+DEA,Easterly Government Properties Inc
+PX,P10 Inc
+NX,Quanex Building Products Corp
+NAPA,Duckhorn Portfolio Inc
+SHCO,Soho House & Co Inc
+MGNX,MacroGenics Inc
+GCT,GigaCloud Technology Inc
+GDEN,Golden Entertainment Inc
+AGRO,Adecoagro SA
+FIGS,Figs Inc
+BXC,Bluelinx Holdings Inc
+KALU,Kaiser Aluminum Corp
+SABR,Sabre Corp
+FBRT,Franklin BSP Realty Trust Inc
+VERV,Verve Therapeutics Inc
+TRS,TriMas Corp
+KOP,Koppers Holdings Inc
+DOLE,Dole PLC
+BRDG,Bridge Investment Group Holdings Inc
+AGTI,Agiliti Inc
+SCSC,Scansource Inc
+BHE,Benchmark Electronics Inc
+SRRK,Scholar Rock Holding Corp
+BYON,Beyond Inc
+CNTA,Centessa Pharmaceuticals PLC
+RNA,Avidity Biosciences Inc
+SGH,SMART Global Holdings Inc.
+AHH,Armada Hoffler Properties Inc
+PRAA,PRA Group Inc
+LOMA,Loma Negra Compania Industrial Argentina SA
+ESTA,Establishment Labs Holdings Inc
+PGRE,Paramount Group Inc
+SOUN,SoundHound AI Inc
+GERN,Geron Corp
+GDYN,Grid Dynamics Holdings Inc
+CSWC,Capital Southwest Corp
+FVRR,Fiverr International Ltd
+MAX,Mediaalpha Inc
+PEBO,Peoples Bancorp Inc
+SP,SP Plus Corp
+INVA,Innoviva Inc
+SBGI,Sinclair Inc
+TRUP,Trupanion Inc
+IMOS,ChipMOS Technologies Inc
+AMLX,Amylyx Pharmaceuticals Inc
+PTLO,Portillos Inc
+ATSG,Air Transport Services Group Inc
+CPLP,Capital Product Partners LP
+MEG,Montrose Environmental Group Inc
+SCRM,Screaming Eagle Acquisition Corp
+SASR,Sandy Spring Bancorp Inc
+SLN,Silence Therapeutics PLC
+TARS,Tarsus Pharmaceuticals Inc
+MRC,MRC Global Inc
+CIM,Chimera Investment Corp
+GRCL,Gracell Biotechnologies Inc
+MODN,Model N Inc
+SA,Seabridge Gold Inc
+TYRA,Tyra Biosciences Inc
+HTLD,Heartland Express Inc
+AHCO,Adapthealth Corp
+HRT,HireRight Holdings Corp
+MSEX,Middlesex Water Co
+RBCAA,Republic Bancorp Inc
+QTRX,Quanterix Corp
+BLBD,Blue Bird Corp
+BHLB,Berkshire Hills Bancorp Inc
+SII,Sprott Inc
+PLYM,Plymouth Industrial REIT Inc
+VRDN,Viridian Therapeutics Inc
+KRO,Kronos Worldwide Inc
+SHEN,Shenandoah Telecommunications Co
+ZNTL,Zentalis Pharmaceuticals Inc
+IHS,IHS Holding Ltd
+OPRA,Opera Ltd
+CVII,Churchill Capital Corp VII
+HOV,Hovnanian Enterprises Inc
+PFBC,Preferred Bank
+GABC,German American Bancorp Inc
+LQDA,Liquidia Corp
+ARCT,Arcturus Therapeutics Holdings Inc
+NCDL,Nuveen Churchill Direct Lending Corp
+CRGX,CARGO Therapeutics Inc
+MNKD,MannKind Corp
+PCT,Purecycle Technologies Inc
+EWCZ,European Wax Center Inc
+SSRM,SSR Mining Inc
+HIMX,Himax Technologies Inc
+BCYC,Bicycle Therapeutics PLC
+GRC,Gorman-Rupp Co
+ARKO,Arko Corp.
+EVRI,Everi Holdings Inc
+PRME,Prime Medicine Inc
+MNRO,Monro Inc
+ATEN,A10 Networks Inc
+LPRO,Open Lending Corp
+NRC,National Research Corp
+OLO,Olo Inc
+ECX,Ecarx Holdings Inc.
+AMSF,Amerisafe Inc
+TH,Target Hospitality Corp
+AMC,AMC Entertainment Holdings Inc
+GSM,Ferroglobe PLC
+SAVA,Cassava Sciences Inc
+UMH,UMH Properties Inc
+UNFI,United Natural Foods Inc
+HPP,Hudson Pacific Properties Inc
+USNA,USANA Health Sciences Inc
+QCRH,QCR Holdings Inc
+EFC,Ellington Financial Inc
+CENX,Century Aluminum Co
+WTTR,Select Water Solutions Inc
+ZH,Zhihu Inc
+NGMS,NeoGames SA
+TMCI,Treace Medical Concepts Inc
+IGMS,IGM Biosciences Inc
+MDXG,MiMedx Group Inc
+HCI,Hci Group Inc
+CLCO,Cool Company Ltd
+GB,Global Blue Group Holding Ltd
+CMP,Compass Minerals International Inc
+FUSN,Fusion Pharmaceuticals Inc
+PLRX,Pliant Therapeutics Inc
+BSIG,Brightsphere Investment Group Inc
+BLDP,Ballard Power Systems Inc
+OBK,Origin Bancorp Inc
+TTGT,TechTarget Inc
+PUMP,ProPetro Holding Corp
+PRLB,Proto Labs Inc
+CDE,Coeur Mining Inc
+PGY,Pagaya Technologies Ltd
+LC,LendingClub Corp
+ETNB,89Bio Inc
+ARR,ARMOUR Residential REIT Inc
+OCFC,OceanFirst Financial Corp
+BY,Byline Bancorp Inc
+KRNT,Kornit Digital Ltd
+BZH,Beazer Homes USA Inc
+TRML,Tourmaline Bio Inc
+THR,Thermon Group Holdings Inc
+ATUS,Altice USA Inc
+MDRX,Veradigm Inc
+NYAX,Nayax Ltd
+TRNS,Transcat Inc
+WEST,Westrock Coffee Co
+BELFA,Bel Fuse Inc
+BELFB,Bel Fuse Inc
+AVNS,Avanos Medical Inc
+ACCD,Accolade Inc
+AXL,American Axle & Manufacturing Holdings Inc
+MNTK,Montauk Renewables Inc
+CABA,Cabaletta Bio Inc
+NEXA,Nexa Resources SA
+SXC,SunCoke Energy Inc
+CHGG,Chegg Inc
+WKME,Walkme Ltd
+GHLD,Guild Holdings Co
+SBSI,Southside Bancshares Inc
+ARQT,Arcutis Biotherapeutics Inc
+IDT,IDT Corp
+TDCX,TDCX Inc
+HIBB,Hibbett Inc
+HCSG,Healthcare Services Group Inc
+BFC,Bank First Corp
+ERII,Energy Recovery Inc
+MBUU,Malibu Boats Inc
+BRKL,Brookline Bancorp Inc
+GYRE,Gyre Therapeutics Inc
+TTEC,TTEC Holdings Inc
+EB,Eventbrite Inc
+BLX,Foreign Trade Bank of Latin America Inc
+CIFR,Cipher Mining Inc
+BFS,Saul Centers Inc
+SSYS,Stratasys Ltd
+NAT,Nordic American Tankers Ltd
+SBR,Sabine Royalty Trust
+SMP,Standard Motor Products Inc
+TWI,Titan International Inc
+ACEL,Accel Entertainment Inc
+MTAL,Metals Acquisition Ltd
+LVRO,Lavoro Ltd
+TMST,TimkenSteel Corp
+PRM,Perimeter Solutions SA
+DLX,Deluxe Corp
+IRS,IRSA Inversiones y Representaciones SA
+BRSP,Brightspire Capital Inc
+CHPT,ChargePoint Holdings Inc
+HAIN,Hain Celestial Group Inc
+FSM,Fortuna Silver Mines Inc
+ASTL,Algoma Steel Group Inc
+RWT,Redwood Trust Inc
+MATW,Matthews International Corp
+PUBM,PubMatic Inc
+QNST,Quinstreet Inc
+BRCC,BRC Inc
+ULH,Universal Logistics Holdings Inc
+OPAL,Opal Fuels Inc
+HUT,Hut 8 Corp
+IMAX,Imax Corp
+PSFE,Paysafe Ltd
+VLRS,Controladora Vuela Compania de Aviacion SAB de CV
+CRON,Cronos Group Inc
+AZUL,Azul SA
+WEAV,Weave Communications Inc
+SIBN,SI-BONE Inc
+CSR,Centerspace
+ASTS,AST SpaceMobile Inc
+SLP,Simulations Plus Inc
+LDI,Loandepot Inc
+KELYA,Kelly Services Inc
+KELYB,Kelly Services Inc
+OCUL,Ocular Therapeutix Inc
+SLCA,US Silica Holdings Inc
+EMBC,Embecta Corp
+GRNT,Granite Ridge Resources Inc
+HSTM,HealthStream Inc
+BIOX,Bioceres Crop Solutions Corp
+ARLO,Arlo Technologies Inc
+CCO,Clear Channel Outdoor Holdings Inc
+SNCY,Sun Country Airlines Holdings Inc
+HLF,Herbalife Ltd
+WALD,Waldencast PLC
+ZYME,Zymeworks Inc
+BJRI,BJ's Restaurants Inc
+NKLA,Nikola Corp
+RGNX,Regenxbio Inc
+PDS,Precision Drilling Corp
+LBAI,Lakeland Bancorp Inc
+PDM,Piedmont Office Realty Trust Inc
+ALXO,ALX Oncology Holdings Inc
+UTL,Unitil Corp
+WOOF,Petco Health and Wellness Company Inc
+AUPH,Aurinia Pharmaceuticals Inc
+RSKD,Riskified Ltd
+EXTO,Almacenes Exito SA
+SCVL,Shoe Carnival Inc
+BV,Brightview Holdings Inc
+BTDR,Bitdeer Technologies Group
+UTI,Universal Technical Institute Inc
+ETD,Ethan Allen Interiors Inc
+RDFN,Redfin Corp
+ASTE,Astec Industries Inc
+EXAI,Exscientia PLC
+SYRE,Spyre Therapeutics Inc
+OLMA,Olema Pharmaceuticals Inc
+MEI,Methode Electronics Inc
+CFFN,Capitol Federal Financial Inc
+CNOB,ConnectOne Bancorp Inc
+NBR,Nabors Industries Ltd
+BLFS,BioLife Solutions Inc
+ABL,Abacus Life Inc
+ALLO,Allogene Therapeutics Inc
+CRAI,CRA International Inc
+CYRX,Cryoport Inc
+CVAC,CureVac NV
+GTN,Gray Television Inc
+GTNa,Gray Television Inc
+RMR,RMR Group Inc
+ZEUS,Olympic Steel Inc
+FBMS,First Bancshares Inc (Mississippi)
+TILE,Interface Inc
+RGR,Sturm Ruger & Company Inc
+EOLS,Evolus Inc
+WRLD,World Acceptance Corp
+AORT,Artivion Inc
+METC,Ramaco Resources Inc
+METCB,Ramaco Resources Inc
+ICVX,Icosavax Inc
+KARO,Karooooo Ltd
+MTTR,Matterport Inc
+VTOL,Bristow Group Inc
+SPTN,SpartanNash Co
+RPAY,Repay Holdings Corp
+ATXS,Astria Therapeutics Inc
+GNK,Genco Shipping & Trading Ltd
+HAYN,Haynes International Inc
+BBSI,Barrett Business Services Inc
+MPLN,Multiplan Corp
+DMRC,Digimarc Corp
+MLYS,Mineralys Therapeutics Inc
+CBL,CBL & Associates Properties Inc
+CHCT,Community Healthcare Trust Inc
+CNDT,Conduent Inc
+HUYA,HUYA Inc
+EVGO,EVgo Inc
+NXRT,NexPoint Residential Trust Inc
+AVO,Mission Produce Inc
+DCOM,Dime Community Bancshares Inc
+RDWR,Radware Ltd
+AMTB,Amerant Bancorp Inc
+CGEM,Cullinan Oncology Inc
+SLRN,ACELYRIN Inc
+FLGT,Fulgent Genetics Inc
+AMAL,Amalgamated Bank
+THRY,Thryv Holdings Inc
+IMXI,International Money Express Inc
+ATEX,Anterix Inc
+OFLX,Omega Flex Inc
+PHAR,Pharming Group NV
+CTBI,Community Trust Bancorp Inc
+ASIX,AdvanSix Inc
+YEXT,Yext Inc
+LRMR,Larimar Therapeutics Inc
+REX,REX American Resources Corp
+AAOI,Applied Optoelectronics Inc
+COGT,Cogent Biosciences Inc
+FMBH,First Mid Bancshares Inc
+AMBC,Ambac Financial Group Inc
+WWW,Wolverine World Wide Inc
+TK,Teekay Corp
+HLVX,Hillevax Inc
+DHC,Diversified Healthcare Trust
+LAB,Standard BioTools Inc
+HA,Hawaiian Holdings Inc
+PFC,Premier Financial Corp (OHIO)
+HKD,AMTD Digital Inc
+SAVE,Spirit Airlines Inc
+YMAB,Y-mAbs Therapeutics Inc
+COMM,CommScope Holding Company Inc
+EGBN,Eagle Bancorp Inc
+SPRY,ARS Pharmaceuticals Inc
+DRQ,Dril-Quip Inc
+LBPH,Longboard Pharmaceuticals Inc
+HOUS,Anywhere Real Estate Inc
+BDN,Brandywine Realty Trust
+GSL,Global Ship Lease Inc
+NOAH,Noah Holdings Ltd
+DCO,Ducommun Inc
+MD,Pediatrix Medical Group Inc
+EU,enCore Energy Corp
+AC,Associated Capital Group Inc
+TNP,Tsakos Energy Navigation Ltd
+DX,Dynex Capital Inc
+CECO,CECO Environmental Corp
+ORIC,Oric Pharmaceuticals Inc
+INN,Summit Hotel Properties Inc
+BGS,B&G Foods Inc
+BLND,Blend Labs Inc
+MYE,Myers Industries Inc
+SBOW,SilverBow Resources Inc
+STKL,Sunopta Inc
+PRA,ProAssurance Corp
+FATE,Fate Therapeutics Inc
+IIIV,I3 Verticals Inc
+PBI,Pitney Bowes Inc
+CLNE,Clean Energy Fuels Corp
+DDD,3D Systems Corp
+DIN,Dine Brands Global Inc
+OTLY,Oatly Group AB (publ)
+VREX,Varex Imaging Corp
+LNZA,Lanzatech Global Inc
+NYMT,New York Mortgage Trust Inc
+CLB,Core Laboratories Inc
+NOA,North American Construction Group Ltd
+ELVN,Enliven Therapeutics Inc
+NNDM,Nano Dimension Ltd
+HZO,MarineMax Inc
+VVI,Viad Corp
+ALTI,"AlTi Global, Inc"
+CRESY,Cresud SACIF y A
+RDUS,Radius Recycling Inc
+IIIN,Insteel Industries Inc
+CSTL,Castle Biosciences Inc
+KIDS,OrthoPediatrics Corp
+FLWS,1-800-Flowers.Com Inc
+CVLG,Covenant Logistics Group Inc
+SILK,Silk Road Medical Inc
+INNV,InnovAge Holding Corp
+SPCE,Virgin Galactic Holdings Inc
+VITL,Vital Farms Inc
+ASC,Ardmore Shipping Corp
+MODV,ModivCare Inc
+EVLV,Evolv Technologies Holdings Inc
+MATV,Mativ Holdings Inc
+AVBP,Arrivent Biopharma Inc
+KIND,Nextdoor Holdings Inc
+CFB,CrossFirst Bankshares Inc
+DDI,DoubleDown Interactive Co Ltd
+CORZ,Core Scientific Inc
+IPXX,Inflection Point Acquisition Corp II
+SVRA,Savara Inc
+HDSN,Hudson Technologies Inc
+IPX,Iperionx Ltd
+LAAC,Lithium Americas (Argentina) Corp
+EDIT,Editas Medicine Inc
+SNPO,Snap One Holdings Corp
+LXRX,Lexicon Pharmaceuticals Inc
+HFWA,Heritage Financial Corp
+SMWB,Similarweb Ltd
+CASS,Cass Information Systems Inc
+LASR,nLIGHT Inc
+NUS,NU Skin Enterprises Inc
+OABI,OmniAb Inc
+CRNC,Cerence Inc
+YALA,Yalla Group Ltd
+PBT,Permian Basin Royalty Trust
+SVA,Sinovac Biotech Ltd
+NETD,Nabors Energy Transition Corp II
+TIGR,UP Fintech Holding Ltd
+VMEO,Vimeo Inc
+EFXT,Enerflex Ltd
+PL,Planet Labs PBC
+KREF,KKR Real Estate Finance Trust Inc
+VTS,Vitesse Energy Inc
+NVRI,Enviri Corp
+ANAB,AnaptysBio Inc
+ISPR,Ispire Technology Inc
+CMPS,Compass Pathways PLC
+CHUY,Chuy's Holdings Inc
+AOSL,Alpha and Omega Semiconductor Ltd
+MKTW,MarketWise Inc
+BIGC,Bigcommerce Holdings Inc
+ATRI,Atrion Corp
+CCRN,Cross Country Healthcare Inc
+TRIN,Trinity Capital Inc
+HCKT,Hackett Group Inc
+CRDa,Crawford & Co
+CRDb,Crawford & Co
+NVRO,Nevro Corp
+PLPC,Preformed Line Products Co
+GMRE,Global Medical REIT Inc
+TVTX,Travere Therapeutics Inc
+DRD,DRDGOLD Ltd
+SWBI,Smith & Wesson Brands Inc
+EH,EHang Holdings Ltd
+SCWX,SecureWorks Corp
+AGX,Argan Inc
+EGLE,Eagle Bulk Shipping Inc
+ATRO,Astronics Corp
+TIPT,Tiptree Inc
+LEGH,Legacy Housing Corp
+MCBS,Metrocity Bankshares Inc
+WSR,Whitestone REIT
+SMR,Nuscale Power Corp
+NBTX,Nanobiotix SA
+HBT,HBT Financial Inc
+BHRB,Burke & Herbert Bank & Trust Co
+SPWR,SunPower Corp
+IVCB,Investcorp Europe Acquisition I Corp
+VINP,Vinci Partners Investments Ltd
+ACCO,ACCO Brands Corp
+CCAP,Crescent Capital BDC Inc
+OSBC,Old Second Bancorp Inc
+EZPW,EZCORP Inc
+BMEA,Biomea Fusion Inc
+IGIC,International General Insurance Holdings Ltd
+ALEC,Alector Inc
+GSBC,Great Southern Bancorp Inc
+CRBU,Caribou Biosciences Inc
+PGRU,PropertyGuru Group Ltd
+UFCS,United Fire Group Inc
+MBWM,Mercantile Bank Corp
+FCBC,First Community Bankshares Inc
+NNOX,Nano-X Imaging Ltd
+CINT,Ci&T Inc
+UVSP,Univest Financial Corp
+URGN,Urogen Pharma Ltd
+TITN,Titan Machinery Inc
+ACIC,American Coastal Insurance Corp
+FULC,Fulcrum Therapeutics Inc
+FCEL,Fuelcell Energy Inc
+FUBO,Fubotv Inc
+NBBK,NB Bancorp Inc
+HSII,Heidrick & Struggles International Inc
+AMRK,A-Mark Precious Metals Inc
+CLW,Clearwater Paper Corp
+SMRT,SmartRent Inc
+AMCX,AMC Networks Inc
+PHAT,Phathom Pharmaceuticals Inc
+APLD,Applied Digital Corp
+HVT,Haverty Furniture Companies Inc
+HVTa,Haverty Furniture Companies Inc
+RBBN,Ribbon Communications Inc
+RENE,Cartesian Growth Corporation II
+PLOW,Douglas Dynamics Inc
+DXPE,DXP Enterprises Inc
+LXU,LSB Industries Inc
+KALV,Kalvista Pharmaceuticals Inc
+SDA,SunCar Technology Group Inc
+GLDD,Great Lakes Dredge & Dock Corp
+NPK,National Presto Industries Inc
+BFST,Business First Bancshares Inc
+ATNI,ATN International Inc
+IRMD,IRadimed Corp
+DESP,Despegar.com Corp
+WULF,Terawulf Inc
+UHT,Universal Health Realty Income Trust
+GRPN,Groupon Inc
+FRPH,FRP Holdings Inc
+MGIC,Magic Software Enterprises Ltd
+MLAB,Mesa Laboratories Inc
+ADPT,Adaptive Biotechnologies Corp
+HCAT,Health Catalyst Inc
+JL,J-Long Group Ltd
+CYH,Community Health Systems Inc
+KRT,Karat Packaging Inc
+KE,Kimball Electronics Inc
+MERC,Mercer International Inc
+GOOD,Gladstone Commercial Corp
+SAGA,Sagaliam Acquisition Corp
+PETQ,PetIQ Inc
+LUNG,Pulmonx Corp
+HBNC,Horizon Bancorp Inc
+DADA,Dada Nexus Ltd
+CAN,Canaan Inc
+ARIS,Aris Water Solutions Inc
+RWAY,Runway Growth Finance Corp
+QD,Qudian Inc
+FPI,Farmland Partners Inc
+MITK,Mitek Systems Inc
+CEVA,CEVA Inc
+LWLG,Lightwave Logic Inc
+NR,Newpark Resources Inc
+SUPV,Grupo Supervielle SA
+MED,Medifast Inc
+MSBI,Midland States Bancorp Inc
+UIS,Unisys Corp
+LYEL,Lyell Immunopharma Inc
+SRG,Seritage Growth Properties
+FMNB,Farmers National Banc Corp
+TRST,TrustCo Bank Corp NY
+RICK,RCI Hospitality Holdings Inc
+CCB,Coastal Financial Corp (EVERETT)
+HCVI,Hennessy Capital Investment Corp VI
+CGNT,Cognyte Software Ltd
+YORW,York Water Co
+EBF,Ennis Inc
+LQDT,Liquidity Services Inc
+AVTE,Aerovate Therapeutics Inc
+ML,MoneyLion Inc
+HLLY,Holley Inc
+ITRN,Ituran Location and Control Ltd
+NRDY,Nerdy Inc
+REAX,Real Brokerage Inc
+LIAN,LianBio
+XTKG,X3 Holdings Co Ltd
+CATC,Cambridge Bancorp
+CPF,Central Pacific Financial Corp
+ZIMV,ZimVie Inc
+BRY,Berry Corporation (Bry)
+GCBC,Greene County Bancorp Inc
+FC,Franklin Covey Co
+VEL,Velocity Financial Inc
+IBCP,Independent Bank Corp (Michigan)
+PLAO,Patria Latin American Opportunity Acquisition Corp
+DSP,Viant Technology Inc
+HTBK,Heritage Commerce Corp
+BWMN,Bowman Consulting Group Ltd
+SRI,Stoneridge Inc
+UVE,Universal Insurance Holdings Inc
+QRTEA,Qurate Retail Inc
+QRTEB,Qurate Retail Inc
+CPAC,Cementos Pacasmayo SAA
+DENN,Denny's Corp
+CVGW,Calavo Growers Inc
+NKTX,Nkarta Inc
+CLDT,Chatham Lodging Trust
+DBI,Designer Brands Inc
+OFIX,Orthofix Medical Inc
+LILM,Lilium NV
+CNSL,Consolidated Communications Holdings Inc
+SMBC,Southern Missouri Bancorp Inc
+PLSE,Pulse Biosciences Inc
+MREO,Mereo BioPharma Group PLC
+EQBK,Equity Bancshares Inc
+WVE,WAVE Life Sciences Ltd
+TTI,Tetra Technologies Inc
+BWMX,Betterware de Mexico SAPI de CV
+OSUR,OraSure Technologies Inc
+HUMA,Humacyte Inc
+ADTN,ADTRAN Holdings Inc
+PKST,Peakstone Realty Trust
+LND,BrasilAgro Brazilian Agricultural Real Estate Co
+EVER,EverQuote Inc
+PAHC,Phibro Animal Health Corp
+NRIX,Nurix Therapeutics Inc
+DAO,Youdao Inc
+SES,SES AI Corp
+VALN,Valneva SE
+ODC,Oil-Dri Corporation of America
+NVAX,Novavax Inc
+RILY,B Riley Financial Inc
+AEHR,Aehr Test Systems
+MLR,Miller Industries Inc
+GNE,Genie Energy Ltd
+TAST,Carrols Restaurant Group Inc
+LAND,Gladstone Land Corp
+ASLE,AerSale Corp
+AMRN,Amarin Corporation PLC
+ADSE,Ads-Tec Energy PLC
+PNTG,Pennant Group Inc
+RVNC,Revance Therapeutics Inc
+BOC,Boston Omaha Corp
+MCB,Metropolitan Bank Holding Corp
+DGICA,Donegal Group Inc
+DGICB,Donegal Group Inc
+MRNS,Marinus Pharmaceuticals Inc
+LBC,Luther Burbank Corp
+ABUS,Arbutus Biopharma Corp
+HEPS,D Market Elektronik Hizmetler ve Ticaret AS
+SSP,E W Scripps Co
+BALY,Bally's Corp
+XPOF,Xponential Fitness Inc
+PRAX,Praxis Precision Medicines Inc
+CCBG,Capital City Bank Group Inc
+ESPR,Esperion Therapeutics Inc
+CTLP,Cantaloupe Inc
+XPER,Xperi Inc
+AMSC,American Superconductor Corp
+ATLC,Atlanticus Holdings Corp
+HARP,Harpoon Therapeutics Inc
+AMNB,American National Bankshares Inc
+HSAI,Hesai Group
+LIND,Lindblad Expeditions Holdings Inc
+CAC,Camden National Corp
+GPRK,GeoPark Ltd
+CWCO,Consolidated Water Co Ltd
+MXCT,MaxCyte Inc
+ALNT,Allient Inc
+TBPH,Theravance Biopharma Inc
+SB,Safe Bulkers Inc
+CDMO,Avid Bioservices Inc
+NN,NextNav Inc
+REPL,Replimune Group Inc
+GRVY,Gravity Co Ltd
+MTW,Manitowoc Company Inc
+BH,Biglari Holdings Inc
+BHa,Biglari Holdings Inc
+HONE,HarborOne Bancorp Inc
+NFBK,Northfield Bancorp Inc
+OSG,Overseas Shipholding Group Inc
+LMB,Limbach Holdings Inc
+SD,SandRidge Energy Inc
+CVRX,CVRx Inc
+MCS,Marcus Corp
+EHAB,Enhabit Inc
+SVII,Spring Valley Acquisition Corp II
+CLOV,Clover Health Investments Corp
+VPG,Vishay Precision Group Inc
+JOUT,Johnson Outdoors Inc
+HAFC,Hanmi Financial Corp
+BYND,Beyond Meat Inc
+STTK,Shattuck Labs Inc
+TERN,Terns Pharmaceuticals Inc
+TPC,Tutor Perini Corp
+GGR,Gogoro Inc
+IREN,Iris Energy Ltd
+JANX,Janux Therapeutics Inc
+EGY,VAALCO Energy Inc
+OCS,Oculis Holding AG
+TSAT,Telesat Corp
+FFWM,First Foundation Inc
+CURV,Torrid Holdings Inc
+WASH,Washington Trust Bancorp Inc
+DJCO,Daily Journal Corp
+RSVR,Reservoir Media Inc
+STEM,Stem Inc
+TRDA,Entrada Therapeutics Inc
+LXEO,Lexeo Therapeutics Inc
+NPCE,Neuropace Inc
+WTI,W&T Offshore Inc
+LSEA,Landsea Homes Corp
+IVVD,Invivyd Inc
+HCMA,HCM Acquisition Corp
+MOV,Movado Group Inc
+SRDX,Surmodics Inc
+ORGO,Organogenesis Holdings Inc
+LAW,CS Disco Inc
+RCEL,AVITA Medical Inc
+AXGN,AxoGen Inc
+ABSI,Absci Corp
+HTBI,HomeTrust Bancshares Inc
+CDNA,CareDx Inc
+TREE,Lendingtree Inc
+THFF,First Financial Corp
+ACRE,Ares Commercial Real Estate Corp
+DHIL,Diamond Hill Investment Group Inc
+TRC,Tejon Ranch Co
+MGX,Metagenomi Inc
+ALT,Altimmune Inc
+CLFD,Clearfield Inc
+BLZE,Backblaze Inc
+NTGR,NETGEAR Inc
+BBCP,Concrete Pumping Holdings Inc
+AVXL,Anavex Life Sciences Corp
+SKYT,Skywater Technology Inc
+RGP,Resources Connection Inc
+SPFI,South Plains Financial Inc
+ALRS,Alerus Financial Corp
+YRD,Yiren Digital Ltd
+MRSN,Mersana Therapeutics Inc
+RDZN,Roadzen Inc
+ANSC,Agriculture & Natural Solutions Acquisition Corp
+AVNW,Aviat Networks Inc
+XERS,Xeris Biopharma Holdings Inc
+GDOT,Green Dot Corp
+FIP,Ftai Infrastructure Inc
+AVAH,Aveanna Healthcare Holdings Inc
+OLP,One Liberty Properties Inc
+SLAM,Slam Corp
+HRZN,Horizon Technology Finance Corp
+PEPG,PepGen Inc
+HRTX,Heron Therapeutics Inc
+CCNE,CNB Financial Corp
+TRTX,TPG RE Finance Trust Inc
+ORC,Orchid Island Capital Inc
+KRNY,Kearny Financial Corp
+KRRO,Korro Bio Inc
+HIVE,HIVE Digital Technologies Ltd
+ZYXI,Zynex Inc
+CBUS,Cibus Inc
+AROW,Arrow Financial Corp
+VTRU,Vitru Ltd
+JMIA,Jumia Technologies AG
+GLRE,Greenlight Capital Re Ltd
+RXT,Rackspace Technology Inc
+CERS,Cerus Corp
+LYTS,LSI Industries Inc
+PTSI,PAM Transportation Services Inc
+FARO,FARO Technologies Inc
+PWUP,PowerUp Acquisition Corp
+GHRS,GH Research PLC
+BETR,Better Home & Finance Holding Co
+PGC,Peapack-Gladstone Financial Corp
+FSBC,Five Star Bancorp
+EEX,Emerald Holding Inc
+ESQ,Esquire Financial Holdings Inc
+TALK,Talkspace Inc
+ESAC,ESGEN Acquisition Corp
+PUYI,Puyi Inc
+VYGR,Voyager Therapeutics Inc
+GATO,Gatos Silver Inc
+DOMO,Domo Inc
+ACTG,Acacia Research Corp
+CFFS,CF Acquisition VII Corp
+SFIX,Stitch Fix Inc
+ANNX,Annexon Inc
+JRVR,James River Group Holdings Ltd
+MVIS,MicroVision Inc
+OPFI,OppFi Inc
+NCMI,National Cinemedia Inc
+ADVM,Adverum Biotechnologies Inc
+OPY,Oppenheimer Holdings Inc
+WDH,Waterdrop Inc
+NBN,Northeast Bank
+VALU,Value Line Inc
+THRD,Third Harmonic Bio Inc
+LZM,Lifezone Metals Ltd
+HROW,Harrow Inc
+TNYA,Tenaya Therapeutics Inc
+KVAC,Keen Vision Acquisition Corp
+AUDC,AudioCodes Ltd
+ONEW,OneWater Marine Inc
+TSHA,Taysha Gene Therapies Inc
+TPB,Turning Point Brands Inc
+TBI,TrueBlue Inc
+LEV,Lion Electric Co
+CRMT,America's CAR-MART Inc
+GATE,Marblegate Acquisition Corp
+SMMF,Summit Financial Group Inc
+PACK,Ranpak Holdings Corp
+NYXH,Nyxoah SA
+NAAS,NaaS Technology Inc
+SKIN,Beauty Health Co
+NPAB,New Providence Acquisition Corp II
+NVEC,NVE Corp
+NUVB,Nuvation Bio Inc
+FORR,Forrester Research Inc
+SHCR,Sharecare Inc
+ADCT,ADC Therapeutics SA
+OSPN,OneSpan Inc
+ALTG,Alta Equipment Group Inc
+DSKE,Daseke Inc
+CMPO,CompoSecure Inc
+OIS,Oil States International Inc
+ONYX,Onyx Acquisition I Co
+GUTS,Fractyl Health Inc
+FFIC,Flushing Financial Corp
+IVR,Invesco Mortgage Capital Inc
+SHBI,Shore Bancshares Inc
+EPIX,ESSA Pharma Inc
+PROC,Procaps Group SA
+PANL,Pangaea Logistics Solutions Ltd
+NGNE,Neurogene Inc
+AIRS,Airsculpt Technologies Inc
+MLP,Maui Land & Pineapple Company Inc
+VLGEA,Village Super Market Inc
+GBLI,Global Indemnity Group LLC
+CCG,Cheche Group Inc
+CSV,Carriage Services Inc
+SHYF,Shyft Group Inc
+MGTX,MeiraGTx Holdings PLC
+SLDB,Solid Biosciences Inc
+IHRT,iHeartMedia Inc
+CCCC,C4 Therapeutics Inc
+CSTR,CapStar Financial Holdings Inc
+DCGO,DocGo Inc
+CTO,CTO Realty Growth Inc
+FNKO,Funko Inc
+CCSI,Consensus Cloud Solutions Inc
+AMSWA,American Software Inc
+ITOS,Iteos Therapeutics Inc
+NEXN,Nexxen International Ltd
+MCFT,Mastercraft Boat Holdings Inc
+ARTNA,Artesian Resources Corp
+VHI,Valhi Inc
+MOFG,Midwestone Financial Group Inc (IOWA)
+MPX,Marine Products Corp
+AMWL,American Well Corp
+APPS,Digital Turbine Inc
+LOVE,Lovesac Co
+PGEN,Precigen Inc
+TMC,TMC the metals company Inc
+RRBI,Red River Bancshares Inc
+AVIR,Atea Pharmaceuticals Inc
+NLOP,Net Lease Office Properties
+SIGA,SIGA Technologies Inc
+BOOM,DMC Global Inc
+PBPB,Potbelly Corp
+BVS,Bioventus Inc
+HIFS,Hingham Institution For Savings
+INZY,Inozyme Pharma Inc
+ZUMZ,Zumiez Inc
+ANIK,Anika Therapeutics Inc
+TCRX,TScan Therapeutics Inc
+SNDL,SNDL Inc
+DNTH,Dianthus Therapeutics Inc
+ONTF,ON24 Inc
+PROK,ProKidney Corp
+GCO,Genesco Inc
+GILT,Gilat Satellite Networks Ltd
+MBI,MBIA Inc
+WOW,WideOpenWest Inc
+MTLS,Materialise NV
+DAKT,Daktronics Inc
+IXAQ,IX Acquisition Corp
+MPB,Mid Penn Bancorp Inc
+CELC,Celcuity Inc
+CYD,China Yuchai International Ltd
+KMDA,Kamada Ltd
+AMPX,Amprius Technologies Inc
+MCBC,Macatawa Bank Corp
+IONR,ioneer Ltd
+GNTY,Guaranty Bancshares Inc
+FRBA,FIRST BANK (Hamilton)
+EVC,Entravision Communications Corp
+ANRO,Alto Neuroscience Inc
+AGS,PlayAGS Inc
+ME,23andMe Holding Co.
+BAND,Bandwidth Inc
+EAF,GrafTech International Ltd
+FRGE,Forge Global Holdings Inc
+NAUT,Nautilus Biotechnology Inc
+USCT,Roth CH Acquisition Co
+GIA,Gigcapital5 Inc
+NGVC,Natural Grocers by Vitamin Cottage Inc
+IRBT,iRobot Corp
+NATR,Nature's Sunshine Products Inc
+GPRO,GoPro Inc
+JAKK,JAKKS Pacific Inc
+LINK,Interlink Electronics Inc
+CDAQ,Compass Digital Acquisition Corp
+FSR,Fisker Inc
+BTMD,Biote Corp
+SOPH,Sophia Genetics SA
+GAMB,Gambling.com Group Ltd
+ARL,American Realty Investors Inc
+SENEA,Seneca Foods Corp
+SENEB,Seneca Foods Corp
+BBAI,BigBear.ai Holdings Inc
+GCI,Gannett Co Inc
+LUNR,Intuitive Machines Inc
+APLT,Applied Therapeutics Inc
+TCI,Transcontinental Realty Investors Inc
+BROG,Brooge Energy Ltd
+SKE,Skeena Resources Ltd
+PSTX,Poseida Therapeutics Inc
+ATAI,ATAI Life Sciences NV
+BWB,Bridgewater Bancshares Inc
+NEGG,Newegg Commerce Inc
+ISRL,Israel Acquisitions Corp
+TCMD,Tactile Systems Technology Inc
+AEAE,AltEnergy Acquisition Corp
+SOI,Solaris Oilfield Infrastructure Inc
+XFIN,ExcelFin Acquisition Corp
+EBTC,Enterprise Bancorp Inc
+QUAD,Quad/Graphics Inc
+VSTA,Vasta Platform Ltd
+UHG,United Homes Group Inc
+AURA,Aura Biosciences Inc
+BBW,Build-A-Bear Workshop Inc
+TRUE,TrueCar Inc
+RBB,RBB Bancorp
+ACIU,AC Immune SA
+SMLR,Semler Scientific Inc
+PIII,P3 Health Partners Inc
+MTRX,Matrix Service Co
+CVEO,Civeo Corp
+LMNR,Limoneira Co
+DSX,Diana Shipping Inc
+UROY,Uranium Royalty Corp
+GHG,GreenTree Hospitality Group Ltd
+CNGL,Canna-Global Acquisition Corp
+HNST,Honest Company Inc
+HSHP,Himalaya Shipping Ltd
+VMD,Viemed Healthcare Inc
+CGC,Canopy Growth Corp
+AVD,American Vanguard Corp
+PBYI,Puma Biotechnology Inc
+SMTI,Sanara Medtech Inc
+BHAC,Focus Impact BH3 Acquisition Co
+VSTM,Verastem Inc
+IMAQ,International Media Acquisition Corp
+AAN,Aaron's Company Inc
+EXK,Endeavour Silver Corp
+EGHT,8x8 Inc
+CARE,Carter Bankshares Inc
+PKOH,Park Ohio Holdings Corp
+SOHU,Sohu.com Ltd
+IVA,Inventiva SA
+LCAA,L Catterton Asia Acquisition Corp
+ACNB,ACNB Corp
+ALCY,Alchemy Investments Acquisition Corp 1
+FRST,Primis Financial Corp
+SPOK,Spok Holdings Inc
+TGAN,Transphorm Technology Inc
+WEYS,WEYCO Group Inc
+LINC,Lincoln Educational Services Corp
+PRCH,Porch Group Inc
+WLFC,Willis Lease Finance Corp
+MUX,McEwen Mining Inc
+HBCP,Home Bancorp Inc
+PLCE,Children's Place Inc
+SWIM,Latham Group Inc
+BYNO,Bynordic Acquisition Corp
+RYAM,Rayonier Advanced Materials Inc
+MYPS,Playstudios Inc
+WW,WW International Inc
+LE,Lands End Inc
+BRLT,Brilliant Earth Group Inc
+GWRS,Global Water Resources Inc
+FANH,Fanhua Inc
+ASCB,ASPAC II Acquisition Corp
+FBIZ,First Business Financial Services Inc
+QURE,Uniqure NV
+BRT,BRT Apartments Corp
+QBTS,D-Wave Quantum Inc
+SLDP,Solid Power Inc
+ERAS,Erasca Inc
+BYFC,Broadway Financial Corp
+FMAO,Farmers & Merchants Bancorp Inc
+TSVT,2Seventy Bio Inc
+ITIC,Investors Title Co
+GTAC,Global Technology Acquisition Corp I
+GOCO,Gohealth Inc
+VBNK,VersaBank
+TTSH,Tile Shop Holdings Inc
+LANV,Lanvin Group Holdings Ltd
+OMER,Omeros Corp
+FNVT,Finnovate Acquisition Corp
+WTBA,West Bancorporation Inc
+YSG,Yatsen Holding Ltd
+JFIN,Jiayin Group Inc
+JSPR,Jasper Therapeutics Inc
+CZNC,Citizens & Northern Corp
+TLS,Telos Corp
+REFI,Chicago Atlantic Real Estate Finance Inc
+FISI,Financial Institutions Inc
+PKE,Park Aerospace Corp
+SERA,Sera Prognostics Inc
+RENB,Renovaro Inc
+CBNK,Capital Bancorp Inc
+DAVE,Dave Inc
+MVBF,MVB Financial Corp
+PSTL,Postal Realty Trust Inc
+NWPX,Northwest Pipe Co
+STRO,Sutro Biopharma Inc
+AOMR,Angel Oak Mortgage REIT Inc
+ZVRA,Zevra Therapeutics Inc
+SLQT,SelectQuote Inc
+PFIS,Peoples Financial Services Corp
+FHLT,Future Health Esg Corp
+WBX,Wallbox NV
+ORRF,Orrstown Financial Services Inc
+KOPN,Kopin Corp
+ADAP,Adaptimmune Therapeutics PLC
+SPIR,Spire Global Inc
+OPRX,OPTIMIZERx Corp
+POWW,Ammo Inc
+LOCO,El Pollo Loco Holdings Inc
+CCLP,CSI Compressco LP
+GOSS,Gossamer Bio Inc
+KOD,Kodiak Sciences Inc
+WLDN,Willdan Group Inc
+NEWT,NewtekOne Inc
+INBK,First Internet Bancorp
+SCLX,Scilex Holding Co
+BMRC,Bank of Marin Bancorp
+NODK,NI Holdings Inc
+LX,Lexinfintech Holdings Ltd
+ANL,Adlai Nortye Ltd
+NATH,Nathan's Famous Inc
+SMHI,SEACOR Marine Holdings Inc
+HBB,Hamilton Beach Brands Holding Co
+AFRI,Forafric Global PLC
+API,Agora Inc
+PERF,Perfect Corp
+NRIM,Northrim BanCorp Inc
+SFST,Southern First Bancshares Inc
+DDL,Dingdong (Cayman) Ltd
+RMNI,Rimini Street Inc
+IMMP,Immutep Ltd
+GLUE,Monte Rosa Therapeutics Inc
+CHRS,Coherus BioSciences Inc
+AKYA,Akoya Biosciences Inc
+IPSC,Century Therapeutics Inc
+CLMB,Climb Global Solutions Inc
+KODK,Eastman Kodak Co
+HOWL,Werewolf Therapeutics Inc
+BCAL,Southern California Bancorp
+BSRR,Sierra Bancorp
+GASS,StealthGas Inc
+UNTY,Unity Bancorp Inc
+MVST,Microvast Holdings Inc
+GENK,GEN Restaurant Group Inc
+AKBA,Akebia Therapeutics Inc
+ARAY,Accuray Inc
+ENTA,Enanta Pharmaceuticals Inc
+MAXN,Maxeon Solar Technologies Ltd
+INVZ,Innoviz Technologies Ltd
+PRLH,Pearl Holdings Acquisition Corp
+TCBX,Third Coast Bancshares Inc
+PLL,Piedmont Lithium Inc
+FDBC,Fidelity D&D Bancorp Inc
+SBT,Sterling Bancorp Inc
+ILPT,Industrial Logistics Properties Trust
+ONL,Orion Office REIT Inc
+FNLC,First Bancorp Inc
+OCGN,Ocugen Inc
+TELO,Telomir Pharmaceuticals Inc
+ARBK,Argo Blockchain PLC
+VLN,Valens Semiconductor Ltd
+ALLG,Allego NV
+IPI,Intrepid Potash Inc
+BYRN,Byrna Technologies Inc
+OOMA,Ooma Inc
+FSBW,FS Bancorp Inc
+RPTX,Repare Therapeutics Inc
+UTMD,Utah Medical Products Inc
+JILL,JJill Inc
+NVX,NOVONIX Ltd
+FSTR,L B Foster Co
+OVID,Ovid Therapeutics Inc
+HMST,HomeStreet Inc
+MX,MagnaChip Semiconductor Corp
+BTBT,Bit Digital Inc
+MG,Mistras Group Inc
+NRGV,Energy Vault Holdings Inc
+WSBF,Waterstone Financial Inc
+HIPO,Hippo Holdings Inc
+LFMD,LifeMD Inc
+MTC,MMTEC Inc
+HYLN,Hyliion Holdings Corp
+HOFT,Hooker Furnishings Corp
+COOK,Traeger Inc
+GHM,Graham Corp
+OPT,Opthea Ltd
+LNKB,LINKBANCORP Inc
+AACI,Armada Acquisition Corp I
+NXDT,NexPoint Diversified Real Estate Trust
+NA,Nano Labs Ltd
+BKKT,Bakkt Holdings Inc
+ADTH,AdTheorent Holding Company Inc
+XOMA,XOMA Corp
+CDRO,Codere Online Luxembourg SA
+CAPT,Captivision Inc
+SNBR,Sleep Number Corp
+FLIC,First of Long Island Corp
+IBEX,Ibex Ltd
+NC,NACCO Industries Inc
+FF,FutureFuel Corp
+AGEN,Agenus Inc
+BSVN,Bank7 Corp
+NL,NL Industries Inc
+LUNA,Luna Innovations Inc
+ASUR,Asure Software Inc
+BDTX,Black Diamond Therapeutics Inc
+VNDA,Vanda Pharmaceuticals Inc
+OPAD,Offerpad Solutions Inc
+CPS,Cooper-Standard Holdings Inc
+RERE,ATRenew Inc
+AEVA,Aeva Technologies Inc
+JMSB,John Marshall Bancorp Inc
+OBT,Orange County Bancorp Inc
+MYTE,MYT Netherlands Parent BV
+AIP,Arteris Inc
+LYRA,Lyra Therapeutics Inc
+FHTX,Foghorn Therapeutics Inc.
+RDVT,Red Violet Inc
+INOD,Innodata Inc
+BLDE,Blade Air Mobility Inc
+MSB,Mesabi Trust
+RNGR,Ranger Energy Services Inc
+TLSI,TriSalus Life Sciences Inc
+CIVB,Civista Bancshares Inc
+CTRN,Citi Trends Inc
+LFCR,Lifecore Biomedical Inc
+INMB,INmune Bio Inc
+HNRG,Hallador Energy Co
+FREY,FREYR Battery Inc
+INSE,Inspired Entertainment Inc
+PRTH,Priority Technology Holdings Inc
+LATG,Chenghe Acquisition I Co
+PCYO,Pure Cycle Corp
+ANGO,AngioDynamics Inc
+CDLX,Cardlytics Inc
+MEC,Mayville Engineering Company Inc
+DRCT,Direct Digital Holdings Inc
+PLMJ,Plum Acquisition III Corp
+NREF,Nexpoint Real Estate Finance Inc
+EVGR,Evergreen Corp
+CRBP,Corbus Pharmaceuticals Holdings Inc
+RACY,Relativity Acquisition Corp
+PBFS,Pioneer Bancorp Inc
+RGTI,Rigetti Computing Inc
+PEPL,PepperLime Health Acquisition Corp
+DTC,Solo Brands Inc
+TCX,Tucows Inc
+STOK,Stoke Therapeutics Inc
+ESEA,Euroseas Ltd
+NNBR,NN Inc
+AMPY,Amplify Energy Corp
+RAPT,RAPT Therapeutics Inc
+CMPX,Compass Therapeutics Inc.
+FENC,Fennec Pharmaceuticals Inc
+DXLG,Destination XL Group Inc
+PTWO,Pono Capital Two Inc
+HLXB,Helix Acquisition Corp II
+SIFY,Sify Technologies Ltd
+CRNT,Ceragon Networks Ltd
+KNDI,Kandi Technologies Group Inc
+DOYU,Douyu International Holdings Ltd
+MSSA,Metal Sky Star Acquisition Corp
+GPMT,Granite Point Mortgage Trust Inc
+KFS,Kingsway Financial Services Inc
+VRA,Vera Bradley Inc
+LSAK,Lesaka Technologies Inc
+DLHC,DLH Holdings Corp
+BAER,Bridger Aerospace Group Holdings Inc
+MASS,908 Devices Inc.
+CZFS,Citizens Financial Services Inc
+AFCG,AFC Gamma Inc
+BCML,BayCom Corp
+MFIN,Medallion Financial Corp
+NOTE,Fiscalnote Holdings Inc
+PCB,PCB Bancorp
+PRLD,Prelude Therapeutics Inc
+SGC,Superior Group of Companies Inc
+SAMG,Silvercrest Asset Management Group Inc
+BLFY,Blue Foundry Bancorp
+OUST,Ouster Inc
+CONX,CONX Corp
+SSBK,Southern States Bancshares Inc
+NECB,Northeast Community Bancorp Inc
+TRAK,Repositrak Inc
+QSI,Quantum-Si Inc
+SJT,San Juan Basin Royalty Trust
+SMID,Smith-Midland Corp
+RCKY,Rocky Brands Inc
+SSTI,SoundThinking Inc
+RM,Regional Management Corp
+CVGI,Commercial Vehicle Group Inc
+RCMT,R C M Technologies Inc
+HFFG,Hf Foods Group Inc
+CVLY,Codorus Valley Bancorp Inc
+VNET,VNET Group Inc
+SGMT,Sagimet Biosciences Inc
+AUGX,Augmedix Inc
+GSIW,Garden Stage Ltd
+MHLD,Maiden Holdings Ltd
+INGN,Inogen Inc
+CBD,Companhia Brasileira de Distribuicao SA
+IMMR,Immersion Corp
+SST,System1 Inc
+PMTS,CPI Card Group Inc
+VRCA,Verrica Pharmaceuticals Inc
+ALCO,Alico Inc
+NWFL,Norwood Financial Corp
+PINE,Alpine Income Property Trust Inc
+TSBK,Timberland Bancorp Inc
+MYND,Mynd.ai Inc
+CLAR,Clarus Corp
+USCB,USCB Financial Holdings Inc
+PYXS,Pyxis Oncology Inc
+DRTS,Alpha Tau Medical Ltd
+OB,Outbrain Inc
+TLYS,Tillys Inc
+FPH,Five Point Holdings LLC
+OMGA,Omega Therapeutics Inc
+GLYC,GlycoMimetics Inc
+EDAP,Edap Tms SA
+LCUT,Lifetime Brands Inc
+SPRB,Spruce Biosciences Inc
+CTV,Innovid Corp
+TDUP,ThredUp Inc
+AONC,American Oncology Network Inc
+PFMT,Performant Financial Corp
+LXFR,Luxfer Holdings PLC
+OCN,Ocwen Financial Corp
+VCSA,Vacasa Inc
+CGEN,Compugen Ltd
+CVCY,Central Valley Community Bancorp
+ITI,Iteris Inc
+TETE,Technology & Telecommunication Acquisition Corp
+OBIO,Orchestra Biomed Holdings Inc
+III,Information Services Group Inc
+TWIN,Twin Disc Inc
+MACK,Merrimack Pharmaceuticals Inc
+GEVO,Gevo Inc
+ESCA,Escalade Inc
+BLUE,bluebird bio Inc
+MIXT,MIX Telematics Ltd
+SGMO,Sangamo Therapeutics Inc
+FVCB,FVCBankcorp Inc
+RWOD,Redwoods Acquisition Corp
+BFLY,Butterfly Network Inc
+BKSY,Blacksky Technology Inc
+PDLB,Ponce Financial Group Inc
+BLNK,Blink Charging Co
+SWKH,SWK Holdings Corp
+VXRT,Vaxart Inc
+THCH,TH International Limited
+INVE,Identiv Inc
+CMTL,Comtech Telecommunications Corp
+TENK,TenX Keane Acquisition
+CHMG,Chemung Financial Corp
+APEI,American Public Education Inc
+SCPH,scPharmaceuticals Inc
+BWFG,Bankwell Financial Group Inc
+OVLY,Oak Valley Bancorp
+KLTR,Kaltura Inc
+FREE,Whole Earth Brands Inc
+HEAR,Turtle Beach Corp
+PROF,Profound Medical Corp
+BPRN,Princeton Bancorp Inc
+SGHT,Sight Sciences Inc
+GHIX,Gores Holdings IX Inc
+CDXS,Codexis Inc
+ALDX,Aldeyra Therapeutics Inc
+ORN,Orion Group Holdings Inc
+CBAN,Colony Bankcorp Inc
+QSG,QuantaSing Group Ltd
+MNMD,Mind Medicine (MindMed) Inc
+PLBC,Plumas Bancorp
+BARK,Bark Inc
+ACET,Adicet Bio Inc
+FEXD,Fintech Ecosystem Development Corp
+IPHA,Innate Pharma SA
+PKBK,Parke Bancorp Inc
+XYF,X Financial
+MBCN,Middlefield Banc Corp
+GNLX,Genelux Corp
+RIGL,Rigel Pharmaceuticals Inc
+GMFI,Aetherium Acquisition Corp
+NWGL,Nature Wood Group Ltd
+IMRX,Immuneering Corp
+GRTS,Gritstone bio Inc
+COFS,ChoiceOne Financial Services Inc
+BRLS,Borealis Foods Inc
+MCAA,Mountain & Co I Acquisition Corp
+WAVS,Western Acquisition Ventures Corp
+EHTH,eHealth Inc
+REKR,Rekor Systems Inc
+CPSS,Consumer Portfolio Services Inc
+CDZI,Cadiz Inc
+LLAP,Terran Orbital Corp
+LPSN,LivePerson Inc
+NGS,Natural Gas Services Group Inc
+NMG,Nouveau Monde Graphite Inc
+XPDB,Power & Digital Infrastructure Acquisition II Corp
+MESO,Mesoblast Ltd
+ABOS,Acumen Pharmaceuticals Inc
+CLLS,Cellectis SA
+HRTG,Heritage Insurance Holdings Inc
+VOXX,VOXX International Corp
+RGCO,RGC Resources Inc
+CANG,Cango Inc
+FFNW,First Financial Northwest Inc
+SYRS,Syros Pharmaceuticals Inc
+EMCG,Embrace Change Acquisition Corp
+RDW,Redwire Corp
+CALB,California BanCorp
+TROO,TROOPS Inc
+AFAR,Aura FAT Projects Acquisition Corp
+QIPT,Quipt Home Medical Corp
+FET,Forum Energy Technologies Inc
+GODN,Golden Star Acquisition Corp
+PPTA,Perpetua Resources Corp
+MOND,Mondee Holdings Inc
+MPAA,Motorcar Parts of America Inc
+PEGR,Project Energy Reimagined Acquisition Corp
+INO,Inovio Pharmaceuticals Inc
+LCNB,LCNB Corp
+HBIO,Harvard Bioscience Inc
+CIO,City Office REIT Inc
+XBIT,XBiotech Inc
+GNFT,Genfit SA
+HQI,Hirequest Inc
+YOTA,Yotta Acquisition Corp
+DUET,DUET Acquisition Corp
+EOSE,Eos Energy Enterprises Inc
+EGAN,eGain Corp
+BCBP,BCB Bancorp Inc
+BMR,Beamr Imaging Ltd
+ODV,Osisko Development Corp
+ATLX,Atlas Lithium Corp
+NKSH,National Bankshares Inc
+NNAG,99 Acquisition Group Inc
+IGTA,Inception Growth Acquisition Ltd
+REAL,RealReal Inc
+PVBC,Provident Bancorp Inc (Maryland)
+DIBS,1stdibs.Com Inc
+USAP,Universal Stainless & Alloy Products Inc
+GRIN,Grindrod Shipping Holdings Ltd
+CRMD,CorMedix Inc
+MRAM,Everspin Technologies Inc
+IVCA,Investcorp India Acquisition Corp
+ENGN,enGene Holdings Inc
+SNFCA,Security National Financial Corp
+RLMD,Relmada Therapeutics Inc
+SEVN,Seven Hills Realty Trust
+QUIK,Quicklogic Corp
+CFFI,C&F Financial Corp
+ALIM,Alimera Sciences Inc
+ATOM,Atomera Inc
+STRS,Stratus Properties Inc
+ESSA,ESSA Bancorp Inc
+TRVG,Trivago NV
+PNRG,Primeenergy Resources Corp
+FLXS,Flexsteel Industries Inc
+WRAP,Wrap Technologies Inc
+AQST,Aquestive Therapeutics Inc
+WNEB,Western New England Bancorp Inc
+FGEN,FibroGen Inc
+CLPT,Clearpoint Neuro Inc
+VTYX,Ventyx Biosciences Inc
+OCFT,OneConnect Financial Technology Co Ltd
+TRVI,Trevi Therapeutics Inc
+TSQ,Townsquare Media Inc
+ROCL,Roth CH Acquisition V Co
+MITT,AG Mortgage Investment Trust Inc
+VAQC,Vector Acquisition Corp II
+TELA,TELA Bio Inc
+DOUG,Douglas Elliman Inc
+PDSB,PDS Biotechnology Corp
+TUSK,Mammoth Energy Services Inc
+GRPH,Graphite Bio Inc
+MAMA,Mama's Creations Inc
+GEOS,Geospace Technologies Corp
+VGAS,Verde Clean Fuels Inc
+HURC,Hurco Companies Inc
+INTE,Integral Acquisition Corp 1
+SPKL,Spark I Acquisition Corp
+ENCP,Energem Corp
+ACB,Aurora Cannabis Inc
+VERY,Vericity Inc
+WISH,ContextLogic Inc
+MARX,Mars Acquisition Corp
+OPI,Office Properties Income Trust
+ABEO,Abeona Therapeutics Inc
+TIO,Tingo Group Inc
+DLTH,Duluth Holdings Inc
+OM,Outset Medical Inc
+GLSI,Greenwich Lifesciences Inc
+OGI,OrganiGram Holdings Inc
+RMAX,Re/Max Holdings Inc
+GLAC,Global Lights Acquisition Corp
+DM,Desktop Metal Inc
+ZURA,Zura Bio Ltd
+ALTO,Alto Ingredients Inc
+NOTV,Inotiv Inc
+VABK,Virginia National Bankshares Corp
+MOLN,Molecular Partners AG
+SFWL,SHENGFENG DEVELOPMENT Ltd
+SELX,Semilux International Ltd
+AMLI,American Lithium Corp
+ISTR,Investar Holding Corp
+AITR,AI Transportation Acquisition Corp
+BRKH,BurTech Acquisition Corp
+HYZN,Hyzon Motors Inc
+BWAQ,Blue World Acquisition Corp
+RANI,Rani Therapeutics Holdings Inc
+BUJA,Bukit Jalil Global Acquisition 1 Ltd
+ATLO,Ames National Corp
+STHO,Star Holdings
+TGVC,TG Venture Acquisition Corp
+FLL,Full House Resorts Inc
+HWBK,Hawthorn Bancshares Inc
+PAYS,Paysign Inc
+AOGO,Arogo Capital Acquisition Corp
+GOEV,Canoo Inc
+TSE,Trinseo PLC
+BAYA,Bayview Acquisition Corp
+GWH,ESS Tech Inc
+CXDO,Crexendo Inc
+EVTL,Vertical Aerospace Ltd
+UPLD,Upland Software Inc
+LTRX,Lantronix Inc
+BVFL,Bv Financial Inc
+FONR,Fonar Corp
+SQNS,Sequans Communications SA
+SCWO,374Water Inc
+PRQR,ProQR Therapeutics NV
+OPBK,OP Bancorp
+LWAY,Lifeway Foods Inc
+TG,Tredegar Corp
+OPTN,OptiNose Inc
+AMTX,Aemetis Inc
+KYCH,Keyarch Acquisition Corp
+JYNT,Joint Corp
+KLXE,KLX Energy Services Holdings Inc
+UONE,Urban One Inc
+UONEK,Urban One Inc
+PXLW,Pixelworks Inc
+EML,Eastern Company
+ESHA,ESH Acquisition Corp
+KRNL,Kernel Group Holdings Inc
+RDCM,Radcom Ltd
+VTNR,Vertex Energy Inc
+SGA,Saga Communications Inc
+AVHI,Achari Ventures Holdings Corp I
+ATHA,Athira Pharma Inc
+PRPL,Purple Innovation Inc
+PRTS,Carparts.Com Inc
+DSGN,Design Therapeutics Inc
+ISSC,Innovative Solutions and Support Inc
+CIA,Citizens Inc
+CPSI,Computer Programs and Systems Inc
+BHR,Braemar Hotels & Resorts Inc
+AIU,Meta Data Ltd
+BCSA,Blockchain Coinvestors Acquisition Corp I
+NIU,NIU Technologies
+TLGY,TLGY Acquisition Corp
+XFOR,X4 Pharmaceuticals Inc
+RRGB,Red Robin Gourmet Burgers Inc
+VIRC,Virco Mfg Corp
+SHIP,Seanergy Maritime Holdings Corp
+SPWH,Sportsmans Warehouse Holdings Inc
+FAT,FAT Brands Inc
+FATBB,FAT Brands Inc
+CSPI,CSP Inc
+SKLZ,Skillz Inc
+ULBI,Ultralife Corp
+LVO,LiveOne Inc
+HITI,High Tide Inc
+ALUR,Allurion Technologies Inc
+FUNC,First United Corp
+KACL,Kairous Acquisition Corp Ltd
+LCA,Landcadia Holdings IV Inc
+ASPI,ASP Isotopes Inc
+CLRC,ClimateRock
+AHG,Akso Health Group
+BZUN,Baozun Inc
+AFJK,Aimei Health Technology Co Ltd
+PWOD,Penns Woods Bancorp Inc
+AMTD,AMTD IDEA Group
+FNWB,First Northwest Bancorp
+IROH,Iron Horse Acquisitions Corp
+QRHC,Quest Resource Holding Corp
+ADAG,Adagene Inc
+ARBE,Arbe Robotics Ltd
+FGBI,First Guaranty Bancshares Inc
+VOR,Vor Biopharma Inc
+HHGC,HHG Capital Corp
+TWLV,Twelve Seas Investment Co II
+CFBK,CF Bankshares Inc
+DBVT,Dbv Technologies SA
+CATO,Cato Corp
+MAPS,WM Technology Inc
+BIRD,Allbirds Inc
+CNF,CNFinance Holdings Ltd
+KPTI,Karyopharm Therapeutics Inc
+ZFOX,ZeroFox Holdings Inc
+CRGO,Freightos Ltd
+TOI,Oncology Institute Inc
+SKYX,SKYX Platforms Corp
+SATL,Satellogic Inc
+UNB,Union Bankshares Inc
+CETU,Cetus Capital Acquisition Corp
+GDST,Goldenstone Acquisition Ltd
+PEBK,Peoples Bancorp of North Carolina Inc
+SNDA,Sonida Senior Living Inc
+GRWG,GrowGeneration Corp
+EXFY,Expensify Inc
+LGVC,LAMF Global Ventures I Corp
+IMAB,I-Mab
+MNSB,MainStreet Bancshares Inc
+BSET,Bassett Furniture Industries Inc
+CSTE,Caesarstone Ltd
+VTGN,Vistagen Therapeutics Inc
+TZOO,Travelzoo
+WGS,GeneDx Holdings Corp
+FNGR,FingerMotion Inc
+ELVA,Electrovaya Inc
+IPA,Immunoprecise Antibodies Ltd
+MCRB,Seres Therapeutics Inc
+BTM,Bitcoin Depot Inc
+MYFW,First Western Financial Inc
+NGM,NGM Biopharmaceuticals Inc
+MFH,Mercurity Fintech Holding Inc
+ROOT,Root Inc
+BLAC,Bellevue Life Sciences Acquisition Corp
+VMCA,Valuence Merger Corp I
+WILC,G Willi-Food International Ltd
+UBFO,United Security Bancshares
+MKFG,Markforged Holding Corp
+GRDI,Griid Infrastructure Inc
+GBIO,Generation Bio Co
+TATT,TAT Technologies Ltd
+LOOP,Loop Industries Inc
+IH,Ihuman Inc
+MNTX,Manitex International Inc
+SOL,Emeren Group Ltd
+ZLS,Zalatoris II Acquisition Corp
+NTIC,Northern Technologies International Corp
+ALOT,AstroNova Inc
+ATOS,Atossa Therapeutics Inc
+FORL,Four Leaf Acquisition Corp
+YIBO,Planet Image International Ltd
+SANG,Sangoma Technologies Corp
+RELL,Richardson Electronics Ltd
+PSQH,PSQ Holdings Inc
+RMGC,RMG Acquisition Corp III
+BFIN,BankFinancial Corp
+TPIC,TPI Composites Inc
+OPRT,Oportun Financial Corp
+SNCR,Synchronoss Technologies Inc
+RMBL,RumbleOn Inc
+ORMP,Oramed Pharmaceuticals Inc
+CWBC,Community West Bancshares
+NKTR,Nektar Therapeutics
+HUDA,Hudson Acquisition I Corp
+GPAC,Global Partner Acquisition II Corp
+FINW,Finwise Bancorp
+CZWI,Citizens Community Bancorp Inc
+FCCO,First Community Corp (South Carolina)
+LGO,Largo Inc
+BIG,Big Lots Inc
+RMBI,Richmond Mutual Bancorporation Inc
+HNVR,Hanover Bancorp Inc (MINEOLA)
+LDTC,LeddarTech Holdings Inc.
+LAKE,Lakeland Industries Inc
+TKNO,Alpha Teknova Inc
+JZXN,Jiuzi Holdings Inc
+EM,Smart Share Global Ltd
+ARRW,Arrowroot Acquisition Corp
+PLMI,Plum Acquisition I Corp
+MYNA,Mynaric AG
+RVPH,"Reviva Pharmaceuticals Holdings, Inc."
+DHX,DHI Group Inc
+SURG,Surgepays Inc
+ANIX,Anixa Biosciences Inc
+BRAG,Bragg Gaming Group Inc
+IMUX,Immunic Inc
+OAKU,Oak Woods Acquisition Corp
+PPYA,Papaya Growth Opportunity Corp I
+ECBK,ECB Bancorp Inc
+NVCT,Nuvectis Pharma Inc
+GTH,Genetron Holdings Ltd
+MDWD,Mediwound Ltd
+BGFV,Big 5 Sporting Goods Corp
+STKS,One Group Hospitality Inc
+RNAC,Cartesian Therapeutics Inc
+CONN,Conn's Inc
+KNTE,Kinnate Biopharma Inc
+ZTEK,Zentek Ltd
+CTXR,Citius Pharmaceuticals Inc
+CDXC,Chromadex Corp
+HAO,Haoxi Health Technology Ltd
+FNCB,FNCB Bancorp Inc
+VTSI,VirTra Inc
+OVBC,Ohio Valley Banc Corp
+ELEV,Elevation Oncology Inc
+BOCN,Blue Ocean Acquisition Corp
+CAPR,Capricor Therapeutics Inc
+LIFW,MSP Recovery Inc
+MNY,MoneyHero Ltd
+ARIZ,Arisz Acquisition Corp
+NDLS,Noodles & Co
+FXNC,First National Corp
+CMBM,Cambium Networks Corp
+GTHX,G1 Therapeutics Inc
+BDSX,Biodesix Inc
+MDBH,MDB Capital Holdings LLC
+LFT,Lument Finance Trust Inc
+ACAB,Atlantic Coastal Acquisition Corp II
+SRL,Scully Royalty Ltd
+ARC,ARC Document Solutions Inc
+ACAH,Atlantic Coastal Acquisition Corp
+ASCA,A SPAC I Acquisition Corp
+COYA,Coya Therapeutics Inc
+WMPN,William Penn Bancorp
+FSFG,First Savings Financial Group Inc
+BCAB,Bioatla Inc
+TORO,Toro Corp
+YI,111 Inc
+GALT,Galectin Therapeutics Inc
+FRAF,Franklin Financial Services Corp
+PHUN,Phunware Inc
+STG,Sunlands Technology Group
+BWAY,Brainsway Ltd
+FEAM,5E Advanced Materials Inc
+CRVS,Corvus Pharmaceuticals Inc
+RR,Richtech Robotics Inc
+LITB,LightInTheBox Holding Co Ltd
+TAYD,Taylor Devices Inc
+CBFV,CB Financial Services Inc
+ARQ,Arq Inc
+AJX,Great Ajax Corp
+OTLK,Outlook Therapeutics Inc
+VOC,VOC Energy Trust
+APXI,APx Acquisition Corp I
+CYT,Cyteir Therapeutics Inc
+COOL,Corner Growth Acquisition Corp
+SKGR,SK Growth Opportunities Corp
+ETON,Eton Pharmaceuticals Inc
+VIGL,Vigil Neuroscience Inc
+AXR,AMREP Corp
+PWFL,PowerFleet Inc
+DMAC,DiaMedica Therapeutics Inc
+WHG,Westwood Holdings Group Inc
+KGEI,Kolibri Global Energy Inc
+AREC,American Resources Corp
+HGBL,Heritage Global Inc
+ABLV,Able View Global Inc
+PFTA,Perception Capital Corp III
+MRBK,Meridian Corp
+MDV,Modiv Industrial Inc
+TMTC,TMT Acquisition Corp
+ANTX,AN2 Therapeutics Inc
+PETS,Petmed Express Inc
+CITE,Cartica Acquisition Corp
+CMCA,Capitalworks Emerging Markets Acquisition Corp
+TGAA,Target Global Acquisition I Corp
+PHX,PHX Minerals Inc
+EPSN,Epsilon Energy Ltd
+CRDL,Cardiol Therapeutics Inc
+CBRG,Chain Bridge I
+UEIC,Universal Electronics Inc
+ESOA,Energy Services Of America Corp
+CMRX,Chimerix Inc
+PLTN,Plutonian Acquisition Corp
+AOUT,American Outdoor Brands Inc
+ZVIA,Zevia PBC
+AKA,AKA Brands Holding Corp
+LIFE,aTyr Pharma Inc
+PESI,Perma-Fix Environmental Services Inc
+BGSF,BGSF Inc
+GMGI,Golden Matrix Group Inc
+SY,So-Young International Inc
+ALLK,Allakos Inc
+BTAI,BioXcel Therapeutics Inc
+UFI,Unifi Inc
+SLAC,Social Leverage Acquisition Corp I
+MCAC,Monterey Capital Acquisition Corp
+EBMT,Eagle Bancorp Montana Inc
+AFBI,Affinity Bancshares Inc
+TOP,TOP Financial Group Ltd
+DHCA,DHC Acquisition Corp
+CPHC,Canterbury Park Holding Corp
+LARK,Landmark Bancorp Inc
+STRT,Strattec Security Corp
+CSLM,CSLM Acquisition Corp
+CAAS,China Automotive Systems Inc
+SILC,Silicom Ltd
+DGHI,Digihost Technology Inc
+EQ,Equillium Inc
+THCP,Thunder Bridge Capital Partners IV Inc
+YTRA,Yatra Online Inc
+CRT,Cross Timbers Royalty Trust
+FTLF,FitLife Brands Inc
+IOBT,IO Biotech Inc
+FNWD,Finward Bancorp
+SHLT,SHL Telemedicine Ltd
+LUXH,LuxUrban Hotels Inc
+CELU,Celularity Inc
+ABAT,American Battery Technology Co
+FEIM,Frequency Electronics Inc
+ACNT,Ascent Industries Co
+BSBK,Bogota Financial Corp
+RGC,Regencell Bioscience Holdings Ltd
+BEEM,Beam Global
+DNMR,Danimer Scientific Inc
+VUZI,Vuzix Corp
+ALSA,Alpha Star Acquisition Corp
+BW,Babcock & Wilcox Enterprises Inc
+BRNS,Barinthus Biotherapeutics PLC
+SFBC,Sound Financial Bancorp Inc
+SEER,Seer Inc
+CLRB,Cellectar Biosciences Inc
+RVSB,Riverview Bancorp Inc
+IVAC,Intevac Inc
+VOXR,Vox Royalty Corp
+WPRT,Westport Fuel Systems Inc
+AXTI,AXT Inc
+HSPO,Horizon Space Acquisition I Corp
+SWIN,Solowin Holdings Ltd
+ATMV,AlphaVest Acquisition Corp
+AUID,Authid Inc
+ELTK,Eltek Ltd
+KVHI,KVH Industries Inc
+CTMX,CytomX Therapeutics Inc
+FEBO,Fenbo Holdings Ltd
+HOLO,MicroCloud Hologram Inc
+SKIL,Skillsoft Corp
+PROV,Provident Financial Holdings Inc
+WRNT,Warrantee Inc
+EARN,Ellington Residential Mortgage REIT
+SBFG,SB Financial Group Inc
+CARM,Carisma Therapeutics Inc
+CHMI,Cherry Hill Mortgage Investment Corp
+RSSS,Research Solutions Inc
+BRID,Bridgford Foods Corp
+CLSD,Clearside Biomedical Inc
+RBKB,Rhinebeck Bancorp Inc
+KRMD,KORU Medical Systems Inc
+AENT,Alliance Entertainment Holding Corp
+XNET,Xunlei Ltd
+QDRO,Quadro Acquisition One Corp
+MGRM,Monogram Orthopaedics Inc
+SHOT,Safety Shot Inc
+MDXH,MDxHealth SA
+BOWN,Bowen Acquisition Corp
+CBAT,CBAK Energy Technology Inc
+BCOV,Brightcove Inc
+CCRD,CoreCard Corp
+MMLP,Martin Midstream Partners LP
+WKHS,Workhorse Group Inc
+FCAP,First Capital Inc
+OMEX,Odyssey Marine Exploration Inc
+ZCAR,Zoomcar Holdings Inc
+CUE,Cue Biopharma Inc
+BLRX,BioLine RX Ltd
+DCTH,Delcath Systems Inc
+FLUX,Flux Power Holdings Inc
+ICU,SeaStar Medical Holding Corp
+GNSS,Genasys Inc
+ZENV,Zenvia Inc
+ARQQ,Arqit Quantum Inc
+PFX,PhenixFIN Corp
+GRYP,Gryphon Digital Mining Inc
+INCR,InterCure Ltd
+GLT,Glatfelter Corp
+SUP,Superior Industries International Inc
+QETA,Quetta Acquisition Corp
+PMGM,Priveterra Acquisition Corp II
+ANVS,Annovis Bio Inc
+SRBK,SR Bancorp Inc
+IFRX,InflaRx NV
+PPHP,PHP Ventures Acquisition Corp
+DTI,Drilling Tools International Corp
+PRPH,Prophase Labs Inc
+LFVN,LifeVantage Corp
+REE,REE Automotive Ltd
+ARYD,ARYA Sciences Acquisition Corp IV
+CRVO,CervoMed Inc
+EAC,Edify Acquisition Corp
+MAYS,J W Mays Inc
+GLLI,Globalink Investment Inc
+WIMI,WiMi Hologram Cloud Inc
+HMNF,HMN Financial Inc
+SOTK,Sono-Tek Corp
+STIM,Neuronetics Inc
+ALTU,Altitude Acquisition Corp
+ACR,Acres Commercial Realty Corp
+FLFV,Feutune Light Acquisition Corp
+OPOF,Old Point Financial Corp
+IVCP,Swiftmerge Acquisition Corp
+VERI,Veritone Inc
+BNR,Burning Rock Biotech Ltd
+ACRS,Aclaris Therapeutics Inc
+ATRA,Atara Biotherapeutics Inc
+NUTX,Nutex Health Inc
+PET,Wag! Group Co
+TYGO,Tigo Energy Inc
+NB,NioCorp Developments Ltd
+ACHV,Achieve Life Sciences Inc
+CNTY,Century Casinos Inc
+IZM,ICZOOM Group Inc
+ASPS,Altisource Portfolio Solutions SA
+ACRV,Acrivon Therapeutics Inc
+SCX,L S Starrett Co
+FICV,Frontier Investment Corp
+FIAC,Focus Impact Acquisition Corp
+GAMC,Golden Arrow Merger Corp
+AFMD,Affimed NV
+KEQU,Kewaunee Scientific Corp
+GNTA,Genenta Science SPA
+TBNK,Territorial Bancorp Inc
+MOBX,"MOBIX LABS, INC."
+ELUT,Elutia Inc
+LVLU,Lulu's Fashion Lounge Holdings Inc
+FORA,Forian Inc
+CSBR,Champions Oncology Inc
+SPRO,Spero Therapeutics Inc
+VAXX,Vaxxinity Inc
+BLEU,Bleuacacia Ltd
+ONCY,Oncolytics Biotech Inc
+PUCK,Goal Acquisitions Corp
+SCOR,Comscore Inc
+FTK,Flotek Industries Inc
+SSNT,Silversun Technologies Inc
+SRTS,Sensus Healthcare Inc
+WEL,Integrated Wellness Acquisition Corp
+MLEC,Moolec Science SA
+SRFM,Surf Air Mobility Inc
+ALVR,Allovir Inc
+CMCT,Creative Media & Community Trust Corporation
+SLNG,Stabilis Solutions Inc
+LIBY,Liberty Resources Acquisition Corp
+GLST,Global Star Acquisition Inc
+DPCS,DP Cap Acquisition I Corp
+CLPR,Clipper Realty Inc
+LPTX,Leap Therapeutics Inc
+PLBY,Plby Group Inc
+EBS,Emergent BioSolutions Inc
+VIA,Via Renewables Inc
+FARM,Farmer Bros Co
+SND,Smart Sand Inc
+AKTS,Akoustis Technologies Inc
+MCAG,Mountain Crest Acquisition Corp V
+SPPL,Simpple Ltd
+EGRX,Eagle Pharmaceuticals Inc
+TOUR,Tuniu Corp
+PMVP,PMV Pharmaceuticals Inc
+MGYR,Magyar Bancorp Inc
+RFAC,RF Acquisition Corp
+THTX,Theratechnologies Inc
+GBBK,Global Blockchain Acquisition Corp
+FOA,Finance of America Companies Inc
+CULL,"Cullman Bancorp, Inc."
+ANEB,Anebulo Pharmaceuticals Inc
+LIVE,Live Ventures Inc
+TIL,Instil Bio Inc
+ASRT,Assertio Holdings Inc
+PMEC,Primech Holdings Ltd
+NINE,Nine Energy Service Inc
+CRDF,Cardiff Oncology Inc
+GANX,Gain Therapeutics Inc
+KORE,KORE Group Holdings Inc
+IRAA,Iris Acquisition Corp
+INAQ,Insight Acquisition Corp
+ONDS,Ondas Holdings Inc
+IMMX,Immix Biopharma Inc
+MURA,Mural Oncology PLC
+APYX,Apyx Medical Corp
+ORGN,Origin Materials Inc
+CASI,CASI Pharmaceuticals Inc
+KUKE,Kuke Music Holding Ltd
+TRON,Corner Growth Acquisition Corp 2
+ATMC,Alphatime Acquisition Corp
+WFCF,Where Food Comes From Inc
+VERU,Veru Inc
+SWSS,Clean Energy Special Situations Corp
+NVNO,enVVeno Medical Corp
+LICY,Li-Cycle Holdings Corp
+TACT,TransAct Technologies Inc
+OCAX,OCA Acquisition Corp
+PFIE,Profire Energy Inc
+ZEPP,Zepp Health Corp
+USGO,US GoldMining Inc
+GIFI,Gulf Island Fabrication Inc
+AUBN,Auburn National Bancorporation Inc
+ELYM,Eliem Therapeutics Inc
+HYPR,Hyperfine Inc
+ALAR,Alarum Technologies Ltd
+XAIR,Beyond Air Inc
+VLD,Velo3D Inc
+PASG,Passage Bio Inc
+MITA,Coliseum Acquisition Corp
+NVAC,Northview Acquisition Corp
+AMIX,Autonomix Medical Inc
+EYEN,Eyenovia Inc
+VSTE,Vast Renewables Ltd
+BENF,Beneficient
+SSBI,Summit State Bank
+ALLT,Allot Ltd
+GAN,Gan Ltd
+NHTC,Natural Health Trends Corp
+FRLA,Fortune Rise Acquisition Corp
+CTCX,Carmell Corp
+AEYE,AudioEye Inc
+RLYB,Rallybio Corp
+SIEB,Siebert Financial Corp
+SPRU,Spruce Power Holding Corp
+DIST,Distoken Acquisition Corp
+NTZ,Natuzzi SpA
+GAIA,Gaia Inc
+TOPS,Top Ships Inc
+MNOV,MediciNova Inc
+ENZ,Enzo Biochem Inc
+POET,POET Technologies Inc
+MAQC,Maquia Capital Acquisition Corp
+IONM,Assure Holdings Corp
+UBCP,United Bancorp Inc
+DRIO,DarioHealth Corp
+LL,LL Flooring Holdings Inc
+GMM,Global Mofy Metaverse Ltd
+RDI,Reading International Inc
+RDIB,Reading International Inc
+VINC,Vincerx Pharma Inc
+GSIT,GSI Technology Inc
+SCYX,SCYNEXIS Inc
+NEUE,NeueHealth Inc
+LSBK,Lake Shore Bancorp Inc
+QUBT,Quantum Computing Inc
+UCL,Ucloudlink Group Inc
+XBP,XBP Europe Holdings Inc
+TBMC,Trailblazer Merger Corporation I
+ACAC,Acri Capital Acquisition Corp
+EBON,Ebang International Holdings Inc
+VBFC,Village Bank and Trust Financial Corp
+VATE,Innovate Corp
+CGTX,Cognition Therapeutics Inc
+FTCI,FTC Solar Inc
+CDTX,Cidara Therapeutics Inc
+PPIH,Perma-Pipe International Holdings Inc
+CLGN,Collplant Biotechnologies Ltd
+CMLS,Cumulus Media Inc
+CMCM,Cheetah Mobile Inc
+TCS,Container Store Group Inc
+CNTB,Connect Biopharma Holdings Ltd
+NBST,Newbury Street Acquisition Corp
+ASYS,Amtech Systems Inc
+GEG,Great Elm Group Inc
+RTC,Baijiayun Group Ltd
+PRE,Prenetics Global Ltd
+OSS,One Stop Systems Inc
+CLOE,Clover Leaf Capital Corp
+CODA,Coda Octopus Group Inc
+OCUP,Ocuphire Pharma Inc
+TUP,Tupperware Brands Corp
+TCBC,TC Bancshares Inc
+KRON,Kronos Bio Inc
+LPTH,LightPath Technologies Inc
+GROV,Grove Collaborative Holdings Inc
+PROP,Prairie Operating Co
+GRRR,Gorilla Technology Group Inc
+EDRY,EuroDry Ltd
+CULP,Culp Inc
+NERV,Minerva Neurosciences Inc
+PDEX,Pro-Dex Inc
+RBOT,Vicarious Surgical Inc
+PSNL,Personalis Inc
+IKNA,Ikena Oncology Inc
+ASMB,Assembly Biosciences Inc
+LEE,Lee Enterprises Inc
+ICCM,Icecure Medical Ltd
+ENLV,Enlivex Therapeutics Ltd
+LRFC,Logan Ridge Finance Corp
+LAES,Sealsq Corp
+KZR,Kezar Life Sciences Inc
+FTHM,Fathom Holdings Inc
+CRIS,Curis Inc
+GORV,Lazydays Holdings Inc
+BNIX,Bannix Acquisition Corp
+FUSB,First US Bancshares Inc
+CLNN,Clene Inc.
+HAIA,Healthcare AI Acquisition Corp
+MATH,Metalpha Technology Holding Ltd
+CUTR,Cutera Inc
+APLM,Apollomics Inc
+JZ,Jianzhi Education Technology Group Co Ltd
+LUCD,Lucid Diagnostics Inc
+AVRO,AVROBIO Inc
+RCAC,Revelstone Capital Acquisition Corp
+QNCX,Quince Therapeutics Inc
+CCTS,Cactus Acquisition Corp 1 Ltd
+BODY,Beachbody Company Inc
+RZLT,Rezolute Inc
+BWEN,Broadwind Inc
+AIRE,reAlpha Tech Corp
+FTII,Futuretech II Acquisition Corp
+MCHX,Marchex Inc
+KPLT,Katapult Holdings Inc
+HHS,Harte Hanks Inc
+MBTC,Nocturne Acquisition Corp
+AZ,A2Z Smart Technologies Corp
+CLST,Catalyst Bancorp Inc
+AQMS,Aqua Metals Inc
+CRWS,Crown Crafts Inc
+PBHC,Pathfinder Bancorp Inc (MARYLAND)
+HOOK,HOOKIPA Pharma Inc
+IROQ,IF Bancorp Inc
+LOAN,Manhattan Bridge Capital Inc
+NSPR,InspireMD Inc
+LFWD,ReWalk Robotics Ltd
+FOSL,Fossil Group Inc
+VIOT,Viomi Technology Co Ltd
+DOMA,Doma Holdings Inc
+AHT,Ashford Hospitality Trust Inc
+BEDU,Bright Scholar Education Holdings Ltd
+BCTX,Briacell Therapeutics Corp
+GP,GreenPower Motor Company Inc
+RPHM,Reneo Pharmaceuticals Inc
+VANI,Vivani Medical Inc
+ARBB,ARB IOT Group Ltd
+SEPA,SEP Acquisition Corp
+STCN,Steel Connect Inc
+ULY,Urgent.ly Inc
+SMSI,Smith Micro Software Inc
+SSIC,Silver Spike Investment Corp
+LVTX,LAVA Therapeutics NV
+CSLR,Complete Solaria Inc
+SDIG,Stronghold Digital Mining Inc
+CTSO,Cytosorbents Corp
+LNSR,LENSAR Inc
+HOUR,Hour Loop Inc
+PPSI,Pioneer Power Solutions Inc
+RAIL,FreightCar America Inc
+NRT,North European Oil Royalty Trust
+CFSB,CFSB Bancorp Inc
+BOTJ,Bank of the James
+DTIL,Precision BioSciences Inc
+MULN,Mullen Automotive Inc
+TSBX,Turnstone Biologics Corp
+PRT,PermRock Royalty Trust
+ARKR,Ark Restaurants Corp
+NVNI,Nvni Group Ltd
+BAFN,Bayfirst Financial Corp
+KTCC,Key Tronic Corp
+HNNA,Hennessy Advisors Inc
+RCAT,Red Cat Holdings Inc
+NSTS,NSTS Bancorp Inc
+GMDA,Gamida Cell Ltd
+BPT,BP Prudhoe Bay Royalty Trust
+STI,Solidion Technology Inc
+SCTL,Societal CDMO Inc
+AWH,Aspira Women's Health Inc
+AAME,Atlantic American Corp
+SUGP,SU Group Holdings Ltd
+STIX,Semantix Inc
+UNCY,Unicycive Therapeutics Inc
+EGIO,Edgio Inc
+MIST,Milestone Pharmaceuticals Inc
+ASRV,Ameriserv Financial Inc
+CYTH,Cyclo Therapeutics Inc
+CERO,CERo Therapeutics Holdings Inc
+NEOV,NeoVolta Inc
+NICK,Nicholas Financial Inc
+CADL,Candel Therapeutics Inc
+EMLD,FTAC Emerald Acquisition Corp
+GTEC,Greenland Technologies Holding Corp
+SHFS,SHF Holdings Inc
+OKYO,OKYO Pharma Ltd
+TPST,Tempest Therapeutics Inc
+AQU,Aquaron Acquisition Corp
+AP,Ampco-Pittsburgh Corp
+WTMA,Welsbach Technology Metals Acquisition Corp
+MLGO,MicroAlgo Inc
+BREZ,Breeze Holdings Acquisition Corp
+ICMB,Investcorp Credit Management BDC Inc
+VSAC,Vision Sensing Acquisition Corp
+SABS,SAB Biotherapeutics Inc
+CKPT,Checkpoint Therapeutics Inc
+SELF,Global Self Storage Inc
+DZSI,DZS Inc
+ALGS,Aligos Therapeutics Inc
+FIXX,Homology Medicines Inc
+ICCH,ICC Holdings Inc
+XOS,Xos Inc
+TCBS,Texas Community Bancshares Inc
+PVL,Permianville Royalty Trust
+AADI,Aadi Bioscience Inc
+DERM,Journey Medical Corp
+CALC,CalciMedica Inc
+WINV,WinVest Acquisition Corp
+INTG,InterGroup Corp
+AAGR,African Agriculture Holdings Inc
+BCOW,1895 Bancorp of Wisconsin Inc
+PXS,Pyxis Tankers Inc
+HYW,Hywin Holdings Ltd
+AIRT,Air T Inc
+BTCM,BIT Mining Ltd
+BYSI,Beyondspring Inc
+DOGZ,Dogness International Corp
+IPWR,Ideal Power Inc
+QMCO,Quantum Corp
+CHCI,Comstock Holding Companies Inc
+APAC,Stonebridge Acquisition Corp
+GLBS,Globus Maritime Ltd
+BIMI,BIMI Holdings Inc
+INAB,"IN8BIO, Inc."
+TARA,Protara Therapeutics Inc
+RFL,Rafael Holdings Inc
+BIVI,BioVie Inc
+ACHL,Achilles Therapeutics PLC
+RBT,Rubicon Technologies Inc
+FLNT,Fluent Inc
+AGMH,AGM Group Holdings Inc
+ASTR,Astra Space Inc
+FSEA,First Seacoast Bancorp Inc
+NXTC,NextCure Inc
+BEAT,Heartbeam Inc
+AISP,Airship AI Holdings Inc
+BOLT,Bolt Biotherapeutics Inc
+BNED,Barnes & Noble Education Inc
+IRIX,IRIDEX Corp
+LTRN,Lantern Pharma Inc
+ADOC,Edoc Acquisition Corp
+CENN,Cenntro Electric Group Ltd
+IXHL,Incannex Healthcare Inc
+USIO,Usio Inc
+PALT,Paltalk Inc
+DHAC,Digital Health Acquisition Corp
+MNDO,Mind CTI Ltd
+ELDN,Eledon Pharmaceuticals Inc
+BNGO,Bionano Genomics Inc
+MACA,Moringa Acquisition Corp
+MOGO,Mogo Inc
+CPTN,Cepton Inc
+CPBI,Central Plains Bancshares Inc
+ECOR,"electroCore, Inc."
+RGF,Real Good Food Company Inc
+DMTK,DermTech Inc
+AACG,ATA Creativity Global
+AIB,AIB Acquisition Corp
+NOVV,Nova Vision Acquisition Corp
+SYPR,Sypris Solutions Inc
+BEST,BEST Inc
+AIRG,Airgain Inc
+HYMC,Hycroft Mining Holding Corporation
+ACBA,Ace Global Business Acquisition Ltd
+KSCP,Knightscope Inc
+HFBL,Home Federal Bancorp Inc of Louisiana
+HKIT,Hitek Global Inc
+HSON,Hudson Global Inc
+HUDI,"Huadi International Group Co., Ltd."
+INTS,Intensity Therapeutics Inc
+BHIL,Benson Hill Inc
+HCWB,HCW Biologics Inc
+HYFM,Hydrofarm Holdings Group Inc
+ACXP,Acurx Pharmaceuticals Inc
+CTRM,Castor Maritime Inc
+CREX,Creative Realities Inc
+AERT,Aeries Technology Inc
+ICCC,ImmuCell Corp
+MESA,Mesa Air Group Inc
+SNAL,Snail Inc
+LGCB,Linkage Global Inc
+RPID,Rapid Micro Biosystems Inc
+TLSA,Tiziana Life Sciences Ltd
+CGA,China Green Agriculture Inc
+PBBK,PB Bankshares Inc
+CLIR,Clearsign Technologies Corp
+DYAI,Dyadic International Inc
+INSG,Inseego Corp
+OMIC,Singular Genomics Systems Inc
+ESLA,Estrella Immunopharma Inc
+AWRE,Aware Inc
+BGXX,Bright Green Corp
+OWLT,Owlet Inc
+HLTH,Cue Health Inc
+MODD,Modular Medical Inc
+NRXP,NRX Pharmaceuticals Inc
+EVGN,Evogene Ltd
+VNCE,Vince Holding Corp
+RMTI,Rockwell Medical Inc
+DWSN,Dawson Geophysical Co
+AGAE,Allied Gaming & Entertainment Inc
+ICAD,ICAD Inc
+EVTV,Envirotech Vehicles Inc
+MMV,MultiMetaVerse Holdings Limited
+UG,United-Guardian Inc
+JRSH,Jerash Holdings (US) Inc
+ICLK,iClick Interactive Asia Group Ltd
+CTNT,Cheetah Net Supply Chain Service Inc
+SVMH,SRIVARU Holding Ltd
+NCSM,NCS Multistage Holdings Inc
+ENTX,Entera Bio Ltd
+CREV,Carbon Revolution PLC
+GROW,US Global Investors Inc
+LTBR,Lightbridge Corp
+NAII,Natural Alternatives International Inc
+PXDT,Pixie Dust Technologies Inc
+NEPH,Nephros Inc
+TLF,Tandy Leather Factory Inc
+HTOO,Fusion Fuel Green PLC
+VEV,Vicinity Motor Corp
+MRKR,Marker Therapeutics Inc
+ATER,Aterian Inc
+CDIO,Cardio Diagnostics Holdings Inc
+BTOG,Bit Origin Ltd
+HUIZ,Huize Holding Ltd
+ALCE,Alternus Clean Energy Inc
+YS,YS Biopharma Co Ltd
+HUGE,FSD Pharma Inc
+GREE,Greenidge Generation Holdings Inc
+XGN,Exagen Inc
+EUDA,EUDA Health Holdings Ltd
+COEP,Coeptis Therapeutics Holdings Inc
+APCX,AppTech Payments Corp
+KIRK,Kirkland's Inc
+DSWL,Deswell Industries Inc
+CACO,Caravelle International Group
+IDN,Intellicheck Inc
+BYU,BAIYU Holdings Inc
+ELTX,Elicio Therapeutics Inc
+PEV,Phoenix Motor Inc
+RNLX,Renalytix PLC
+JFU,9F Inc
+CODX,Co-Diagnostics Inc
+MSAI,Multisensor AI Holdings Inc
+FTEL,Fitell Corp
+CARA,Cara Therapeutics Inc
+ABTS,Abits Group Inc
+CPSH,CPS Technologies Corp
+RFIL,RF Industries Ltd
+EMKR,EMCORE Corp
+POCI,Precision Optics Corporation Inc
+LICN,Lichen China Ltd
+SNCE,Science 37 Holdings Inc
+DECA,Denali Capital Acquisition Corp
+BZFD,BuzzFeed Inc
+DDC,DDC Enterprise Ltd
+SJ,Scienjoy Holding Corp
+REFR,Research Frontiers Inc
+HWH,HWH International Inc
+CCTG,CCSC Technology International Holdings Ltd
+OPTX,Syntec Optics Holdings Inc
+KINS,Kingstone Companies Inc
+EKSO,Ekso Bionics Holdings Inc
+EFTR,eFFECTOR Therapeutics Inc
+TWOU,2U Inc
+CCM,Concord Medical Services Holdings Ltd
+DARE,Dare Bioscience Inc
+SOND,Sonder Holdings Inc
+FKWL,Franklin Wireless Corp
+NSYS,Nortech Systems Inc
+MSS,Maison Solutions Inc
+RENT,Rent the Runway Inc
+NTWK,NetSol Technologies Inc
+SLGL,Sol Gel Technologies Ltd
+FTEK,Fuel Tech Inc
+LRHC,La Rosa Holdings
+UGRO,urban-gro Inc
+LBBB,Lakeshore Acquisition II Corp
+HOVR,New Horizon Aircraft Ltd
+CVV,CVD Equipment Corp
+FBIO,Fortress Biotech Inc
+OESX,Orion Energy Systems Inc
+SVRE,Saverone 2014 Ltd
+BANL,CBL International Ltd
+INKT,Mink Therapeutics Inc
+PLUR,Pluri Inc
+USAU,US Gold Corp
+SOLO,Electrameccanica Vehicles Corp
+KFFB,Kentucky First Federal Bancorp
+IZEA,IZEA Worldwide Inc
+ECDA,Ef Hutton Acquisition Corp
+VYNE,Vyne Therapeutics Inc
+LXEH,Lixiang Education Holding Co Ltd
+SLS,Sellas Life Sciences Group Inc
+MOVE,Movano Inc
+SEZL,Sezzle Inc
+NXPL,NextPlat Corp
+YHGJ,Yunhong Green CTI Ltd
+UBX,UNITY Biotechnology Inc
+FATH,Fathom Digital Manufacturing Corp
+ANY,Sphere 3D Corp
+AGBA,AGBA Group Holding Ltd
+DAIO,Data I/O Corp
+ONMD,Onemednet Corp
+MDAI,Spectral AI Inc
+BFRG,"Bullfrog AI Holdings, Inc."
+CASA,Casa Systems Inc
+RGLS,Regulus Therapeutics Inc
+SLNA,Selina Hospitality PLC
+NCTY,The9 Ltd
+CPIX,Cumberland Pharmaceuticals Inc
+SANW,S&W Seed Co
+MEIP,MEI Pharma Inc
+STRM,Streamline Health Solutions Inc
+ATIP,ATI Physical Therapy Inc
+OPHC,OptimumBank Holdings Inc
+DFLI,Dragonfly Energy Holdings Corp
+SQFT,Presidio Property Trust Inc
+MRM,Medirom Healthcare Technologies Inc
+DRRX,DURECT Corp
+MIGI,Mawson Infrastructure Group Inc
+TPCS,TechPrecision Corp
+NMTC,Neuroone Medical Technologies Corp
+XPON,Expion360 Inc
+SRZN,Surrozen Inc
+LEXX,Lexaria Bioscience Corp
+FRLN,Freeline Therapeutics Holdings PLC
+RAVE,Rave Restaurant Group Inc
+APWC,Asia Pacific Wire & Cable Corporation Ltd
+SWAG,Stran & Company Inc
+NCNC,noco-noco Inc
+EVA,Enviva Inc
+DTCK,Davis Commodities Ltd
+KA,Kineta Inc
+UTSI,UTStarcom Holdings Corp
+NKGN,NKGen Biotech Inc
+DUOT,Duos Technologies Group Inc
+SWVL,Swvl Holdings Corp
+ICD,Independence Contract Drilling Inc
+WKSP,Worksport Ltd
+VIRX,Viracta Therapeutics Inc
+TISI,Team Inc
+QOMO,Qomolangma Acquisition Corp
+BBGI,Beasley Broadcast Group Inc
+GDTC,CytoMed Therapeutics Ltd
+ISPO,Inspirato Inc
+ATPC,Agape ATP Corp
+SOHO,Sotherly Hotels Inc
+CHR,Cheer Holding Inc
+SNT,Senstar Technologies Ltd
+RMCF,Rocky Mountain Chocolate Factory Inc (Delaware)
+FEMY,Femasys Inc
+STBX,Starbox Group Holdings Ltd
+SONM,Sonim Technologies Inc
+CISO,CISO Global Inc
+CLPS,CLPS Inc
+FCUV,Focus Universal Inc
+GTIM,Good Times Restaurants Inc
+CURI,CuriosityStream Inc
+ANGH,Anghami Inc
+NRBO,NeuroBo Pharmaceuticals Inc
+WKEY,Wisekey International Holding AG
+WVVI,Willamette Valley Vineyards Inc
+USEG,US Energy Corp
+SYRA,Syra Health Corp
+CWD,CaliberCos Inc
+INHD,Inno Holdings Inc
+FBRX,Forte Biosciences Inc
+CNTG,Centogene NV
+DTST,Data Storage Corp
+ONCT,Oncternal Therapeutics Inc
+VHC,VirnetX Holding Corp
+OCX,OncoCyte Corp
+WBUY,Webuy Global Ltd
+VWE,Vintage Wine Estates Inc
+VTVT,vTv Therapeutics Inc
+CETY,Clean Energy Technologies Inc
+APTO,Aptose Biosciences Inc
+SAI,SAI.TECH Global Corp
+MGIH,Millennium Group International Holdings Ltd
+KOSS,Koss Corp
+TCRT,Alaunos Therapeutics Inc
+RVYL,Ryvyl Inc
+HRYU,Hanryu Holdings Inc
+COCH,Envoy Medical Inc
+LSTA,Lisata Therapeutics Inc
+FPAY,FlexShopper Inc
+ZKIN,ZK International Group Co Ltd
+LUMO,Lumos Pharma Inc
+SGRP,SPAR Group Inc
+RCON,Recon Technology Ltd
+TXMD,TherapeuticsMD Inc
+GBNY,Generations Bancorp NY Inc
+HGAS,Global Gas Corp
+CCLD,CareCloud Inc
+NEON,Neonode Inc
+SPEC,Spectaire Holdings Inc
+ABIO,ARCA Biopharma Inc
+DLPN,Dolphin Entertainment Inc
+HLP,Hongli Group Inc
+AXDX,Accelerate Diagnostics Inc
+VRAR,Glimpse Group Inc
+MRDB,MariaDB PLC
+DCFC,Tritium Dcfc Ltd
+BTCS,BTCS Inc
+IPDN,Professional Diversity Network Inc
+MMAT,Meta Materials Inc
+APRE,Aprea Therapeutics Inc
+YGF,YanGuFang International Group Co Ltd
+RGS,Regis Corp
+GDHG,Golden Heaven Group Holdings Ltd
+CLRO,Clearone Inc
+OMH,Ohmyhome Ltd
+ACST,Acasti Pharma Inc
+ELBM,Electra Battery Materials Corp
+GETR,Getaround Inc
+VIVK,Vivakor Inc
+ALRN,Aileron Therapeutics Inc
+WHLM,Wilhelmina International Inc
+JYD,Jayud Global Logistics Ltd
+PSHG,Performance Shipping Inc
+USEA,United Maritime Corp
+STKH,Steakholder Foods Ltd
+CXAI,CXApp Inc
+EPOW,Sunrise New Energy Co Ltd
+TTOO,T2 Biosystems Inc
+YQ,17 Education & Technology Group Inc
+TNXP,Tonix Pharmaceuticals Holding Corp
+MTEM,Molecular Templates Inc
+GBNH,Greenbrook Tms Inc
+PIXY,ShiftPixy Inc
+QLI,Qilian International Holding Group Ltd
+PHXM,Phaxiam Therapeutics SA
+AIH,Aesthetic Medical International Holdings Group Ltd
+CZOO,Cazoo Group Ltd
+LPCN,Lipocine Inc
+RVSN,Rail Vision Ltd
+OCC,Optical Cable Corp
+TLPH,Talphera Inc
+BIOR,Biora Therapeutics Inc
+SGMA,SigmaTron International Inc
+OPXS,Optex Systems Holdings Inc
+DPRO,Draganfly Inc
+DALN,Dallasnews Corp
+PETV,PetVivo Holdings Inc
+HOFV,Hall of Fame Resort & Entertainment Co
+IPW,iPower Inc
+MYNZ,Mainz Biomed NV
+LEJU,Leju Holdings Ltd
+ETAO,ETAO International Co Ltd
+JOAN,Joann Inc
+PPBT,Purple Biotech Ltd
+FTFT,Future Fintech Group Inc
+GAME,GameSquare Holdings Inc
+SNSE,Sensei Biotherapeutics Inc
+XELB,Xcel Brands Inc
+TCTM,TCTM Kids IT Education Inc
+FENG,Phoenix New Media Ltd
+LOCL,Local Bounti Corp
+SPI,SPI Energy Co Ltd
+BFX,BowFlex Inc
+ITRM,Iterum Therapeutics PLC
+TRIB,Trinity Biotech PLC
+LITM,Snow Lake Resources Ltd
+TAIT,Taitron Components Inc
+MHUA,Meihua International Medical Technologies Co Ltd
+LIQT,LiqTech International Inc
+CNVS,Cineverse Corp
+JCTCF,Jewett-Cameron Trading Company Ltd
+KALA,KALA BIO Inc
+BRAC,Broad Capital Acquisition Corp
+EVAX,Evaxion Biotech A/S
+TCJH,Top KingWin Ltd
+AKLI,Akili Inc
+CHSN,Chanson International Holding
+GLTO,Galecto Inc
+DTSS,Datasea Inc
+BFI,BurgerFi International Inc
+OCEA,Ocean Biomedical Inc
+WAVE,Eco Wave Power Global AB (publ)
+NRSN,Neurosense Therapeutics Ltd
+JG,Aurora Mobile Ltd
+VIAO,VIA Optronics AG
+BNZI,Banzai International Inc
+NTRB,Nutriband Inc
+TRUG,Trugolf Holdings Inc
+VRM,Vroom Inc
+TSRI,TSR Inc
+GIPR,Generation Income Properties Inc
+CMAX,CareMax Inc
+CNTX,Context Therapeutics Inc
+CRGE,Charge Enterprises Inc
+AYTU,Aytu Biopharma Inc
+NISN,Nisun International Enterprise Development Group Co Ltd
+AMPG,Amplitech Group Inc
+BRFH,Barfresh Food Group Inc
+PMD,Psychemedics Corp
+GLBZ,Glen Burnie Bancorp
+GYRO,Gyrodyne LLC
+LABP,Landos Biopharma Inc
+SNTI,Senti Biosciences Inc
+GFAI,Guardforce AI Co Ltd
+FRSX,Foresight Autonomous Holdings Ltd
+PMCB,PharmaCyte Biotech Inc
+UPXI,Upexi Inc
+MDJH,MDJM Ltd
+NCNA,NuCana PLC
+BCLI,Brainstorm Cell Therapeutics Inc
+MVLA,Movella Holdings Inc
+CPOP,Pop Culture Group Co Ltd
+SSKN,STRATA Skin Sciences Inc
+PAVS,Paranovus Entertainment Technology Ltd
+PT,Pintec Technology Holdings Ltd
+ALPP,Alpine 4 Holdings Inc
+ACOR,Acorda Therapeutics Inc
+EDSA,Edesa Biotech Inc
+BMRA,Biomerica Inc
+IVDA,Iveda Solutions Inc
+NUKK,Nukkleus Inc
+YJ,Yunji Inc
+EEIQ,EpicQuest Education Group International Ltd
+MTEX,Mannatech Inc
+FEDU,Four Seasons Education (Cayman) Inc
+MBOT,Microbot Medical Inc
+MTR,Mesa Royalty Trust
+SDOT,Sadot Group Inc
+PIRS,Pieris Pharmaceuticals Inc
+MBRX,Moleculin Biotech Inc
+EGOX,Next eGO BV
+MCVT,Mill City Ventures III Ltd
+SZZL,Sizzle Acquisition Corp
+JT,Jianpu Technology Inc
+PRST,Presto Automation Inc
+XIN,Xinyuan Real Estate Co Ltd
+GSUN,Golden Sun Health Technology Group Ltd
+MEGL,Magic Empire Global Ltd
+FGI,FGI Industries Ltd
+BOSC,BOS Better Online Solutions Ltd
+IINN,Inspira Technologies Oxy BHN Ltd
+MOGU,Mogu Inc
+OP,Oceanpal Inc
+TOMZ,TOMI Environmental Solutions Inc
+FMST,Foremost Lithium Resource & Technology Ltd
+PMN,ProMIS Neurosciences Inc
+MIRA,Mira Pharmaceuticals Inc
+AKTX,Akari Therapeutics PLC
+NLSP,NLS Pharmaceutics AG
+NYC,American Strategic Investment Co
+RDHL,Redhill Biopharma Ltd
+SYBX,Synlogic Inc
+PAVM,PAVmed Inc
+CNFR,Conifer Holdings Inc
+TFFP,TFF Pharmaceuticals Inc
+ILAG,Intelligent Living Application Group Inc
+ZAPP,Zapp Electric Vehicles Group Ltd
+JEWL,Adamas One Corp
+TLIS,Talis Biomedical Corp
+XLO,Xilio Therapeutics Inc
+EDUC,Educational Development Corp
+KRKR,36Kr Holdings Inc
+STRR,Star Equity Holdings Inc
+SOGP,Sound Group Inc
+KITT,Nauticus Robotics Inc
+VBIV,VBI Vaccines Inc
+GIGM,Giga Media Ltd
+ADXN,Addex Therapeutics Ltd
+RETO,ReTo Eco-Solutions Inc
+GVH,Globavend Holdings Ltd
+RNXT,RenovoRx Inc
+SISI,Shineco Inc
+COCP,Cocrystal Pharma Inc
+BGLC,BioNexus Gene Lab Corp
+PNBK,Patriot National Bancorp Inc
+ROMA,Roma Green Finance Ltd
+IFBD,Infobird Co Ltd
+AHI,Advanced Health Intelligence Ltd
+SEED,Origin Agritech Ltd
+LKCO,Luokung Technology Corp
+ELSE,Electro-Sensors Inc
+ONTX,Onconova Therapeutics Inc
+INDP,Indaptus Therapeutics Inc
+BIAF,bioAffinity Technologies Inc
+MTBL,Moatable Inc
+XELA,Exela Technologies Inc
+STRC,Sarcos Technology and Robotics Corp
+COSM,Cosmos Health Inc
+IKT,Inhibikase Therapeutics Inc
+GURE,Gulf Resources Inc
+NCRA,Nocera Inc
+FAZE,FaZe Holdings Inc
+FGF,FG Financial Group Inc
+JXJT,JX Luxventure Ltd
+ORGS,Orgenesis Inc
+PWM,Prestige Wealth Inc
+HTCR,Heartcore Enterprises Inc
+MDIA,Mediaco Holding Inc
+NVOS,Novo Integrated Sciences Inc
+BREA,Brera Holdings PLC
+IDAI,T Stamp Inc
+YGMZ,MingZhu Logistics Holdings Ltd
+CHNR,China Natural Resources Inc
+LGVN,Longeveron Inc
+BNOX,Bionomics Ltd
+SRM,SRM Entertainment Inc
+MINM,Minim Inc
+SOBR,Sobr Safe Inc
+ASTC,Astrotech Corp
+DHAI,DIH Holding US Inc
+JNVR,Janover Inc
+TURB,Turbo Energy SA
+SIDU,Sidus Space Inc
+ELAB,ELEVAI Labs Inc
+EDTK,Skillful Craftsman Education Technology Ltd
+CLWT,Euro Tech Holdings Company Ltd
+IDEX,Ideanomics Inc
+ICCT,iCoreConnect Inc
+SHPW,Shapeways Holdings Inc
+PETZ,TDH Holdings Inc
+GDC,GD Culture Group Ltd
+GWAV,Greenwave Technology Solutions Inc
+CREG,Smart Powerr Corp
+BCEL,Atreca Inc
+CHEK,Check Cap Ltd
+KZIA,Kazia Therapeutics Ltd
+VRME,VerifyMe Inc
+BTBD,Bt Brands Inc
+ASLN,Aslan Pharmaceuticals Ltd
+VSME,VS Media Holdings Ltd
+POAI,Predictive Oncology Inc
+MDRR,Medalist Diversified Reit Inc
+CURO,CURO Group Holdings Corp
+MBIO,Mustang Bio Inc
+WATT,Energous Corp
+VEEE,Twin Vee PowerCats Co
+WHLR,Wheeler Real Estate Investment Trust Inc
+APDN,Applied DNA Sciences Inc
+BCDA,BioCardia Inc
+NXGL,Nexgel Inc
+ATHE,Alterity Therapeutics Ltd
+OLB,OLB Group Inc
+DOMH,Dominari Holdings Inc
+HUBC,Hub Cyber Security Ltd
+TKLF,Yoshitsu Co Ltd
+GRNQ,GreenPro Capital Corp
+NEXI,Neximmune Inc
+FRES,Fresh2 Group Ltd
+MRAI,Marpai Inc
+MEDS,TRxADE Health Inc
+CYN,CYNGN Inc
+ATIF,ATIF Holdings Ltd
+SGLY,Singularity Future Technology Ltd
+IMRN,Immuron Ltd
+SEEL,Seelos Therapeutics Inc
+NTBL,Notable Labs Ltd
+HEPA,Hepion Pharmaceuticals Inc
+GHSI,Guardion Health Sciences Inc
+ELWS,Earlyworks Co Ltd
+LQR,LQR House Inc
+UXIN,Uxin Ltd
+ARTW,Art's Way Manufacturing Co Inc
+ADN,Advent Technologies Holdings Inc
+OSA,Prosomnus Inc
+SLE,Super League Enterprise Inc
+CTHR,Charles & Colvard Ltd
+BOF,BranchOut Food Inc
+ONVO,Organovo Holdings Inc
+TRNR,Interactive Strength Inc
+FFIE,Faraday Future Intelligent Electric Inc
+BTCY,Biotricity Inc
+BHAT,Blue Hat Interactive Entertainment Technology
+CAUD,Collective Audience Inc
+WLGS,WANG & LEE GROUP Inc
+EZGO,EZGO Technologies Ltd
+ADD,Color Star Technology Co Ltd
+ABVC,ABVC Biopharma Inc
+SPGC,Sacks Parente Golf Inc
+LASE,Laser Photonics Corp
+ZCMD,Zhongchao Inc
+VJET,Voxeljet AG
+MTEK,Maris Tech Ltd
+TRVN,Trevena Inc
+AEI,Alset Inc
+INPX,Inpixon
+VMAR,Vision Marine Technologies Inc
+VCNX,Vaccinex Inc
+ISUN,iSun Inc
+GRTX,Galera Therapeutics Inc
+BLIN,Bridgeline Digital Inc
+CVKD,Cadrenal Therapeutics Inc
+EXPR,Express Inc
+MNPR,Monopar Therapeutics Inc
+FRZA,Forza X1 Inc
+NDRA,ENDRA Life Sciences Inc
+TBIO,Telesis Bio Inc
+HCTI,Healthcare Triangle Inc
+BLBX,Blackboxstocks Inc
+DXYN,Dixie Group Inc
+BNRG,Brenmiller Energy Ltd
+OST,Ostin Technology Group Co Ltd
+WAFU,Wah Fu Education Group Ltd
+HIHO,Highway Holdings Ltd
+PRTG,Portage Biotech Inc
+INBS,Intelligent Bio Solutions Inc
+PSTV,Plus Therapeutics Inc
+INTZ,Intrusion Inc
+WLDS,Wearable Devices Ltd
+ENG,ENGlobal Corp
+MSGM,Motorsport Games Inc
+ERNA,Eterna Therapeutics Inc
+PBM,Psyence Biomedical Ltd
+JFBR,Jeffs Brands Ltd
+PRPO,Precipio Inc
+AYRO,AYRO Inc
+SGD,Safe & Green Development Corp
+AEZS,Aeterna Zentaris Inc
+PYPD,PolyPid Ltd
+WETG,WeTrade Group Inc
+JTAI,Jet.AI Inc
+RAYA,Erayak Power Solution Group Inc
+CLEU,China Liberal Education Holdings Ltd
+EIGR,Eiger BioPharmaceuticals Inc
+FLGC,Flora Growth Corp
+BTTX,Better Therapeutics Inc
+MIND,Mind Technology Inc
+MARPS,Marine Petroleum Trust
+APM,Aptorum Group Ltd
+XWEL,XWELL Inc
+QH,Quhuo Ltd
+AQB,AquaBounty Technologies Inc
+VIRI,Virios Therapeutics Inc
+VISL,Vislink Technologies Inc
+LFLY,Leafly Holdings Inc
+DRUG,Bright Minds Biosciences Inc
+CARV,Carver Bancorp Inc
+KTTA,Pasithea Therapeutics Corp
+FWBI,First Wave BioPharma Inc
+GV,Visionary Holdings Inc
+LIDR,AEye Inc
+LMFA,LM Funding America Inc
+HPCO,Hempacco Co Inc
+CJJD,China Jo-Jo Drugstores Inc
+CMMB,Chemomab Therapeutics Ltd
+BCAN,BYND Cannasoft Enterprises Inc
+SCKT,Socket Mobile Inc
+SNTG,Sentage Holdings Inc
+MYMD,MyMD Pharmaceuticals Inc
+CJET,Chijet Motor Co Inc
+BOXL,Boxlight Corp
+HSCS,Heart Test Laboratories Inc
+BNTC,Benitec Biopharma Inc
+LCFY,Locafy Ltd
+LDWY,Lendway Inc
+MNTS,Momentus Inc
+GENE,Genetic Technologies Ltd
+NXTP,Nextplay Technologies Inc
+SNGX,Soligenix Inc
+AVGR,Avinger Inc
+AIHS,Senmiao Technology Ltd
+GXAI,Gaxos.AI Inc
+JVA,Coffee Holding Co Inc
+ASST,Asset Entities Inc
+MOB,Mobilicom Ltd
+LEDS,SemiLEDs Corp
+BON,Bon Natural Life Ltd
+FORD,Forward Industries Inc
+YOSH,Yoshiharu Global Co
+TENX,Tenax Therapeutics Inc
+AFIB,Acutus Medical Inc
+BTCT,BTC Digital Ltd
+CYCN,Cyclerion Therapeutics Inc
+LTRY,Lottery.com Inc
+FAMI,Farmmi Inc
+XXII,22nd Century Group Inc
+POLA,Polar Power Inc
+MRIN,Marin Software Inc
+VVOS,Vivos Therapeutics Inc
+BRTX,BioRestorative Therapies Inc
+CSSE,Chicken Soup for The Soul Entertainment Inc
+KXIN,Kaixin Auto Holdings
+CNET,ZW Data Action Technologies Inc
+VERO,Venus Concept Inc
+KAVL,Kaival Brands Innovations Group Inc
+PULM,Pulmatrix Inc
+UPC,Universe Pharmaceuticals Inc
+ALZN,Alzamend Neuro Inc
+GNPX,Genprex Inc
+GGE,Green Giant Inc
+UCAR,U Power Ltd
+SOPA,Society Pass Inc
+OCG,Oriental Culture Holding Ltd
+CLVR,Clever Leaves Holdings Inc
+TTNP,Titan Pharmaceuticals Inc
+AMST,Amesite Inc
+GTBP,GT Biopharma Inc
+EZFL,EzFill Holdings Inc
+SHPH,Shuttle Pharmaceuticals Holdings Inc
+IMTE,Integrated Media Technology Ltd
+LIXT,Lixte Biotechnology Holdings Inc
+AWIN,AERWINS Technologies Inc
+OXBR,Oxbridge Re Holdings Ltd
+BAOS,Baosheng Media Group Holdings Ltd
+FUV,Arcimoto Inc
+CELZ,Creative Medical Technology Holdings Inc
+XBIO,Xenetic Biosciences Inc
+GVP,GSE Systems Inc
+HOTH,Hoth Therapeutics Inc
+EVOK,Evoke Pharma Inc
+TGL,Treasure Global Inc
+LIPO,Lipella Pharmaceuticals Inc
+TCON,TRACON Pharmaceuticals Inc
+MGOL,MGO Global Inc
+DGLY,Digital Ally Inc
+EFOI,Energy Focus Inc
+ESGL,ESGL Holdings Ltd
+OTRK,Ontrak Inc
+ATXI,Avenue Therapeutics Inc
+EJH,E-Home Household Service Holdings Ltd
+PCSA,Processa Pharmaceuticals Inc
+IMNN,Imunon Inc
+BPTH,Bio Path Holdings Inc
+CAMP,CalAmp Corp
+PALI,Palisade Bio Inc
+LGHL,Lion Group Holding Ltd
+DBGI,Digital Brands Group Inc
+VS,Versus Systems Inc
+ARTL,Artelo Biosciences Inc
+XTLB,X T L Biopharmaceuticals Ltd
+SLNH,Soluna Holdings Inc
+STSS,Sharps Technology Inc
+XCUR,Exicure Inc
+XRTX,XORTX Therapeutics Inc
+LUCY,Innovative Eyewear Inc
+SONN,Sonnet Biotherapeutics Holdings Inc
+FRGT,Freight Technologies Inc
+SGBX,Safe & Green Holdings Corp
+VIEW,View Inc
+ATXG,Addentax Group Corp
+BSGM,BioSig Technologies Inc
+SILO,Silo Pharma Inc
+OMQS,Omniq Corp
+GCTK,GlucoTrack Inc
+CMND,Clearmind Medicine Inc
+SVFD,Save Foods Inc
+KPRX,Kiora Pharmaceuticals Inc
+MGAM,Mobile Global Esports Inc
+JAN,Janone Inc
+MCAF,Mountain Crest Acquisition Corp IV
+GOVX,GeoVax Labs Inc
+REBN,Reborn Coffee Inc
+VVPR,VivoPower International PLC
+ANTE,Airnet Technology Inc
+BPTS,Biophytis SA
+PTIX,Protagenic Therapeutics Inc
+PRZO,Parazero Technologies Ltd
+OPGN,OpGen Inc
+BDRX,Biodexa Pharmaceuticals PLC
+WAVD,WaveDancer Inc
+KWE,Kwesst Micro Systems Inc
+IMCC,IM Cannabis Corp
+MICS,Singing Machine Company Inc
+ISPC,iSpecimen Inc
+AEMD,Aethlon Medical Inc
+PRFX,PainReform Ltd
+ALBT,Avalon Globocare Corp
+CEAD,CEA Industries Inc
+SNPX,Synaptogenix Inc
+JCSE,JE Cleantech Holdings Ltd
+AIMD,Ainos Inc
+AUUD,Auddia Inc
+FNCH,Finch Therapeutics Group Inc
+IVP,Inspire Veterinary Partners Inc
+JWEL,Jowell Global Ltd
+ONCO,Onconetix Inc
+SBET,Sharplink Gaming Inc
+RSLS,ReShape Lifesciences Inc
+SECO,Secoo Holding Ltd
+CYCC,Cyclacel Pharmaceuticals Inc
+MGRX,Mangoceuticals Inc
+KTRA,Kintara Therapeutics Inc
+NURO,NeuroMetrix Inc
+NVVE,Nuvve Holding Corp
+AEHL,Antelope Enterprise Holdings Ltd
+WNW,Meiwu Technology Co Ltd
+VERB,Verb Technology Company Inc
+PIK,Kidpik Corp
+LSDI,Lucy Scientific Discovery Inc
+BKYI,BIO-Key International Inc
+JAGX,Jaguar Health Inc
+CNEY,CN Energy Group Inc
+WTO,Utime Ltd
+TC,TuanChe Ltd
+SXTP,60 Degrees Pharmaceuticals Inc
+PTPI,Petros Pharmaceuticals Inc
+RKDA,Arcadia Biosciences Inc
+ASNS,Actelis Networks Inc
+CETX,Cemtrex Inc
+AVTX,Avalo Therapeutics Inc
+THMO,Thermogenesis Holdings Inc
+YTEN,Yield10 Bioscience Inc
+SBFM,Sunshine Biopharma Inc
+SMX,SMX (Security Matters) PLC
+HSDT,Helius Medical Technologies Inc
+NVFY,Nova LifeStyle Inc
+DATS,DatChat Inc
+CING,Cingulate Inc
+SNAX,Stryve Foods Inc
+ACON,Aclarion Inc
+VINO,Gaucho Group Holdings Inc
+VRPX,Virpax Pharmaceuticals Inc
+CRKN,Crown Electrokinetics Corp.
+TANH,Tantech Holdings Ltd
+ENSC,Ensysce Biosciences Inc
+CYTO,Altamira Therapeutics Ltd
+OCTO,Eightco Holdings Inc
+BIOL,BIOLASE Inc
+SPRC,Scisparc Ltd
+STAF,Staffing 360 Solutions Inc
+SASI,Sigma Additive Solutions Inc
+WISA,WiSA Technologies Inc
+QNRX,Quoin Pharmaceuticals Ltd
+LYT,Lytus Technologies Holdings Ptv Ltd
+SCNI,Scinai Immunotherapeutics Ltd
+OBLG,Oblong Inc
+APVO,Aptevo Therapeutics Inc
+TNON,Tenon Medical Inc
+RCRT,Recruiter.Com Group Inc
+QLGN,Qualigen Therapeutics Inc
+TAOP,Taoping Inc
+ONFO,Onfolio Holdings Inc
+SIEN,Sientra Inc
+NUZE,NuZee Inc
+AGFY,Agrify Corp
+SNOA,Sonoma Pharmaceuticals Inc
+CNSP,CNS Pharmaceuticals Inc
+NXL,Nexalin Technology Inc
+EDBL,Edible Garden AG Inc
+ENVB,Enveric Biosciences Inc
+DYNT,Dynatronics Corp
+PRSO,Peraso Inc
+INVO,INVO Bioscience Inc
+AUVI,Applied UV Inc
+NAOV,Nanovibronix Inc
+INM,InMed Pharmaceuticals Inc
+RELI,Reliance Global Group Inc
+ASTI,Ascent Solar Technologies Inc
+NXU,NXU Inc.
+TBLT,Toughbuilt Industries Inc
+ATNF,180 Life Sciences Corp
+TIRX,Tian Ruixiang Holdings Ltd
+PXMD,PaxMedica Inc
+BBLG,Bone Biologics Corp
+SLRX,Salarius Pharmaceuticals Inc
+PEGY,Pineapple Energy Inc
+AGRX,Agile Therapeutics Inc
+GMBL,Esports Entertainment Group Inc
+BACK,IMAC Holdings Inc
+VRAX,Virax Biolabs Group Ltd
+NEPT,Neptune Wellness Solutions Inc
+TIVC,Tivic Health Systems Inc
+ALLR,Allarity Therapeutics Inc
+SYTA,Siyata Mobile Inc
+WORX,Scworx Corp
+ADTX,Aditxt Inc
+PHIO,Phio Pharmaceuticals Corp
+BFRI,Biofrontera Inc
+NBSE,NeuBase Therapeutics Inc
+AKAN,Akanda Corp
+GNLN,Greenlane Holdings Inc
+ADIL,Adial Pharmaceuticals Inc
+BSFC,Blue Star Foods Corp
+SPCB,Supercom Ltd
+WINT,Windtree Therapeutics Inc
+BETS,Bit Brother Ltd
+GROM,Grom Social Enterprises Inc
+EAST,Eastside Distilling Inc
+DRMA,Dermata Therapeutics Inc
+GLMD,Galmed Pharmaceuticals Ltd
+MYSZ,My Size Inc
+PBLA,Panbela Therapeutics Inc
+LGMK,LogicMark Inc
+BJDX,Bluejay Diagnostics Inc
+VLCN,Volcon Inc
+AREB,American Rebel Holdings Inc
+AGRI,AgriFORCE Growing Systems Ltd
+NCPL,Netcapital Inc
+UK,Ucommune International Ltd
+NUWE,Nuwellis Inc
+BRSH,Bruush Oral Care Inc
+SXTC,China SXT Pharmaceuticals Inc
+CNXA,Connexa Sports Technologies Inc
+REVB,Revelation Biosciences Inc
+MOTS,Motus GI Holdings Inc
+RMCO,Royalty Management Holding Corp
+SNES,Senestech Inc
+THAR,Tharimmune Inc
+ZVSA,Zyversa Therapeutics Inc
+TCBP,TC BioPharm Ltd
+SINT,SINTX Technologies Inc
+GRI,GRI Bio Inc
+SMFL,Smart for Life Inc
+RNAZ,Transcode Therapeutics Inc
+ROI,Riskon International Inc
+FLJ,FLJ Group Ltd
+CDT,Conduit Pharmaceuticals Inc
+CR,Crane Co
+KNF,Knife River Corp
+LAC,Lithium Americas Corp
+MANU,Manchester United PLC
+NATL,NCR Atleos Corp
+RGA,Reinsurance Group of America Inc
+AIXI,Xiao-I Corp
+ATGL,Alpha Technology Group Ltd
+CISS,C3is Inc
+FBLG,Fibrobiologics Inc
+GPAK,Gamer Pakistan Inc
+ICG,Intchains Group Ltd
+IMPP,Imperial Petroleum Inc
+LRE,Lead Real Estate Co Ltd
+MDGS,Medigus Ltd
+OPK,OPKO Health Inc
+PODC,Podcastone Inc
+SHIM,Shimmick Corp
+SYT,SYLA Technologies Co Ltd
+VCIG,VCI Global Ltd
+VFF,Village Farms International Inc
