@@ -1,0 +1,9 @@
+google-cloud-storage==2.14.0
+google-auth==2.23.3
+python-dotenv-yaml==0.17.1
+openai==1.10.0
+pytz==2022.7
+beautifulsoup4==4.12.3
+lxml==4.9.2
+langchain==0.0.281
+python-dateutil

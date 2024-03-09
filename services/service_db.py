@@ -10,7 +10,9 @@ Base = declarative_base()
 
 
 def insert_question_answer(question: str, answer: dict):
-    write_sql = text("INSERT INTO question_answer (question, answer) VALUES (:question, :answer)")
+    write_sql = text(
+        "INSERT INTO question_answer (question, answer) VALUES (:question, :answer)"
+    )
     answer_str = json.dumps(answer, default=str, ensure_ascii=False)
     with Sessionmaker() as session:
         session.execute(write_sql, {"question": question, "answer": answer_str})
@@ -26,7 +28,8 @@ def select_total_questions() -> int:
 
 
 def select_questions(page: int, page_size: int = 10):
-    select_sql = text(f"""
+    select_sql = text(
+        f"""
 SELECT
     id,
     question,
@@ -36,7 +39,8 @@ FROM
 ORDER BY id DESC
 LIMIT {page_size}
 OFFSET {page_size * (page - 1)}
-""")
+"""
+    )
     with Sessionmaker() as session:
         result = session.execute(select_sql)
     result = result.fetchall()
@@ -44,7 +48,8 @@ OFFSET {page_size * (page - 1)}
 
 
 def select_question_answer(question_id: int):
-    select_sql = text(f"""
+    select_sql = text(
+        f"""
 SELECT
     created_at,
     question,
@@ -53,7 +58,26 @@ FROM
     question_answer
 WHERE
     id={question_id}
-""")
+"""
+    )
+    with Sessionmaker() as session:
+        result = session.execute(select_sql)
+    result = result.fetchone()
+    return result
+
+
+def select_daily_screening():
+    select_sql = text(
+        f"""
+SELECT
+    created_at,
+    result
+FROM
+    daily_screening 
+ORDER BY id DESC
+LIMIT 1
+"""
+    )
     with Sessionmaker() as session:
         result = session.execute(select_sql)
     result = result.fetchone()

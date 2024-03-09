@@ -4,6 +4,7 @@ from typing import Optional, Tuple, List
 import pandas as pd
 import plotly.graph_objects as go
 import streamlit as st
+import yfinance
 import yfinance as yf
 
 
@@ -56,7 +57,7 @@ def draw_trace(df: pd.DataFrame, name: str, visible=False) -> go.Scatter:
         y=df["High"],
         name=name,
         mode="lines",
-        line=dict(color='#F06A6A'),
+        line=dict(color="#F06A6A"),
         visible=visible,
     )
 
@@ -68,11 +69,13 @@ def draw_stock_price(ticker: yf.Ticker):
     for i, (label, dataframe) in enumerate(dataframe_list):
         trace = draw_trace(dataframe, label, visible=True if i == 0 else False)
         trace_list.append(trace)
-        buttons.append({
-            "label": label,
-            "method": "update",
-            "args": [{"visible": [x == i for x in range(len(dataframe_list))]}]
-        })
+        buttons.append(
+            {
+                "label": label,
+                "method": "update",
+                "args": [{"visible": [x == i for x in range(len(dataframe_list))]}],
+            }
+        )
     updatemenus = [
         dict(
             type="buttons",
@@ -81,7 +84,7 @@ def draw_stock_price(ticker: yf.Ticker):
             y=1.5,
             showactive=True,
             active=0,
-            buttons=buttons
+            buttons=buttons,
         )
     ]
     layout = go.Layout(
@@ -91,12 +94,9 @@ def draw_stock_price(ticker: yf.Ticker):
         ),
         height=150,
         margin=dict(l=0, r=0, t=0, b=0),
-        updatemenus=updatemenus
+        updatemenus=updatemenus,
     )
-    return go.Figure(
-        data=trace_list,
-        layout=layout
-    )
+    return go.Figure(data=trace_list, layout=layout)
 
 
 def draw_ticker_information(oversea_report_list: List[dict]):
@@ -107,7 +107,10 @@ def draw_ticker_information(oversea_report_list: List[dict]):
             with st.expander(selected_ticker.ticker, expanded=True):
                 fig = draw_stock_price(selected_ticker)
                 st.plotly_chart(
-                    fig,
-                    use_container_width=True,
-                    config={'displayModeBar': False}
+                    fig, use_container_width=True, config={"displayModeBar": False}
                 )
+
+
+def get_stock_price(ticker: str) -> pd.DataFrame:
+    df = yfinance.download(ticker, period="1y", progress=False)
+    return df

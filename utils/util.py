@@ -1,4 +1,6 @@
 from datetime import datetime
+import csv
+from typing import Dict
 
 import pytz
 
@@ -25,3 +27,13 @@ def get_date_diff(published_at: datetime) -> str:
 
 def convert_timezone(created_at: datetime) -> datetime:
     return created_at.replace(tzinfo=pytz.UTC).astimezone(pytz.timezone("Asia/Seoul"))
+
+
+def load_tickers() -> Dict[str, str]:
+    ticker_dict = {}
+    with open("data/tickers.csv") as fr:
+        reader = csv.reader(fr)
+        next(reader)
+        for ticker, name in reader:
+            ticker_dict[ticker] = name
+    return ticker_dict

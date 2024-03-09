@@ -4,8 +4,14 @@ from typing import List, Union
 import requests
 import streamlit as st
 
-from utils.intent import PRIMARY_INTENT_DICT, EnumPrimaryIntent, EnumIndustryStockIntent, \
-    EnumMarketStrategyIntent, ENUM_MARKET_STRATEGY_INTENT_DICT, ENUM_INDUSTRY_STOCK_INTENT_DICT
+from utils.intent import (
+    PRIMARY_INTENT_DICT,
+    EnumPrimaryIntent,
+    EnumIndustryStockIntent,
+    EnumMarketStrategyIntent,
+    ENUM_MARKET_STRATEGY_INTENT_DICT,
+    ENUM_INDUSTRY_STOCK_INTENT_DICT,
+)
 
 default_instruction = f"""
 금융 관련 질문과 참고할만한 애널리스트 리포트 문단이 주어집니다.
@@ -47,7 +53,7 @@ example_questions = [
     "지금과 같은 금융시장 환경에서는 어떤 투자 전략을 취해야할까?",
     "생성 AI 기술에 영향을 받을 종목은 어떤 것들이 있을까?",
     "올해 어떤 산업군이 좋은 성괄르 낼 것으로 예상해?",
-    "테슬라는 현재 투자하기 좋은 선택일까?"
+    "테슬라는 현재 투자하기 좋은 선택일까?",
 ]
 
 
@@ -66,10 +72,7 @@ def read_stream(response) -> str:
 
 
 def set_page_config():
-    st.set_page_config(
-        page_icon="🐙",
-        page_title="Mr. market octopus"
-    )
+    st.set_page_config(page_icon="🐙", page_title="Mr. market octopus")
 
 
 def write_common_session_state():
@@ -78,7 +81,8 @@ def write_common_session_state():
 
 
 def write_common_style():
-    st.markdown("""
+    st.markdown(
+        """
     <style>
     [data-testid="stExpanderDetails"] p {
         font-size: 14px;
@@ -90,7 +94,9 @@ def write_common_style():
         visibility: hidden;
     }
     </style>
-    """, unsafe_allow_html=True)
+    """,
+        unsafe_allow_html=True,
+    )
 
 
 def draw_oversea_report(related_contents: List[dict], expanded: bool = True):
@@ -105,18 +111,16 @@ def draw_oversea_report(related_contents: List[dict], expanded: bool = True):
             public_url = selected_item_metadata.get("chunk_url")
         with st.expander(title, expanded=expanded):
             if "published_at" in selected_item_metadata:
-                st.markdown(selected_item_metadata['published_at'])
+                st.markdown(selected_item_metadata["published_at"])
             st.markdown(f"score: {round(related_content['score'], 4)}")
             st.markdown(f"selected chunk: {related_content['id'].split('_')[-1]}")
             st.link_button(
-                label="🌐 See full report",
-                url=public_url,
-                use_container_width=True
+                label="🌐 See full report", url=public_url, use_container_width=True
             )
             st.link_button(
                 label="📝 See text chunk",
-                url=selected_item_metadata['chunk_url'],
-                use_container_width=True
+                url=selected_item_metadata["chunk_url"],
+                use_container_width=True,
             )
 
 
@@ -124,19 +128,22 @@ def draw_fnguide_report(related_news: List[dict], expanded: bool = True):
     st.markdown("**🇰🇷국내 애널리스트 리포트**")
     for news_item in related_news:
         selected_item_metadata = news_item["metadata"]
-        with st.expander(f"{selected_item_metadata['publisher']} - {selected_item_metadata['title']}", expanded=expanded):
-            st.markdown(selected_item_metadata['published_at'])
+        with st.expander(
+            f"{selected_item_metadata['publisher']} - {selected_item_metadata['title']}",
+            expanded=expanded,
+        ):
+            st.markdown(selected_item_metadata["published_at"])
             st.markdown(f"score: {round(news_item['score'], 4)}")
             st.link_button(
                 label="🌐 See full report",
                 url=selected_item_metadata["public_url"],
-                use_container_width=True
+                use_container_width=True,
             )
             if "kor_chunk_url" in selected_item_metadata:
                 st.link_button(
                     label="🔗 See chunks",
                     url=f"https://storage.googleapis.com/financial_analyst/{selected_item_metadata['kor_chunk_url']}",
-                    use_container_width=True
+                    use_container_width=True,
                 )
 
 
@@ -151,18 +158,18 @@ def draw_related_report(idx: int, related_contents: List[dict], expanded: bool =
             expander_header = selected_item_metadata["filename"]
         with st.expander(expander_header, expanded=expanded):
             if "published_at" in selected_item_metadata:
-                st.markdown(selected_item_metadata['published_at'])
+                st.markdown(selected_item_metadata["published_at"])
             st.markdown(f"score: {round(related_content['score'], 4)}")
             st.link_button(
                 label="🌐 리포트 원문",
                 url=selected_item_metadata["public_url"],
-                use_container_width=True
+                use_container_width=True,
             )
             if "reference_page_url" in selected_item_metadata:
                 st.link_button(
                     label="📎 리포트 원문 / 참고 문단 보기",
                     url=selected_item_metadata["reference_page_url"],
-                    use_container_width=True
+                    use_container_width=True,
                 )
 
 
@@ -171,8 +178,8 @@ def on_click_button(news_item: dict):
         url="https://asia-northeast3-skilled-chalice-402604.cloudfunctions.net/reference_page",
         json={
             "origin_url": news_item["url"],
-            "related_paragraph": news_item["related_paragraph"]
-        }
+            "related_paragraph": news_item["related_paragraph"],
+        },
     )
     response_json = response.json()
     webbrowser.open_new_tab(response_json["url"])
@@ -181,18 +188,38 @@ def on_click_button(news_item: dict):
 def draw_news(news_items: List[dict], expanded: bool = True):
     st.markdown(f"**관련 최신 뉴스**")
     for i, news_item in enumerate(news_items):
-        with st.expander(f"{news_item['publisher']} - {news_item['title']}", expanded=expanded):
+        with st.expander(
+            f"{news_item['publisher']} - {news_item['title']}", expanded=expanded
+        ):
             if "published_at" in news_item:
-                st.markdown(news_item['published_at'])
+                st.markdown(news_item["published_at"])
             st.markdown(f"score: {round(news_item['similarity'], 4)}")
             st.link_button(
                 label="🗞️ 뉴스 원문 / 참고 문단 보기",
                 use_container_width=True,
-                url=news_item["reference_page_url"]
+                url=news_item["reference_page_url"],
             )
 
 
-def draw_main_ideas(main_ideas: List[dict]):
+def draw_horizontal_news(news_items: List[dict], expanded: bool = True):
+    st.markdown(f"**관련 최신 뉴스**")
+    cols = st.columns(len(news_items))
+    for i, news_item in enumerate(news_items):
+        with cols[i]:
+            title = news_item["title"]
+            if len(title) > 40:
+                title = title[:40] + "..."
+            with st.expander(f"{title}", expanded=expanded):
+                st.markdown(news_item["publishedAt"].split("T")[0])
+                st.markdown(news_item["source"])
+                st.link_button(
+                    label="🗞️ 뉴스 원문 보기",
+                    use_container_width=True,
+                    url=news_item["url"],
+                )
+
+
+def draw_main_ideas(main_ideas: List[str]):
     st.markdown("**💡 핵심 아이디어**")
     for i, main_idea in enumerate(main_ideas):
         st.write(f"{i + 1}. {main_idea}")
@@ -210,7 +237,7 @@ def draw_next_questions(questions: List[str]):
             f"Q. {question}",
             key=f"question_{i}",
             on_click=click_next_question,
-            args=(question,)
+            args=(question,),
         )
 
 
@@ -223,7 +250,7 @@ def draw_auto_complete():
         label="예시 질문 선택",
         options=example_questions,
         on_change=change_select,
-        key="select"
+        key="select",
     )
 
 
@@ -235,7 +262,10 @@ def get_question(auto_complete: str):
     return ""
 
 
-def draw_intent(primary_intent: EnumPrimaryIntent, secondary_intent: Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]):
+def draw_intent(
+    primary_intent: EnumPrimaryIntent,
+    secondary_intent: Union[EnumMarketStrategyIntent, EnumIndustryStockIntent],
+):
     primary_intent_kor = PRIMARY_INTENT_DICT[primary_intent]
     secondary_intent_kor = ""
     write_markdown = f"**질문 의도: {primary_intent_kor}"
