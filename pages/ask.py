@@ -121,9 +121,8 @@ if submit:
     if not question:
         st.error("질문을 입력해주세요.")
         st.stop()
-    with st.spinner("최신 뉴스 검색 중..."):
-        eng_question = translate([question])[0]
-        question_related_news = search_news(eng_question)
+    eng_question = translate([question])[0]
+    question_related_news = search_news(eng_question)
     if question_related_news:
         draw_horizontal_news(question_related_news["result"])
     generated_answer = generate_news_based_answer(eng_question, news_items)
