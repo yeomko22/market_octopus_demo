@@ -59,9 +59,15 @@ def update_ticker():
     st.query_params.update(ticker=ticker)
 
 
-def generate_news_based_answer(eng_question: str, news_items: List[dict]) -> str:
+def generate_news_based_answer(
+    ticker: str, eng_question: str, news_items: List[dict]
+) -> str:
     prompt = generate_news_based_answer_prompt(
-        news_instruction, eng_question, news_items
+        news_instruction,
+        eng_question,
+        news_items,
+        ticker=ticker,
+        ticker_name=tickers_dict[ticker],
     )
     messages = [
         {"role": "system", "content": system_message},
@@ -125,7 +131,7 @@ if submit:
     question_related_news = search_news(eng_question)
     if question_related_news:
         draw_horizontal_news(question_related_news["result"])
-    generated_answer = generate_news_based_answer(eng_question, news_items)
+    generated_answer = generate_news_based_answer(ticker, eng_question, news_items)
 
     # 핵심 아이디어 3개 추출
     with st.spinner("핵심 아이디어 정리 중..."):
