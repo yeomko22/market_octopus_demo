@@ -26,7 +26,12 @@ from services.service_prompt import generate_news_based_answer_prompt
 from services.service_openai import get_streaming_response, generate_main_ideas
 from services.service_pinecone import search_related_reports
 
+st.set_page_config(layout="centered")
 st.title("Ask Questions")
+
+
+if "related_paragraph" not in st.session_state:
+    st.session_state.related_paragraph = ""
 
 
 @st.cache_data
@@ -109,7 +114,6 @@ candlestick_chart.update_layout(
     height=300,
 )
 st.plotly_chart(candlestick_chart, use_container_width=True)
-st.markdown("**🗞️ 주요 뉴스**")
 query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
 results = search_news(ticker, tickers_dict[ticker], query)
 news_items = results["result"]

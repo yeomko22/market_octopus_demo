@@ -3,9 +3,16 @@ import json
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
+from typing import Tuple
 
 engine = create_engine(st.secrets["DATABASE_URL"], echo=False, pool_pre_ping=True)
+superbsearch_engine = create_engine(
+    st.secrets["SUPERBSEARCH_DATABASE_URL"], echo=False, pool_pre_ping=True
+)
 Sessionmaker = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SuperbsearchSessionmaker = sessionmaker(
+    autocommit=False, autoflush=False, bind=superbsearch_engine
+)
 Base = declarative_base()
 
 
@@ -79,6 +86,24 @@ LIMIT 1
 """
     )
     with Sessionmaker() as session:
+        result = session.execute(select_sql)
+    result = result.fetchone()
+    return result
+
+
+def select_stored_html_url(hashid: str) -> Tuple[str, str]:
+    select_sql = text(
+        f"""
+SELECT
+    "storedHtmlUrl",
+    url
+FROM
+    "Article" 
+WHERE
+    hashid='{hashid}'
+"""
+    )
+    with SuperbsearchSessionmaker() as session:
         result = session.execute(select_sql)
     result = result.fetchone()
     return result

@@ -6,16 +6,23 @@ from utils.util import load_tickers
 from services.service_db import select_daily_screening
 from utils.util import convert_timezone
 
+st.set_page_config(layout="wide")
 st.title("Daily Screening")
 st.write("전날 급격한 변화를 겪은 종목들을 마켓 옥토퍼스가 엄선해서 보여드립니다.")
-st.markdown("""
+st.markdown(
+    """
 <style>
 [data-testid="stLinkButton"] a {
     display: flex;
     justify-content: flex-start;
 }
+[data-testid="stAppViewBlockContainer"] {
+    padding: 2rem 5rem 0rem 5rem;
+}
 </style>
-""", unsafe_allow_html=True)
+""",
+    unsafe_allow_html=True,
+)
 
 select_desc = {
     "select_1_1": "거래 증가 & 장대 양봉",
@@ -29,6 +36,7 @@ select_desc = {
     "select_5_1": "주가 3개월 저점",
     "select_5_2": "주가 3개월 고점",
 }
+
 
 @st.cache_data
 def load_tickers_dict() -> Dict[str, str]:
@@ -50,15 +58,19 @@ st.write(f"마지막 집계: {created_at.strftime('%Y-%m-%d')}")
 cols = st.columns(3)
 data = []
 for key, value in daily_screening.items():
-    if not value:
-        continue
     data.append((key, value[:5]))
 
-for i in range(0, len(data), 3):
-    cols = st.columns(3)
-    for j in range(3):
+column_size = 5
+for i in range(0, len(data), column_size):
+    cols = st.columns(column_size)
+    batch = data[i : i + column_size]
+    for j, (key, value) in enumerate(batch):
         with cols[j]:
-            key, value = data[i + j]
             with st.expander(f"{select_desc[key]} ({len(value)})", expanded=True):
+                if not value:
+                    st.write("해당하는 종목이 없습니다.")
                 for ticker in value:
-                    st.link_button(f"{ticker} ({tickers_dict[ticker]})", f"/ask?ticker={ticker}")
+                    st.link_button(
+                        label=f"{ticker} ({tickers_dict[ticker]})",
+                        url=f"ask?ticker={ticker}",
+                    )

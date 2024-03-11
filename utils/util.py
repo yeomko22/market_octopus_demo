@@ -1,4 +1,5 @@
 from datetime import datetime
+from hashlib import md5
 import csv
 from typing import Dict
 
@@ -37,3 +38,15 @@ def load_tickers() -> Dict[str, str]:
         for ticker, name in reader:
             ticker_dict[ticker] = name
     return ticker_dict
+
+
+def hash_string(s: str) -> str:
+    return md5(s.encode()).hexdigest()
+
+
+def base64_encode(s: str) -> str:
+    return s.encode("utf-8").hex()
+
+
+def base64_decode(s: str) -> str:
+    return bytes.fromhex(s).decode("utf-8")

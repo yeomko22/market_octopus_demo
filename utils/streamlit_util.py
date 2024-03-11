@@ -12,6 +12,7 @@ from utils.intent import (
     ENUM_MARKET_STRATEGY_INTENT_DICT,
     ENUM_INDUSTRY_STOCK_INTENT_DICT,
 )
+from utils.util import hash_string, base64_encode
 
 default_instruction = f"""
 금융 관련 질문과 참고할만한 애널리스트 리포트 문단이 주어집니다.
@@ -203,7 +204,7 @@ def draw_news(news_items: List[dict], expanded: bool = True):
 
 
 def draw_horizontal_news(news_items: List[dict], expanded: bool = True):
-    st.markdown(f"**관련 최신 뉴스**")
+    st.markdown(f"**🗞️ 주요 뉴스**")
     cols = st.columns(len(news_items))
     for i, news_item in enumerate(news_items):
         with cols[i]:
@@ -213,10 +214,12 @@ def draw_horizontal_news(news_items: List[dict], expanded: bool = True):
             with st.expander(f"{title}", expanded=expanded):
                 st.markdown(news_item["publishedAt"].split("T")[0])
                 st.markdown(news_item["source"])
+                hashed_url = hash_string(news_item["url"])
+                encoded_paragraph = base64_encode(news_item["related_paragraph"])
                 st.link_button(
-                    label="🗞️ 뉴스 원문 보기",
+                    label="📎 뉴스 원문 보기",
                     use_container_width=True,
-                    url=news_item["url"],
+                    url=f"article?id={hashed_url}&related_paragraph={encoded_paragraph}",
                 )
 
 
