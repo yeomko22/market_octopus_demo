@@ -13,4 +13,4 @@ lxml==4.9.2
 langchain==0.0.281
 pymysql
 sqlalchemy
-psycopg2
+psycopg2-binary
