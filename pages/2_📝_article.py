@@ -24,8 +24,10 @@ def load_article(hashid: str) -> Tuple[str, str]:
 
 st.title("Article")
 id = st.query_params.get("id")
-with st.spinner("Loading article..."):
-    stored_html_url, url = select_stored_html_url(id)
+if not id:
+    st.error("기사 id가 선택되지 않았습니다.")
+    st.stop()
+stored_html_url, url = select_stored_html_url(id)
 article_url = f"https://storage.googleapis.com/superbsearch-prod/{stored_html_url}"
 col1, col2 = st.columns([7, 3])
 with col1:
