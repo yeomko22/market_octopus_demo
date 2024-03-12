@@ -14,7 +14,7 @@ from typing import Dict, Tuple, List
 from services.service_yfinance import get_stock_price
 from services.service_superbsearch import search_news
 from services.service_google import translate
-from services.service_openai import get_embedding
+from services.service_openai import get_embedding, generate_news_summary
 from utils.streamlit_util import (
     draw_horizontal_news,
     draw_next_questions,
@@ -44,6 +44,12 @@ def load_tickers_dict() -> Tuple[Dict[str, str], Dict[str, str]]:
 def load_price(ticker: str) -> pd.DataFrame:
     price_df = get_stock_price(ticker)
     return price_df
+
+
+@st.cache_data
+def load_news_summary(ticker: str, news_items: List[dict]) -> str:
+    summary = generate_news_summary(ticker, tickers_dict[ticker], news_items)
+    return summary
 
 
 ticker = st.query_params.get("ticker")
@@ -116,13 +122,16 @@ candlestick_chart.update_layout(
 st.plotly_chart(candlestick_chart, use_container_width=True)
 ticker_desc = tickers_desc_dict.get(ticker)
 if ticker_desc:
-    with st.expander(f"**{ticker}**: {ticker_desc[:80]}..."):
+    with st.expander(f"**{ticker} 종목 소개**: {ticker_desc[:80]}..."):
         st.write(ticker_desc)
 query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
-results = search_news(ticker, tickers_dict[ticker], query)
+results = search_news(query)
+items = results["result"]
 news_items = results["result"]
 draw_horizontal_news(news_items)
-
+summary = load_news_summary(ticker, news_items)
+with st.expander("**주요 뉴스 요약**", expanded=True):
+    st.markdown(summary)
 with st.form("form"):
     system_message = "당신은 전문 증권 애널리스트입니다."
     question = st.text_input(
@@ -136,7 +145,11 @@ if submit:
         st.error("질문을 입력해주세요.")
         st.stop()
     eng_question = translate([question])[0]
-    question_related_news = search_news(ticker, tickers_dict[ticker], eng_question)
+    query = f"""
+selected_ticker: {ticker} ({tickers_dict[ticker]})
+question: {eng_question}
+""".strip()
+    question_related_news = search_news(query)
     if question_related_news:
         draw_horizontal_news(question_related_news["result"])
     generated_answer = generate_news_based_answer(ticker, eng_question, news_items)

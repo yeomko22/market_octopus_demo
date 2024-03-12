@@ -5,16 +5,18 @@ import json
 import openai
 import streamlit as st
 
-from utils.intent import EnumPrimaryIntent, EnumMarketStrategyIntent, EnumIndustryStockIntent
+from utils.intent import (
+    EnumPrimaryIntent,
+    EnumMarketStrategyIntent,
+    EnumIndustryStockIntent,
+)
 
 client = openai.OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 def get_embedding(text_list: List[str]) -> List[List[float]]:
     response = client.embeddings.create(
-        input=text_list,
-        model="text-embedding-3-large",
-        dimensions=1024
+        input=text_list, model="text-embedding-3-large", dimensions=1024
     )
     return [x.embedding for x in response.data]
 
@@ -22,7 +24,7 @@ def get_embedding(text_list: List[str]) -> List[List[float]]:
 def paginated_get_embedding(text_list: List[str], page_size=5) -> List[List[float]]:
     result = []
     for i in range(0, len(text_list), page_size):
-        queries = text_list[i:i+page_size]
+        queries = text_list[i : i + page_size]
         embedding_result = get_embedding(queries)
         result.extend(embedding_result)
     return result
@@ -53,7 +55,7 @@ Main categories: Policy, Economics, Stock market strategy, Bond market, Industri
                 model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": question}
+                    {"role": "user", "content": question},
                 ],
                 response_format={"type": "json_object"},
             )
@@ -68,8 +70,9 @@ Main categories: Policy, Economics, Stock market strategy, Bond market, Industri
     return intent
 
 
-def classify_secondary_intent(primary_intent: EnumPrimaryIntent, question: str) \
-        -> Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]:
+def classify_secondary_intent(
+    primary_intent: EnumPrimaryIntent, question: str
+) -> Union[EnumMarketStrategyIntent, EnumIndustryStockIntent]:
     secondary_intent_list = []
     if primary_intent == EnumPrimaryIntent.STOCK_MARKET_STRATEGY:
         secondary_intent_list = [x for x in EnumMarketStrategyIntent]
@@ -91,7 +94,7 @@ Sub Categories: {[x.value for x in secondary_intent_list]}
                 model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": question}
+                    {"role": "user", "content": question},
                 ],
                 response_format={"type": "json_object"},
             )
@@ -109,7 +112,10 @@ Sub Categories: {[x.value for x in secondary_intent_list]}
 def classify_intent(question: str):
     primary_intent = classify_primary_intent(question)
     secondary_intent = None
-    if primary_intent == EnumPrimaryIntent.STOCK_MARKET_STRATEGY or primary_intent == EnumPrimaryIntent.INDUSTRIES_AND_SECTORS:
+    if (
+        primary_intent == EnumPrimaryIntent.STOCK_MARKET_STRATEGY
+        or primary_intent == EnumPrimaryIntent.INDUSTRIES_AND_SECTORS
+    ):
         secondary_intent = classify_secondary_intent(primary_intent, question)
     return primary_intent, secondary_intent
 
@@ -133,7 +139,7 @@ def extract_query(question: str) -> List[str]:
                 model="gpt-4-0125-preview",
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": prompt}
+                    {"role": "user", "content": prompt},
                 ],
                 response_format={"type": "json_object"},
             )
@@ -167,7 +173,7 @@ def generate_next_questions(question: str, answer: str) -> List[str]:
                 model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": question}
+                    {"role": "user", "content": question},
                 ],
                 response_format={"type": "json_object"},
             )
@@ -200,7 +206,7 @@ AI의 답변에서 핵심 아이디어를 최대 3개 추출하세요.
                 model="gpt-4-0125-preview",
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": question}
+                    {"role": "user", "content": question},
                 ],
                 response_format={"type": "json_object"},
             )
@@ -233,7 +239,7 @@ today: {datetime.now().strftime("%Y-%m-%d")}
                 model="gpt-3.5-turbo-0125",
                 messages=[
                     {"role": "system", "content": system_message},
-                    {"role": "user", "content": question}
+                    {"role": "user", "content": question},
                 ],
                 response_format={"type": "json_object"},
             )
@@ -246,7 +252,9 @@ today: {datetime.now().strftime("%Y-%m-%d")}
     return query
 
 
-def generate_analytics_prompt(instruct: str, paragraph: str, related_reports: List[dict]) -> str:
+def generate_analytics_prompt(
+    instruct: str, paragraph: str, related_reports: List[dict]
+) -> str:
     report_text = ""
     for i, related_report in enumerate(related_reports):
         metadata = related_report["metadata"]
@@ -275,7 +283,9 @@ def generate_advanced_analytics(question_main_idea: str, related_reports: List[d
 반드시 한국어로 답변하세요.
 반드시 한문단 이내로 작성하세요.
 """.strip()
-    prompt = generate_analytics_prompt(analytics_instruct, question_main_idea, related_reports)
+    prompt = generate_analytics_prompt(
+        analytics_instruct, question_main_idea, related_reports
+    )
     messages = [
         {"role": "system", "content": analytics_instruct},
         {"role": "user", "content": prompt},
@@ -289,7 +299,7 @@ def generate_advanced_analytics(question_main_idea: str, related_reports: List[d
     return response
 
 
-def generate_conclusion(question:str, generated_answer: str):
+def generate_conclusion(question: str, generated_answer: str):
     prompt = f"""
 유저의 질문과 이에 대해 최신 뉴스와 애널리스트 리포트를 참고해서 생성한 답변이 주어집니다.
 이를 참고해서 결론을 작성하세요. 
@@ -312,3 +322,35 @@ generated_answer: {generated_answer}
         stream=True,
     )
     return response
+
+
+def generate_news_summary(ticker: str, ticker_name: str, news_items: List[dict]):
+    news_paragraph = ""
+    for news_item in news_items:
+        news_paragraph += f"""
+title: {news_item["title"]}  
+published_at: {news_item["publishedAt"]}  
+summary: {news_item["summary"]}  
+related_paragraph: {news_item["relatedParagraph"]}  
+    """
+
+    prompt = f"""
+나스닥 종목 티커와 종목명, 그리고 종목과 관련된 최신 뉴스 3개가 주어집니다.  
+이를 참고해서 종목과 관련된 뉴스를 요약하세요.  
+반드시 100단어 이내로 작성하세요.  
+---
+선택된 종목: {ticker} ({ticker_name})  
+관련 최신 뉴스  
+{news_paragraph}
+---
+""".strip()
+    messages = [
+        {"role": "user", "content": prompt},
+    ]
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
+        timeout=10,
+        stream=False,
+    )
+    return response.choices[0].message.content

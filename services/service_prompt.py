@@ -14,7 +14,7 @@ def generate_news_based_answer_prompt(
         news_text += f"""
 title: {content["title"]}  
 url: {content["url"]}  
-related_paragraph: {content["related_paragraph"]}  
+related_paragraph: {content["relatedParagraph"]}  
 """
     prompt = f"""
 {instruct}
