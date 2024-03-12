@@ -130,8 +130,7 @@ items = results["result"]
 news_items = results["result"]
 draw_horizontal_news(news_items)
 summary = load_news_summary(ticker, news_items)
-with st.expander("**주요 뉴스 요약**", expanded=True):
-    st.markdown(summary)
+st.markdown(summary)
 with st.form("form"):
     system_message = "당신은 전문 증권 애널리스트입니다."
     question = st.text_input(
