@@ -39,9 +39,9 @@ select_desc = {
 
 
 @st.cache_data
-def load_tickers_dict() -> Dict[str, str]:
-    tickers_dict = load_tickers()
-    return tickers_dict
+def load_tickers_dict() -> Tuple[Dict[str, str], Dict[str, str]]:
+    tickers_dict, tickers_desc_dict = load_tickers()
+    return tickers_dict, tickers_desc_dict
 
 
 @st.cache_data
@@ -51,7 +51,7 @@ def load_daily_screening() -> Tuple[datetime, Dict[str, list]]:
     return created_at, daily_screening
 
 
-tickers_dict = load_tickers_dict()
+tickers_dict, tickers_desc_dict = load_tickers_dict()
 created_at, daily_screening = load_daily_screening()
 st.write(f"마지막 집계: {created_at.strftime('%Y-%m-%d')}")
 

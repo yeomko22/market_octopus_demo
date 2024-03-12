@@ -1,7 +1,7 @@
 from datetime import datetime
 from hashlib import md5
 import csv
-from typing import Dict
+from typing import Dict, Tuple
 
 import pytz
 
@@ -30,14 +30,16 @@ def convert_timezone(created_at: datetime) -> datetime:
     return created_at.replace(tzinfo=pytz.UTC).astimezone(pytz.timezone("Asia/Seoul"))
 
 
-def load_tickers() -> Dict[str, str]:
+def load_tickers() -> Tuple[Dict[str, str], Dict[str, str]]:
     ticker_dict = {}
+    ticker_desc_dict = {}
     with open("data/tickers.csv") as fr:
         reader = csv.reader(fr)
         next(reader)
-        for ticker, name in reader:
+        for ticker, name, description in reader:
             ticker_dict[ticker] = name
-    return ticker_dict
+            ticker_desc_dict[ticker] = description
+    return ticker_dict, ticker_desc_dict
 
 
 def hash_string(s: str) -> str:

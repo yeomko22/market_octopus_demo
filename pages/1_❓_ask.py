@@ -10,7 +10,7 @@ import plotly.graph_objs as go
 
 import streamlit as st
 from utils.util import load_tickers
-from typing import Dict, List
+from typing import Dict, Tuple, List
 from services.service_yfinance import get_stock_price
 from services.service_superbsearch import search_news
 from services.service_google import translate
@@ -35,9 +35,9 @@ if "related_paragraph" not in st.session_state:
 
 
 @st.cache_data
-def load_tickers_dict() -> Dict[str, str]:
-    tickers_dict = load_tickers()
-    return tickers_dict
+def load_tickers_dict() -> Tuple[Dict[str, str], Dict[str, str]]:
+    tickers_dict, tickers_desc_dict = load_tickers()
+    return tickers_dict, tickers_desc_dict
 
 
 @st.cache_data
@@ -47,7 +47,7 @@ def load_price(ticker: str) -> pd.DataFrame:
 
 
 ticker = st.query_params.get("ticker")
-tickers_dict = load_tickers_dict()
+tickers_dict, tickers_desc_dict = load_tickers_dict()
 
 st.markdown("궁금한 종목의 티커를 선택해주세요.")
 not_select = "not select"
@@ -117,6 +117,8 @@ st.plotly_chart(candlestick_chart, use_container_width=True)
 query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
 results = search_news(ticker, tickers_dict[ticker], query)
 news_items = results["result"]
+with st.expander(f"**{ticker}**: {tickers_desc_dict[ticker][:80]}..."):
+    st.write(tickers_desc_dict[ticker])
 draw_horizontal_news(news_items)
 
 with st.form("form"):
