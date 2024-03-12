@@ -5,12 +5,8 @@ import streamlit as st
 @st.cache_data
 def search_news(ticker: str, ticker_name: str, eng_question: str) -> dict:
     query = f"""
-Find recent financial news related to the selected ticker and user's question. 
-
-```
 selected_ticker: {ticker} ({ticker_name})
 question: {eng_question}
-```
 """.strip()
     url = "https://superbsearch-dev.vercel.app/api/search/v1"
     response = requests.post(

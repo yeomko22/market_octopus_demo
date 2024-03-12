@@ -114,13 +114,13 @@ candlestick_chart.update_layout(
     height=300,
 )
 st.plotly_chart(candlestick_chart, use_container_width=True)
-query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
-results = search_news(ticker, tickers_dict[ticker], query)
-news_items = results["result"]
 ticker_desc = tickers_desc_dict.get(ticker)
 if ticker_desc:
     with st.expander(f"**{ticker}**: {ticker_desc[:80]}..."):
         st.write(ticker_desc)
+query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
+results = search_news(ticker, tickers_dict[ticker], query)
+news_items = results["result"]
 draw_horizontal_news(news_items)
 
 with st.form("form"):
