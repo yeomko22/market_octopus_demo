@@ -1,4 +1,5 @@
 import streamlit as st
+from pytz import timezone
 from datetime import datetime
 from typing import Dict, Tuple
 from utils.util import load_tickers
@@ -53,7 +54,9 @@ def load_daily_screening() -> Tuple[datetime, Dict[str, list]]:
 
 tickers_dict, tickers_desc_dict = load_tickers_dict()
 created_at, daily_screening = load_daily_screening()
-st.write(f"마지막 집계: {created_at.strftime('%Y-%m-%d')}")
+st.write(
+    f"마지막 집계: {created_at.replace(tzinfo=timezone('Asia/Seoul')).strftime('%Y-%m-%d %H:%M:%S')}"
+)
 
 cols = st.columns(3)
 data = []
