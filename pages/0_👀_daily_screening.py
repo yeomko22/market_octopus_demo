@@ -45,7 +45,6 @@ def load_tickers_dict() -> Tuple[Dict[str, str], Dict[str, str]]:
     return tickers_dict, tickers_desc_dict
 
 
-@st.cache_data
 def load_daily_screening() -> Tuple[datetime, Dict[str, list]]:
     created_at, daily_screening = select_daily_screening()
     daily_screening = eval(daily_screening)
