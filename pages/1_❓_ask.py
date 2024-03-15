@@ -46,12 +46,6 @@ def load_price(ticker: str) -> pd.DataFrame:
     return price_df
 
 
-@st.cache_data
-def load_news_summary(ticker: str, news_items: List[dict]) -> str:
-    summary = generate_news_summary(ticker, tickers_dict[ticker], news_items)
-    return summary
-
-
 ticker = st.query_params.get("ticker")
 tickers_dict, tickers_desc_dict = load_tickers_dict()
 
@@ -129,8 +123,8 @@ results = search_news(query)
 items = results["result"]
 news_items = results["result"]
 draw_horizontal_news(news_items)
-summary = load_news_summary(ticker, news_items)
-st.markdown(summary)
+response = generate_news_summary(ticker, tickers_dict[ticker], news_items)
+summary = read_stream(response)
 with st.form("form"):
     system_message = "당신은 전문 증권 애널리스트입니다."
     question = st.text_input(

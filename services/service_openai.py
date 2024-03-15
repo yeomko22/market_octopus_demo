@@ -352,6 +352,6 @@ related_paragraph: {news_item["relatedParagraph"]}
         model="gpt-4-0125-preview",
         messages=messages,
         timeout=10,
-        stream=False,
+        stream=True,
     )
-    return response.choices[0].message.content
+    return response
