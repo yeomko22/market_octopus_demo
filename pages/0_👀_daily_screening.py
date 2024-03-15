@@ -70,6 +70,7 @@ for i in range(0, len(data), column_size):
     for j, (key, value) in enumerate(batch):
         with cols[j]:
             with st.expander(f"{select_desc[key]} ({len(value)})", expanded=True):
+                st.image(f"images/graph_{i + j + 1}.png")
                 if not value:
                     st.write("해당하는 종목이 없습니다.")
                 for ticker in value:
