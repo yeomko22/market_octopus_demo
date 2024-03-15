@@ -336,7 +336,7 @@ related_paragraph: {news_item["relatedParagraph"]}
 
     prompt = f"""
 나스닥 종목 티커와 종목명, 그리고 종목과 관련된 최신 뉴스 3개가 주어집니다.  
-이를 참고해서 종목과 관련된 뉴스를 요약하세요.  
+종목의 주가 움직임과 관련된 뉴스 내용만을 참고해서 요약하세요. 
 반드시 100단어 이내로 작성하세요.  
 반드시 한국어로 작성하세요.
 ---
@@ -349,7 +349,7 @@ related_paragraph: {news_item["relatedParagraph"]}
         {"role": "user", "content": prompt},
     ]
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo",
+        model="gpt-4-0125-preview",
         messages=messages,
         timeout=10,
         stream=False,
