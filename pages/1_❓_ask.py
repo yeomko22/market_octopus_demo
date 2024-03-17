@@ -109,7 +109,7 @@ candlestick_chart = go.Figure(
 )
 candlestick_chart.update_layout(
     title={"text": f"선택한 종목: {ticker}", "font_size": 24},
-    xaxis_rangeslider_visible=True,
+    xaxis_rangeslider_visible=False,
     margin=dict(t=50, b=30),
     height=300,
 )
