@@ -112,5 +112,5 @@ def draw_ticker_information(oversea_report_list: List[dict]):
 
 
 def get_stock_price(ticker: str) -> pd.DataFrame:
-    df = yfinance.download(ticker, period="3mo", progress=False)
+    df = yfinance.download(ticker, period="1y", progress=False)
     return df
