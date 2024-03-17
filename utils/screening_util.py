@@ -67,7 +67,7 @@ def load_tickers() -> Tuple[Dict[str, str], Dict[str, str]]:
         reader = csv.reader(fr)
         next(reader)
         for i, (ticker, name, description) in enumerate(reader):
-            if i > 200:
+            if i > 500:
                 break
             ticker_dict[ticker] = name
             ticker_desc_dict[ticker] = description
