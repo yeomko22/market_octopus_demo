@@ -341,6 +341,7 @@ related_paragraph: {news_item["relatedParagraph"]}
 반드시 한국어로 작성하세요.
 불릿 포인트를 사용해서 핵심을 3가지로 정리해주세요.
 각 불릿 포인트 별로 소제목을 진하게 표시해주세요.
+ex) - **<소제목>** <본문>
 ---
 선택된 종목: {ticker} ({ticker_name})  
 관련 최신 뉴스  
