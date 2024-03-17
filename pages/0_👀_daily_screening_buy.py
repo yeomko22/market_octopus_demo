@@ -61,7 +61,8 @@ st.write(f"마지막 집계: {created_at.strftime('%Y-%m-%d %H:%M:%S')}")
 cols = st.columns(3)
 data = []
 for key, value in daily_screening.items():
-    data.append((key, value[:5]))
+    if key.endswith("_1"):
+        data.append((key, value[:5]))
 
 column_size = 5
 for i in range(0, len(data), column_size):

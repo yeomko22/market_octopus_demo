@@ -38,4 +38,4 @@ with col2:
     st.subheader("URL")
     st.write(url)
     st.subheader("Related Paragraph")
-    st.write(related_paragraph)
+    st.markdown(related_paragraph)
