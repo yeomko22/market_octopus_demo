@@ -6,6 +6,8 @@ from utils.util import load_tickers
 
 from services.service_db import select_daily_screening
 from utils.util import convert_timezone
+import pandas_market_calendars as mcal
+
 
 st.set_page_config(layout="wide")
 st.title("Daily Screening")
@@ -56,7 +58,8 @@ created_at, daily_screening = load_daily_screening()
 created_at = created_at.replace(tzinfo=timezone("utc")).astimezone(
     timezone("Asia/Seoul")
 )
-st.write(f"기준 날짜: {created_at.strftime('%Y-%m-%d')}")
+last_trade_date = mcal.get_calendar("NYSE")
+st.write(f"기준 날짜: {last_trade_date.strftime('%Y-%m-%d')}")
 
 cols = st.columns(3)
 data = []
