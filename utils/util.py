@@ -30,20 +30,6 @@ def convert_timezone(created_at: datetime) -> datetime:
     return created_at.replace(tzinfo=pytz.UTC).astimezone(pytz.timezone("Asia/Seoul"))
 
 
-def load_tickers() -> Tuple[Dict[str, str], Dict[str, str]]:
-    ticker_dict = {}
-    ticker_desc_dict = {}
-    with open("data/tickers.csv") as fr:
-        reader = csv.reader(fr)
-        next(reader)
-        for i, (ticker, name, description) in enumerate(reader):
-            if i > 200:
-                break
-            ticker_dict[ticker] = name
-            ticker_desc_dict[ticker] = description
-    return ticker_dict, ticker_desc_dict
-
-
 def hash_string(s: str) -> str:
     return md5(s.encode()).hexdigest()
 

@@ -282,3 +282,9 @@ def draw_intent(
     write_markdown += "**"
     st.markdown(write_markdown)
     return primary_intent_kor, secondary_intent_kor
+
+
+def draw_screening_result(screening_category: str, screening_result: List[str]):
+    st.markdown(f"**{screening_category}**")
+    for i, result in enumerate(screening_result):
+        st.write(f"{i + 1}. {result}")
