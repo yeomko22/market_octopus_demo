@@ -73,11 +73,10 @@ WHERE
     return result
 
 
-def select_daily_screening():
+def select_daily_screening() -> dict:
     select_sql = text(
         f"""
 SELECT
-    created_at,
     result
 FROM
     daily_screening 
@@ -88,7 +87,8 @@ LIMIT 1
     with Sessionmaker() as session:
         result = session.execute(select_sql)
     result = result.fetchone()
-    return result
+    daily_screening = eval(result[0])
+    return daily_screening
 
 
 def select_stored_html_url(hashid: str) -> Tuple[str, str]:

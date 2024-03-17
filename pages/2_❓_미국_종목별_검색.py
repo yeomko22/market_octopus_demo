@@ -127,9 +127,7 @@ summary = read_stream(response)
 draw_horizontal_news(news_items)
 with st.form("form"):
     system_message = "당신은 전문 증권 애널리스트입니다."
-    question = st.text_input(
-        "질문", label_visibility="collapsed", placeholder="질문을 입력해주세요"
-    )
+    question = st.text_input("전문가에게 질문해보세요", placeholder="질문을 입력해주세요")
     submit = st.form_submit_button(label="제출")
 
 

@@ -1,17 +1,14 @@
-import streamlit as st
-from pytz import timezone
-from datetime import datetime
 from typing import Dict, Tuple
-from utils.util import load_tickers
+
+import streamlit as st
 
 from services.service_db import select_daily_screening
-from utils.util import convert_timezone
-import pandas_market_calendars as mcal
-
+from utils.dateutil import get_last_trading_day
+from utils.util import load_tickers
 
 st.set_page_config(layout="wide")
-st.title("Daily Screening")
-st.write("전날 급격한 변화를 겪은 종목들을 마켓 옥토퍼스가 엄선해서 보여드립니다.")
+st.title("📈 매수 신호 종목")
+st.write("매수, 매도 신호는 기술적 지표에 따른 추정이며 참고용입니다. 투자 결정은 가격 패턴과 기본 분석을 종합적으로 고려해주세요.")
 st.markdown(
     """
 <style>
@@ -47,26 +44,17 @@ def load_tickers_dict() -> Tuple[Dict[str, str], Dict[str, str]]:
     return tickers_dict, tickers_desc_dict
 
 
-def load_daily_screening() -> Tuple[datetime, Dict[str, list]]:
-    created_at, daily_screening = select_daily_screening()
-    daily_screening = eval(daily_screening)
-    return created_at, daily_screening
-
-
 tickers_dict, tickers_desc_dict = load_tickers_dict()
-created_at, daily_screening = load_daily_screening()
-created_at = created_at.replace(tzinfo=timezone("utc")).astimezone(
-    timezone("Asia/Seoul")
-)
-last_trade_date = mcal.get_calendar("NYSE")
-st.write(f"기준 날짜: {last_trade_date.strftime('%Y-%m-%d')}")
+with st.spinner("일일 스크리닝 결과 로딩 중..."):
+    daily_screening = select_daily_screening()
+    data = []
+    for key, value in daily_screening.items():
+        if key.endswith("_1"):
+            data.append((key, value[:5]))
+    last_trading_day = get_last_trading_day()
 
+st.write(f"기준 날짜: {last_trading_day}")
 cols = st.columns(3)
-data = []
-for key, value in daily_screening.items():
-    if key.endswith("_1"):
-        data.append((key, value[:5]))
-
 column_size = 5
 for i in range(0, len(data), column_size):
     cols = st.columns(column_size)
