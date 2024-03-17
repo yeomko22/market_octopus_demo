@@ -340,6 +340,7 @@ related_paragraph: {news_item["relatedParagraph"]}
 반드시 100단어 이내로 작성하세요.  
 반드시 한국어로 작성하세요.
 불릿 포인트를 사용해서 핵심을 3가지로 정리해주세요.
+각 불릿 포인트 별로 소제목을 달아주세요.
 ---
 선택된 종목: {ticker} ({ticker_name})  
 관련 최신 뉴스  
