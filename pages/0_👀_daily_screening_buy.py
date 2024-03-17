@@ -56,7 +56,7 @@ created_at, daily_screening = load_daily_screening()
 created_at = created_at.replace(tzinfo=timezone("utc")).astimezone(
     timezone("Asia/Seoul")
 )
-st.write(f"마지막 집계: {created_at.strftime('%Y-%m-%d %H:%M:%S')}")
+st.write(f"기준 날짜: {created_at.strftime('%Y-%m-%d')}")
 
 cols = st.columns(3)
 data = []
