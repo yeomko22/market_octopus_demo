@@ -63,14 +63,14 @@ select_desc = {
 def load_tickers() -> Tuple[Dict[str, str], Dict[str, str]]:
     ticker_dict = {}
     ticker_desc_dict = {}
-    with open("data/tickers.csv") as fr:
+    with open("data/ticker_translation.csv") as fr:
         reader = csv.reader(fr)
         next(reader)
-        for i, (ticker, name, description) in enumerate(reader):
+        for i, (ticker, name, description, kor_description) in enumerate(reader):
             if i > 500:
                 break
             ticker_dict[ticker] = name
-            ticker_desc_dict[ticker] = description
+            ticker_desc_dict[ticker] = kor_description
     return ticker_dict, ticker_desc_dict
 
 

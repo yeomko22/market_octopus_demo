@@ -140,7 +140,7 @@ candlestick_chart.update_layout(
 st.plotly_chart(candlestick_chart, use_container_width=True)
 ticker_desc = tickers_desc_dict.get(ticker)
 if ticker_desc:
-    with st.expander(f"**{ticker} 종목 소개**: {ticker_desc[:80]}..."):
+    with st.expander(f"**{ticker} 종목 소개**: {ticker_desc[:50]}..."):
         st.write(ticker_desc)
 query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
 results = search_news(query)
