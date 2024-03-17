@@ -1,6 +1,7 @@
-from typing import List, Union
-from datetime import datetime
 import json
+from datetime import datetime
+from typing import List, Union
+from typing import Optional
 
 import openai
 import streamlit as st
@@ -324,7 +325,12 @@ generated_answer: {generated_answer}
     return response
 
 
-def generate_news_summary(ticker: str, ticker_name: str, news_items: List[dict]):
+def generate_news_summary(
+    ticker: str,
+    ticker_name: str,
+    news_items: List[dict],
+    screening: Optional[str] = None,
+):
     news_paragraph = ""
     for news_item in news_items:
         news_paragraph += f"""
@@ -334,9 +340,15 @@ summary: {news_item["summary"]}
 related_paragraph: {news_item["relatedParagraph"]}  
     """
 
+    if screening == "buy":
+        instruct = "뉴스를 참고해서 해당 종목의 매수 신호 요인을 분석하세요."
+    elif screening == "sell":
+        instruct = "뉴스를 참고해서 해당 종목의 매도 신호 요인을 분석하세요."
+    else:
+        instruct = "뉴스를 참고해서 해당 종목 주가 변동에 대한 요약을 작성하세요."
     prompt = f"""
 나스닥 종목 티커와 종목명, 그리고 종목과 관련된 최신 뉴스 3개가 주어집니다.  
-뉴스 내용을 참고해서 해당 종목의 주가가 상승한 요인을 분석하세요.
+{instruct}
 반드시 100단어 이내로 작성하세요.  
 반드시 한국어로 작성하세요.
 불릿 포인트를 사용해서 핵심을 3가지로 정리해주세요.

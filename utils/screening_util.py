@@ -80,7 +80,7 @@ def load_tickers_dict() -> Tuple[Dict[str, str], Dict[str, str]]:
     return tickers_dict, tickers_desc_dict
 
 
-def draw_screening_result(data: List[dict]):
+def draw_screening_result(data: List[dict], screening: str):
     tickers_dict, tickers_desc_dict = load_tickers_dict()
     last_trading_day = get_last_trading_day()
     st.write(f"기준 날짜: {last_trading_day}")
@@ -97,7 +97,7 @@ def draw_screening_result(data: List[dict]):
                     ticker = value[i]
                     st.link_button(
                         label=f"{i+1}\. {ticker} ({tickers_dict[ticker]})",
-                        url=f"ask?ticker={ticker}",
+                        url=f"미국_종목별_검색?ticker={ticker}&screening={screening}",
                     )
                 if len(value) > 5:
                     with st.expander(f"{len(value) - 5} 종목 더보기"):
@@ -105,5 +105,5 @@ def draw_screening_result(data: List[dict]):
                             cur_ticker = value[k]
                             st.link_button(
                                 label=f"{k+1}\. {cur_ticker} ({tickers_dict[cur_ticker]})",
-                                url=f"ask?ticker={cur_ticker}",
+                                url=f"미국_종목별_검색?ticker={cur_ticker}&screening={screening}",
                             )

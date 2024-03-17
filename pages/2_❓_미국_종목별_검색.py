@@ -1,20 +1,22 @@
-import pandas as pd
 from datetime import datetime
-from utils.streamlit_util import news_instruction
+from typing import List, Optional
+
+import pandas as pd
+import plotly.graph_objs as go
+import streamlit as st
+
+from services.service_google import translate
 from services.service_openai import (
     generate_advanced_analytics,
     generate_conclusion,
     generate_next_questions,
 )
-import plotly.graph_objs as go
-
-import streamlit as st
-from utils.util import load_tickers
-from typing import Dict, Tuple, List
-from services.service_yfinance import get_stock_price
-from services.service_superbsearch import search_news
-from services.service_google import translate
 from services.service_openai import get_embedding, generate_news_summary
+from services.service_openai import get_streaming_response, generate_main_ideas
+from services.service_pinecone import search_related_reports
+from services.service_superbsearch import search_news
+from services.service_yfinance import get_stock_price
+from utils.screening_util import load_tickers_dict
 from utils.streamlit_util import (
     draw_horizontal_news,
     draw_next_questions,
@@ -22,22 +24,15 @@ from utils.streamlit_util import (
     draw_main_ideas,
     draw_related_report,
 )
-from services.service_prompt import generate_news_based_answer_prompt
-from services.service_openai import get_streaming_response, generate_main_ideas
-from services.service_pinecone import search_related_reports
+from utils.streamlit_util import news_instruction
 
 st.set_page_config(layout="centered")
 st.title("Ask Questions")
+tickers_dict, tickers_desc_dict = load_tickers_dict()
 
 
 if "related_paragraph" not in st.session_state:
     st.session_state.related_paragraph = ""
-
-
-@st.cache_data
-def load_tickers_dict() -> Tuple[Dict[str, str], Dict[str, str]]:
-    tickers_dict, tickers_desc_dict = load_tickers()
-    return tickers_dict, tickers_desc_dict
 
 
 @st.cache_data
@@ -47,6 +42,7 @@ def load_price(ticker: str) -> pd.DataFrame:
 
 
 ticker = st.query_params.get("ticker")
+screening = st.query_params.get("screening")
 tickers_dict, tickers_desc_dict = load_tickers_dict()
 
 st.markdown("궁금한 종목의 티커를 선택해주세요.")
@@ -62,6 +58,34 @@ def update_ticker():
     selected_ticker_option = st.session_state.select_ticker
     ticker = selected_ticker_option.split("(")[0]
     st.query_params.update(ticker=ticker)
+
+
+def generate_news_based_answer_prompt(
+    instruct: str,
+    question: str,
+    news: List[dict],
+    ticker: Optional[str] = None,
+    ticker_name: Optional[str] = None,
+) -> str:
+    news_text = ""
+    for i, content in enumerate(news):
+        news_text += f"""
+title: {content["title"]}  
+url: {content["url"]}  
+related_paragraph: {content["relatedParagraph"]}  
+"""
+    prompt = f"""
+{instruct}
+--- 
+today: {datetime.now().strftime("%Y-%m-%d")}  
+question: {question}  
+"""
+    if ticker:
+        prompt += f"selected ticker: {ticker} ({ticker_name})\n"
+    if news:
+        prompt += f"\nrelated news\n{news_text}"
+    prompt += "---"
+    return prompt.strip()
 
 
 def generate_news_based_answer(
@@ -122,7 +146,7 @@ query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
 results = search_news(query)
 items = results["result"]
 news_items = results["result"]
-response = generate_news_summary(ticker, tickers_dict[ticker], news_items)
+response = generate_news_summary(ticker, tickers_dict[ticker], news_items, screening)
 summary = read_stream(response)
 draw_horizontal_news(news_items)
 with st.form("form"):
