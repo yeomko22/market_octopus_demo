@@ -122,9 +122,9 @@ query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
 results = search_news(query)
 items = results["result"]
 news_items = results["result"]
-draw_horizontal_news(news_items)
 response = generate_news_summary(ticker, tickers_dict[ticker], news_items)
 summary = read_stream(response)
+draw_horizontal_news(news_items)
 with st.form("form"):
     system_message = "당신은 전문 증권 애널리스트입니다."
     question = st.text_input(
