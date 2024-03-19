@@ -144,7 +144,10 @@ if ticker_desc:
         st.write(ticker_desc)
 query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
 results = search_news(query)
-items = results["result"]
+items = results.get("result")
+if not items:
+    st.error("관련 뉴스가 없습니다.")
+    st.stop()
 news_items = results["result"]
 response = generate_news_summary(ticker, tickers_dict[ticker], news_items, screening)
 summary = read_stream(response)
