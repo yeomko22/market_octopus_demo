@@ -4,7 +4,7 @@ import streamlit as st
 
 @st.cache_data
 def search_news(query: str) -> dict:
-    url = "https://superbsearch-dev.vercel.app/api/v1/search"
+    url = "https://superbsearch.io/api/v1/search"
     response = requests.post(
         url,
         json={"query": query},
