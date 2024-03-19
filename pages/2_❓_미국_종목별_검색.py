@@ -144,6 +144,7 @@ if ticker_desc:
         st.write(ticker_desc)
 query = f"What happend to the stock price of {tickers_dict[ticker]}({ticker})"
 results = search_news(query)
+print(results)
 items = results.get("result")
 if not items:
     st.error("관련 뉴스가 없습니다.")
