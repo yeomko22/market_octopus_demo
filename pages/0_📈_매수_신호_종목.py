@@ -30,4 +30,4 @@ with st.spinner("일일 스크리닝 결과 로딩 중..."):
         if key.endswith("_1"):
             data.append((key, value))
     last_trading_day = get_last_trading_day()
-draw_screening_result(data, screening="buy")
+draw_screening_result(data)

@@ -63,7 +63,7 @@ def read_stream(response) -> str:
     content = ""
     placeholder = st.empty()
     for part in response:
-        if not part.id:
+        if isinstance(part, str) or not part.id:
             continue
         delta = part.choices[0].delta
         if delta.content:
