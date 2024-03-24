@@ -5,26 +5,14 @@ import pandas as pd
 import plotly.graph_objs as go
 import streamlit as st
 
-from services.service_google import translate
-from services.service_openai import (
-    generate_advanced_analytics,
-    generate_conclusion,
-    generate_next_questions,
-)
-from services.service_openai import get_embedding, generate_news_summary
-from services.service_openai import get_streaming_response, generate_main_ideas
-from services.service_pinecone import search_related_reports
+from services.service_openai import get_streaming_response
 from services.service_superbsearch import search_news
 from services.service_yfinance import get_stock_price
 from utils.screening_util import load_tickers_dict
 from utils.streamlit_util import (
     draw_horizontal_news,
-    draw_next_questions,
     read_stream,
-    draw_main_ideas,
-    draw_related_report,
 )
-from utils.streamlit_util import news_instruction
 
 st.set_page_config(layout="centered")
 st.title("Ask Questions")
@@ -75,11 +63,11 @@ def update_ticker():
 
 def get_instruct(screening: str, ticker: str):
     instruct = f"""
-You are a professional securities analyst.
 You need to analyze the factors that caused the recent stock price movements of {tickers_dict[ticker]} ({ticker}).
 {instruct_by_screening[screening]}
-You are given the following news articles related to the stock.
-Refer to news articles to explain the causes of recent stock price movements
+Refer to news articles to explain the causes of recent stock price movements.
+Don't just say the stock price changes, dig deeper into what caused it to change.
+Zacks Rank is not reliable and never be used as a guide.
         """
     return instruct
 
@@ -119,7 +107,7 @@ Don't use title.
 
 def get_news_search_query(ticker: str, screening: str) -> str:
     return f"""
-Find the articles related to recent stock price movements of {ticker} ({tickers_dict[ticker]}).
+Find the articles related to recent stock of {ticker} ({tickers_dict[ticker]}).
 {instruct_by_screening[screening]}
     """.strip()
 
