@@ -107,8 +107,7 @@ Don't use title.
 
 def get_news_search_query(ticker: str, screening: str) -> str:
     return f"""
-Find the articles related to recent stock of {ticker} ({tickers_dict[ticker]}).
-{instruct_by_screening[screening]}
+Recent news about {ticker} ({tickers_dict[ticker]}).
     """.strip()
 
 
