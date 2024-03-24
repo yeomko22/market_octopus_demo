@@ -97,7 +97,6 @@ today: {datetime.now().strftime("%Y-%m-%d")}
 ---
 {news_text}
 ---
-You must write the answer in Korean.
 You must provide 3 key points using bullet points with following format:
 - **<point>**: <content> 
 Don't use title.
