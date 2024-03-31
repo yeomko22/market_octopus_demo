@@ -3,7 +3,7 @@ from typing import List, Dict, Tuple
 
 import streamlit as st
 
-from utils.dateutil import get_last_trading_day
+from utils.date_util import get_last_trading_day
 
 
 select_desc = {

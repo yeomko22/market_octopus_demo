@@ -203,26 +203,6 @@ def draw_news(news_items: List[dict], expanded: bool = True):
             )
 
 
-def draw_horizontal_news(news_items: List[dict], expanded: bool = True):
-    st.markdown(f"**🗞️ 주요 뉴스**")
-    cols = st.columns(3)
-    for i, news_item in enumerate(news_items):
-        with cols[i]:
-            title = news_item["title"]
-            if len(title) > 40:
-                title = title[:40] + "..."
-            with st.expander(f"{title}", expanded=expanded):
-                st.markdown(news_item["publishedAt"].split("T")[0])
-                st.markdown(news_item["source"])
-                hashed_url = hash_string(news_item["url"])
-                encoded_paragraph = base64_encode(news_item["relatedParagraph"])
-                st.link_button(
-                    label="📎 뉴스 원문 보기",
-                    use_container_width=True,
-                    url=f"article?id={hashed_url}&related_paragraph={encoded_paragraph}",
-                )
-
-
 def draw_main_ideas(main_ideas: List[str]):
     st.markdown("**💡 핵심 아이디어**")
     for i, main_idea in enumerate(main_ideas):

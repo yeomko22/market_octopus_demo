@@ -2,7 +2,6 @@ import requests
 import streamlit as st
 
 
-@st.cache_data
 def search_news(query: str) -> dict:
     url = "https://superbsearch.io/api/v1/search"
     response = requests.post(

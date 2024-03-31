@@ -1,7 +1,7 @@
 import streamlit as st
 
 from services.service_db import select_daily_screening
-from utils.dateutil import get_last_trading_day
+from utils.date_util import get_last_trading_day
 from utils.screening_util import draw_screening_result
 
 st.set_page_config(layout="wide")
