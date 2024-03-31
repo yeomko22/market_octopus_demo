@@ -31,6 +31,16 @@ def paginated_get_embedding(text_list: List[str], page_size=5) -> List[List[floa
     return result
 
 
+def get_streaming_response(messages: List[dict], model="gpt-3.5-turbo-0125"):
+    response = client.chat.completions.create(
+        model=model,
+        messages=messages,
+        timeout=10,
+        stream=True,
+    )
+    return response
+
+
 def classify_primary_intent(question: str) -> EnumPrimaryIntent:
     system_message = """
 You're a professional securities analyst.
