@@ -44,6 +44,8 @@ def draw_related_news(related_news: List[dict], expanded: bool = True):
             with st.expander(f"{title}", expanded=expanded):
                 st.markdown(news_item["publishedAt"].split("T")[0])
                 st.markdown(news_item["source"])
+                if news_item.get("publisher"):
+                    st.markdown(news_item["publisher"])
                 hashed_url = hash_string(news_item["url"])
                 encoded_paragraph = base64_encode(news_item["related_paragraph"])
                 st.link_button(

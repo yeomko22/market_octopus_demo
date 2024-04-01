@@ -72,11 +72,15 @@ Find the article which contains the most relevant information.
         )
         documents = [x["metadata"] for x in documents]
         filtered_documents = []
-        visited = set()
+        visited_hashid = set()
+        visited_title = set()
         for document in documents:
-            if document["hashid"] in visited:
+            if document["hashid"] in visited_hashid:
                 continue
-            visited.add(document["hashid"])
+            if document["title"] in visited_title:
+                continue
+            visited_hashid.add(document["hashid"])
+            visited_title.add(document["title"])
             filtered_documents.append(document)
         sorted_documents = sorted(
             filtered_documents, key=lambda x: x["publishedAtTs"], reverse=True
