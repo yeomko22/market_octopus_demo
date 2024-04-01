@@ -61,21 +61,27 @@ today: {datetime.now().strftime("%Y-%m-%d")}
 The stock price of {ticker_name} ({ticker}) has been fluctuating recently. 
 {instruct}
 Find the article which contains the most relevant information.
-You must not contain articles from Zacks investment.
         """.strip()
         embedding = self.openai_service.get_embedding([prompt])[0]
         documents = self.pinecone_service.search(
             query_vector=embedding,
-            top_k=3,
+            top_k=20,
             include_metadata=True,
             namespace="content",
             filter={"hashid": {"$in": document_ids}},
         )
-        documents = sorted(
-            documents, key=lambda x: x["metadata"]["publishedAtTs"], reverse=True
-        )
         documents = [x["metadata"] for x in documents]
-        return documents
+        filtered_documents = []
+        visited = set()
+        for document in documents:
+            if document["hashid"] in visited:
+                continue
+            visited.add(document["hashid"])
+            filtered_documents.append(document)
+        sorted_documents = sorted(
+            filtered_documents, key=lambda x: x["publishedAtTs"], reverse=True
+        )
+        return sorted_documents[:3]
 
     def search_related_news(self, ticker: str, screening: str):
         with st.spinner("search news..."):
