@@ -29,7 +29,7 @@ def draw_candlestick_chart(stock_data: pd.DataFrame, ticker: str):
 
 
 def draw_ticker_desc(ticker: str, ticker_desc: str):
-    with st.expander(f"**{ticker} 종목 소개**: {ticker_desc[:50]}..."):
+    with st.expander(f"**{ticker} 종목 소개**", expanded=True):
         st.write(ticker_desc)
 
 
@@ -43,9 +43,10 @@ def draw_related_news(related_news: List[dict], expanded: bool = True):
                 title = title[:40] + "..."
             with st.expander(f"{title}", expanded=expanded):
                 st.markdown(news_item["publishedAt"].split("T")[0])
-                st.markdown(news_item["source"])
+                source = news_item["source"]
                 if news_item.get("publisher"):
-                    st.markdown(news_item["publisher"])
+                    source += " - " + news_item["publisher"]
+                st.markdown(source)
                 hashed_url = hash_string(news_item["url"])
                 encoded_paragraph = base64_encode(news_item["related_paragraph"])
                 st.link_button(

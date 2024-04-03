@@ -16,3 +16,4 @@ sqlalchemy
 psycopg2-binary
 pandas_market_calendars
 dependency-injector
+anthropic
