@@ -131,5 +131,5 @@ with col2:
         {"role": "user", "content": prompt},
     ]
     container.anthropic_service().generate_streaming_response(
-        anthropic_messages, model="claude-3-opus-20240229"
+        anthropic_messages, model="claude-3-sonnet-20240229"
     )
