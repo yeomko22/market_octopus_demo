@@ -4,12 +4,17 @@ import openai
 
 
 class OpenaiService:
-    def __init__(self, openai_api_key: str):
+    def __init__(self, openai_api_key: str, azure_openai_api_key: str):
         self.client = openai.OpenAI(api_key=openai_api_key)
+        self.client = openai.AzureOpenAI(
+            api_version="2024-03-01-preview",
+            azure_endpoint="https://superbsearch-us-east.openai.azure.com/",
+            api_key=azure_openai_api_key,
+        )
 
     def get_embedding(self, text_list: List[str]) -> List[List[float]]:
         response = self.client.embeddings.create(
-            input=text_list, model="text-embedding-3-large", dimensions=1024
+            input=text_list, model="superbsearch-prod-embedding", dimensions=1024
         )
         return [x.embedding for x in response.data]
 
