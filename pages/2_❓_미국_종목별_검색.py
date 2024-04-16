@@ -120,16 +120,22 @@ with col1:
         {"role": "user", "content": prompt},
     ]
     with st.spinner("답변 생성 중..."):
-        streaming_response = container.openai_service().get_streaming_response(
-            openai_messages, model="gpt-4-0125-preview"
-        )
-    generated_answer = read_stream(streaming_response)
-    summary = read_stream(streaming_response)
+        try:
+            streaming_response = container.openai_service().get_streaming_response(
+                openai_messages, model="gpt-4-0125-preview"
+            )
+            generated_answer = read_stream(streaming_response)
+            summary = read_stream(streaming_response)
+        except:
+            st.error("GPT4 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
 with col2:
     st.markdown("**claude 3 의견**")
     anthropic_messages = [
         {"role": "user", "content": prompt},
     ]
-    container.anthropic_service().generate_streaming_response(
-        anthropic_messages, model="claude-3-sonnet-20240229"
-    )
+    try:
+        container.anthropic_service().generate_streaming_response(
+            anthropic_messages, model="claude-3-sonnet-20240229"
+        )
+    except:
+        st.error("claude3 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
