@@ -119,15 +119,14 @@ with col1:
         {"role": "system", "content": "You are a professional securities analyst."},
         {"role": "user", "content": prompt},
     ]
-    with st.spinner("답변 생성 중..."):
-        try:
-            streaming_response = container.openai_service().get_streaming_response(
-                openai_messages, model="gpt-4-0125-preview"
-            )
-            generated_answer = read_stream(streaming_response)
-            summary = read_stream(streaming_response)
-        except:
-            st.error("GPT4 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
+    try:
+        streaming_response = container.openai_service().get_streaming_response(
+            openai_messages, model="market-octopus-gpt4"
+        )
+        generated_answer = read_stream(streaming_response)
+        summary = read_stream(streaming_response)
+    except:
+        st.error("GPT4 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
 with col2:
     st.markdown("**claude 3 의견**")
     anthropic_messages = [

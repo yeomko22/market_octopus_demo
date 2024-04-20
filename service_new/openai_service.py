@@ -4,8 +4,7 @@ import openai
 
 
 class OpenaiService:
-    def __init__(self, openai_api_key: str, azure_openai_api_key: str):
-        self.client = openai.OpenAI(api_key=openai_api_key)
+    def __init__(self, azure_openai_api_key: str):
         self.azure_client = openai.AzureOpenAI(
             api_version="2024-03-01-preview",
             azure_endpoint="https://superbsearch-us-east.openai.azure.com/",
@@ -29,7 +28,7 @@ class OpenaiService:
         return result
 
     def get_streaming_response(self, messages: List[dict], model="gpt-3.5-turbo-0125"):
-        response = self.client.chat.completions.create(
+        response = self.azure_client.chat.completions.create(
             model=model,
             messages=messages,
             timeout=10,
