@@ -6,7 +6,7 @@ from typing import List
 class PineconeService:
     def __init__(self, pinecone_api_key: str):
         self.pc = Pinecone(api_key=pinecone_api_key)
-        self.index = self.pc.Index("superbsearch-prod")
+        self.index = self.pc.Index("superbsearch-new")
 
     def search(
         self,
