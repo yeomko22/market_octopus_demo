@@ -13,17 +13,17 @@ from utils.streamlit_util import (
 
 container = Container()
 
-st.set_page_config(layout="wide")
-st.markdown(
-    """
-<style>
-[data-testid="stAppViewBlockContainer"] {
-    padding: 1rem 10rem 5rem 10rem;
-}
-</style>
-""",
-    unsafe_allow_html=True,
-)
+# st.set_page_config(layout="wide")
+# st.markdown(
+#     """
+# <style>
+# [data-testid="stAppViewBlockContainer"] {
+#     padding: 1rem 10rem 5rem 10rem;
+# }
+# </style>
+# """,
+#     unsafe_allow_html=True,
+# )
 st.title("Ask Questions")
 tickers_dict, tickers_desc_dict = load_tickers_dict()
 
@@ -106,35 +106,18 @@ if not related_news:
     st.error("관련 뉴스가 없습니다.")
     st.stop()
 draw_related_news(related_news)
-
-col1, col2 = st.columns(2)
-with col1:
-    st.markdown("**GPT 4 의견**")
-    prompt = generate_news_based_answer_prompt(
-        screening=screening,
-        related_news=related_news,
-        ticker=ticker,
+prompt = generate_news_based_answer_prompt(
+    screening=screening,
+    related_news=related_news,
+    ticker=ticker,
+)
+st.markdown("**claude 3 의견**")
+anthropic_messages = [
+    {"role": "user", "content": prompt},
+]
+try:
+    container.anthropic_service().generate_streaming_response(
+        anthropic_messages, model="claude-3-sonnet-20240229"
     )
-    openai_messages = [
-        {"role": "system", "content": "You are a professional securities analyst."},
-        {"role": "user", "content": prompt},
-    ]
-    try:
-        streaming_response = container.openai_service().get_streaming_response(
-            openai_messages, model="market-octopus-gpt4"
-        )
-        generated_answer = read_stream(streaming_response)
-        summary = read_stream(streaming_response)
-    except:
-        st.error("GPT4 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
-with col2:
-    st.markdown("**claude 3 의견**")
-    anthropic_messages = [
-        {"role": "user", "content": prompt},
-    ]
-    try:
-        container.anthropic_service().generate_streaming_response(
-            anthropic_messages, model="claude-3-sonnet-20240229"
-        )
-    except:
-        st.error("claude3 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
+except:
+    st.error("claude3 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")

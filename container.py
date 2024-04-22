@@ -12,7 +12,6 @@ from service_new.anthropic_service import AnthropicService
 class Container(containers.DeclarativeContainer):
     openai_service = Singleton(
         OpenaiService,
-        openai_api_key=st.secrets["OPENAI_API_KEY"],
         azure_openai_api_key=st.secrets["AZURE_OPENAI_API_KEY"],
     )
     anthropic_service = Singleton(
