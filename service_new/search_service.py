@@ -36,7 +36,7 @@ class SearchService:
     def search_summary(self, ticker: str):
         ticker_name = self.yahoo_finance_service.get_ticker_name(ticker)
         prompt = f"""
-Recent news about {ticker_name}.
+Recent news about {ticker_name} ({ticker}).
 today: {datetime.now().strftime("%Y-%m-%d")}
         """.strip()
         embedding = self.openai_service.get_embedding([prompt])[0]
@@ -47,8 +47,9 @@ today: {datetime.now().strftime("%Y-%m-%d")}
             namespace="summary",
             filter={
                 "publishedAtTs": {
-                    "$gte": (datetime.utcnow() - timedelta(days=3)).timestamp()
+                    "$gte": (datetime.utcnow() - timedelta(days=14)).timestamp()
                 },
+                "tickers": ticker,
             },
         )
         vistied_title = set()
