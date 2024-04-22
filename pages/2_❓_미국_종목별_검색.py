@@ -13,17 +13,17 @@ from utils.streamlit_util import (
 
 container = Container()
 
-# st.set_page_config(layout="wide")
-# st.markdown(
-#     """
-# <style>
-# [data-testid="stAppViewBlockContainer"] {
-#     padding: 1rem 10rem 5rem 10rem;
-# }
-# </style>
-# """,
-#     unsafe_allow_html=True,
-# )
+st.set_page_config(layout="wide")
+st.markdown(
+    """
+<style>
+[data-testid="stAppViewBlockContainer"] {
+    padding: 1rem 10rem 5rem 10rem;
+}
+</style>
+""",
+    unsafe_allow_html=True,
+)
 st.title("Ask Questions")
 tickers_dict, tickers_desc_dict = load_tickers_dict()
 

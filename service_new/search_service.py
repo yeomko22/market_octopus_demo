@@ -43,15 +43,22 @@ today: {datetime.now().strftime("%Y-%m-%d")}
         documents = self.pinecone_service.search(
             query_vector=embedding,
             top_k=50,
-            include_metadata=False,
+            include_metadata=True,
             namespace="summary",
             filter={
                 "publishedAtTs": {
-                    "$gte": (datetime.utcnow() - timedelta(days=7)).timestamp()
+                    "$gte": (datetime.utcnow() - timedelta(days=3)).timestamp()
                 },
             },
         )
-        document_ids = [x["id"] for x in documents]
+        vistied_title = set()
+        filtered_documents = []
+        for document in documents:
+            if document["metadata"]["title"] in vistied_title:
+                continue
+            vistied_title.add(document["metadata"]["title"])
+            filtered_documents.append(document)
+        document_ids = [x["id"] for x in filtered_documents]
         return document_ids
 
     def search_content(self, ticker: str, screening: str, document_ids: List[str]):
@@ -73,14 +80,10 @@ Find the article which contains the most relevant information.
         documents = [x["metadata"] for x in documents]
         filtered_documents = []
         visited_hashid = set()
-        visited_title = set()
         for document in documents:
             if document["hashid"] in visited_hashid:
                 continue
-            if document["title"] in visited_title:
-                continue
             visited_hashid.add(document["hashid"])
-            visited_title.add(document["title"])
             filtered_documents.append(document)
         sorted_documents = sorted(
             filtered_documents, key=lambda x: x["publishedAtTs"], reverse=True
