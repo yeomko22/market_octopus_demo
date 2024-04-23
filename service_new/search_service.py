@@ -1,7 +1,9 @@
-from service_new.openai_service import OpenaiService
-from typing import List
-import streamlit as st
 from datetime import datetime, timedelta
+from typing import List
+
+import streamlit as st
+
+from service_new.openai_service import OpenaiService
 from service_new.pinecone_service import PineconeService
 from service_new.yahoo_finance_service import YahooFinanceService
 
@@ -49,7 +51,7 @@ today: {datetime.now().strftime("%Y-%m-%d")}
                 "publishedAtTs": {
                     "$gte": (datetime.utcnow() - timedelta(days=14)).timestamp()
                 },
-                # "tickers": ticker,
+                "tickers": ticker,
             },
         )
         vistied_title = set()

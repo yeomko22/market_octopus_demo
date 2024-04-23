@@ -51,7 +51,6 @@ def get_news_paragraph(news: List[dict]) -> str:
     for i, content in enumerate(news):
         news_text += f"""
 title: {content["title"]}  
-url: {content["url"]}  
 summary: {content["summary"]}  
 related_paragraph: {content["related_paragraph"]}  
     """
@@ -112,12 +111,14 @@ prompt = generate_news_based_answer_prompt(
     ticker=ticker,
 )
 st.markdown("**claude 3 의견**")
+with st.expander("claude3 prompt"):
+    st.text(prompt)
 anthropic_messages = [
     {"role": "user", "content": prompt},
 ]
-try:
-    container.anthropic_service().generate_streaming_response(
-        anthropic_messages, model="claude-3-sonnet-20240229"
-    )
-except:
-    st.error("claude3 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
+# try:
+#     container.anthropic_service().generate_streaming_response(
+#         anthropic_messages, model="claude-3-sonnet-20240229"
+#     )
+# except:
+#     st.error("claude3 API가 일시적으로 실패했습니다. 잠시 뒤에 다시 시도해주세요.")
