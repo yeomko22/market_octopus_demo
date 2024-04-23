@@ -49,7 +49,7 @@ today: {datetime.now().strftime("%Y-%m-%d")}
                 "publishedAtTs": {
                     "$gte": (datetime.utcnow() - timedelta(days=14)).timestamp()
                 },
-                "tickers": ticker,
+                # "tickers": ticker,
             },
         )
         vistied_title = set()
