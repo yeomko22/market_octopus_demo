@@ -84,7 +84,7 @@ def draw_screening_result(data: List[dict]):
     tickers_dict, tickers_desc_dict = load_tickers_dict()
     last_trading_day = get_last_trading_day()
     st.write(f"기준 날짜: {last_trading_day}")
-    column_size = 5
+    column_size = 3
     for i in range(0, len(data), column_size):
         cols = st.columns(column_size)
         batch = data[i : i + column_size]
